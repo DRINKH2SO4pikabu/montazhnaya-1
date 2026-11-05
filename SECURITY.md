@@ -4,7 +4,7 @@ Montazhnaya_1 is a beta desktop application. Do not use it with sensitive or irr
 
 ## Reporting a vulnerability
 
-Please do not post exploitable vulnerability details in a public issue. Once the repository is created, maintainers should enable **Settings → Code security and analysis → Private vulnerability reporting**. Until that feature is enabled, contact the maintainer through the private contact listed on the repository profile. Do not invent or publish a personal email address in this file.
+Please do not post exploitable vulnerability details in a public issue. Use this repository's **Private vulnerability reporting** feature from the Security tab (Report a vulnerability). This channel is enabled for the public repository. Do not send credentials or private media with a report unless they are strictly necessary and safe to share.
 
 ## Supported versions
 
