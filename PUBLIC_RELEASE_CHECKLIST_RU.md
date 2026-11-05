@@ -25,12 +25,15 @@
 - [ ] Electron/Chromium notices проверены в Setup/Portable.
 
 ## Репозиторий и безопасность
-- [ ] Создан публичный GitHub repo `montazhnaya-1` под аккаунтом сопровождающего.
-- [ ] Owner/URL внесены в `CITATION.cff`.
-- [ ] Включены Dependabot, secret scanning, push protection и private vulnerability reporting.
+- [x] Создан публичный GitHub repo `montazhnaya-1`: https://github.com/DRINKH2SO4pikabu/montazhnaya-1.
+- [x] URL внесён в `CITATION.cff`; README EN/RU обновлены.
+- [x] Dependency graph, Dependabot alerts и Dependabot security updates включены.
+- [x] Secret Protection, Push protection и Private vulnerability reporting включены.
+- [x] Ветка `main` защищена от force-push и удаления; прямые коммиты остаются разрешены.
+- [x] CI на публичном репозитории успешно прошёл на Windows, Ubuntu и macOS.
 - [x] Внешние GitHub Actions закреплены полными commit SHAs; workflow permissions минимизированы.
-- [ ] Проверен первый запуск Actions после публикации и выбраны реальные обязательные status checks.
-- [ ] Финальная secret scan публичного архива.
+- [x] Выполнен предварительный осмотр текущего дерева на секреты и пользовательские пути; известных маркеров секретов не найдено.
+- [ ] Полная проверка всей Git-истории на секреты и персональные данные.
 
 ## Тесты и бинарный выпуск
 - [ ] `npm run deps:ci` PASS на чистой сетевой машине.
