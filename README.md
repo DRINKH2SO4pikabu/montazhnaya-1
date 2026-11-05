@@ -2,9 +2,11 @@
 
 **A free, local-first video editor for Windows — built in public, improved with the community.**
 
+[Русская версия](README_RU.md) · [GitHub repository](https://github.com/DRINKH2SO4pikabu/montazhnaya-1)
+
 Montazhnaya_1 is an independent beta desktop video editor for assembling video, images and audio on a local Windows PC. The original application source code and project documentation are released under **GNU General Public License v3.0 or later (GPL-3.0-or-later)**.
 
-> **Project status:** Beta. This repository template is prepared from the `3.6.45` / Stage 19 source snapshot. It is not a claim that every hardware configuration, installer or codec has been certified. See `PUBLICATION_READINESS_RU.md` before the first public push.
+> **Project status:** Public beta source repository, based on the `3.6.45` / Stage 19 snapshot. The automated CI matrix has passed on Windows, Ubuntu and macOS. Windows Setup/Portable binaries have not yet been published. CI success does not certify every hardware configuration, installer or codec. See `PUBLICATION_READINESS_RU.md` for the remaining release gates.
 
 ## Why this project exists
 
@@ -54,13 +56,14 @@ Bug reports, test results from different GPUs, accessibility feedback, translati
 
 ## Security
 
-Please do not publish exploitable security details in public issues. Use GitHub's private vulnerability reporting after it is enabled for this repository. See `SECURITY.md`.
+Please do not publish exploitable security details in public issues. Use this repository's **Private vulnerability reporting** feature from the Security tab. See `SECURITY.md`.
 
 ## Project links
 
-- Repository: not created yet; the public repository name is planned as `montazhnaya-1`.
-- First-push instructions: `PUSH_TO_GITHUB_RU.md`.
-- Releases and issue tracker: will be linked here after the maintainer creates the repository.
+- Repository: https://github.com/DRINKH2SO4pikabu/montazhnaya-1
+- Bug reports and feature requests: https://github.com/DRINKH2SO4pikabu/montazhnaya-1/issues
+- Releases: https://github.com/DRINKH2SO4pikabu/montazhnaya-1/releases (official Windows binaries are not published yet).
+- Build instructions: `BUILDING_RU.md`.
 
 ---
 
