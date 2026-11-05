@@ -1,0 +1,108 @@
+{
+  "generatedFrom": "package-lock.json",
+  "packageCount": 13,
+  "packagesMissingLicenseMetadata": 0,
+  "licenseDistribution": {
+    "MIT": 10,
+    "ISC": 2,
+    "Apache-2.0": 1
+  },
+  "electronBuilderIncludedInLockfile": false,
+  "registryPackageCount": 13,
+  "registryPackagesMissingSRI": 0,
+  "registryPackagesInvalidSRI": 0,
+  "notice": "Dependency license metadata inventory only; not a legal review or license-compatibility determination. electron-builder remains isolated in tools/release-toolchain and must be audited with its own lockfile. SRI fields are present and syntactically valid for all registry.npmjs.org package entries; this is not a local tarball digest verification.",
+  "packages": [
+    {
+      "name": "node_modules/@electron-internal/extract-zip",
+      "version": "1.0.8",
+      "license": "MIT",
+      "integrityPresent": true,
+      "integrityAlgorithm": "sha512"
+    },
+    {
+      "name": "node_modules/@electron/get",
+      "version": "5.1.0",
+      "license": "MIT",
+      "integrityPresent": true,
+      "integrityAlgorithm": "sha512"
+    },
+    {
+      "name": "node_modules/@types/node",
+      "version": "24.13.2",
+      "license": "MIT",
+      "integrityPresent": true,
+      "integrityAlgorithm": "sha512"
+    },
+    {
+      "name": "node_modules/debug",
+      "version": "4.3.4",
+      "license": "MIT",
+      "integrityPresent": true,
+      "integrityAlgorithm": "sha512"
+    },
+    {
+      "name": "node_modules/electron",
+      "version": "45.2.1",
+      "license": "MIT",
+      "integrityPresent": true,
+      "integrityAlgorithm": "sha512"
+    },
+    {
+      "name": "node_modules/env-paths",
+      "version": "3.0.0",
+      "license": "MIT",
+      "integrityPresent": true,
+      "integrityAlgorithm": "sha512"
+    },
+    {
+      "name": "node_modules/graceful-fs",
+      "version": "4.2.11",
+      "license": "ISC",
+      "integrityPresent": true,
+      "integrityAlgorithm": "sha512"
+    },
+    {
+      "name": "node_modules/ms",
+      "version": "2.1.2",
+      "license": "MIT",
+      "integrityPresent": true,
+      "integrityAlgorithm": "sha512"
+    },
+    {
+      "name": "node_modules/progress",
+      "version": "2.0.3",
+      "license": "MIT",
+      "integrityPresent": true,
+      "integrityAlgorithm": "sha512"
+    },
+    {
+      "name": "node_modules/semver",
+      "version": "7.8.0",
+      "license": "ISC",
+      "integrityPresent": true,
+      "integrityAlgorithm": "sha512"
+    },
+    {
+      "name": "node_modules/sumchecker",
+      "version": "3.0.1",
+      "license": "Apache-2.0",
+      "integrityPresent": true,
+      "integrityAlgorithm": "sha512"
+    },
+    {
+      "name": "node_modules/undici",
+      "version": "7.30.1",
+      "license": "MIT",
+      "integrityPresent": true,
+      "integrityAlgorithm": "sha512"
+    },
+    {
+      "name": "node_modules/undici-types",
+      "version": "7.18.2",
+      "license": "MIT",
+      "integrityPresent": true,
+      "integrityAlgorithm": "sha512"
+    }
+  ]
+}

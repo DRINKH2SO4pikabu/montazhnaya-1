@@ -1,0 +1,278 @@
+{
+  "version": "3.6.40",
+  "testCommand": "node --test tests/*.test.cjs",
+  "tests": 274,
+  "passed": 274,
+  "failed": 0,
+  "localeAudit": {
+    "version": "3.6.40",
+    "sourceKeyCount": 436,
+    "internationalLocaleCount": 24,
+    "locales": [
+      {
+        "code": "de",
+        "sourceMessageCount": 436,
+        "localeMappedCount": 436,
+        "englishFallbackCount": 0,
+        "englishFallbackKeys": [],
+        "direction": "ltr",
+        "translationStage": "translation-draft-complete-review-pending",
+        "completedTranslationWave": "beta-3.6.37-phase-4",
+        "aboutVersion": "Montazhnaya Beta 3.6.40 — Videoeditor für Fotos, Audio und Video"
+      },
+      {
+        "code": "fr",
+        "sourceMessageCount": 436,
+        "localeMappedCount": 436,
+        "englishFallbackCount": 0,
+        "englishFallbackKeys": [],
+        "direction": "ltr",
+        "translationStage": "translation-draft-complete-review-pending",
+        "completedTranslationWave": "beta-3.6.37-phase-4",
+        "aboutVersion": "Montazhnaya Beta 3.6.40 — éditeur photo, audio et vidéo"
+      },
+      {
+        "code": "es",
+        "sourceMessageCount": 436,
+        "localeMappedCount": 436,
+        "englishFallbackCount": 0,
+        "englishFallbackKeys": [],
+        "direction": "ltr",
+        "translationStage": "translation-draft-complete-review-pending",
+        "completedTranslationWave": "beta-3.6.37-phase-4",
+        "aboutVersion": "Montazhnaya Beta 3.6.40 — editor de fotos, audio y vídeo"
+      },
+      {
+        "code": "pt-BR",
+        "sourceMessageCount": 436,
+        "localeMappedCount": 436,
+        "englishFallbackCount": 0,
+        "englishFallbackKeys": [],
+        "direction": "ltr",
+        "translationStage": "translation-draft-complete-review-pending",
+        "completedTranslationWave": "beta-3.6.37-phase-4",
+        "aboutVersion": "Montazhnaya Beta 3.6.40 — editor de fotos, áudio e vídeo"
+      },
+      {
+        "code": "it",
+        "sourceMessageCount": 436,
+        "localeMappedCount": 436,
+        "englishFallbackCount": 0,
+        "englishFallbackKeys": [],
+        "direction": "ltr",
+        "translationStage": "translation-draft-complete-review-pending",
+        "completedTranslationWave": "beta-3.6.37-phase-4",
+        "aboutVersion": "Montazhnaya Beta 3.6.40 — editor di foto, audio e video"
+      },
+      {
+        "code": "pl",
+        "sourceMessageCount": 436,
+        "localeMappedCount": 436,
+        "englishFallbackCount": 0,
+        "englishFallbackKeys": [],
+        "direction": "ltr",
+        "translationStage": "translation-draft-complete-review-pending",
+        "completedTranslationWave": "beta-3.6.37-phase-4",
+        "aboutVersion": "Montazhnaya Beta 3.6.40 — edytor zdjęć, dźwięku i wideo"
+      },
+      {
+        "code": "uk",
+        "sourceMessageCount": 436,
+        "localeMappedCount": 436,
+        "englishFallbackCount": 0,
+        "englishFallbackKeys": [],
+        "direction": "ltr",
+        "translationStage": "translation-draft-complete-review-pending",
+        "completedTranslationWave": "beta-3.6.38-phase-5",
+        "aboutVersion": "Montazhnaya beta 3.6.40 — редактор фото, аудіо та відео"
+      },
+      {
+        "code": "tr",
+        "sourceMessageCount": 436,
+        "localeMappedCount": 436,
+        "englishFallbackCount": 0,
+        "englishFallbackKeys": [],
+        "direction": "ltr",
+        "translationStage": "translation-draft-complete-review-pending",
+        "completedTranslationWave": "beta-3.6.38-phase-5",
+        "aboutVersion": "Montazhnaya beta 3.6.40 — fotoğraf, ses ve video düzenleyici"
+      },
+      {
+        "code": "zh-CN",
+        "sourceMessageCount": 436,
+        "localeMappedCount": 436,
+        "englishFallbackCount": 0,
+        "englishFallbackKeys": [],
+        "direction": "ltr",
+        "translationStage": "translation-draft-complete-review-pending",
+        "completedTranslationWave": "beta-3.6.38-phase-5",
+        "aboutVersion": "Montazhnaya beta 3.6.40 — 照片、音频与视频编辑器"
+      },
+      {
+        "code": "zh-TW",
+        "sourceMessageCount": 436,
+        "localeMappedCount": 436,
+        "englishFallbackCount": 0,
+        "englishFallbackKeys": [],
+        "direction": "ltr",
+        "translationStage": "translation-draft-complete-review-pending",
+        "completedTranslationWave": "beta-3.6.38-phase-5",
+        "aboutVersion": "Montazhnaya beta 3.6.40 — 照片、音訊與影片編輯器"
+      },
+      {
+        "code": "ja",
+        "sourceMessageCount": 436,
+        "localeMappedCount": 436,
+        "englishFallbackCount": 0,
+        "englishFallbackKeys": [],
+        "direction": "ltr",
+        "translationStage": "translation-draft-complete-review-pending",
+        "completedTranslationWave": "beta-3.6.38-phase-5",
+        "aboutVersion": "Montazhnaya beta 3.6.40 — 写真・音声・動画編集ソフト"
+      },
+      {
+        "code": "ko",
+        "sourceMessageCount": 436,
+        "localeMappedCount": 436,
+        "englishFallbackCount": 0,
+        "englishFallbackKeys": [],
+        "direction": "ltr",
+        "translationStage": "translation-draft-complete-review-pending",
+        "completedTranslationWave": "beta-3.6.38-phase-5",
+        "aboutVersion": "Montazhnaya beta 3.6.40 — 사진·오디오·동영상 편집기"
+      },
+      {
+        "code": "ar",
+        "sourceMessageCount": 436,
+        "localeMappedCount": 436,
+        "englishFallbackCount": 0,
+        "englishFallbackKeys": [],
+        "direction": "rtl",
+        "translationStage": "translation-draft-complete-review-pending",
+        "completedTranslationWave": "beta-3.6.39-phase-6",
+        "aboutVersion": "مونتاجنايا 3.6.40 beta — محرّر الصور والصوت والفيديو"
+      },
+      {
+        "code": "he",
+        "sourceMessageCount": 436,
+        "localeMappedCount": 436,
+        "englishFallbackCount": 0,
+        "englishFallbackKeys": [],
+        "direction": "rtl",
+        "translationStage": "translation-draft-complete-review-pending",
+        "completedTranslationWave": "beta-3.6.39-phase-6",
+        "aboutVersion": "מונטאז׳נאיה בטא 3.6.40 — עורך תמונות, שמע ווידאו"
+      },
+      {
+        "code": "hi",
+        "sourceMessageCount": 436,
+        "localeMappedCount": 436,
+        "englishFallbackCount": 0,
+        "englishFallbackKeys": [],
+        "direction": "ltr",
+        "translationStage": "translation-draft-complete-review-pending",
+        "completedTranslationWave": "beta-3.6.39-phase-6",
+        "aboutVersion": "मोंताझनाया बीटा 3.6.40 — फ़ोटो, ऑडियो और वीडियो संपादक"
+      },
+      {
+        "code": "nl",
+        "sourceMessageCount": 436,
+        "localeMappedCount": 436,
+        "englishFallbackCount": 0,
+        "englishFallbackKeys": [],
+        "direction": "ltr",
+        "translationStage": "translation-draft-complete-review-pending",
+        "completedTranslationWave": "beta-3.6.39-phase-6",
+        "aboutVersion": "Montazhnaya beta 3.6.40 — foto-, audio- en videobewerker"
+      },
+      {
+        "code": "sv",
+        "sourceMessageCount": 436,
+        "localeMappedCount": 436,
+        "englishFallbackCount": 0,
+        "englishFallbackKeys": [],
+        "direction": "ltr",
+        "translationStage": "translation-draft-complete-review-pending",
+        "completedTranslationWave": "beta-3.6.39-phase-6",
+        "aboutVersion": "Montazhnaya beta 3.6.40 — redigerare för foto, ljud och video"
+      },
+      {
+        "code": "fi",
+        "sourceMessageCount": 436,
+        "localeMappedCount": 436,
+        "englishFallbackCount": 0,
+        "englishFallbackKeys": [],
+        "direction": "ltr",
+        "translationStage": "translation-draft-complete-review-pending",
+        "completedTranslationWave": "beta-3.6.39-phase-6",
+        "aboutVersion": "Montazhnaya beta 3.6.40 — valokuvien, äänen ja videon editori"
+      },
+      {
+        "code": "cs",
+        "sourceMessageCount": 436,
+        "localeMappedCount": 436,
+        "englishFallbackCount": 0,
+        "englishFallbackKeys": [],
+        "direction": "ltr",
+        "translationStage": "translation-draft-complete-review-pending",
+        "completedTranslationWave": "beta-3.6.40-phase-7",
+        "aboutVersion": "Montazhnaya beta 3.6.40 — editor fotografií, zvuku a videa"
+      },
+      {
+        "code": "ro",
+        "sourceMessageCount": 436,
+        "localeMappedCount": 436,
+        "englishFallbackCount": 0,
+        "englishFallbackKeys": [],
+        "direction": "ltr",
+        "translationStage": "translation-draft-complete-review-pending",
+        "completedTranslationWave": "beta-3.6.40-phase-7",
+        "aboutVersion": "Montazhnaya beta 3.6.40 — editor foto, audio și video"
+      },
+      {
+        "code": "el",
+        "sourceMessageCount": 436,
+        "localeMappedCount": 436,
+        "englishFallbackCount": 0,
+        "englishFallbackKeys": [],
+        "direction": "ltr",
+        "translationStage": "translation-draft-complete-review-pending",
+        "completedTranslationWave": "beta-3.6.40-phase-7",
+        "aboutVersion": "Montazhnaya beta 3.6.40 — επεξεργαστής φωτογραφιών, ήχου και βίντεο"
+      },
+      {
+        "code": "vi",
+        "sourceMessageCount": 436,
+        "localeMappedCount": 436,
+        "englishFallbackCount": 0,
+        "englishFallbackKeys": [],
+        "direction": "ltr",
+        "translationStage": "translation-draft-complete-review-pending",
+        "completedTranslationWave": "beta-3.6.40-phase-7",
+        "aboutVersion": "Montazhnaya beta 3.6.40 — trình chỉnh sửa ảnh, âm thanh và video"
+      },
+      {
+        "code": "id",
+        "sourceMessageCount": 436,
+        "localeMappedCount": 436,
+        "englishFallbackCount": 0,
+        "englishFallbackKeys": [],
+        "direction": "ltr",
+        "translationStage": "translation-draft-complete-review-pending",
+        "completedTranslationWave": "beta-3.6.40-phase-7",
+        "aboutVersion": "Montazhnaya beta 3.6.40 — editor foto, audio, dan video"
+      },
+      {
+        "code": "th",
+        "sourceMessageCount": 436,
+        "localeMappedCount": 436,
+        "englishFallbackCount": 0,
+        "englishFallbackKeys": [],
+        "direction": "ltr",
+        "translationStage": "translation-draft-complete-review-pending",
+        "completedTranslationWave": "beta-3.6.40-phase-7",
+        "aboutVersion": "Montazhnaya beta 3.6.40 — โปรแกรมตัดต่อภาพ เสียง และวิดีโอ"
+      }
+    ]
+  }
+}

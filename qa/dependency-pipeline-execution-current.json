@@ -1,0 +1,52 @@
+{
+  "date": "2026-11-03",
+  "projectVersion": "3.6.45",
+  "electron": "45.2.1",
+  "extractZip": "1.0.8",
+  "undici": "7.30.1",
+  "environment": {
+    "os": "Linux x86_64",
+    "node": "22.16.0",
+    "npm": "10.9.2",
+    "windowsRunnerAvailable": false
+  },
+  "checks": {
+    "regressionTests": {
+      "status": "PASS",
+      "passed": 307,
+      "failed": 0,
+      "source": "final regression log generated after new Windows workflow and batch tests"
+    },
+    "rootLockSRI": {
+      "status": "PASS",
+      "registryPackages": 13,
+      "missing": 0,
+      "invalid": 0
+    },
+    "rootNpmCiOfflineDryRun": {
+      "status": "PASS",
+      "detail": "npm ci --ignore-scripts --dry-run --offline accepted the root lockfile and manifest"
+    },
+    "rootNpmAudit": {
+      "status": "BLOCKED",
+      "detail": "EAI_AGAIN registry.npmjs.org; no vulnerability count was returned"
+    },
+    "releaseToolchainLockGeneration": {
+      "status": "BLOCKED",
+      "detail": "npm install --package-lock-only --offline failed ENOTCACHED; online npm requests fail EAI_AGAIN. No release-toolchain package-lock.json created."
+    },
+    "releaseToolchainNpmAudit": {
+      "status": "BLOCKED",
+      "detail": "npm audit cannot run without tools/release-toolchain/package-lock.json (ENOLOCK); generating the lockfile failed ENOTCACHED offline and EAI_AGAIN online."
+    },
+    "windowsX64Build": {
+      "status": "BLOCKED_ON_HOST_PLATFORM",
+      "detail": "node tools/run-windows-build.cjs was invoked on Linux x86_64 and stopped at the explicit win32 guard. Actual Setup/Portable packaging was not performed. The project now also checks process.arch === x64 on Windows."
+    },
+    "hostedWindowsWorkflow": {
+      "status": "PREPARED_NOT_EXECUTED",
+      "detail": "Manual windows-latest workflow added to the source tree; no connected GitHub repository is available to dispatch it from this environment."
+    }
+  },
+  "policy": "Fail closed: no incomplete or third-party-derived lockfile was substituted; no audit result or Windows artifact is claimed."
+}

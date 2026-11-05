@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "stage": 4,
+  "date": "2026-11-04",
+  "contract": {
+    "status": "error",
+    "error": {
+      "code": "STRING",
+      "key": "error.namespace.permanentKey",
+      "params": "bounded scalar map",
+      "retryable": "boolean"
+    },
+    "mainProcessMessageField": false,
+    "preloadLocalizedCompatibilityMessage": true
+  },
+  "registeredChannelCount": 19,
+  "channelFallbacks": {
+    "ui:set-locale": "error.locale.syncFailed",
+    "frame:save-still": "error.frame.saveFailed",
+    "system:tool-diagnostics": "error.diagnostics.failed",
+    "export:get-codec-capabilities": "error.export.capabilitiesFailed",
+    "export:begin-png-sequence": "error.export.beginFailed",
+    "export:write-png-frame": "error.export.writeFrameFailed",
+    "export:start-png-stream": "error.export.startFailed",
+    "export:prepare-source-frames": "error.export.prepareSourceFramesFailed",
+    "export:read-source-frame": "error.export.readSourceFrameFailed",
+    "export:finish-png-sequence": "error.export.finishFailed",
+    "export:cancel-png-sequence": "error.export.cancelFailed",
+    "media:stage-file-begin": "error.media.stageFailed",
+    "media:stage-file-write": "error.media.stageFailed",
+    "media:stage-file-finish": "error.media.stageFailed",
+    "media:stage-file-cleanup": "error.media.stageFailed",
+    "media:inspect-webm-duration": "error.media.inspectFailed",
+    "media:extract-video-audio": "error.audio.extractFailed",
+    "media:inspect-audio": "error.audio.inspectFailed",
+    "media:prepare-audio": "error.audio.prepareFailed"
+  },
+  "errorDefinitions": {
+    "error.ipc.untrustedRequest": {
+      "code": "IPC_UNTRUSTED_REQUEST",
+      "retryable": false
+    },
+    "error.locale.syncFailed": {
+      "code": "LOCALE_SYNC_FAILED",
+      "retryable": true
+    },
+    "error.operation.failed": {
+      "code": "OPERATION_FAILED",
+      "retryable": true
+    },
+    "error.media.stageFailed": {
+      "code": "MEDIA_STAGE_FAILED",
+      "retryable": true
+    },
+    "error.media.inspectFailed": {
+      "code": "MEDIA_INSPECTION_FAILED",
+      "retryable": true
+    },
+    "error.media.invalidFile": {
+      "code": "MEDIA_FILE_INVALID",
+      "retryable": false
+    },
+    "error.media.probeFailed": {
+      "code": "MEDIA_PROBE_FAILED",
+      "retryable": true
+    },
+    "error.export.capabilitiesFailed": {
+      "code": "EXPORT_CAPABILITIES_FAILED",
+      "retryable": true
+    },
+    "error.export.beginFailed": {
+      "code": "EXPORT_BEGIN_FAILED",
+      "retryable": true
+    },
+    "error.export.writeFrameFailed": {
+      "code": "EXPORT_FRAME_WRITE_FAILED",
+      "retryable": true
+    },
+    "error.export.startFailed": {
+      "code": "EXPORT_START_FAILED",
+      "retryable": true
+    },
+    "error.export.prepareSourceFramesFailed": {
+      "code": "EXPORT_SOURCE_PREPARATION_FAILED",
+      "retryable": true
+    },
+    "error.export.readSourceFrameFailed": {
+      "code": "EXPORT_SOURCE_FRAME_READ_FAILED",
+      "retryable": true
+    },
+    "error.export.finishFailed": {
+      "code": "EXPORT_FINALIZATION_FAILED",
+      "retryable": true
+    },
+    "error.export.cancelFailed": {
+      "code": "EXPORT_CANCELLATION_FAILED",
+      "retryable": true
+    },
+    "error.audio.extractFailed": {
+      "code": "AUDIO_EXTRACTION_FAILED",
+      "retryable": true
+    },
+    "error.audio.inspectFailed": {
+      "code": "AUDIO_INSPECTION_FAILED",
+      "retryable": true
+    },
+    "error.audio.prepareFailed": {
+      "code": "AUDIO_PREPARATION_FAILED",
+      "retryable": true
+    },
+    "error.frame.saveFailed": {
+      "code": "FRAME_SAVE_FAILED",
+      "retryable": true
+    },
+    "error.diagnostics.failed": {
+      "code": "TOOL_DIAGNOSTICS_FAILED",
+      "retryable": true
+    },
+    "error.storage.insufficientSpace": {
+      "code": "STORAGE_INSUFFICIENT_SPACE",
+      "retryable": true
+    },
+    "error.tool.ffmpegMissing": {
+      "code": "TOOL_FFMPEG_MISSING",
+      "retryable": false
+    },
+    "error.tool.ffprobeMissing": {
+      "code": "TOOL_FFPROBE_MISSING",
+      "retryable": false
+    },
+    "error.tool.notFound": {
+      "code": "TOOL_NOT_FOUND",
+      "retryable": false
+    },
+    "error.process.timeout": {
+      "code": "PROCESS_TIMEOUT",
+      "retryable": true
+    },
+    "error.process.permissionDenied": {
+      "code": "PROCESS_PERMISSION_DENIED",
+      "retryable": false
+    },
+    "error.export.validationFailed": {
+      "code": "EXPORT_VALIDATION_FAILED",
+      "retryable": true
+    },
+    "error.export.sessionInvalid": {
+      "code": "EXPORT_SESSION_INVALID",
+      "retryable": false
+    },
+    "error.export.busy": {
+      "code": "EXPORT_BUSY",
+      "retryable": true
+    },
+    "error.audio.trackMissing": {
+      "code": "AUDIO_TRACK_MISSING",
+      "retryable": false
+    }
+  },
+  "errorKeyCount": 30
+}

@@ -1,0 +1,40 @@
+{
+  "version": "3.6.39",
+  "sourceKeys": 436,
+  "completed": [
+    "de",
+    "fr",
+    "es",
+    "pt-BR",
+    "it",
+    "pl",
+    "uk",
+    "tr",
+    "zh-CN",
+    "zh-TW",
+    "ja",
+    "ko",
+    "ar",
+    "he",
+    "hi",
+    "nl",
+    "sv",
+    "fi"
+  ],
+  "partial": [
+    "cs",
+    "ro",
+    "el",
+    "vi",
+    "id",
+    "th"
+  ],
+  "fallbacks": {
+    "cs": 135,
+    "ro": 135,
+    "el": 135,
+    "vi": 135,
+    "id": 135,
+    "th": 135
+  }
+}

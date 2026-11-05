@@ -1,0 +1,1657 @@
+{
+  "version": "3.6.45",
+  "selectableLanguageVariants": 36,
+  "previewLocales": 34,
+  "englishReferenceKeyCount": 436,
+  "totals": {
+    "missingKeys": 0,
+    "emptyValues": 0,
+    "englishFallbackEntries": 0,
+    "placeholderMismatches": 0,
+    "duplicateTerminologyMismatches": 0,
+    "aboutVersionMismatches": 0,
+    "semanticCatalogIssues": 0
+  },
+  "terminologyGroupsChecked": 2,
+  "localeReports": [
+    {
+      "code": "de",
+      "nativeName": "Deutsch",
+      "englishName": "German",
+      "direction": "ltr",
+      "sourceKeyCount": 436,
+      "mappedKeyCount": 436,
+      "missingKeyCount": 0,
+      "emptyValueCount": 0,
+      "englishFallbackCount": 0,
+      "placeholderMismatchCount": 0,
+      "duplicateTerminologyIssueCount": 0,
+      "longLabelsOver46Chars": 48,
+      "veryLongLabelsOver72Chars": 25,
+      "longestLabels": [
+        {
+          "source": "Проверяется наличие FFmpeg и ffprobe, а также кодировщики H.264/AAC и VP8/VP9/Opus, PNG-декодер и контейнеры MP4/WebM. Редактор создаёт короткие тестовые файлы каждого доступного варианта и проверяет потоки и временные метки через ffprobe. Временные файлы удаляются после проверки.",
+          "value": "Geprüft werden FFmpeg und ffprobe, die Encoder H.264/AAC und VP8/VP9/Opus, der PNG-Decoder sowie die Container MP4/WebM. Der Editor erstellt kurze Testdateien für alle verfügbaren Optionen und überprüft Streams und Zeitstempel mit ffprobe. Temporäre Dateien werden nach der Prüfung gelöscht.",
+          "length": 291
+        },
+        {
+          "source": "Наведите курсор на карточку, чтобы увидеть анимацию. Перетащите её на клип: левый край — вход, правый — выход. На стыке клипов создаётся перекрытие. Нажатие применяет вход выбранного клипа.",
+          "value": "Bewege den Mauszeiger über eine Karte, um die Animation in der Vorschau zu sehen. Ziehe sie auf einen Clip: Die linke Kante wendet einen Eingang an, die rechte einen Ausgang. Beim Ablegen zwischen Clips entsteht eine Überlappung. Ein Klick wendet den Eingang auf den ausgewählten Clip an.",
+          "length": 288
+        },
+        {
+          "source": "Сохранится вся композиция на текущей позиции таймлайна: видимые видеослои, переходы, цветокоррекция, трансформации и титры. Монтажные направляющие в изображение не попадут.",
+          "value": "Die gesamte Komposition an der aktuellen Position der Zeitleiste wird gespeichert: sichtbare Videoebenen, Übergänge, Farbkorrektur, Transformationen und Titel. Schnittmarkierungen werden nicht in das Bild übernommen.",
+          "length": 216
+        },
+        {
+          "source": "Будут добавлены только изображения и видео, в названиях которых есть цифры. Порядок будет числовым, поэтому 2 пойдёт перед 10. Клипам будет задана последовательность без наложений.",
+          "value": "Es werden nur Bilder und Videos hinzugefügt, deren Dateinamen Zahlen enthalten. Die Sortierung erfolgt numerisch, daher kommt 2 vor 10. Die Clips werden ohne Überlappungen hintereinander angeordnet.",
+          "length": 198
+        },
+        {
+          "source": "Можно экспортировать только фрагмент. Время указывается в секундах относительно начала таймлайна, а точность границ округляется к выбранной частоте кадров.",
+          "value": "Sie können nur einen ausgewählten Bereich exportieren. Die Zeit wird in Sekunden ab dem Anfang der Zeitleiste angegeben; die Bereichsgrenzen werden auf die gewählte Bildrate gerundet.",
+          "length": 183
+        }
+      ],
+      "linguisticReviewStatus": "automated-terminology-consistency-checked-native-speaker-review-pending",
+      "visualReviewStatus": "script-aware-layout-hardening-added-windows-render-check-pending",
+      "translationQuality": "draft-needs-native-review",
+      "scriptVariant": null,
+      "fontFamily": "Segoe UI Variable Text → Segoe UI → Arial",
+      "fontProfile": "latin"
+    },
+    {
+      "code": "fr",
+      "nativeName": "Français",
+      "englishName": "French",
+      "direction": "ltr",
+      "sourceKeyCount": 436,
+      "mappedKeyCount": 436,
+      "missingKeyCount": 0,
+      "emptyValueCount": 0,
+      "englishFallbackCount": 0,
+      "placeholderMismatchCount": 0,
+      "duplicateTerminologyIssueCount": 0,
+      "longLabelsOver46Chars": 49,
+      "veryLongLabelsOver72Chars": 27,
+      "longestLabels": [
+        {
+          "source": "Проверяется наличие FFmpeg и ffprobe, а также кодировщики H.264/AAC и VP8/VP9/Opus, PNG-декодер и контейнеры MP4/WebM. Редактор создаёт короткие тестовые файлы каждого доступного варианта и проверяет потоки и временные метки через ffprobe. Временные файлы удаляются после проверки.",
+          "value": "Vérification de FFmpeg et ffprobe, des encodeurs H.264/AAC et VP8/VP9/Opus, du décodeur PNG et des conteneurs MP4/WebM. L’éditeur crée de courts fichiers de test pour chaque option disponible, puis vérifie les flux et les horodatages avec ffprobe. Les fichiers temporaires sont supprimés à la fin du contrôle.",
+          "length": 309
+        },
+        {
+          "source": "Наведите курсор на карточку, чтобы увидеть анимацию. Перетащите её на клип: левый край — вход, правый — выход. На стыке клипов создаётся перекрытие. Нажатие применяет вход выбранного клипа.",
+          "value": "Survolez une carte pour prévisualiser son animation. Faites-la glisser sur un clip : le bord gauche applique une entrée, le bord droit une sortie. Déposez-la entre deux clips pour créer un chevauchement. Un clic applique une entrée au clip sélectionné.",
+          "length": 252
+        },
+        {
+          "source": "Сохранится вся композиция на текущей позиции таймлайна: видимые видеослои, переходы, цветокоррекция, трансформации и титры. Монтажные направляющие в изображение не попадут.",
+          "value": "La composition complète à la position actuelle de la timeline sera enregistrée : calques vidéo visibles, transitions, correction colorimétrique, transformations et titres. Les repères de montage ne seront pas intégrés à l’image.",
+          "length": 228
+        },
+        {
+          "source": "Фото можно растягивать за левый и правый край клипа. Длительность не ограничена исходником. Для точного значения введи секунды выше.",
+          "value": "Vous pouvez raccourcir les photos en faisant glisser l’un ou l’autre bord du clip. Leur durée n’est pas limitée par le média source. Saisissez un nombre de secondes ci-dessus pour définir une valeur précise.",
+          "length": 207
+        },
+        {
+          "source": "Будут добавлены только изображения и видео, в названиях которых есть цифры. Порядок будет числовым, поэтому 2 пойдёт перед 10. Клипам будет задана последовательность без наложений.",
+          "value": "Seules les images et les vidéos dont le nom de fichier contient des chiffres seront ajoutées. Le tri est numérique : 2 précède donc 10. Les clips seront placés à la suite, sans chevauchement.",
+          "length": 191
+        }
+      ],
+      "linguisticReviewStatus": "automated-terminology-consistency-checked-native-speaker-review-pending",
+      "visualReviewStatus": "script-aware-layout-hardening-added-windows-render-check-pending",
+      "translationQuality": "draft-needs-native-review",
+      "scriptVariant": null,
+      "fontFamily": "Segoe UI Variable Text → Segoe UI → Arial",
+      "fontProfile": "latin"
+    },
+    {
+      "code": "es",
+      "nativeName": "Español",
+      "englishName": "Spanish",
+      "direction": "ltr",
+      "sourceKeyCount": 436,
+      "mappedKeyCount": 436,
+      "missingKeyCount": 0,
+      "emptyValueCount": 0,
+      "englishFallbackCount": 0,
+      "placeholderMismatchCount": 0,
+      "duplicateTerminologyIssueCount": 0,
+      "longLabelsOver46Chars": 49,
+      "veryLongLabelsOver72Chars": 25,
+      "longestLabels": [
+        {
+          "source": "Проверяется наличие FFmpeg и ffprobe, а также кодировщики H.264/AAC и VP8/VP9/Opus, PNG-декодер и контейнеры MP4/WebM. Редактор создаёт короткие тестовые файлы каждого доступного варианта и проверяет потоки и временные метки через ffprobe. Временные файлы удаляются после проверки.",
+          "value": "Se comprueba FFmpeg y ffprobe, los codificadores H.264/AAC y VP8/VP9/Opus, el decodificador PNG y los contenedores MP4/WebM. El editor crea archivos de prueba breves para cada opción disponible y verifica los flujos y las marcas de tiempo con ffprobe. Los archivos temporales se eliminan al terminar la comprobación.",
+          "length": 316
+        },
+        {
+          "source": "Наведите курсор на карточку, чтобы увидеть анимацию. Перетащите её на клип: левый край — вход, правый — выход. На стыке клипов создаётся перекрытие. Нажатие применяет вход выбранного клипа.",
+          "value": "Pasa el cursor sobre una tarjeta para previsualizar su animación. Arrástrala hasta un clip: el borde izquierdo aplica una entrada y el derecho una salida. Al soltarla entre clips se crea un solapamiento. Al hacer clic, se aplica una entrada al clip seleccionado.",
+          "length": 262
+        },
+        {
+          "source": "Сохранится вся композиция на текущей позиции таймлайна: видимые видеослои, переходы, цветокоррекция, трансформации и титры. Монтажные направляющие в изображение не попадут.",
+          "value": "Se guardará la composición completa en la posición actual de la línea de tiempo: capas de vídeo visibles, transiciones, corrección de color, transformaciones y títulos. Las guías de edición no se incluirán en la imagen.",
+          "length": 219
+        },
+        {
+          "source": "Будут добавлены только изображения и видео, в названиях которых есть цифры. Порядок будет числовым, поэтому 2 пойдёт перед 10. Клипам будет задана последовательность без наложений.",
+          "value": "Solo se añadirán imágenes y vídeos cuyos nombres de archivo contengan números. La ordenación es numérica, por lo que 2 aparece antes que 10. Los clips se colocarán en secuencia y sin solapamientos.",
+          "length": 197
+        },
+        {
+          "source": "Фото можно растягивать за левый и правый край клипа. Длительность не ограничена исходником. Для точного значения введи секунды выше.",
+          "value": "Puedes recortar las fotos arrastrando cualquiera de los extremos del clip. Su duración no está limitada por el medio de origen. Introduce los segundos arriba para establecer un valor exacto.",
+          "length": 190
+        }
+      ],
+      "linguisticReviewStatus": "automated-terminology-consistency-checked-native-speaker-review-pending",
+      "visualReviewStatus": "script-aware-layout-hardening-added-windows-render-check-pending",
+      "translationQuality": "draft-needs-native-review",
+      "scriptVariant": null,
+      "fontFamily": "Segoe UI Variable Text → Segoe UI → Arial",
+      "fontProfile": "latin"
+    },
+    {
+      "code": "pt-BR",
+      "nativeName": "Português (Brasil)",
+      "englishName": "Portuguese (Brazil)",
+      "direction": "ltr",
+      "sourceKeyCount": 436,
+      "mappedKeyCount": 436,
+      "missingKeyCount": 0,
+      "emptyValueCount": 0,
+      "englishFallbackCount": 0,
+      "placeholderMismatchCount": 0,
+      "duplicateTerminologyIssueCount": 0,
+      "longLabelsOver46Chars": 46,
+      "veryLongLabelsOver72Chars": 23,
+      "longestLabels": [
+        {
+          "source": "Проверяется наличие FFmpeg и ffprobe, а также кодировщики H.264/AAC и VP8/VP9/Opus, PNG-декодер и контейнеры MP4/WebM. Редактор создаёт короткие тестовые файлы каждого доступного варианта и проверяет потоки и временные метки через ffprobe. Временные файлы удаляются после проверки.",
+          "value": "Verificando FFmpeg e ffprobe, codificadores H.264/AAC e VP8/VP9/Opus, decodificador PNG e contêineres MP4/WebM. O editor cria arquivos curtos de teste para cada opção disponível e verifica os fluxos e os registros de tempo com ffprobe. Os arquivos temporários são excluídos após a verificação.",
+          "length": 293
+        },
+        {
+          "source": "Наведите курсор на карточку, чтобы увидеть анимацию. Перетащите её на клип: левый край — вход, правый — выход. На стыке клипов создаётся перекрытие. Нажатие применяет вход выбранного клипа.",
+          "value": "Passe o cursor sobre um cartão para visualizar a animação. Arraste-o para um clipe: a borda esquerda aplica uma entrada e a direita, uma saída. Ao soltar entre clipes, será criada uma sobreposição. Clicar aplica uma entrada ao clipe selecionado.",
+          "length": 245
+        },
+        {
+          "source": "Сохранится вся композиция на текущей позиции таймлайна: видимые видеослои, переходы, цветокоррекция, трансформации и титры. Монтажные направляющие в изображение не попадут.",
+          "value": "A composição inteira na posição atual da linha do tempo será salva: camadas de vídeo visíveis, transições, correção de cor, transformações e títulos. As guias de edição não serão incluídas na imagem.",
+          "length": 199
+        },
+        {
+          "source": "Будут добавлены только изображения и видео, в названиях которых есть цифры. Порядок будет числовым, поэтому 2 пойдёт перед 10. Клипам будет задана последовательность без наложений.",
+          "value": "Somente imagens e vídeos cujos nomes de arquivo contenham números serão adicionados. A ordenação é numérica, então 2 vem antes de 10. Os clipes serão colocados em sequência, sem sobreposição.",
+          "length": 191
+        },
+        {
+          "source": "Фото можно растягивать за левый и правый край клипа. Длительность не ограничена исходником. Для точного значения введи секунды выше.",
+          "value": "As fotos podem ser aparadas arrastando qualquer uma das extremidades do clipe. A duração delas não é limitada pela mídia de origem. Digite os segundos acima para definir um valor exato.",
+          "length": 185
+        }
+      ],
+      "linguisticReviewStatus": "automated-terminology-consistency-checked-native-speaker-review-pending",
+      "visualReviewStatus": "script-aware-layout-hardening-added-windows-render-check-pending",
+      "translationQuality": "draft-needs-native-review",
+      "scriptVariant": null,
+      "fontFamily": "Segoe UI Variable Text → Segoe UI → Arial",
+      "fontProfile": "latin"
+    },
+    {
+      "code": "it",
+      "nativeName": "Italiano",
+      "englishName": "Italian",
+      "direction": "ltr",
+      "sourceKeyCount": 436,
+      "mappedKeyCount": 436,
+      "missingKeyCount": 0,
+      "emptyValueCount": 0,
+      "englishFallbackCount": 0,
+      "placeholderMismatchCount": 0,
+      "duplicateTerminologyIssueCount": 0,
+      "longLabelsOver46Chars": 48,
+      "veryLongLabelsOver72Chars": 24,
+      "longestLabels": [
+        {
+          "source": "Проверяется наличие FFmpeg и ffprobe, а также кодировщики H.264/AAC и VP8/VP9/Opus, PNG-декодер и контейнеры MP4/WebM. Редактор создаёт короткие тестовые файлы каждого доступного варианта и проверяет потоки и временные метки через ffprobe. Временные файлы удаляются после проверки.",
+          "value": "Controllo di FFmpeg e ffprobe, degli encoder H.264/AAC e VP8/VP9/Opus, del decodificatore PNG e dei contenitori MP4/WebM. L’editor crea brevi file di prova per ogni opzione disponibile e verifica flussi e timestamp con ffprobe. I file temporanei vengono eliminati al termine del controllo.",
+          "length": 289
+        },
+        {
+          "source": "Наведите курсор на карточку, чтобы увидеть анимацию. Перетащите её на клип: левый край — вход, правый — выход. На стыке клипов создаётся перекрытие. Нажатие применяет вход выбранного клипа.",
+          "value": "Passa il puntatore su una scheda per visualizzare l’anteprima dell’animazione. Trascinala su una clip: il bordo sinistro applica un’entrata, quello destro un’uscita. Rilasciandola tra due clip viene creato un sovrapporsi. Facendo clic si applica un’entrata alla clip selezionata.",
+          "length": 279
+        },
+        {
+          "source": "Сохранится вся композиция на текущей позиции таймлайна: видимые видеослои, переходы, цветокоррекция, трансформации и титры. Монтажные направляющие в изображение не попадут.",
+          "value": "Verrà salvata l’intera composizione nella posizione corrente della timeline: livelli video visibili, transizioni, correzione colore, trasformazioni e titoli. Le guide di montaggio non saranno incluse nell’immagine.",
+          "length": 214
+        },
+        {
+          "source": "Будут добавлены только изображения и видео, в названиях которых есть цифры. Порядок будет числовым, поэтому 2 пойдёт перед 10. Клипам будет задана последовательность без наложений.",
+          "value": "Verranno aggiunte solo immagini e video con numeri nel nome del file. L’ordinamento è numerico, quindi 2 viene prima di 10. Le clip saranno disposte in sequenza senza sovrapposizioni.",
+          "length": 183
+        },
+        {
+          "source": "Можно экспортировать только фрагмент. Время указывается в секундах относительно начала таймлайна, а точность границ округляется к выбранной частоте кадров.",
+          "value": "È possibile esportare solo un intervallo selezionato. Il tempo è indicato in secondi dall’inizio della timeline e i limiti vengono arrotondati alla frequenza fotogrammi selezionata.",
+          "length": 181
+        }
+      ],
+      "linguisticReviewStatus": "automated-terminology-consistency-checked-native-speaker-review-pending",
+      "visualReviewStatus": "script-aware-layout-hardening-added-windows-render-check-pending",
+      "translationQuality": "draft-needs-native-review",
+      "scriptVariant": null,
+      "fontFamily": "Segoe UI Variable Text → Segoe UI → Arial",
+      "fontProfile": "latin"
+    },
+    {
+      "code": "pl",
+      "nativeName": "Polski",
+      "englishName": "Polish",
+      "direction": "ltr",
+      "sourceKeyCount": 436,
+      "mappedKeyCount": 436,
+      "missingKeyCount": 0,
+      "emptyValueCount": 0,
+      "englishFallbackCount": 0,
+      "placeholderMismatchCount": 0,
+      "duplicateTerminologyIssueCount": 0,
+      "longLabelsOver46Chars": 43,
+      "veryLongLabelsOver72Chars": 19,
+      "longestLabels": [
+        {
+          "source": "Проверяется наличие FFmpeg и ffprobe, а также кодировщики H.264/AAC и VP8/VP9/Opus, PNG-декодер и контейнеры MP4/WebM. Редактор создаёт короткие тестовые файлы каждого доступного варианта и проверяет потоки и временные метки через ffprobe. Временные файлы удаляются после проверки.",
+          "value": "Sprawdzana jest obecność FFmpeg i ffprobe, koderów H.264/AAC oraz VP8/VP9/Opus, dekodera PNG i kontenerów MP4/WebM. Edytor tworzy krótkie pliki testowe dla każdej dostępnej opcji i weryfikuje strumienie oraz znaczniki czasu za pomocą ffprobe. Pliki tymczasowe są usuwane po zakończeniu sprawdzania.",
+          "length": 298
+        },
+        {
+          "source": "Наведите курсор на карточку, чтобы увидеть анимацию. Перетащите её на клип: левый край — вход, правый — выход. На стыке клипов создаётся перекрытие. Нажатие применяет вход выбранного клипа.",
+          "value": "Najedź kursorem na kartę, aby zobaczyć podgląd animacji. Przeciągnij ją na klip: lewa krawędź dodaje wejście, prawa — wyjście. Upuszczenie między klipami tworzy nakładanie. Kliknięcie dodaje wejście do zaznaczonego klipu.",
+          "length": 221
+        },
+        {
+          "source": "Сохранится вся композиция на текущей позиции таймлайна: видимые видеослои, переходы, цветокоррекция, трансформации и титры. Монтажные направляющие в изображение не попадут.",
+          "value": "Zostanie zapisana cała kompozycja w bieżącej pozycji osi czasu: widoczne warstwy wideo, przejścia, korekcja kolorów, przekształcenia i tytuły. Prowadnice montażowe nie zostaną umieszczone na obrazie.",
+          "length": 199
+        },
+        {
+          "source": "Фото можно растягивать за левый и правый край клипа. Длительность не ограничена исходником. Для точного значения введи секунды выше.",
+          "value": "Zdjęcia można przycinać, przeciągając dowolną krawędź klipu. Ich czas trwania nie jest ograniczony materiałem źródłowym. Wpisz powyżej liczbę sekund, aby ustawić dokładną wartość.",
+          "length": 179
+        },
+        {
+          "source": "Будут добавлены только изображения и видео, в названиях которых есть цифры. Порядок будет числовым, поэтому 2 пойдёт перед 10. Клипам будет задана последовательность без наложений.",
+          "value": "Dodane zostaną tylko obrazy i filmy, których nazwy plików zawierają cyfry. Sortowanie jest numeryczne, więc 2 będzie przed 10. Klipy zostaną ułożone kolejno, bez nakładania się.",
+          "length": 177
+        }
+      ],
+      "linguisticReviewStatus": "automated-terminology-consistency-checked-native-speaker-review-pending",
+      "visualReviewStatus": "script-aware-layout-hardening-added-windows-render-check-pending",
+      "translationQuality": "draft-needs-native-review",
+      "scriptVariant": null,
+      "fontFamily": "Segoe UI Variable Text → Segoe UI → Arial",
+      "fontProfile": "latin"
+    },
+    {
+      "code": "uk",
+      "nativeName": "Українська",
+      "englishName": "Ukrainian",
+      "direction": "ltr",
+      "sourceKeyCount": 436,
+      "mappedKeyCount": 436,
+      "missingKeyCount": 0,
+      "emptyValueCount": 0,
+      "englishFallbackCount": 0,
+      "placeholderMismatchCount": 0,
+      "duplicateTerminologyIssueCount": 0,
+      "longLabelsOver46Chars": 38,
+      "veryLongLabelsOver72Chars": 20,
+      "longestLabels": [
+        {
+          "source": "Проверяется наличие FFmpeg и ffprobe, а также кодировщики H.264/AAC и VP8/VP9/Opus, PNG-декодер и контейнеры MP4/WebM. Редактор создаёт короткие тестовые файлы каждого доступного варианта и проверяет потоки и временные метки через ffprobe. Временные файлы удаляются после проверки.",
+          "value": "Перевіряється наявність FFmpeg і ffprobe, кодерів H.264/AAC та VP8/VP9/Opus, декодера PNG і контейнерів MP4/WebM. Редактор створює короткі тестові файли для кожного доступного варіанта та перевіряє потоки й часові мітки за допомогою ffprobe. Після перевірки тимчасові файли видаляються.",
+          "length": 286
+        },
+        {
+          "source": "Наведите курсор на карточку, чтобы увидеть анимацию. Перетащите её на клип: левый край — вход, правый — выход. На стыке клипов создаётся перекрытие. Нажатие применяет вход выбранного клипа.",
+          "value": "Наведіть курсор на картку, щоб переглянути її анімацію. Перетягніть її на кліп: лівий край застосовує появу, правий — вихід. Якщо відпустити картку між кліпами, створиться перекриття. Натискання застосовує появу до вибраного кліпу.",
+          "length": 231
+        },
+        {
+          "source": "Сохранится вся композиция на текущей позиции таймлайна: видимые видеослои, переходы, цветокоррекция, трансформации и титры. Монтажные направляющие в изображение не попадут.",
+          "value": "Буде збережено всю композицію на поточній позиції таймлайна: видимі відеошари, переходи, корекцію кольору, трансформації та титри. Монтажні напрямні не потраплять до зображення.",
+          "length": 177
+        },
+        {
+          "source": "Фото можно растягивать за левый и правый край клипа. Длительность не ограничена исходником. Для точного значения введи секунды выше.",
+          "value": "Фотографії можна обрізати, перетягуючи будь-який край кліпу. Їхня тривалість не обмежена вихідним медіафайлом. Введіть секунди вище, щоб задати точне значення.",
+          "length": 159
+        },
+        {
+          "source": "Будут добавлены только изображения и видео, в названиях которых есть цифры. Порядок будет числовым, поэтому 2 пойдёт перед 10. Клипам будет задана последовательность без наложений.",
+          "value": "Буде додано лише зображення й відео, у назвах файлів яких є цифри. Сортування числове, тому 2 буде перед 10. Кліпи буде розміщено послідовно без накладання.",
+          "length": 156
+        }
+      ],
+      "linguisticReviewStatus": "automated-terminology-consistency-checked-native-speaker-review-pending",
+      "visualReviewStatus": "script-aware-layout-hardening-added-windows-render-check-pending",
+      "translationQuality": "draft-needs-native-review",
+      "scriptVariant": null,
+      "fontFamily": "Segoe UI Variable Text → Segoe UI → Arial",
+      "fontProfile": "cyrillic"
+    },
+    {
+      "code": "tr",
+      "nativeName": "Türkçe",
+      "englishName": "Turkish",
+      "direction": "ltr",
+      "sourceKeyCount": 436,
+      "mappedKeyCount": 436,
+      "missingKeyCount": 0,
+      "emptyValueCount": 0,
+      "englishFallbackCount": 0,
+      "placeholderMismatchCount": 0,
+      "duplicateTerminologyIssueCount": 0,
+      "longLabelsOver46Chars": 38,
+      "veryLongLabelsOver72Chars": 20,
+      "longestLabels": [
+        {
+          "source": "Проверяется наличие FFmpeg и ffprobe, а также кодировщики H.264/AAC и VP8/VP9/Opus, PNG-декодер и контейнеры MP4/WebM. Редактор создаёт короткие тестовые файлы каждого доступного варианта и проверяет потоки и временные метки через ffprobe. Временные файлы удаляются после проверки.",
+          "value": "FFmpeg ve ffprobe’un, H.264/AAC ve VP8/VP9/Opus kodlayıcılarının, PNG kod çözücüsünün ve MP4/WebM kapsayıcılarının kullanılabilirliği denetlenir. Düzenleyici, kullanılabilir her seçenek için kısa test dosyaları oluşturur ve akışları ile zaman damgalarını ffprobe ile doğrular. Geçici dosyalar denetimden sonra silinir.",
+          "length": 318
+        },
+        {
+          "source": "Наведите курсор на карточку, чтобы увидеть анимацию. Перетащите её на клип: левый край — вход, правый — выход. На стыке клипов создаётся перекрытие. Нажатие применяет вход выбранного клипа.",
+          "value": "Animasyonunu önizlemek için kartın üzerine gelin. Kartı bir klibin üzerine sürükleyin: sol kenar giriş, sağ kenar çıkış uygular. Kliplerin arasına bırakıldığında bindirme oluşturulur. Tıklamak, seçili klibe giriş uygular.",
+          "length": 221
+        },
+        {
+          "source": "Сохранится вся композиция на текущей позиции таймлайна: видимые видеослои, переходы, цветокоррекция, трансформации и титры. Монтажные направляющие в изображение не попадут.",
+          "value": "Zaman çizelgesinin geçerli konumundaki kompozisyonun tamamı kaydedilir: görünür video katmanları, geçişler, renk düzeltme, dönüşümler ve başlıklar. Kurgu kılavuzları görüntüye dahil edilmez.",
+          "length": 190
+        },
+        {
+          "source": "Можно экспортировать только фрагмент. Время указывается в секундах относительно начала таймлайна, а точность границ округляется к выбранной частоте кадров.",
+          "value": "Yalnızca seçili bir aralığı dışa aktarabilirsiniz. Zaman, zaman çizelgesinin başlangıcından itibaren saniye cinsindendir ve aralık sınırları seçilen kare hızına yuvarlanır.",
+          "length": 172
+        },
+        {
+          "source": "Будут добавлены только изображения и видео, в названиях которых есть цифры. Порядок будет числовым, поэтому 2 пойдёт перед 10. Клипам будет задана последовательность без наложений.",
+          "value": "Yalnızca dosya adında sayı bulunan görsel ve videolar eklenir. Sıralama sayısaldır; bu nedenle 2, 10’dan önce gelir. Klipler üst üste binmeden art arda yerleştirilir.",
+          "length": 166
+        }
+      ],
+      "linguisticReviewStatus": "automated-terminology-consistency-checked-native-speaker-review-pending",
+      "visualReviewStatus": "script-aware-layout-hardening-added-windows-render-check-pending",
+      "translationQuality": "draft-needs-native-review",
+      "scriptVariant": null,
+      "fontFamily": "Segoe UI Variable Text → Segoe UI → Arial",
+      "fontProfile": "latin"
+    },
+    {
+      "code": "zh-CN",
+      "nativeName": "简体中文",
+      "englishName": "Chinese (Simplified)",
+      "direction": "ltr",
+      "sourceKeyCount": 436,
+      "mappedKeyCount": 436,
+      "missingKeyCount": 0,
+      "emptyValueCount": 0,
+      "englishFallbackCount": 0,
+      "placeholderMismatchCount": 0,
+      "duplicateTerminologyIssueCount": 0,
+      "longLabelsOver46Chars": 7,
+      "veryLongLabelsOver72Chars": 2,
+      "longestLabels": [
+        {
+          "source": "Проверяется наличие FFmpeg и ffprobe, а также кодировщики H.264/AAC и VP8/VP9/Opus, PNG-декодер и контейнеры MP4/WebM. Редактор создаёт короткие тестовые файлы каждого доступного варианта и проверяет потоки и временные метки через ffprobe. Временные файлы удаляются после проверки.",
+          "value": "正在检查 FFmpeg 和 ffprobe、H.264/AAC 与 VP8/VP9/Opus 编码器、PNG 解码器以及 MP4/WebM 容器。编辑器会为每个可用选项创建短测试文件，并使用 ffprobe 检查媒体流和时间戳。检查完成后会删除临时文件。",
+          "length": 127
+        },
+        {
+          "source": "Наведите курсор на карточку, чтобы увидеть анимацию. Перетащите её на клип: левый край — вход, правый — выход. На стыке клипов создаётся перекрытие. Нажатие применяет вход выбранного клипа.",
+          "value": "将鼠标悬停在卡片上可预览动画。将卡片拖到片段上：左边缘应用入场效果，右边缘应用出场效果。放在两个片段之间会创建重叠。单击卡片会将入场效果应用到所选片段。",
+          "length": 76
+        },
+        {
+          "source": "Будут добавлены только изображения и видео, в названиях которых есть цифры. Порядок будет числовым, поэтому 2 пойдёт перед 10. Клипам будет задана последовательность без наложений.",
+          "value": "仅添加文件名中包含数字的图片和视频。系统将按数值排序，因此 2 会排在 10 前面。片段将依次排列，不会相互重叠。",
+          "length": 57
+        },
+        {
+          "source": "Сохранится вся композиция на текущей позиции таймлайна: видимые видеослои, переходы, цветокоррекция, трансформации и титры. Монтажные направляющие в изображение не попадут.",
+          "value": "将保存时间轴当前位置的完整合成画面：可见视频图层、转场、色彩校正、变换和标题。编辑辅助线不会包含在图像中。",
+          "length": 53
+        },
+        {
+          "source": "Обнаружен несохранённый проект ({savedAt}): клипов {clips}, материалов {media}. Восстановить его?",
+          "value": "发现未保存的项目（{savedAt}）：{clips} 个片段、{media} 个媒体项。是否恢复？",
+          "length": 50
+        }
+      ],
+      "linguisticReviewStatus": "automated-terminology-consistency-checked-native-speaker-review-pending",
+      "visualReviewStatus": "script-aware-layout-hardening-added-windows-render-check-pending",
+      "translationQuality": "draft-needs-native-review",
+      "scriptVariant": null,
+      "fontFamily": "Microsoft YaHei UI → Noto Sans CJK SC → system-ui",
+      "fontProfile": "simplifiedChinese"
+    },
+    {
+      "code": "zh-TW",
+      "nativeName": "繁體中文",
+      "englishName": "Chinese (Traditional)",
+      "direction": "ltr",
+      "sourceKeyCount": 436,
+      "mappedKeyCount": 436,
+      "missingKeyCount": 0,
+      "emptyValueCount": 0,
+      "englishFallbackCount": 0,
+      "placeholderMismatchCount": 0,
+      "duplicateTerminologyIssueCount": 0,
+      "longLabelsOver46Chars": 7,
+      "veryLongLabelsOver72Chars": 2,
+      "longestLabels": [
+        {
+          "source": "Проверяется наличие FFmpeg и ffprobe, а также кодировщики H.264/AAC и VP8/VP9/Opus, PNG-декодер и контейнеры MP4/WebM. Редактор создаёт короткие тестовые файлы каждого доступного варианта и проверяет потоки и временные метки через ffprobe. Временные файлы удаляются после проверки.",
+          "value": "正在檢查 FFmpeg 與 ffprobe、H.264/AAC 和 VP8/VP9/Opus 編碼器、PNG 解碼器，以及 MP4/WebM 容器。編輯器會為每個可用選項建立短測試檔，並使用 ffprobe 驗證串流與時間戳記。檢查完成後會刪除暫存檔。",
+          "length": 126
+        },
+        {
+          "source": "Наведите курсор на карточку, чтобы увидеть анимацию. Перетащите её на клип: левый край — вход, правый — выход. На стыке клипов создаётся перекрытие. Нажатие применяет вход выбранного клипа.",
+          "value": "將游標停留在卡片上可預覽動畫。將卡片拖曳到片段上：左側邊緣套用進場效果，右側邊緣套用出場效果。放在兩個片段之間會建立重疊。按一下卡片會將進場效果套用到選取的片段。",
+          "length": 81
+        },
+        {
+          "source": "Будут добавлены только изображения и видео, в названиях которых есть цифры. Порядок будет числовым, поэтому 2 пойдёт перед 10. Клипам будет задана последовательность без наложений.",
+          "value": "只會新增檔名中含有數字的圖片與影片。系統會依數值排序，因此 2 會排在 10 前面。片段會依序排列，不會彼此重疊。",
+          "length": 57
+        },
+        {
+          "source": "Сохранится вся композиция на текущей позиции таймлайна: видимые видеослои, переходы, цветокоррекция, трансформации и титры. Монтажные направляющие в изображение не попадут.",
+          "value": "將儲存時間軸目前位置的完整合成畫面：可見影片圖層、轉場、色彩校正、變形與標題。編輯輔助線不會包含在影像中。",
+          "length": 53
+        },
+        {
+          "source": "Фото можно растягивать за левый и правый край клипа. Длительность не ограничена исходником. Для точного значения введи секунды выше.",
+          "value": "拖曳相片片段任一側的邊緣即可修剪。相片持續時間不受來源媒體長度限制。若要設定精確值，請在上方輸入秒數。",
+          "length": 51
+        }
+      ],
+      "linguisticReviewStatus": "automated-terminology-consistency-checked-native-speaker-review-pending",
+      "visualReviewStatus": "script-aware-layout-hardening-added-windows-render-check-pending",
+      "translationQuality": "draft-needs-native-review",
+      "scriptVariant": null,
+      "fontFamily": "Microsoft JhengHei UI → Noto Sans CJK TC → system-ui",
+      "fontProfile": "traditionalChinese"
+    },
+    {
+      "code": "ja",
+      "nativeName": "日本語",
+      "englishName": "Japanese",
+      "direction": "ltr",
+      "sourceKeyCount": 436,
+      "mappedKeyCount": 436,
+      "missingKeyCount": 0,
+      "emptyValueCount": 0,
+      "englishFallbackCount": 0,
+      "placeholderMismatchCount": 0,
+      "duplicateTerminologyIssueCount": 0,
+      "longLabelsOver46Chars": 16,
+      "veryLongLabelsOver72Chars": 5,
+      "longestLabels": [
+        {
+          "source": "Проверяется наличие FFmpeg и ffprobe, а также кодировщики H.264/AAC и VP8/VP9/Opus, PNG-декодер и контейнеры MP4/WebM. Редактор создаёт короткие тестовые файлы каждого доступного варианта и проверяет потоки и временные метки через ffprobe. Временные файлы удаляются после проверки.",
+          "value": "FFmpeg と ffprobe、H.264/AAC および VP8/VP9/Opus エンコーダー、PNG デコーダー、MP4/WebM コンテナを確認します。エディターは利用可能な各オプションについて短いテストファイルを作成し、ffprobe でストリームとタイムスタンプを検証します。テスト後、一時ファイルは削除されます。",
+          "length": 164
+        },
+        {
+          "source": "Наведите курсор на карточку, чтобы увидеть анимацию. Перетащите её на клип: левый край — вход, правый — выход. На стыке клипов создаётся перекрытие. Нажатие применяет вход выбранного клипа.",
+          "value": "カードにカーソルを合わせるとアニメーションをプレビューできます。カードをクリップにドラッグします。左端では開始トランジション、右端では終了トランジションが適用されます。クリップ間にドロップすると重なりが作成されます。クリックすると選択中のクリップに開始トランジションが適用されます。",
+          "length": 141
+        },
+        {
+          "source": "Фото можно растягивать за левый и правый край клипа. Длительность не ограничена исходником. Для точного значения введи секунды выше.",
+          "value": "クリップの左右どちらかの端をドラッグすると写真をトリミングできます。写真の長さは元のメディアの長さに制限されません。正確な値を設定するには、上に秒数を入力してください。",
+          "length": 84
+        },
+        {
+          "source": "Сохранится вся композиция на текущей позиции таймлайна: видимые видеослои, переходы, цветокоррекция, трансформации и титры. Монтажные направляющие в изображение не попадут.",
+          "value": "タイムラインの現在位置にある合成全体を保存します。対象は表示中のビデオレイヤー、トランジション、カラー補正、変形、タイトルです。編集ガイドは画像に含まれません。",
+          "length": 80
+        },
+        {
+          "source": "Будут добавлены только изображения и видео, в названиях которых есть цифры. Порядок будет числовым, поэтому 2 пойдёт перед 10. Клипам будет задана последовательность без наложений.",
+          "value": "ファイル名に数字が含まれる画像と動画のみを追加します。数値順に並べ替えるため、2 は 10 より前になります。クリップは重ならないように順番に配置されます。",
+          "length": 78
+        }
+      ],
+      "linguisticReviewStatus": "automated-terminology-consistency-checked-native-speaker-review-pending",
+      "visualReviewStatus": "script-aware-layout-hardening-added-windows-render-check-pending",
+      "translationQuality": "draft-needs-native-review",
+      "scriptVariant": null,
+      "fontFamily": "Yu Gothic UI → Meiryo UI → Noto Sans CJK JP",
+      "fontProfile": "japanese"
+    },
+    {
+      "code": "ko",
+      "nativeName": "한국어",
+      "englishName": "Korean",
+      "direction": "ltr",
+      "sourceKeyCount": 436,
+      "mappedKeyCount": 436,
+      "missingKeyCount": 0,
+      "emptyValueCount": 0,
+      "englishFallbackCount": 0,
+      "placeholderMismatchCount": 0,
+      "duplicateTerminologyIssueCount": 0,
+      "longLabelsOver46Chars": 17,
+      "veryLongLabelsOver72Chars": 6,
+      "longestLabels": [
+        {
+          "source": "Проверяется наличие FFmpeg и ffprobe, а также кодировщики H.264/AAC и VP8/VP9/Opus, PNG-декодер и контейнеры MP4/WebM. Редактор создаёт короткие тестовые файлы каждого доступного варианта и проверяет потоки и временные метки через ffprobe. Временные файлы удаляются после проверки.",
+          "value": "FFmpeg 및 ffprobe, H.264/AAC 및 VP8/VP9/Opus 인코더, PNG 디코더, MP4/WebM 컨테이너의 사용 가능 여부를 확인합니다. 편집기는 사용 가능한 각 옵션에 대해 짧은 테스트 파일을 만들고 ffprobe로 스트림과 타임스탬프를 검사합니다. 검사가 끝나면 임시 파일을 삭제합니다.",
+          "length": 174
+        },
+        {
+          "source": "Наведите курсор на карточку, чтобы увидеть анимацию. Перетащите её на клип: левый край — вход, правый — выход. На стыке клипов создаётся перекрытие. Нажатие применяет вход выбранного клипа.",
+          "value": "카드 위에 마우스를 올리면 애니메이션을 미리 볼 수 있습니다. 카드를 클립으로 드래그하세요. 왼쪽 가장자리는 인트로, 오른쪽 가장자리는 아웃트로를 적용합니다. 클립 사이에 놓으면 겹침이 만들어집니다. 카드를 클릭하면 선택한 클립에 인트로가 적용됩니다.",
+          "length": 140
+        },
+        {
+          "source": "Сохранится вся композиция на текущей позиции таймлайна: видимые видеослои, переходы, цветокоррекция, трансформации и титры. Монтажные направляющие в изображение не попадут.",
+          "value": "타임라인의 현재 위치에 있는 전체 합성 화면을 저장합니다. 표시 중인 비디오 레이어, 전환, 색 보정, 변형 및 제목이 포함됩니다. 편집 안내선은 이미지에 포함되지 않습니다.",
+          "length": 97
+        },
+        {
+          "source": "Фото можно растягивать за левый и правый край клипа. Длительность не ограничена исходником. Для точного значения введи секунды выше.",
+          "value": "클립의 양쪽 가장자리를 드래그하여 사진을 트리밍할 수 있습니다. 사진 길이는 원본 미디어 길이의 제한을 받지 않습니다. 정확한 값을 입력하려면 위에 초 단위로 입력하세요.",
+          "length": 95
+        },
+        {
+          "source": "Будут добавлены только изображения и видео, в названиях которых есть цифры. Порядок будет числовым, поэтому 2 пойдёт перед 10. Клипам будет задана последовательность без наложений.",
+          "value": "파일 이름에 숫자가 포함된 이미지와 동영상만 추가됩니다. 숫자 기준으로 정렬하므로 2가 10보다 앞에 옵니다. 클립은 겹치지 않도록 순서대로 배치됩니다.",
+          "length": 85
+        }
+      ],
+      "linguisticReviewStatus": "automated-terminology-consistency-checked-native-speaker-review-pending",
+      "visualReviewStatus": "script-aware-layout-hardening-added-windows-render-check-pending",
+      "translationQuality": "draft-needs-native-review",
+      "scriptVariant": null,
+      "fontFamily": "Malgun Gothic → Noto Sans CJK KR → system-ui",
+      "fontProfile": "korean"
+    },
+    {
+      "code": "ar",
+      "nativeName": "العربية",
+      "englishName": "Arabic",
+      "direction": "rtl",
+      "sourceKeyCount": 436,
+      "mappedKeyCount": 436,
+      "missingKeyCount": 0,
+      "emptyValueCount": 0,
+      "englishFallbackCount": 0,
+      "placeholderMismatchCount": 0,
+      "duplicateTerminologyIssueCount": 0,
+      "longLabelsOver46Chars": 30,
+      "veryLongLabelsOver72Chars": 14,
+      "longestLabels": [
+        {
+          "source": "Проверяется наличие FFmpeg и ffprobe, а также кодировщики H.264/AAC и VP8/VP9/Opus, PNG-декодер и контейнеры MP4/WebM. Редактор создаёт короткие тестовые файлы каждого доступного варианта и проверяет потоки и временные метки через ffprobe. Временные файлы удаляются после проверки.",
+          "value": "يتم التحقق من توفر FFmpeg وffprobe، وبرامج ترميز H.264/AAC وVP8/VP9/Opus، ومفكك PNG وحاويات MP4/WebM. ينشئ المحرر ملفات اختبار قصيرة لكل خيار متاح، ثم يفحص التدفقات والطوابع الزمنية باستخدام ffprobe. تُحذف الملفات المؤقتة بعد الفحص.",
+          "length": 232
+        },
+        {
+          "source": "Наведите курсор на карточку, чтобы увидеть анимацию. Перетащите её на клип: левый край — вход, правый — выход. На стыке клипов создаётся перекрытие. Нажатие применяет вход выбранного клипа.",
+          "value": "مرّر المؤشر فوق البطاقة لمعاينة الحركة. اسحبها إلى مقطع: تطبّق الحافة اليسرى تأثير دخول، واليمنى تأثير خروج. يؤدي إفلاتها بين مقطعين إلى إنشاء تداخل. يؤدي النقر إلى تطبيق تأثير دخول على المقطع المحدد.",
+          "length": 200
+        },
+        {
+          "source": "Сохранится вся композиция на текущей позиции таймлайна: видимые видеослои, переходы, цветокоррекция, трансформации и титры. Монтажные направляющие в изображение не попадут.",
+          "value": "سيتم حفظ التكوين الكامل عند الموضع الحالي في الخط الزمني: طبقات الفيديو المرئية والانتقالات وتصحيح الألوان والتحويلات والعناوين. لن تظهر أدلة التحرير في الصورة.",
+          "length": 160
+        },
+        {
+          "source": "Будут добавлены только изображения и видео, в названиях которых есть цифры. Порядок будет числовым, поэтому 2 пойдёт перед 10. Клипам будет задана последовательность без наложений.",
+          "value": "ستُضاف الصور ومقاطع الفيديو التي تحتوي أسماؤها على أرقام فقط. سيكون الترتيب رقميًا، لذلك يسبق 2 الرقم 10. وستُرتب المقاطع بالتتابع من دون تداخل.",
+          "length": 144
+        },
+        {
+          "source": "Фото можно растягивать за левый и правый край клипа. Длительность не ограничена исходником. Для точного значения введи секунды выше.",
+          "value": "يمكن قص الصور بسحب أي من حافتي المقطع. لا تحد مدة الصورة مدة الوسائط المصدر. أدخل عدد الثواني أعلاه لتحديد قيمة دقيقة.",
+          "length": 118
+        }
+      ],
+      "linguisticReviewStatus": "automated-terminology-consistency-checked-native-speaker-review-pending",
+      "visualReviewStatus": "script-aware-layout-hardening-added-windows-render-check-pending",
+      "translationQuality": "draft-needs-native-review",
+      "scriptVariant": null,
+      "fontFamily": "Noto Sans Arabic → Segoe UI → Tahoma",
+      "fontProfile": "arabic"
+    },
+    {
+      "code": "he",
+      "nativeName": "עברית",
+      "englishName": "Hebrew",
+      "direction": "rtl",
+      "sourceKeyCount": 436,
+      "mappedKeyCount": 436,
+      "missingKeyCount": 0,
+      "emptyValueCount": 0,
+      "englishFallbackCount": 0,
+      "placeholderMismatchCount": 0,
+      "duplicateTerminologyIssueCount": 0,
+      "longLabelsOver46Chars": 25,
+      "veryLongLabelsOver72Chars": 11,
+      "longestLabels": [
+        {
+          "source": "Проверяется наличие FFmpeg и ffprobe, а также кодировщики H.264/AAC и VP8/VP9/Opus, PNG-декодер и контейнеры MP4/WebM. Редактор создаёт короткие тестовые файлы каждого доступного варианта и проверяет потоки и временные метки через ffprobe. Временные файлы удаляются после проверки.",
+          "value": "נבדקת הזמינות של FFmpeg ו־ffprobe, מקודדי H.264/AAC ו־VP8/VP9/Opus, מפענח PNG ומכולות MP4/WebM. העורך יוצר קובצי בדיקה קצרים לכל אפשרות זמינה ובודק את הזרמים ואת חותמות הזמן באמצעות ffprobe. הקבצים הזמניים נמחקים לאחר הבדיקה.",
+          "length": 225
+        },
+        {
+          "source": "Наведите курсор на карточку, чтобы увидеть анимацию. Перетащите её на клип: левый край — вход, правый — выход. На стыке клипов создаётся перекрытие. Нажатие применяет вход выбранного клипа.",
+          "value": "העבר את הסמן מעל כרטיס כדי להציג תצוגה מקדימה של האנימציה. גרור אותו אל קליפ: הקצה השמאלי מחיל כניסה והקצה הימני מחיל יציאה. שחרור בין קליפים יוצר חפיפה. לחיצה מחילה כניסה על הקליפ שנבחר.",
+          "length": 187
+        },
+        {
+          "source": "Сохранится вся композиция на текущей позиции таймлайна: видимые видеослои, переходы, цветокоррекция, трансформации и титры. Монтажные направляющие в изображение не попадут.",
+          "value": "הקומפוזיציה המלאה במיקום הנוכחי בציר הזמן תישמר: שכבות הווידאו הגלויות, המעברים, תיקון הצבע, השינויים והכותרות. קווי העזר לעריכה לא ייכללו בתמונה.",
+          "length": 146
+        },
+        {
+          "source": "Будут добавлены только изображения и видео, в названиях которых есть цифры. Порядок будет числовым, поэтому 2 пойдёт перед 10. Клипам будет задана последовательность без наложений.",
+          "value": "יתווספו רק תמונות וסרטונים ששמות הקבצים שלהם כוללים ספרות. המיון יהיה מספרי, כך ש־2 יופיע לפני 10. הקליפים ימוקמו ברצף ללא חפיפה.",
+          "length": 129
+        },
+        {
+          "source": "Фото можно растягивать за левый и правый край клипа. Длительность не ограничена исходником. Для точного значения введи секунды выше.",
+          "value": "אפשר לקצר תמונות על ידי גרירת אחד מקצות הקליפ. משך התמונה אינו מוגבל לאורך מדיית המקור. להזנת ערך מדויק, הזן שניות למעלה.",
+          "length": 121
+        }
+      ],
+      "linguisticReviewStatus": "automated-terminology-consistency-checked-native-speaker-review-pending",
+      "visualReviewStatus": "script-aware-layout-hardening-added-windows-render-check-pending",
+      "translationQuality": "draft-needs-native-review",
+      "scriptVariant": null,
+      "fontFamily": "Noto Sans Hebrew → Segoe UI → Arial",
+      "fontProfile": "hebrew"
+    },
+    {
+      "code": "hi",
+      "nativeName": "हिन्दी",
+      "englishName": "Hindi",
+      "direction": "ltr",
+      "sourceKeyCount": 436,
+      "mappedKeyCount": 436,
+      "missingKeyCount": 0,
+      "emptyValueCount": 0,
+      "englishFallbackCount": 0,
+      "placeholderMismatchCount": 0,
+      "duplicateTerminologyIssueCount": 0,
+      "longLabelsOver46Chars": 36,
+      "veryLongLabelsOver72Chars": 19,
+      "longestLabels": [
+        {
+          "source": "Проверяется наличие FFmpeg и ffprobe, а также кодировщики H.264/AAC и VP8/VP9/Opus, PNG-декодер и контейнеры MP4/WebM. Редактор создаёт короткие тестовые файлы каждого доступного варианта и проверяет потоки и временные метки через ffprobe. Временные файлы удаляются после проверки.",
+          "value": "FFmpeg और ffprobe, H.264/AAC और VP8/VP9/Opus एन्कोडर, PNG डिकोडर तथा MP4/WebM कंटेनर की उपलब्धता जाँची जाती है। एडिटर हर उपलब्ध विकल्प के लिए छोटी परीक्षण फ़ाइलें बनाता है और ffprobe से स्ट्रीम तथा टाइमस्टैम्प जाँचता है। जाँच के बाद अस्थायी फ़ाइलें हटा दी जाती हैं।",
+          "length": 265
+        },
+        {
+          "source": "Наведите курсор на карточку, чтобы увидеть анимацию. Перетащите её на клип: левый край — вход, правый — выход. На стыке клипов создаётся перекрытие. Нажатие применяет вход выбранного клипа.",
+          "value": "एनीमेशन का पूर्वावलोकन देखने के लिए कार्ड पर कर्सर रखें। इसे क्लिप पर खींचें: बायाँ किनारा एंट्री और दायाँ किनारा एग्ज़िट लागू करता है। क्लिपों के बीच छोड़ने पर ओवरलैप बनता है। कार्ड पर क्लिक करने से चुनी गई क्लिप पर एंट्री लागू होती है।",
+          "length": 237
+        },
+        {
+          "source": "Сохранится вся композиция на текущей позиции таймлайна: видимые видеослои, переходы, цветокоррекция, трансформации и титры. Монтажные направляющие в изображение не попадут.",
+          "value": "टाइमलाइन की मौजूदा स्थिति पर पूरी कंपोज़िशन सहेजी जाएगी: दिखाई देने वाली वीडियो परतें, ट्रांज़िशन, रंग सुधार, रूपांतरण और शीर्षक। संपादन गाइड छवि में शामिल नहीं होंगे।",
+          "length": 167
+        },
+        {
+          "source": "Будут добавлены только изображения и видео, в названиях которых есть цифры. Порядок будет числовым, поэтому 2 пойдёт перед 10. Клипам будет задана последовательность без наложений.",
+          "value": "केवल उन्हीं छवियों और वीडियो को जोड़ा जाएगा जिनके फ़ाइल नाम में अंक हों। क्रम संख्यात्मक होगा, इसलिए 2, 10 से पहले आएगा। क्लिप बिना ओवरलैप के क्रम से रखे जाएँगे।",
+          "length": 161
+        },
+        {
+          "source": "Можно экспортировать только фрагмент. Время указывается в секундах относительно начала таймлайна, а точность границ округляется к выбранной частоте кадров.",
+          "value": "आप केवल चुनी हुई समय-सीमा निर्यात कर सकते हैं। समय टाइमलाइन की शुरुआत से सेकंड में दिया जाता है और सीमा चुनी हुई फ़्रेम दर के अनुसार पूर्णांकित होती है।",
+          "length": 152
+        }
+      ],
+      "linguisticReviewStatus": "automated-terminology-consistency-checked-native-speaker-review-pending",
+      "visualReviewStatus": "script-aware-layout-hardening-added-windows-render-check-pending",
+      "translationQuality": "draft-needs-native-review",
+      "scriptVariant": null,
+      "fontFamily": "Noto Sans Devanagari → Mangal → Nirmala UI",
+      "fontProfile": "devanagari"
+    },
+    {
+      "code": "nl",
+      "nativeName": "Nederlands",
+      "englishName": "Dutch",
+      "direction": "ltr",
+      "sourceKeyCount": 436,
+      "mappedKeyCount": 436,
+      "missingKeyCount": 0,
+      "emptyValueCount": 0,
+      "englishFallbackCount": 0,
+      "placeholderMismatchCount": 0,
+      "duplicateTerminologyIssueCount": 0,
+      "longLabelsOver46Chars": 42,
+      "veryLongLabelsOver72Chars": 20,
+      "longestLabels": [
+        {
+          "source": "Проверяется наличие FFmpeg и ffprobe, а также кодировщики H.264/AAC и VP8/VP9/Opus, PNG-декодер и контейнеры MP4/WebM. Редактор создаёт короткие тестовые файлы каждого доступного варианта и проверяет потоки и временные метки через ffprobe. Временные файлы удаляются после проверки.",
+          "value": "De beschikbaarheid van FFmpeg en ffprobe, H.264/AAC- en VP8/VP9/Opus-encoders, PNG-decoder en MP4/WebM-containers wordt gecontroleerd. De editor maakt korte testbestanden voor elke beschikbare optie en controleert streams en tijdstempels met ffprobe. Tijdelijke bestanden worden na de controle verwijderd.",
+          "length": 305
+        },
+        {
+          "source": "Наведите курсор на карточку, чтобы увидеть анимацию. Перетащите её на клип: левый край — вход, правый — выход. На стыке клипов создаётся перекрытие. Нажатие применяет вход выбранного клипа.",
+          "value": "Beweeg de muisaanwijzer over een kaart om de animatie te bekijken. Sleep de kaart naar een clip: de linkerrand past een begin toe, de rechterrand een einde. Neerzetten tussen clips maakt een overlap. Klikken past een begin toe op de geselecteerde clip.",
+          "length": 252
+        },
+        {
+          "source": "Сохранится вся композиция на текущей позиции таймлайна: видимые видеослои, переходы, цветокоррекция, трансформации и титры. Монтажные направляющие в изображение не попадут.",
+          "value": "De volledige compositie op de huidige positie van de tijdlijn wordt opgeslagen: zichtbare videolagen, overgangen, kleurcorrectie, transformaties en titels. Bewerkingshulplijnen worden niet in de afbeelding opgenomen.",
+          "length": 216
+        },
+        {
+          "source": "Будут добавлены только изображения и видео, в названиях которых есть цифры. Порядок будет числовым, поэтому 2 пойдёт перед 10. Клипам будет задана последовательность без наложений.",
+          "value": "Alleen afbeeldingen en video's met cijfers in de bestandsnaam worden toegevoegd. De volgorde is numeriek, dus 2 komt vóór 10. Clips worden achter elkaar geplaatst zonder overlap.",
+          "length": 178
+        },
+        {
+          "source": "Можно экспортировать только фрагмент. Время указывается в секундах относительно начала таймлайна, а точность границ округляется к выбранной частоте кадров.",
+          "value": "Je kunt alleen een geselecteerd bereik exporteren. De tijd wordt aangegeven in seconden vanaf het begin van de tijdlijn; de grenzen worden afgerond op de gekozen beeldsnelheid.",
+          "length": 176
+        }
+      ],
+      "linguisticReviewStatus": "automated-terminology-consistency-checked-native-speaker-review-pending",
+      "visualReviewStatus": "script-aware-layout-hardening-added-windows-render-check-pending",
+      "translationQuality": "draft-needs-native-review",
+      "scriptVariant": null,
+      "fontFamily": "Segoe UI Variable Text → Segoe UI → Arial",
+      "fontProfile": "latin"
+    },
+    {
+      "code": "sv",
+      "nativeName": "Svenska",
+      "englishName": "Swedish",
+      "direction": "ltr",
+      "sourceKeyCount": 436,
+      "mappedKeyCount": 436,
+      "missingKeyCount": 0,
+      "emptyValueCount": 0,
+      "englishFallbackCount": 0,
+      "placeholderMismatchCount": 0,
+      "duplicateTerminologyIssueCount": 0,
+      "longLabelsOver46Chars": 40,
+      "veryLongLabelsOver72Chars": 21,
+      "longestLabels": [
+        {
+          "source": "Проверяется наличие FFmpeg и ffprobe, а также кодировщики H.264/AAC и VP8/VP9/Opus, PNG-декодер и контейнеры MP4/WebM. Редактор создаёт короткие тестовые файлы каждого доступного варианта и проверяет потоки и временные метки через ffprobe. Временные файлы удаляются после проверки.",
+          "value": "Kontrollerar att FFmpeg och ffprobe, H.264/AAC- och VP8/VP9/Opus-kodare, PNG-avkodare samt MP4/WebM-behållare är tillgängliga. Redigeraren skapar korta testfiler för varje tillgängligt alternativ och kontrollerar strömmar och tidsstämplar med ffprobe. Tillfälliga filer tas bort efter kontrollen.",
+          "length": 296
+        },
+        {
+          "source": "Наведите курсор на карточку, чтобы увидеть анимацию. Перетащите её на клип: левый край — вход, правый — выход. На стыке клипов создаётся перекрытие. Нажатие применяет вход выбранного клипа.",
+          "value": "Håll pekaren över ett kort för att förhandsvisa animeringen. Dra det till ett klipp: vänsterkanten lägger till en ingång och högerkanten en utgång. Om du släpper det mellan klipp skapas en överlappning. Ett klick lägger till en ingång på det valda klippet.",
+          "length": 256
+        },
+        {
+          "source": "Сохранится вся композиция на текущей позиции таймлайна: видимые видеослои, переходы, цветокоррекция, трансформации и титры. Монтажные направляющие в изображение не попадут.",
+          "value": "Hela kompositionen vid tidslinjens aktuella position sparas: synliga videolager, övergångar, färgkorrigering, transformeringar och titlar. Redigeringsguider inkluderas inte i bilden.",
+          "length": 182
+        },
+        {
+          "source": "Можно экспортировать только фрагмент. Время указывается в секундах относительно начала таймлайна, а точность границ округляется к выбранной частоте кадров.",
+          "value": "Du kan endast exportera ett markerat intervall. Tiden anges i sekunder från tidslinjens början och intervallgränserna avrundas till vald bildfrekvens.",
+          "length": 150
+        },
+        {
+          "source": "Будут добавлены только изображения и видео, в названиях которых есть цифры. Порядок будет числовым, поэтому 2 пойдёт перед 10. Клипам будет задана последовательность без наложений.",
+          "value": "Endast bilder och videor med siffror i filnamnet läggs till. Sorteringen är numerisk, så 2 kommer före 10. Klippen placeras i följd utan överlappning.",
+          "length": 150
+        }
+      ],
+      "linguisticReviewStatus": "automated-terminology-consistency-checked-native-speaker-review-pending",
+      "visualReviewStatus": "script-aware-layout-hardening-added-windows-render-check-pending",
+      "translationQuality": "draft-needs-native-review",
+      "scriptVariant": null,
+      "fontFamily": "Segoe UI Variable Text → Segoe UI → Arial",
+      "fontProfile": "latin"
+    },
+    {
+      "code": "fi",
+      "nativeName": "Suomi",
+      "englishName": "Finnish",
+      "direction": "ltr",
+      "sourceKeyCount": 436,
+      "mappedKeyCount": 436,
+      "missingKeyCount": 0,
+      "emptyValueCount": 0,
+      "englishFallbackCount": 0,
+      "placeholderMismatchCount": 0,
+      "duplicateTerminologyIssueCount": 0,
+      "longLabelsOver46Chars": 41,
+      "veryLongLabelsOver72Chars": 19,
+      "longestLabels": [
+        {
+          "source": "Проверяется наличие FFmpeg и ffprobe, а также кодировщики H.264/AAC и VP8/VP9/Opus, PNG-декодер и контейнеры MP4/WebM. Редактор создаёт короткие тестовые файлы каждого доступного варианта и проверяет потоки и временные метки через ffprobe. Временные файлы удаляются после проверки.",
+          "value": "Tarkistetaan FFmpegin ja ffproben, H.264/AAC- ja VP8/VP9/Opus-koodainten, PNG-dekooderin sekä MP4/WebM-säiliöiden saatavuus. Editori luo lyhyet testitiedostot jokaiselle käytettävissä olevalle vaihtoehdolle ja tarkistaa virrat sekä aikaleimat ffprobella. Väliaikaiset tiedostot poistetaan tarkistuksen jälkeen.",
+          "length": 310
+        },
+        {
+          "source": "Наведите курсор на карточку, чтобы увидеть анимацию. Перетащите её на клип: левый край — вход, правый — выход. На стыке клипов создаётся перекрытие. Нажатие применяет вход выбранного клипа.",
+          "value": "Esikatsele animaatiota viemällä osoitin kortin päälle. Vedä kortti leikkeen päälle: vasen reuna lisää aloitussiirtymän ja oikea reuna lopetussiirtymän. Pudottaminen leikkeiden väliin luo limityksen. Napsautus lisää aloitussiirtymän valittuun leikkeeseen.",
+          "length": 254
+        },
+        {
+          "source": "Будут добавлены только изображения и видео, в названиях которых есть цифры. Порядок будет числовым, поэтому 2 пойдёт перед 10. Клипам будет задана последовательность без наложений.",
+          "value": "Vain kuvat ja videot, joiden tiedostonimissä on numeroita, lisätään. Järjestys on numeerinen, joten 2 tulee ennen 10:tä. Leikkeet sijoitetaan peräkkäin ilman päällekkäisyyksiä.",
+          "length": 176
+        },
+        {
+          "source": "Сохранится вся композиция на текущей позиции таймлайна: видимые видеослои, переходы, цветокоррекция, трансформации и титры. Монтажные направляющие в изображение не попадут.",
+          "value": "Aikajanan nykyisen kohdan koko sommitelma tallennetaan: näkyvät videotasot, siirtymät, värikorjaus, muunnokset ja otsikot. Muokkausohjaimet eivät sisälly kuvaan.",
+          "length": 161
+        },
+        {
+          "source": "Фото можно растягивать за левый и правый край клипа. Длительность не ограничена исходником. Для точного значения введи секунды выше.",
+          "value": "Valokuvia voi rajata vetämällä leikkeen kumpaa tahansa reunaa. Niiden kestoa ei rajoita lähdemedian pituus. Anna sekunnit yllä määrittääksesi tarkan arvon.",
+          "length": 155
+        }
+      ],
+      "linguisticReviewStatus": "automated-terminology-consistency-checked-native-speaker-review-pending",
+      "visualReviewStatus": "script-aware-layout-hardening-added-windows-render-check-pending",
+      "translationQuality": "draft-needs-native-review",
+      "scriptVariant": null,
+      "fontFamily": "Segoe UI Variable Text → Segoe UI → Arial",
+      "fontProfile": "latin"
+    },
+    {
+      "code": "cs",
+      "nativeName": "Čeština",
+      "englishName": "Czech",
+      "direction": "ltr",
+      "sourceKeyCount": 436,
+      "mappedKeyCount": 436,
+      "missingKeyCount": 0,
+      "emptyValueCount": 0,
+      "englishFallbackCount": 0,
+      "placeholderMismatchCount": 0,
+      "duplicateTerminologyIssueCount": 0,
+      "longLabelsOver46Chars": 37,
+      "veryLongLabelsOver72Chars": 19,
+      "longestLabels": [
+        {
+          "source": "Проверяется наличие FFmpeg и ffprobe, а также кодировщики H.264/AAC и VP8/VP9/Opus, PNG-декодер и контейнеры MP4/WebM. Редактор создаёт короткие тестовые файлы каждого доступного варианта и проверяет потоки и временные метки через ffprobe. Временные файлы удаляются после проверки.",
+          "value": "Kontroluje se dostupnost FFmpeg a ffprobe, kodérů H.264/AAC a VP8/VP9/Opus, dekodéru PNG a kontejnerů MP4/WebM. Editor vytvoří krátké testovací soubory pro každou dostupnou možnost a pomocí ffprobe ověří datové proudy a časové značky. Dočasné soubory se po kontrole odstraní.",
+          "length": 275
+        },
+        {
+          "source": "Наведите курсор на карточку, чтобы увидеть анимацию. Перетащите её на клип: левый край — вход, правый — выход. На стыке клипов создаётся перекрытие. Нажатие применяет вход выбранного клипа.",
+          "value": "Najeďte na kartu a zobrazte náhled animace. Přetáhněte ji na klip: levý okraj použije náběh, pravý okraj odchod. Puštěním mezi klipy vytvoříte překrytí. Kliknutím použijete náběh na vybraný klip.",
+          "length": 195
+        },
+        {
+          "source": "Сохранится вся композиция на текущей позиции таймлайна: видимые видеослои, переходы, цветокоррекция, трансформации и титры. Монтажные направляющие в изображение не попадут.",
+          "value": "Uloží se celá kompozice na aktuální pozici časové osy: viditelné video vrstvy, přechody, korekce barev, transformace a titulky. Pomocné vodicí čáry se do obrázku nezahrnou.",
+          "length": 172
+        },
+        {
+          "source": "Будут добавлены только изображения и видео, в названиях которых есть цифры. Порядок будет числовым, поэтому 2 пойдёт перед 10. Клипам будет задана последовательность без наложений.",
+          "value": "Přidají se pouze obrázky a videa, jejichž názvy souborů obsahují čísla. Pořadí bude číselné, takže 2 bude před 10. Klipy budou umístěny za sebou bez překrývání.",
+          "length": 160
+        },
+        {
+          "source": "Можно экспортировать только фрагмент. Время указывается в секундах относительно начала таймлайна, а точность границ округляется к выбранной частоте кадров.",
+          "value": "Exportovat lze pouze vybraný úsek. Čas se udává v sekundách od začátku časové osy a hranice úseku se zaokrouhlují na zvolenou snímkovou frekvenci.",
+          "length": 146
+        }
+      ],
+      "linguisticReviewStatus": "automated-terminology-consistency-checked-native-speaker-review-pending",
+      "visualReviewStatus": "script-aware-layout-hardening-added-windows-render-check-pending",
+      "translationQuality": "draft-needs-native-review",
+      "scriptVariant": null,
+      "fontFamily": "Segoe UI Variable Text → Segoe UI → Arial",
+      "fontProfile": "latin"
+    },
+    {
+      "code": "ro",
+      "nativeName": "Română",
+      "englishName": "Romanian",
+      "direction": "ltr",
+      "sourceKeyCount": 436,
+      "mappedKeyCount": 436,
+      "missingKeyCount": 0,
+      "emptyValueCount": 0,
+      "englishFallbackCount": 0,
+      "placeholderMismatchCount": 0,
+      "duplicateTerminologyIssueCount": 0,
+      "longLabelsOver46Chars": 44,
+      "veryLongLabelsOver72Chars": 22,
+      "longestLabels": [
+        {
+          "source": "Проверяется наличие FFmpeg и ffprobe, а также кодировщики H.264/AAC и VP8/VP9/Opus, PNG-декодер и контейнеры MP4/WebM. Редактор создаёт короткие тестовые файлы каждого доступного варианта и проверяет потоки и временные метки через ffprobe. Временные файлы удаляются после проверки.",
+          "value": "Se verifică disponibilitatea FFmpeg și ffprobe, a codificatoarelor H.264/AAC și VP8/VP9/Opus, a decodorului PNG și a containerelor MP4/WebM. Editorul creează fișiere scurte de test pentru fiecare opțiune disponibilă și verifică fluxurile și marcajele temporale cu ffprobe. Fișierele temporare sunt șterse după verificare.",
+          "length": 321
+        },
+        {
+          "source": "Наведите курсор на карточку, чтобы увидеть анимацию. Перетащите её на клип: левый край — вход, правый — выход. На стыке клипов создаётся перекрытие. Нажатие применяет вход выбранного клипа.",
+          "value": "Treceți cursorul peste un card pentru a previzualiza animația. Trageți-l pe un clip: marginea stângă aplică o intrare, iar marginea dreaptă o ieșire. Eliberarea între clipuri creează o suprapunere. Un clic aplică o intrare clipului selectat.",
+          "length": 241
+        },
+        {
+          "source": "Сохранится вся композиция на текущей позиции таймлайна: видимые видеослои, переходы, цветокоррекция, трансформации и титры. Монтажные направляющие в изображение не попадут.",
+          "value": "Va fi salvată compoziția completă din poziția curentă a cronologiei: straturile video vizibile, tranzițiile, corecția de culoare, transformările și titlurile. Ghidajele de editare nu vor fi incluse în imagine.",
+          "length": 209
+        },
+        {
+          "source": "Будут добавлены только изображения и видео, в названиях которых есть цифры. Порядок будет числовым, поэтому 2 пойдёт перед 10. Клипам будет задана последовательность без наложений.",
+          "value": "Vor fi adăugate doar imaginile și videoclipurile ale căror nume de fișier conțin cifre. Sortarea este numerică, deci 2 va apărea înainte de 10. Clipurile vor fi așezate consecutiv, fără suprapuneri.",
+          "length": 198
+        },
+        {
+          "source": "Фото можно растягивать за левый и правый край клипа. Длительность не ограничена исходником. Для точного значения введи секунды выше.",
+          "value": "Fotografiile pot fi decupate trăgând de oricare margine a clipului. Durata lor nu este limitată de materialul sursă. Introduceți mai sus numărul de secunde pentru o valoare exactă.",
+          "length": 180
+        }
+      ],
+      "linguisticReviewStatus": "automated-terminology-consistency-checked-native-speaker-review-pending",
+      "visualReviewStatus": "script-aware-layout-hardening-added-windows-render-check-pending",
+      "translationQuality": "draft-needs-native-review",
+      "scriptVariant": null,
+      "fontFamily": "Segoe UI Variable Text → Segoe UI → Arial",
+      "fontProfile": "latin"
+    },
+    {
+      "code": "el",
+      "nativeName": "Ελληνικά",
+      "englishName": "Greek",
+      "direction": "ltr",
+      "sourceKeyCount": 436,
+      "mappedKeyCount": 436,
+      "missingKeyCount": 0,
+      "emptyValueCount": 0,
+      "englishFallbackCount": 0,
+      "placeholderMismatchCount": 0,
+      "duplicateTerminologyIssueCount": 0,
+      "longLabelsOver46Chars": 50,
+      "veryLongLabelsOver72Chars": 24,
+      "longestLabels": [
+        {
+          "source": "Проверяется наличие FFmpeg и ffprobe, а также кодировщики H.264/AAC и VP8/VP9/Opus, PNG-декодер и контейнеры MP4/WebM. Редактор создаёт короткие тестовые файлы каждого доступного варианта и проверяет потоки и временные метки через ffprobe. Временные файлы удаляются после проверки.",
+          "value": "Ελέγχεται η διαθεσιμότητα των FFmpeg και ffprobe, των κωδικοποιητών H.264/AAC και VP8/VP9/Opus, του αποκωδικοποιητή PNG και των περιεκτών MP4/WebM. Ο editor δημιουργεί σύντομα δοκιμαστικά αρχεία για κάθε διαθέσιμη επιλογή και ελέγχει τις ροές και τις χρονικές σημάνσεις με το ffprobe. Τα προσωρινά αρχεία διαγράφονται μετά τον έλεγχο.",
+          "length": 334
+        },
+        {
+          "source": "Наведите курсор на карточку, чтобы увидеть анимацию. Перетащите её на клип: левый край — вход, правый — выход. На стыке клипов создаётся перекрытие. Нажатие применяет вход выбранного клипа.",
+          "value": "Περάστε τον δείκτη πάνω από μια κάρτα για προεπισκόπηση της κίνησής της. Σύρετέ την σε ένα κλιπ: η αριστερή άκρη εφαρμόζει είσοδο και η δεξιά έξοδο. Αν την αφήσετε ανάμεσα σε κλιπ, δημιουργείται επικάλυψη. Με κλικ εφαρμόζεται είσοδος στο επιλεγμένο κλιπ.",
+          "length": 254
+        },
+        {
+          "source": "Сохранится вся композиция на текущей позиции таймлайна: видимые видеослои, переходы, цветокоррекция, трансформации и титры. Монтажные направляющие в изображение не попадут.",
+          "value": "Θα αποθηκευτεί ολόκληρη η σύνθεση στην τρέχουσα θέση της γραμμής χρόνου: ορατά επίπεδα βίντεο, μεταβάσεις, διόρθωση χρώματος, μετασχηματισμοί και τίτλοι. Οι οδηγοί επεξεργασίας δεν θα συμπεριληφθούν στην εικόνα.",
+          "length": 211
+        },
+        {
+          "source": "Будут добавлены только изображения и видео, в названиях которых есть цифры. Порядок будет числовым, поэтому 2 пойдёт перед 10. Клипам будет задана последовательность без наложений.",
+          "value": "Θα προστεθούν μόνο εικόνες και βίντεο με αριθμούς στα ονόματα των αρχείων τους. Η ταξινόμηση είναι αριθμητική, επομένως το 2 προηγείται του 10. Τα κλιπ θα τοποθετηθούν διαδοχικά χωρίς επικαλύψεις.",
+          "length": 196
+        },
+        {
+          "source": "Можно экспортировать только фрагмент. Время указывается в секундах относительно начала таймлайна, а точность границ округляется к выбранной частоте кадров.",
+          "value": "Μπορείτε να εξαγάγετε μόνο ένα επιλεγμένο τμήμα. Ο χρόνος ορίζεται σε δευτερόλεπτα από την αρχή της γραμμής χρόνου και τα όρια στρογγυλοποιούνται στον επιλεγμένο ρυθμό καρέ.",
+          "length": 173
+        }
+      ],
+      "linguisticReviewStatus": "automated-terminology-consistency-checked-native-speaker-review-pending",
+      "visualReviewStatus": "script-aware-layout-hardening-added-windows-render-check-pending",
+      "translationQuality": "draft-needs-native-review",
+      "scriptVariant": null,
+      "fontFamily": "Segoe UI Variable Text → Segoe UI → Arial",
+      "fontProfile": "latin"
+    },
+    {
+      "code": "vi",
+      "nativeName": "Tiếng Việt",
+      "englishName": "Vietnamese",
+      "direction": "ltr",
+      "sourceKeyCount": 436,
+      "mappedKeyCount": 436,
+      "missingKeyCount": 0,
+      "emptyValueCount": 0,
+      "englishFallbackCount": 0,
+      "placeholderMismatchCount": 0,
+      "duplicateTerminologyIssueCount": 0,
+      "longLabelsOver46Chars": 39,
+      "veryLongLabelsOver72Chars": 22,
+      "longestLabels": [
+        {
+          "source": "Проверяется наличие FFmpeg и ffprobe, а также кодировщики H.264/AAC и VP8/VP9/Opus, PNG-декодер и контейнеры MP4/WebM. Редактор создаёт короткие тестовые файлы каждого доступного варианта и проверяет потоки и временные метки через ffprobe. Временные файлы удаляются после проверки.",
+          "value": "Đang kiểm tra FFmpeg và ffprobe, bộ mã hóa H.264/AAC và VP8/VP9/Opus, bộ giải mã PNG cùng các bộ chứa MP4/WebM. Trình chỉnh sửa tạo các tệp thử nghiệm ngắn cho từng tùy chọn khả dụng và dùng ffprobe để xác minh luồng cùng dấu thời gian. Các tệp tạm sẽ được xóa sau khi kiểm tra.",
+          "length": 278
+        },
+        {
+          "source": "Наведите курсор на карточку, чтобы увидеть анимацию. Перетащите её на клип: левый край — вход, правый — выход. На стыке клипов создаётся перекрытие. Нажатие применяет вход выбранного клипа.",
+          "value": "Di chuột lên thẻ để xem trước hoạt ảnh. Kéo thẻ vào clip: cạnh trái áp dụng hiệu ứng vào, cạnh phải áp dụng hiệu ứng ra. Thả thẻ giữa hai clip sẽ tạo phần chồng lấp. Nhấp vào thẻ sẽ áp dụng hiệu ứng vào cho clip đang chọn.",
+          "length": 222
+        },
+        {
+          "source": "Сохранится вся композиция на текущей позиции таймлайна: видимые видеослои, переходы, цветокоррекция, трансформации и титры. Монтажные направляющие в изображение не попадут.",
+          "value": "Toàn bộ bố cục tại vị trí hiện tại trên dòng thời gian sẽ được lưu: các lớp video hiển thị, chuyển cảnh, hiệu chỉnh màu, biến đổi và tiêu đề. Đường căn chỉnh khi biên tập sẽ không xuất hiện trong ảnh.",
+          "length": 200
+        },
+        {
+          "source": "Будут добавлены только изображения и видео, в названиях которых есть цифры. Порядок будет числовым, поэтому 2 пойдёт перед 10. Клипам будет задана последовательность без наложений.",
+          "value": "Chỉ thêm ảnh và video có chứa chữ số trong tên tệp. Thứ tự được sắp xếp theo giá trị số, vì vậy 2 sẽ đứng trước 10. Các clip được đặt nối tiếp nhau, không chồng lấp.",
+          "length": 165
+        },
+        {
+          "source": "Фото можно растягивать за левый и правый край клипа. Длительность не ограничена исходником. Для точного значения введи секунды выше.",
+          "value": "Có thể cắt ảnh bằng cách kéo một trong hai cạnh của clip. Thời lượng ảnh không bị giới hạn bởi phương tiện nguồn. Nhập số giây ở trên để đặt giá trị chính xác.",
+          "length": 159
+        }
+      ],
+      "linguisticReviewStatus": "automated-terminology-consistency-checked-native-speaker-review-pending",
+      "visualReviewStatus": "script-aware-layout-hardening-added-windows-render-check-pending",
+      "translationQuality": "draft-needs-native-review",
+      "scriptVariant": null,
+      "fontFamily": "Segoe UI Variable Text → Segoe UI → Arial",
+      "fontProfile": "latin"
+    },
+    {
+      "code": "id",
+      "nativeName": "Bahasa Indonesia",
+      "englishName": "Indonesian",
+      "direction": "ltr",
+      "sourceKeyCount": 436,
+      "mappedKeyCount": 436,
+      "missingKeyCount": 0,
+      "emptyValueCount": 0,
+      "englishFallbackCount": 0,
+      "placeholderMismatchCount": 0,
+      "duplicateTerminologyIssueCount": 0,
+      "longLabelsOver46Chars": 39,
+      "veryLongLabelsOver72Chars": 19,
+      "longestLabels": [
+        {
+          "source": "Проверяется наличие FFmpeg и ffprobe, а также кодировщики H.264/AAC и VP8/VP9/Opus, PNG-декодер и контейнеры MP4/WebM. Редактор создаёт короткие тестовые файлы каждого доступного варианта и проверяет потоки и временные метки через ffprobe. Временные файлы удаляются после проверки.",
+          "value": "Memeriksa ketersediaan FFmpeg dan ffprobe, encoder H.264/AAC dan VP8/VP9/Opus, dekoder PNG, serta kontainer MP4/WebM. Editor membuat file uji singkat untuk setiap opsi yang tersedia dan memeriksa stream serta stempel waktu menggunakan ffprobe. File sementara akan dihapus setelah pemeriksaan.",
+          "length": 292
+        },
+        {
+          "source": "Наведите курсор на карточку, чтобы увидеть анимацию. Перетащите её на клип: левый край — вход, правый — выход. На стыке клипов создаётся перекрытие. Нажатие применяет вход выбранного клипа.",
+          "value": "Arahkan kursor ke kartu untuk melihat pratinjau animasinya. Seret kartu ke klip: tepi kiri menerapkan efek masuk, tepi kanan menerapkan efek keluar. Meletakkannya di antara klip akan membuat tumpang tindih. Mengeklik kartu akan menerapkan efek masuk ke klip yang dipilih.",
+          "length": 271
+        },
+        {
+          "source": "Будут добавлены только изображения и видео, в названиях которых есть цифры. Порядок будет числовым, поэтому 2 пойдёт перед 10. Клипам будет задана последовательность без наложений.",
+          "value": "Hanya gambar dan video yang nama filenya mengandung angka yang akan ditambahkan. Urutannya berdasarkan nilai angka, jadi 2 akan berada sebelum 10. Klip ditempatkan berurutan tanpa saling tumpang tindih.",
+          "length": 202
+        },
+        {
+          "source": "Сохранится вся композиция на текущей позиции таймлайна: видимые видеослои, переходы, цветокоррекция, трансформации и титры. Монтажные направляющие в изображение не попадут.",
+          "value": "Komposisi lengkap pada posisi timeline saat ini akan disimpan: lapisan video yang terlihat, transisi, koreksi warna, transformasi, dan judul. Panduan pengeditan tidak akan disertakan dalam gambar.",
+          "length": 196
+        },
+        {
+          "source": "Можно экспортировать только фрагмент. Время указывается в секундах относительно начала таймлайна, а точность границ округляется к выбранной частоте кадров.",
+          "value": "Anda hanya dapat mengekspor rentang yang dipilih. Waktu dinyatakan dalam detik sejak awal timeline, dan batas rentang dibulatkan ke laju bingkai yang dipilih.",
+          "length": 158
+        }
+      ],
+      "linguisticReviewStatus": "automated-terminology-consistency-checked-native-speaker-review-pending",
+      "visualReviewStatus": "script-aware-layout-hardening-added-windows-render-check-pending",
+      "translationQuality": "draft-needs-native-review",
+      "scriptVariant": null,
+      "fontFamily": "Segoe UI Variable Text → Segoe UI → Arial",
+      "fontProfile": "latin"
+    },
+    {
+      "code": "th",
+      "nativeName": "ไทย",
+      "englishName": "Thai",
+      "direction": "ltr",
+      "sourceKeyCount": 436,
+      "mappedKeyCount": 436,
+      "missingKeyCount": 0,
+      "emptyValueCount": 0,
+      "englishFallbackCount": 0,
+      "placeholderMismatchCount": 0,
+      "duplicateTerminologyIssueCount": 0,
+      "longLabelsOver46Chars": 27,
+      "veryLongLabelsOver72Chars": 17,
+      "longestLabels": [
+        {
+          "source": "Проверяется наличие FFmpeg и ffprobe, а также кодировщики H.264/AAC и VP8/VP9/Opus, PNG-декодер и контейнеры MP4/WebM. Редактор создаёт короткие тестовые файлы каждого доступного варианта и проверяет потоки и временные метки через ffprobe. Временные файлы удаляются после проверки.",
+          "value": "กำลังตรวจสอบ FFmpeg และ ffprobe รวมถึงตัวเข้ารหัส H.264/AAC และ VP8/VP9/Opus ตัวถอดรหัส PNG และคอนเทนเนอร์ MP4/WebM โปรแกรมจะสร้างไฟล์ทดสอบสั้น ๆ สำหรับทุกตัวเลือกที่ใช้ได้ แล้วใช้ ffprobe ตรวจสอบสตรีมและการประทับเวลา ไฟล์ชั่วคราวจะถูกลบหลังตรวจสอบเสร็จ",
+          "length": 253
+        },
+        {
+          "source": "Наведите курсор на карточку, чтобы увидеть анимацию. Перетащите её на клип: левый край — вход, правый — выход. На стыке клипов создаётся перекрытие. Нажатие применяет вход выбранного клипа.",
+          "value": "วางเคอร์เซอร์เหนือการ์ดเพื่อดูตัวอย่างภาพเคลื่อนไหว ลากการ์ดไปวางบนคลิป: ขอบซ้ายใช้เอฟเฟกต์เข้า ขอบขวาใช้เอฟเฟกต์ออก การวางระหว่างคลิปจะสร้างการซ้อนทับ คลิกการ์ดเพื่อใช้เอฟเฟกต์เข้ากับคลิปที่เลือก",
+          "length": 196
+        },
+        {
+          "source": "Сохранится вся композиция на текущей позиции таймлайна: видимые видеослои, переходы, цветокоррекция, трансформации и титры. Монтажные направляющие в изображение не попадут.",
+          "value": "ระบบจะบันทึกองค์ประกอบทั้งหมด ณ ตำแหน่งปัจจุบันของไทม์ไลน์ ได้แก่ เลเยอร์วิดีโอที่มองเห็น การเปลี่ยนฉาก การแก้ไขสี การแปลง และชื่อเรื่อง เส้นไกด์สำหรับตัดต่อจะไม่รวมอยู่ในภาพ",
+          "length": 174
+        },
+        {
+          "source": "Фото можно растягивать за левый и правый край клипа. Длительность не ограничена исходником. Для точного значения введи секунды выше.",
+          "value": "สามารถตัดแต่งรูปภาพได้โดยลากขอบด้านใดด้านหนึ่งของคลิป ระยะเวลาของรูปภาพไม่จำกัดตามความยาวของสื่อต้นฉบับ ป้อนจำนวนวินาทีด้านบนเพื่อกำหนดค่าอย่างแม่นยำ",
+          "length": 149
+        },
+        {
+          "source": "Будут добавлены только изображения и видео, в названиях которых есть цифры. Порядок будет числовым, поэтому 2 пойдёт перед 10. Клипам будет задана последовательность без наложений.",
+          "value": "จะเพิ่มเฉพาะรูปภาพและวิดีโอที่มีตัวเลขอยู่ในชื่อไฟล์เท่านั้น โดยจะเรียงตามค่าตัวเลข ดังนั้น 2 จะมาก่อน 10 คลิปจะถูกวางต่อกันโดยไม่ซ้อนทับกัน",
+          "length": 140
+        }
+      ],
+      "linguisticReviewStatus": "automated-terminology-consistency-checked-native-speaker-review-pending",
+      "visualReviewStatus": "script-aware-layout-hardening-added-windows-render-check-pending",
+      "translationQuality": "draft-needs-native-review",
+      "scriptVariant": null,
+      "fontFamily": "Leelawadee UI → Noto Sans Thai → Tahoma",
+      "fontProfile": "thai"
+    },
+    {
+      "code": "kk",
+      "nativeName": "Қазақша",
+      "englishName": "Kazakh",
+      "direction": "ltr",
+      "sourceKeyCount": 436,
+      "mappedKeyCount": 436,
+      "missingKeyCount": 0,
+      "emptyValueCount": 0,
+      "englishFallbackCount": 0,
+      "placeholderMismatchCount": 0,
+      "duplicateTerminologyIssueCount": 0,
+      "longLabelsOver46Chars": 37,
+      "veryLongLabelsOver72Chars": 20,
+      "longestLabels": [
+        {
+          "source": "Проверяется наличие FFmpeg и ffprobe, а также кодировщики H.264/AAC и VP8/VP9/Opus, PNG-декодер и контейнеры MP4/WebM. Редактор создаёт короткие тестовые файлы каждого доступного варианта и проверяет потоки и временные метки через ffprobe. Временные файлы удаляются после проверки.",
+          "value": "FFmpeg пен ffprobe, H.264/AAC және VP8/VP9/Opus кодтағыштары, PNG декодтауы және MP4/WebM контейнерлері тексеріледі. Редактор қолжетімді нұсқалар үшін қысқа сынақ файлдарын жасап, ағындар мен уақыт белгілерін ffprobe арқылы тексереді. Уақытша файлдар тексеруден кейін жойылады.",
+          "length": 277
+        },
+        {
+          "source": "Наведите курсор на карточку, чтобы увидеть анимацию. Перетащите её на клип: левый край — вход, правый — выход. На стыке клипов создаётся перекрытие. Нажатие применяет вход выбранного клипа.",
+          "value": "Анимациясын көру үшін карточкаға меңзерді апарыңыз. Оны клипке сүйреңіз: сол жақ шеті — кіру, оң жақ шеті — шығу әсері. Клиптер арасына апарсаңыз, қабаттасу жасалады. Карточканы басу таңдалған клипке кіру әсерін қолданады.",
+          "length": 222
+        },
+        {
+          "source": "Сохранится вся композиция на текущей позиции таймлайна: видимые видеослои, переходы, цветокоррекция, трансформации и титры. Монтажные направляющие в изображение не попадут.",
+          "value": "Таймлайнның ағымдағы орнындағы толық композиция сақталады: көрінетін бейне қабаттары, өтпелер, түс түзетуі, түрлендірулер және титрлер. Монтаж бағыттауыштары суретке кірмейді.",
+          "length": 175
+        },
+        {
+          "source": "Фото можно растягивать за левый и правый край клипа. Длительность не ограничена исходником. Для точного значения введи секунды выше.",
+          "value": "Фотосуреттерді клиптің сол немесе оң жақ шетін сүйреу арқылы қысқартуға болады. Олардың ұзақтығы бастапқы медиаға тәуелді емес. Нақты мән үшін жоғарыда секундпен енгізіңіз.",
+          "length": 172
+        },
+        {
+          "source": "Будут добавлены только изображения и видео, в названиях которых есть цифры. Порядок будет числовым, поэтому 2 пойдёт перед 10. Клипам будет задана последовательность без наложений.",
+          "value": "Тек файл атауларында сандары бар суреттер мен бейнелер қосылады. Рет сандық болады, сондықтан 2 саны 10-нан бұрын орналасады. Клиптер қабаттаспай, тізбектей қойылады.",
+          "length": 166
+        }
+      ],
+      "linguisticReviewStatus": "automated-terminology-consistency-checked-native-speaker-review-pending",
+      "visualReviewStatus": "script-aware-layout-hardening-added-windows-render-check-pending",
+      "translationQuality": "draft-needs-native-review",
+      "scriptVariant": null,
+      "fontFamily": "Segoe UI Variable Text → Segoe UI → Arial",
+      "fontProfile": "cyrillic"
+    },
+    {
+      "code": "uz",
+      "nativeName": "Oʻzbekcha",
+      "englishName": "Uzbek (Latin)",
+      "direction": "ltr",
+      "sourceKeyCount": 436,
+      "mappedKeyCount": 436,
+      "missingKeyCount": 0,
+      "emptyValueCount": 0,
+      "englishFallbackCount": 0,
+      "placeholderMismatchCount": 0,
+      "duplicateTerminologyIssueCount": 0,
+      "longLabelsOver46Chars": 41,
+      "veryLongLabelsOver72Chars": 20,
+      "longestLabels": [
+        {
+          "source": "Проверяется наличие FFmpeg и ffprobe, а также кодировщики H.264/AAC и VP8/VP9/Opus, PNG-декодер и контейнеры MP4/WebM. Редактор создаёт короткие тестовые файлы каждого доступного варианта и проверяет потоки и временные метки через ffprobe. Временные файлы удаляются после проверки.",
+          "value": "FFmpeg va ffprobe, H.264/AAC hamda VP8/VP9/Opus kodlagichlari, PNG dekodlash va MP4/WebM konteynerlari tekshiriladi. Muharrir mavjud variantlar uchun qisqa sinov fayllarini yaratadi va oqimlar hamda vaqt belgilarini ffprobe orqali tekshiradi. Vaqtinchalik fayllar tekshiruvdan so‘ng o‘chiriladi.",
+          "length": 295
+        },
+        {
+          "source": "Наведите курсор на карточку, чтобы увидеть анимацию. Перетащите её на клип: левый край — вход, правый — выход. На стыке клипов создаётся перекрытие. Нажатие применяет вход выбранного клипа.",
+          "value": "Animatsiyani ko‘rish uchun kursorni kartaga olib boring. Uni klip ustiga sudrang: chap cheti kirish, o‘ng cheti chiqish effektini qo‘llaydi. Kliplar orasiga tashlasangiz, ustma-ust tushish hosil bo‘ladi. Kartani bosish tanlangan klipga kirish effektini qo‘llaydi.",
+          "length": 263
+        },
+        {
+          "source": "Сохранится вся композиция на текущей позиции таймлайна: видимые видеослои, переходы, цветокоррекция, трансформации и титры. Монтажные направляющие в изображение не попадут.",
+          "value": "Taymlaynning joriy holatidagi to‘liq kompozitsiya saqlanadi: ko‘rinadigan video qatlamlari, o‘tishlar, rang tuzatish, o‘zgartirishlar va sarlavhalar. Montaj yo‘riqchilari rasmga kiritilmaydi.",
+          "length": 191
+        },
+        {
+          "source": "Будут добавлены только изображения и видео, в названиях которых есть цифры. Порядок будет числовым, поэтому 2 пойдёт перед 10. Клипам будет задана последовательность без наложений.",
+          "value": "Faqat fayl nomida raqamlar bo‘lgan rasm va videolar qo‘shiladi. Tartib sonli bo‘ladi, shuning uchun 2 soni 10 dan oldin keladi. Kliplar ustma-ust tushmasdan ketma-ket joylashtiriladi.",
+          "length": 183
+        },
+        {
+          "source": "Можно экспортировать только фрагмент. Время указывается в секундах относительно начала таймлайна, а точность границ округляется к выбранной частоте кадров.",
+          "value": "Faqat tanlangan oraliqni eksport qilish mumkin. Vaqt taymlayn boshidan boshlab soniyalarda o‘lchanadi, oraliq chegaralari esa tanlangan kadrlar tezligiga moslab yaxlitlanadi.",
+          "length": 174
+        }
+      ],
+      "linguisticReviewStatus": "automated-terminology-consistency-checked-native-speaker-review-pending",
+      "visualReviewStatus": "script-aware-layout-hardening-added-windows-render-check-pending",
+      "translationQuality": "draft-needs-native-review",
+      "scriptVariant": null,
+      "fontFamily": "UzbekLatin",
+      "fontProfile": "latin"
+    },
+    {
+      "code": "uz-Cyrl",
+      "nativeName": "Ўзбекча (кирилл)",
+      "englishName": "Uzbek (Cyrillic)",
+      "direction": "ltr",
+      "sourceKeyCount": 436,
+      "mappedKeyCount": 436,
+      "missingKeyCount": 0,
+      "emptyValueCount": 0,
+      "englishFallbackCount": 0,
+      "placeholderMismatchCount": 0,
+      "duplicateTerminologyIssueCount": 0,
+      "longLabelsOver46Chars": 38,
+      "veryLongLabelsOver72Chars": 19,
+      "longestLabels": [
+        {
+          "source": "Проверяется наличие FFmpeg и ffprobe, а также кодировщики H.264/AAC и VP8/VP9/Opus, PNG-декодер и контейнеры MP4/WebM. Редактор создаёт короткие тестовые файлы каждого доступного варианта и проверяет потоки и временные метки через ffprobe. Временные файлы удаляются после проверки.",
+          "value": "FFmpeg ва ffprobe, H.264/AAC ҳамда VP8/VP9/Opus кодлагичлари, PNG декодлаш ва MP4/WebM контейнерлари текширилади. Муҳаррир мавжуд вариантлар учун қисқа синов файлларини яратади ва оқимлар ҳамда вақт белгиларини ffprobe орқали текширади. Вақтинчалик файллар текширувдан сўнг ўчирилади.",
+          "length": 284
+        },
+        {
+          "source": "Наведите курсор на карточку, чтобы увидеть анимацию. Перетащите её на клип: левый край — вход, правый — выход. На стыке клипов создаётся перекрытие. Нажатие применяет вход выбранного клипа.",
+          "value": "Аниматсияни кўриш учун курсорни картага олиб боринг. Уни клип устига судранг: чап чэти кириш, ўнг чэти чиқиш эффектини қўллайди. Клиплар орасига ташласангиз, устма-уст тушиш ҳосил бўлади. Картани босиш танланган клипга кириш эффектини қўллайди.",
+          "length": 244
+        },
+        {
+          "source": "Сохранится вся композиция на текущей позиции таймлайна: видимые видеослои, переходы, цветокоррекция, трансформации и титры. Монтажные направляющие в изображение не попадут.",
+          "value": "Таймлайннинг жорий ҳолатидаги тўлиқ композитсия сақланади: кўринадиган видео қатламлари, ўтишлар, ранг тузатиш, ўзгартиришлар ва сарлавҳалар. Монтаж йўриқчилари расмга киритилмайди.",
+          "length": 181
+        },
+        {
+          "source": "Будут добавлены только изображения и видео, в названиях которых есть цифры. Порядок будет числовым, поэтому 2 пойдёт перед 10. Клипам будет задана последовательность без наложений.",
+          "value": "Фақат файл номида рақамлар бўлган расм ва видеолар қўшилади. Тартиб сонли бўлади, шунинг учун 2 сони 10 дан олдин келади. Клиплар устма-уст тушмасдан кетма-кет жойлаштирилади.",
+          "length": 175
+        },
+        {
+          "source": "Можно экспортировать только фрагмент. Время указывается в секундах относительно начала таймлайна, а точность границ округляется к выбранной частоте кадров.",
+          "value": "Фақат танланган оралиқни экспорт қилиш мумкин. Вақт таймлайн бошидан бошлаб сонияларда ўлчанади, оралиқ чэгаралари эса танланган кадрлар тезлигига мослаб яхлитланади.",
+          "length": 166
+        }
+      ],
+      "linguisticReviewStatus": "automated-terminology-consistency-checked-native-speaker-review-pending",
+      "visualReviewStatus": "script-aware-layout-hardening-added-windows-render-check-pending",
+      "translationQuality": "transliteration-draft",
+      "scriptVariant": "Cyrl",
+      "fontFamily": "Cyrillic",
+      "fontProfile": "cyrillic"
+    },
+    {
+      "code": "ka",
+      "nativeName": "ქართული",
+      "englishName": "Georgian",
+      "direction": "ltr",
+      "sourceKeyCount": 436,
+      "mappedKeyCount": 436,
+      "missingKeyCount": 0,
+      "emptyValueCount": 0,
+      "englishFallbackCount": 0,
+      "placeholderMismatchCount": 0,
+      "duplicateTerminologyIssueCount": 0,
+      "longLabelsOver46Chars": 35,
+      "veryLongLabelsOver72Chars": 22,
+      "longestLabels": [
+        {
+          "source": "Проверяется наличие FFmpeg и ffprobe, а также кодировщики H.264/AAC и VP8/VP9/Opus, PNG-декодер и контейнеры MP4/WebM. Редактор создаёт короткие тестовые файлы каждого доступного варианта и проверяет потоки и временные метки через ffprobe. Временные файлы удаляются после проверки.",
+          "value": "მოწმდება FFmpeg და ffprobe, H.264/AAC და VP8/VP9/Opus კოდერები, PNG დეკოდირება და MP4/WebM კონტეინერები. რედაქტორი ხელმისაწვდომი ვარიანტებისთვის ქმნის მოკლე სატესტო ფაილებს და ffprobe-ით ამოწმებს ნაკადებსა და დროის ნიშნულებს. დროებითი ფაილები შემოწმების შემდეგ იშლება.",
+          "length": 268
+        },
+        {
+          "source": "Наведите курсор на карточку, чтобы увидеть анимацию. Перетащите её на клип: левый край — вход, правый — выход. На стыке клипов создаётся перекрытие. Нажатие применяет вход выбранного клипа.",
+          "value": "ანიმაციის სანახავად კურსორი ბარათზე მიიტანეთ. გადაათრიეთ კლიპზე: მარცხენა კიდე შემოსვლის, მარჯვენა კი გასვლის ეფექტს იყენებს. კლიპებს შორის გადატანისას იქმნება გადაფარვა. ბარათზე დაჭერა არჩეულ კლიპს შემოსვლის ეფექტს უმატებს.",
+          "length": 224
+        },
+        {
+          "source": "Фото можно растягивать за левый и правый край клипа. Длительность не ограничена исходником. Для точного значения введи секунды выше.",
+          "value": "ფოტოების მოჭრა შესაძლებელია კლიპის მარცხენა ან მარჯვენა კიდის გადათრევით. მათი ხანგრძლივობა საწყისი მედიის ხანგრძლივობით შეზღუდული არ არის. ზუსტი მნიშვნელობისთვის ზემოთ მიუთითეთ წამები.",
+          "length": 185
+        },
+        {
+          "source": "Сохранится вся композиция на текущей позиции таймлайна: видимые видеослои, переходы, цветокоррекция, трансформации и титры. Монтажные направляющие в изображение не попадут.",
+          "value": "შეინახება სრული კომპოზიცია ტაიმლაინის მიმდინარე პოზიციაზე: ხილული ვიდეოფენები, გადასვლები, ფერის კორექცია, გარდაქმნები და სათაურები. მონტაჟის დამხმარე ხაზები სურათში არ მოხვდება.",
+          "length": 178
+        },
+        {
+          "source": "Будут добавлены только изображения и видео, в названиях которых есть цифры. Порядок будет числовым, поэтому 2 пойдёт перед 10. Клипам будет задана последовательность без наложений.",
+          "value": "დაემატება მხოლოდ ის სურათები და ვიდეოები, რომელთა ფაილის სახელებში რიცხვებია. დალაგება რიცხვითია, ამიტომ 2 წინ იქნება 10-ზე. კლიპები გადაფარვის გარეშე მიმდევრობით განთავსდება.",
+          "length": 175
+        }
+      ],
+      "linguisticReviewStatus": "automated-terminology-consistency-checked-native-speaker-review-pending",
+      "visualReviewStatus": "script-aware-layout-hardening-added-windows-render-check-pending",
+      "translationQuality": "draft-needs-native-review",
+      "scriptVariant": null,
+      "fontFamily": "Georgian",
+      "fontProfile": "georgian"
+    },
+    {
+      "code": "hy",
+      "nativeName": "Հայերեն",
+      "englishName": "Armenian",
+      "direction": "ltr",
+      "sourceKeyCount": 436,
+      "mappedKeyCount": 436,
+      "missingKeyCount": 0,
+      "emptyValueCount": 0,
+      "englishFallbackCount": 0,
+      "placeholderMismatchCount": 0,
+      "duplicateTerminologyIssueCount": 0,
+      "longLabelsOver46Chars": 45,
+      "veryLongLabelsOver72Chars": 21,
+      "longestLabels": [
+        {
+          "source": "Проверяется наличие FFmpeg и ffprobe, а также кодировщики H.264/AAC и VP8/VP9/Opus, PNG-декодер и контейнеры MP4/WebM. Редактор создаёт короткие тестовые файлы каждого доступного варианта и проверяет потоки и временные метки через ffprobe. Временные файлы удаляются после проверки.",
+          "value": "Ստուգվում են FFmpeg-ն ու ffprobe-ը, H.264/AAC և VP8/VP9/Opus կոդավորիչները, PNG ապակոդավորումն ու MP4/WebM տարաները։ Խմբագրիչը ստեղծում է կարճ փորձնական ֆայլեր հասանելի տարբերակների համար և ffprobe-ով ստուգում հոսքերն ու ժամանակային նշումները։ Ժամանակավոր ֆայլերը ջնջվում են ստուգումից հետո։",
+          "length": 291
+        },
+        {
+          "source": "Наведите курсор на карточку, чтобы увидеть анимацию. Перетащите её на клип: левый край — вход, правый — выход. На стыке клипов создаётся перекрытие. Нажатие применяет вход выбранного клипа.",
+          "value": "Սավառնեք քարտի վրա՝ անիմացիան տեսնելու համար։ Քաշեք այն հոլովակի վրա․ ձախ եզրը կիրառում է մուտքի, աջ եզրը՝ ելքի էֆեկտը։ Հոլովակների միջև տեղադրելիս ստեղծվում է համընկնում։ Քարտի վրա սեղմելով՝ մուտքի էֆեկտը կիրառվում է ընտրված հոլովակի վրա։",
+          "length": 239
+        },
+        {
+          "source": "Сохранится вся композиция на текущей позиции таймлайна: видимые видеослои, переходы, цветокоррекция, трансформации и титры. Монтажные направляющие в изображение не попадут.",
+          "value": "Կպահպանվի ամբողջական կոմպոզիցիան ժամանակագծի ընթացիկ դիրքում՝ տեսանելի տեսաշերտերը, անցումները, գունային ուղղումը, փոխակերպումները և վերնագրերը։ Մոնտաժային ուղեցույցները պատկերի մեջ չեն ներառվի։",
+          "length": 194
+        },
+        {
+          "source": "Будут добавлены только изображения и видео, в названиях которых есть цифры. Порядок будет числовым, поэтому 2 пойдёт перед 10. Клипам будет задана последовательность без наложений.",
+          "value": "Կավելացվեն միայն այն պատկերներն ու տեսանյութերը, որոնց ֆայլերի անուններում թվեր կան։ Դասավորումը թվային է, ուստի 2-ը կլինի 10-ից առաջ։ Հոլովակները կտեղադրվեն հաջորդաբար՝ առանց համընկնումների։",
+          "length": 191
+        },
+        {
+          "source": "Фото можно растягивать за левый и правый край клипа. Длительность не ограничена исходником. Для точного значения введи секунды выше.",
+          "value": "Լուսանկարները կարելի է կտրել՝ քաշելով հոլովակի ձախ կամ աջ եզրը։ Դրանց տևողությունը սահմանափակված չէ սկզբնական մեդիայի տևողությամբ։ Ճշգրիտ արժեքի համար վերևում մուտքագրեք վայրկյանները։",
+          "length": 183
+        }
+      ],
+      "linguisticReviewStatus": "automated-terminology-consistency-checked-native-speaker-review-pending",
+      "visualReviewStatus": "script-aware-layout-hardening-added-windows-render-check-pending",
+      "translationQuality": "draft-needs-native-review",
+      "scriptVariant": null,
+      "fontFamily": "Armenian",
+      "fontProfile": "armenian"
+    },
+    {
+      "code": "tk",
+      "nativeName": "Türkmençe",
+      "englishName": "Turkmen",
+      "direction": "ltr",
+      "sourceKeyCount": 436,
+      "mappedKeyCount": 436,
+      "missingKeyCount": 0,
+      "emptyValueCount": 0,
+      "englishFallbackCount": 0,
+      "placeholderMismatchCount": 0,
+      "duplicateTerminologyIssueCount": 0,
+      "longLabelsOver46Chars": 38,
+      "veryLongLabelsOver72Chars": 19,
+      "longestLabels": [
+        {
+          "source": "Проверяется наличие FFmpeg и ffprobe, а также кодировщики H.264/AAC и VP8/VP9/Opus, PNG-декодер и контейнеры MP4/WebM. Редактор создаёт короткие тестовые файлы каждого доступного варианта и проверяет потоки и временные метки через ffprobe. Временные файлы удаляются после проверки.",
+          "value": "FFmpeg we ffprobe, H.264/AAC hem-de VP8/VP9/Opus kodlaýjylary, PNG dekodirlemesi we MP4/WebM konteýnerleri barlanýar. Redaktor elýeterli görnüşler üçin gysga synag faýllaryny döredýär we akymlary hem-de wagt belliklerini ffprobe arkaly barlaýar. Wagtlaýyn faýllar barlagdan soň pozulýar.",
+          "length": 287
+        },
+        {
+          "source": "Наведите курсор на карточку, чтобы увидеть анимацию. Перетащите её на клип: левый край — вход, правый — выход. На стыке клипов создаётся перекрытие. Нажатие применяет вход выбранного клипа.",
+          "value": "Animasiýany görmek üçin kursory kartanyň üstünde saklaň. Ony klipiň üstüne süýşüriň: çep gyrasy giriş, sag gyrasy çykyş effektini ulanýar. Klipleriň arasyna goýlanda üst-üste düşme döredilýär. Karta basmak saýlanan klip üçin giriş effektini ulanýar.",
+          "length": 249
+        },
+        {
+          "source": "Будут добавлены только изображения и видео, в названиях которых есть цифры. Порядок будет числовым, поэтому 2 пойдёт перед 10. Клипам будет задана последовательность без наложений.",
+          "value": "Diňe faýl atlarynda sanlar bolan suratlar we wideolar goşular. Tertipleme san boýunça amala aşyrylýar, şonuň üçin 2 sany 10-dan öň ýerleşer. Klipler biri-biriniň üstüni ýapmazdan yzygiderli ýerleşdiriler.",
+          "length": 204
+        },
+        {
+          "source": "Фото можно растягивать за левый и правый край клипа. Длительность не ограничена исходником. Для точного значения введи секунды выше.",
+          "value": "Suratlary klipiň çep ýa-da sag gyrasyny süýşürip kesip bolýar. Olaryň dowamlylygy çeşme mediýanyň dowamlylygy bilen çäklendirilmeýär. Takyk baha üçin ýokarda sekuntlary giriziň.",
+          "length": 177
+        },
+        {
+          "source": "Сохранится вся композиция на текущей позиции таймлайна: видимые видеослои, переходы, цветокоррекция, трансформации и титры. Монтажные направляющие в изображение не попадут.",
+          "value": "Taýmlaynyň häzirki ýagdaýyndaky doly kompozisiýa saklanar: görünýän wideo gatlaklary, geçişler, reňk düzedişi, özgertmeler we ýazgylar. Montaj ugrukdyryjylary surata goşulmaz.",
+          "length": 175
+        }
+      ],
+      "linguisticReviewStatus": "automated-terminology-consistency-checked-native-speaker-review-pending",
+      "visualReviewStatus": "script-aware-layout-hardening-added-windows-render-check-pending",
+      "translationQuality": "draft-needs-native-review",
+      "scriptVariant": null,
+      "fontFamily": "TurkmenLatin",
+      "fontProfile": "latin"
+    },
+    {
+      "code": "az",
+      "nativeName": "Azərbaycanca",
+      "englishName": "Azerbaijani",
+      "direction": "ltr",
+      "sourceKeyCount": 436,
+      "mappedKeyCount": 436,
+      "missingKeyCount": 0,
+      "emptyValueCount": 0,
+      "englishFallbackCount": 0,
+      "placeholderMismatchCount": 0,
+      "duplicateTerminologyIssueCount": 0,
+      "longLabelsOver46Chars": 36,
+      "veryLongLabelsOver72Chars": 20,
+      "longestLabels": [
+        {
+          "source": "Проверяется наличие FFmpeg и ffprobe, а также кодировщики H.264/AAC и VP8/VP9/Opus, PNG-декодер и контейнеры MP4/WebM. Редактор создаёт короткие тестовые файлы каждого доступного варианта и проверяет потоки и временные метки через ffprobe. Временные файлы удаляются после проверки.",
+          "value": "FFmpeg və ffprobe, H.264/AAC və VP8/VP9/Opus kodlayıcıları, PNG dekodlaşdırması və MP4/WebM konteynerləri yoxlanılır. Redaktor mövcud seçimlər üçün qısa sınaq faylları yaradır və axınları, vaxt nişanlarını ffprobe ilə yoxlayır. Müvəqqəti fayllar yoxlamadan sonra silinir.",
+          "length": 271
+        },
+        {
+          "source": "Наведите курсор на карточку, чтобы увидеть анимацию. Перетащите её на клип: левый край — вход, правый — выход. На стыке клипов создаётся перекрытие. Нажатие применяет вход выбранного клипа.",
+          "value": "Animasiyanı görmək üçün kursoru kartın üzərinə gətirin. Onu klipə sürükləyin: sol kənar giriş, sağ kənar çıxış effektini tətbiq edir. Kliplərin arasına buraxdıqda üst-üstə düşmə yaranır. Kartı klikləmək seçilmiş klipə giriş effekti tətbiq edir.",
+          "length": 244
+        },
+        {
+          "source": "Сохранится вся композиция на текущей позиции таймлайна: видимые видеослои, переходы, цветокоррекция, трансформации и титры. Монтажные направляющие в изображение не попадут.",
+          "value": "Taymlaynın cari mövqeyində tam kompozisiya saxlanacaq: görünən video qatları, keçidlər, rəng korreksiyası, çevirmələr və başlıqlar. Montaj bələdçiləri təsvirə daxil edilməyəcək.",
+          "length": 177
+        },
+        {
+          "source": "Будут добавлены только изображения и видео, в названиях которых есть цифры. Порядок будет числовым, поэтому 2 пойдёт перед 10. Клипам будет задана последовательность без наложений.",
+          "value": "Yalnız fayl adında rəqəmlər olan şəkil və videolar əlavə ediləcək. Sıralama rəqəmsaldır, buna görə 2, 10-dan əvvəl gəlir. Kliplər üst-üstə düşmədən ardıcıl yerləşdiriləcək.",
+          "length": 172
+        },
+        {
+          "source": "Можно экспортировать только фрагмент. Время указывается в секундах относительно начала таймлайна, а точность границ округляется к выбранной частоте кадров.",
+          "value": "Yalnız seçilmiş aralığı ixrac etmək olar. Vaxt taymlaynın başlanğıcından saniyələrlə ölçülür, aralığın sərhədləri isə seçilmiş kadr tezliyinə yuvarlaqlaşdırılır.",
+          "length": 161
+        }
+      ],
+      "linguisticReviewStatus": "automated-terminology-consistency-checked-native-speaker-review-pending",
+      "visualReviewStatus": "script-aware-layout-hardening-added-windows-render-check-pending",
+      "translationQuality": "draft-needs-native-review",
+      "scriptVariant": null,
+      "fontFamily": "Segoe UI Variable Text → Segoe UI → Arial",
+      "fontProfile": "latin"
+    },
+    {
+      "code": "ky",
+      "nativeName": "Кыргызча",
+      "englishName": "Kyrgyz",
+      "direction": "ltr",
+      "sourceKeyCount": 436,
+      "mappedKeyCount": 436,
+      "missingKeyCount": 0,
+      "emptyValueCount": 0,
+      "englishFallbackCount": 0,
+      "placeholderMismatchCount": 0,
+      "duplicateTerminologyIssueCount": 0,
+      "longLabelsOver46Chars": 39,
+      "veryLongLabelsOver72Chars": 21,
+      "longestLabels": [
+        {
+          "source": "Проверяется наличие FFmpeg и ffprobe, а также кодировщики H.264/AAC и VP8/VP9/Opus, PNG-декодер и контейнеры MP4/WebM. Редактор создаёт короткие тестовые файлы каждого доступного варианта и проверяет потоки и временные метки через ffprobe. Временные файлы удаляются после проверки.",
+          "value": "FFmpeg жана ffprobe, H.264/AAC жана VP8/VP9/Opus коддогучтары, PNG декоддоосу жана MP4/WebM контейнерлери текшерилет. Редактор жеткиликтүү варианттар үчүн кыска сыноо файлдарын түзүп, агымдарды жана убакыт белгилерин ffprobe аркылуу текшерет. Убактылуу файлдар текшерүүдөн кийин өчүрүлөт.",
+          "length": 288
+        },
+        {
+          "source": "Наведите курсор на карточку, чтобы увидеть анимацию. Перетащите её на клип: левый край — вход, правый — выход. На стыке клипов создаётся перекрытие. Нажатие применяет вход выбранного клипа.",
+          "value": "Анимациясын көрүү үчүн көрсөткүчтү карточканын үстүнө алып барыңыз. Аны клипке сүйрөңүз: сол чети кирүү, оң чети чыгуу эффектин берет. Клиптердин ортосуна таштасаңыз, кабатташуу түзүлөт. Карточканы басуу тандалган клипке кирүү эффектин колдонот.",
+          "length": 245
+        },
+        {
+          "source": "Будут добавлены только изображения и видео, в названиях которых есть цифры. Порядок будет числовым, поэтому 2 пойдёт перед 10. Клипам будет задана последовательность без наложений.",
+          "value": "Файл аталышында сандары бар сүрөттөр жана видеолор гана кошулат. Иреттөө сан боюнча болот, ошондуктан 2 саны 10дон мурда жайгашат. Клиптер кабатташпай, биринин артынан бири коюлат.",
+          "length": 180
+        },
+        {
+          "source": "Сохранится вся композиция на текущей позиции таймлайна: видимые видеослои, переходы, цветокоррекция, трансформации и титры. Монтажные направляющие в изображение не попадут.",
+          "value": "Таймлайндын учурдагы ордундагы толук композиция сакталат: көрүнгөн видео катмарлары, өтүүлөр, түстү оңдоо, өзгөртүүлөр жана аталыштар. Монтаж багыттоочулары сүрөткө кошулбайт.",
+          "length": 175
+        },
+        {
+          "source": "Можно экспортировать только фрагмент. Время указывается в секундах относительно начала таймлайна, а точность границ округляется к выбранной частоте кадров.",
+          "value": "Тандалган бөлүктү гана экспорттоого болот. Убакыт таймлайндын башынан тартып секунд менен өлчөнөт, ал эми бөлүктүн чектери тандалган кадр ылдамдыгына ылайык тегеректелет.",
+          "length": 170
+        }
+      ],
+      "linguisticReviewStatus": "automated-terminology-consistency-checked-native-speaker-review-pending",
+      "visualReviewStatus": "script-aware-layout-hardening-added-windows-render-check-pending",
+      "translationQuality": "draft-needs-native-review",
+      "scriptVariant": null,
+      "fontFamily": "Cyrillic",
+      "fontProfile": "cyrillic"
+    },
+    {
+      "code": "tg",
+      "nativeName": "Тоҷикӣ",
+      "englishName": "Tajik",
+      "direction": "ltr",
+      "sourceKeyCount": 436,
+      "mappedKeyCount": 436,
+      "missingKeyCount": 0,
+      "emptyValueCount": 0,
+      "englishFallbackCount": 0,
+      "placeholderMismatchCount": 0,
+      "duplicateTerminologyIssueCount": 0,
+      "longLabelsOver46Chars": 39,
+      "veryLongLabelsOver72Chars": 20,
+      "longestLabels": [
+        {
+          "source": "Проверяется наличие FFmpeg и ffprobe, а также кодировщики H.264/AAC и VP8/VP9/Opus, PNG-декодер и контейнеры MP4/WebM. Редактор создаёт короткие тестовые файлы каждого доступного варианта и проверяет потоки и временные метки через ffprobe. Временные файлы удаляются после проверки.",
+          "value": "Мавҷудияти FFmpeg ва ffprobe, рамзгузорҳои H.264/AAC ва VP8/VP9/Opus, рамзкушоии PNG ва контейнерҳои MP4/WebM санҷида мешаванд. Муҳаррир барои имконоти дастрас файлҳои кӯтоҳи санҷишӣ месозад ва ҷараёнҳо ва тамғаҳои вақтро бо ffprobe месанҷад. Файлҳои муваққатӣ баъди санҷиш нест карда мешаванд.",
+          "length": 294
+        },
+        {
+          "source": "Наведите курсор на карточку, чтобы увидеть анимацию. Перетащите её на клип: левый край — вход, правый — выход. На стыке клипов создаётся перекрытие. Нажатие применяет вход выбранного клипа.",
+          "value": "Барои дидани аниматсия нишонгарро болои корт нигоҳ доред. Онро ба клип кашед: канори чап эффекти воридшавӣ, канори рост эффекти баромадро татбиқ мекунад. Ҷойгир кардан байни клипҳо ҳампӯшӣ месозад. Пахш кардани корт эффекти воридшавиро ба клипи интихобшуда татбиқ мекунад.",
+          "length": 272
+        },
+        {
+          "source": "Сохранится вся композиция на текущей позиции таймлайна: видимые видеослои, переходы, цветокоррекция, трансформации и титры. Монтажные направляющие в изображение не попадут.",
+          "value": "Композитсияи пурра дар мавқеи ҷории таймлайн нигоҳ дошта мешавад: қабатҳои намоёни видео, гузаришҳо, ислоҳи ранг, табдилдиҳӣ ва унвонҳо. Роҳнамоҳои монтаж ба тасвир дохил намешаванд.",
+          "length": 182
+        },
+        {
+          "source": "Будут добавлены только изображения и видео, в названиях которых есть цифры. Порядок будет числовым, поэтому 2 пойдёт перед 10. Клипам будет задана последовательность без наложений.",
+          "value": "Танҳо тасвирҳо ва видеоҳое илова мешаванд, ки дар номи файл рақам доранд. Ҷобаҷогузорӣ рақамӣ аст, бинобар ин 2 пеш аз 10 меояд. Клипҳо пайдарпай, бе ҳампӯшӣ ҷойгир карда мешаванд.",
+          "length": 180
+        },
+        {
+          "source": "Фото можно растягивать за левый и правый край клипа. Длительность не ограничена исходником. Для точного значения введи секунды выше.",
+          "value": "Аксҳоро бо кашидани канори чап ё рости клип буридан мумкин аст. Давомнокии онҳо бо давомнокии медиаи манбаъ маҳдуд намешавад. Барои арзиши дақиқ сонияҳоро дар боло ворид кунед.",
+          "length": 176
+        }
+      ],
+      "linguisticReviewStatus": "automated-terminology-consistency-checked-native-speaker-review-pending",
+      "visualReviewStatus": "script-aware-layout-hardening-added-windows-render-check-pending",
+      "translationQuality": "draft-needs-native-review",
+      "scriptVariant": null,
+      "fontFamily": "Cyrillic",
+      "fontProfile": "cyrillic"
+    },
+    {
+      "code": "be",
+      "nativeName": "Беларуская",
+      "englishName": "Belarusian",
+      "direction": "ltr",
+      "sourceKeyCount": 436,
+      "mappedKeyCount": 436,
+      "missingKeyCount": 0,
+      "emptyValueCount": 0,
+      "englishFallbackCount": 0,
+      "placeholderMismatchCount": 0,
+      "duplicateTerminologyIssueCount": 0,
+      "longLabelsOver46Chars": 36,
+      "veryLongLabelsOver72Chars": 17,
+      "longestLabels": [
+        {
+          "source": "Проверяется наличие FFmpeg и ffprobe, а также кодировщики H.264/AAC и VP8/VP9/Opus, PNG-декодер и контейнеры MP4/WebM. Редактор создаёт короткие тестовые файлы каждого доступного варианта и проверяет потоки и временные метки через ffprobe. Временные файлы удаляются после проверки.",
+          "value": "Правяраюцца FFmpeg і ffprobe, кодэкі H.264/AAC і VP8/VP9/Opus, дэкадаванне PNG і кантэйнеры MP4/WebM. Рэдактар стварае кароткія тэставыя файлы для даступных варыянтаў і правярае патокі ды часавыя пазнакі праз ffprobe. Часовыя файлы выдаляюцца пасля праверкі.",
+          "length": 258
+        },
+        {
+          "source": "Наведите курсор на карточку, чтобы увидеть анимацию. Перетащите её на клип: левый край — вход, правый — выход. На стыке клипов создаётся перекрытие. Нажатие применяет вход выбранного клипа.",
+          "value": "Навядзіце курсор на картку, каб убачыць анімацыю. Перацягніце яе на кліп: левы край задае эфект з'яўлення, правы — знікнення. Калі адпусціць паміж кліпамі, створыцца накладанне. Націск на картку дадае эфект з'яўлення да выбранага кліпа.",
+          "length": 236
+        },
+        {
+          "source": "Сохранится вся композиция на текущей позиции таймлайна: видимые видеослои, переходы, цветокоррекция, трансформации и титры. Монтажные направляющие в изображение не попадут.",
+          "value": "Будзе захавана ўся кампазіцыя ў бягучай пазіцыі таймлайна: бачныя відэаслаі, пераходы, каляровая карэкцыя, трансфармацыі і тытры. Мантажныя накіроўвальнікі не трапяць у выяву.",
+          "length": 175
+        },
+        {
+          "source": "Фото можно растягивать за левый и правый край клипа. Длительность не ограничена исходником. Для точного значения введи секунды выше.",
+          "value": "Фатаграфіі можна абрэзаць, перацягваючы левы або правы край кліпа. Іх працягласць не абмежаваная працягласцю зыходнага медыя. Для дакладнага значэння ўвядзіце секунды вышэй.",
+          "length": 173
+        },
+        {
+          "source": "Будут добавлены только изображения и видео, в названиях которых есть цифры. Порядок будет числовым, поэтому 2 пойдёт перед 10. Клипам будет задана последовательность без наложений.",
+          "value": "Будуць дададзены толькі выявы і відэа, у назвах файлаў якіх ёсць лічбы. Сартаванне лікавае, таму 2 будзе перад 10. Кліпы размесцяцца паслядоўна без накладанняў.",
+          "length": 160
+        }
+      ],
+      "linguisticReviewStatus": "automated-terminology-consistency-checked-native-speaker-review-pending",
+      "visualReviewStatus": "script-aware-layout-hardening-added-windows-render-check-pending",
+      "translationQuality": "draft-needs-native-review",
+      "scriptVariant": null,
+      "fontFamily": "Cyrillic",
+      "fontProfile": "cyrillic"
+    }
+  ],
+  "limitations": [
+    "This audit validates structure, placeholders and repeated terminology; it does not certify idiomatic quality or professional translation.",
+    "All preview translations still require native-speaker review, especially Uzbek Cyrillic, regional terminology and technical editing vocabulary.",
+    "Font stacks list preferred system fonts and fallbacks; actual font availability and glyph rendering depend on Windows installations and are not certified here.",
+    "Typography and wrapping rules are statically audited; no Windows screenshots or on-device visual verification were produced in this environment.",
+    "Windows Setup and Portable packages are not built by this localization source-only pass."
+  ]
+}

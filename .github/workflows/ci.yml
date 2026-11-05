@@ -1,0 +1,76 @@
+name: Montazhnaya CI
+
+on:
+  push:
+    branches: [main, master, develop]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Tests (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest, macos-latest]
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install FFmpeg (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: choco install ffmpeg --yes --no-progress
+
+      - name: Install FFmpeg (Linux)
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes ffmpeg
+
+      - name: Install FFmpeg (macOS)
+        if: runner.os == 'macOS'
+        run: brew install ffmpeg
+
+      - name: Verify locked app dependencies, SRI and security audit
+        run: npm run deps:ci
+
+      - name: Download checksum-verified Electron runtime
+        run: npm run electron:install
+
+      - name: Verify Electron runtime version
+        run: npm run electron:version
+
+      - name: Run localization quality audit
+        run: npm run qa:locales
+
+      - name: Syntax checks
+        shell: bash
+        run: |
+          node --check electron/main.cjs
+          node --check electron/frame-sequence.cjs
+          node --check electron/h264-encoder.cjs
+
+      - name: Run unit and FFmpeg integration tests
+        run: npm test
+
+      - name: Verify and audit locked Windows release toolchain
+        if: runner.os == 'Windows' && hashFiles('tools/release-toolchain/package-lock.json') != ''
+        run: npm run release-tools:ci
+
+      - name: Report pending Windows release toolchain lockfile
+        if: runner.os == 'Windows' && hashFiles('tools/release-toolchain/package-lock.json') == ''
+        shell: pwsh
+        run: Write-Output 'SKIPPED: release-toolchain lockfile is not committed yet. Windows Setup/Portable releases remain blocked.'

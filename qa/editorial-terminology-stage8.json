@@ -1,0 +1,12 @@
+{
+  "stage": 8,
+  "scope": "high-frequency editing terminology; not a full linguistic sign-off of all 436 strings per locale",
+  "previewLocales": 34,
+  "localesWithEditorialMaps": 34,
+  "correctionCount": 116,
+  "sourceTermsCorrected": 11,
+  "missing": 0,
+  "empty": 0,
+  "runtimeApplied": true,
+  "reviewStatus": "machine-assisted-editorial-pass-1; native-speaker-review-pending"
+}

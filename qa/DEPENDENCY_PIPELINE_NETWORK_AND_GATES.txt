@@ -1,0 +1,16 @@
+Current execution evidence — 2026-11-03
+
+Environment: Linux x86_64, Node.js 22.16.0, npm 10.9.2.
+
+PASS: npm test — 307 tests passed, 0 failed after adding workflow/build-wrapper regression tests.
+PASS: root package-lock v3 — 13 registry.npmjs.org package records, 0 missing SRI, 0 malformed SRI.
+PASS: npm ci --ignore-scripts --dry-run --offline — root manifest and lockfile agree.
+BLOCKED: npm audit --audit-level=low --json — registry request failed with EAI_AGAIN registry.npmjs.org; the endpoint returned no vulnerability summary.
+BLOCKED: tools/release-toolchain lock creation — npm install --package-lock-only --offline failed ENOTCACHED; online npm requests failed DNS resolution with EAI_AGAIN. No lockfile was fabricated or imported from another application.
+BLOCKED: release-toolchain npm audit — ENOLOCK, since its exact dependency lock is not present.
+NOT RUN: Windows x64 NSIS Setup + Portable build — current host is Linux x86_64 and the build entrypoint explicitly requires win32. The source now contains a manual windows-latest workflow to perform the real build after this source is available in the project's GitHub repository.
+
+Policy: fail closed. No zero-vulnerability claim and no Windows executable is claimed.
+
+PREPARED: .github/workflows/dependency-security-windows.yml is available for a manual Windows hosted run. It generates the missing separate toolchain lockfile, collects both audit reports, runs strict replay and builds only when every gate passes. The workflow has not been dispatched because no connected project repository is available.
+PREPARED: PREPARE_DEPENDENCIES_AND_BUILD_WINDOWS_X64.bat provides the first-time network-enabled build path on a Windows x64 workstation. BUILD_WINDOWS_RELEASE.bat now generates the missing toolchain lock before strict replay, then performs the app audit/tests/localization/build gates.

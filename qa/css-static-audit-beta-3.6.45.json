@@ -1,0 +1,8 @@
+{
+  "version": "3.6.45",
+  "stylesheet_blocks": 1,
+  "css_rules": 590,
+  "stylesheet_parse_errors": 0,
+  "declaration_parse_errors": 0,
+  "parser": "tinycss2 1.5.1"
+}

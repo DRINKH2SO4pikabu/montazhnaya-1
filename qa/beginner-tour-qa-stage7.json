@@ -1,0 +1,15 @@
+{
+  "locales": 36,
+  "keysPerLocale": 21,
+  "translations": 756,
+  "missing": 0,
+  "empty": 0,
+  "englishFallback": 0,
+  "longestString": {
+    "characters": 289,
+    "locale": "el",
+    "key": "tour.beginner.step7.tip"
+  },
+  "status": "PASS",
+  "review": "machine-assisted draft; native-speaker review pending for 34 preview locales"
+}

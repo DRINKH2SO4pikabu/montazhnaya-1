@@ -1,0 +1,30 @@
+Montazhnaya Beta 3.6.37 — Localization coverage
+
+English reference dictionary: 436 keys
+
+Locale | Keys | Local mappings | English fallback | Stage
+--- | ---: | ---: | ---: | ---
+de | 436 | 436 | 0 | translation-draft-complete-review-pending
+fr | 436 | 436 | 0 | translation-draft-complete-review-pending
+es | 436 | 436 | 0 | translation-draft-complete-review-pending
+pt-BR | 436 | 436 | 0 | translation-draft-complete-review-pending
+it | 436 | 436 | 0 | translation-draft-complete-review-pending
+pl | 436 | 436 | 0 | translation-draft-complete-review-pending
+uk | 436 | 301 | 135 | partial-translation
+tr | 436 | 301 | 135 | partial-translation
+zh-CN | 436 | 301 | 135 | partial-translation
+zh-TW | 436 | 301 | 135 | partial-translation
+ja | 436 | 301 | 135 | partial-translation
+ko | 436 | 301 | 135 | partial-translation
+ar | 436 | 301 | 135 | partial-translation
+he | 436 | 301 | 135 | partial-translation
+hi | 436 | 301 | 135 | partial-translation
+nl | 436 | 301 | 135 | partial-translation
+sv | 436 | 301 | 135 | partial-translation
+fi | 436 | 301 | 135 | partial-translation
+cs | 436 | 301 | 135 | partial-translation
+ro | 436 | 301 | 135 | partial-translation
+el | 436 | 301 | 135 | partial-translation
+vi | 436 | 301 | 135 | partial-translation
+id | 436 | 301 | 135 | partial-translation
+th | 436 | 301 | 135 | partial-translation

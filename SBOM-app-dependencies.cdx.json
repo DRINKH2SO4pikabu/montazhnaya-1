@@ -1,0 +1,288 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:0f9dd3ac-0a39-4bc2-9b67-8a0e1ac4f8a1",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-11-05T00:00:00Z",
+    "tools": [
+      {
+        "vendor": "Montazhnaya_1 maintainers",
+        "name": "source-lockfile-inventory",
+        "version": "1.0"
+      }
+    ],
+    "component": {
+      "type": "application",
+      "bom-ref": "pkg:generic/montazhnaya-1@3.6.45",
+      "name": "Montazhnaya_1",
+      "version": "3.6.45",
+      "licenses": [
+        {
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
+        }
+      ]
+    },
+    "properties": [
+      {
+        "name": "inventory.scope",
+        "value": "Root package-lock.json only; 13 npm packages. Excludes tools/release-toolchain, downloaded Electron runtime/Chromium, FFmpeg/FFprobe binaries and Windows package contents."
+      },
+      {
+        "name": "inventory.relationships",
+        "value": "Dependency edges reconstructed from package-lock.json; includes root direct dependency and package dependency edges."
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/%40electron-internal/extract-zip@1.0.8",
+      "name": "@electron-internal/extract-zip",
+      "version": "1.0.8",
+      "purl": "pkg:npm/%40electron-internal/extract-zip@1.0.8",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/%40electron/get@5.1.0",
+      "name": "@electron/get",
+      "version": "5.1.0",
+      "purl": "pkg:npm/%40electron/get@5.1.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/%40types/node@24.13.2",
+      "name": "@types/node",
+      "version": "24.13.2",
+      "purl": "pkg:npm/%40types/node@24.13.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/debug@4.3.4",
+      "name": "debug",
+      "version": "4.3.4",
+      "purl": "pkg:npm/debug@4.3.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/electron@45.2.1",
+      "name": "electron",
+      "version": "45.2.1",
+      "purl": "pkg:npm/electron@45.2.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/env-paths@3.0.0",
+      "name": "env-paths",
+      "version": "3.0.0",
+      "purl": "pkg:npm/env-paths@3.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/graceful-fs@4.2.11",
+      "name": "graceful-fs",
+      "version": "4.2.11",
+      "purl": "pkg:npm/graceful-fs@4.2.11",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
+          }
+        }
+      ],
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/ms@2.1.2",
+      "name": "ms",
+      "version": "2.1.2",
+      "purl": "pkg:npm/ms@2.1.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/progress@2.0.3",
+      "name": "progress",
+      "version": "2.0.3",
+      "purl": "pkg:npm/progress@2.0.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/semver@7.8.0",
+      "name": "semver",
+      "version": "7.8.0",
+      "purl": "pkg:npm/semver@7.8.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
+          }
+        }
+      ],
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/sumchecker@3.0.1",
+      "name": "sumchecker",
+      "version": "3.0.1",
+      "purl": "pkg:npm/sumchecker@3.0.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/undici@7.30.1",
+      "name": "undici",
+      "version": "7.30.1",
+      "purl": "pkg:npm/undici@7.30.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "scope": "required",
+      "properties": [
+        {
+          "name": "npm.dependencyType",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/undici-types@7.18.2",
+      "name": "undici-types",
+      "version": "7.18.2",
+      "purl": "pkg:npm/undici-types@7.18.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "scope": "required"
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "pkg:generic/montazhnaya-1@3.6.45",
+      "dependsOn": [
+        "pkg:npm/electron@45.2.1"
+      ]
+    },
+    {
+      "ref": "pkg:npm/%40electron/get@5.1.0",
+      "dependsOn": [
+        "pkg:npm/debug@4.3.4",
+        "pkg:npm/env-paths@3.0.0",
+        "pkg:npm/graceful-fs@4.2.11",
+        "pkg:npm/progress@2.0.3",
+        "pkg:npm/semver@7.8.0",
+        "pkg:npm/sumchecker@3.0.1",
+        "pkg:npm/undici@7.30.1"
+      ]
+    },
+    {
+      "ref": "pkg:npm/%40types/node@24.13.2",
+      "dependsOn": [
+        "pkg:npm/undici-types@7.18.2"
+      ]
+    },
+    {
+      "ref": "pkg:npm/debug@4.3.4",
+      "dependsOn": [
+        "pkg:npm/ms@2.1.2"
+      ]
+    },
+    {
+      "ref": "pkg:npm/electron@45.2.1",
+      "dependsOn": [
+        "pkg:npm/%40electron-internal/extract-zip@1.0.8",
+        "pkg:npm/%40electron/get@5.1.0",
+        "pkg:npm/%40types/node@24.13.2"
+      ]
+    },
+    {
+      "ref": "pkg:npm/sumchecker@3.0.1",
+      "dependsOn": [
+        "pkg:npm/debug@4.3.4"
+      ]
+    }
+  ]
+}

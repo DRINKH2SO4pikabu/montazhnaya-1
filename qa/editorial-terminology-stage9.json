@@ -1,0 +1,12 @@
+{
+  "stage": 9,
+  "scope": "full 436-key structural audit plus targeted high-frequency terminology corrections; native-speaker sign-off remains pending",
+  "previewLocales": 34,
+  "localesWithEditorialMaps": 34,
+  "correctionCount": 191,
+  "sourceTermsCorrected": 34,
+  "missing": 0,
+  "empty": 0,
+  "runtimeApplied": true,
+  "reviewStatus": "machine-assisted-full-dictionary-audit-pass-1; native-speaker-review-pending"
+}

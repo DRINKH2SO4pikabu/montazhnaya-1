@@ -1,0 +1,45 @@
+{
+  "sourceKeys": 436,
+  "completed": [
+    "de",
+    "fr",
+    "es",
+    "pt-BR",
+    "it",
+    "pl",
+    "uk",
+    "tr",
+    "zh-CN",
+    "zh-TW",
+    "ja",
+    "ko"
+  ],
+  "partial": [
+    "ar",
+    "he",
+    "hi",
+    "nl",
+    "sv",
+    "fi",
+    "cs",
+    "ro",
+    "el",
+    "vi",
+    "id",
+    "th"
+  ],
+  "fallbacks": {
+    "ar": 135,
+    "he": 135,
+    "hi": 135,
+    "nl": 135,
+    "sv": 135,
+    "fi": 135,
+    "cs": 135,
+    "ro": 135,
+    "el": 135,
+    "vi": 135,
+    "id": 135,
+    "th": 135
+  }
+}

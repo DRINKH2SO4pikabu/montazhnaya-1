@@ -1,0 +1,37 @@
+Montazhnaya Beta 3.6.40 — International Localization Coverage
+
+English reference dictionary: 436 source keys
+International preview locales: 24
+Mapped keys per locale: 436
+English fallback keys per locale: 0
+Translation status: preview / draft complete / native review pending
+
+Locale | Native name | Mapped | Fallback | Direction
+------ | ----------- | ------ | -------- | ---------
+de | Deutsch | 436 | 0 | LTR
+fr | Français | 436 | 0 | LTR
+es | Español | 436 | 0 | LTR
+pt-BR | Português (Brasil) | 436 | 0 | LTR
+it | Italiano | 436 | 0 | LTR
+pl | Polski | 436 | 0 | LTR
+uk | Українська | 436 | 0 | LTR
+tr | Türkçe | 436 | 0 | LTR
+zh-CN | 简体中文 | 436 | 0 | LTR
+zh-TW | 繁體中文 | 436 | 0 | LTR
+ja | 日本語 | 436 | 0 | LTR
+ko | 한국어 | 436 | 0 | LTR
+ar | العربية | 436 | 0 | RTL
+he | עברית | 436 | 0 | RTL
+hi | हिन्दी | 436 | 0 | LTR
+nl | Nederlands | 436 | 0 | LTR
+sv | Svenska | 436 | 0 | LTR
+fi | Suomi | 436 | 0 | LTR
+cs | Čeština | 436 | 0 | LTR
+ro | Română | 436 | 0 | LTR
+el | Ελληνικά | 436 | 0 | LTR
+vi | Tiếng Việt | 436 | 0 | LTR
+id | Bahasa Indonesia | 436 | 0 | LTR
+th | ไทย | 436 | 0 | LTR
+
+Automated project test suite: 274 passed, 0 failed.
+Native-speaker review and Windows visual QA remain pending.

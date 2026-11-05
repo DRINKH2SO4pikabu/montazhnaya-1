@@ -1,0 +1,57 @@
+name: Bug report
+about: Report a reproducible problem in Montazhnaya_1
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Please do not upload private footage or media you do not have permission to share. Synthetic samples are preferred.
+  - type: input
+    id: version
+    attributes:
+      label: Montazhnaya version / commit
+      placeholder: 3.6.45 beta / commit SHA
+    validations:
+      required: true
+  - type: input
+    id: windows
+    attributes:
+      label: Windows version/build
+    validations:
+      required: true
+  - type: input
+    id: hardware
+    attributes:
+      label: CPU, GPU and driver version
+    validations:
+      required: true
+  - type: input
+    id: ffmpeg
+    attributes:
+      label: FFmpeg / FFprobe version
+    validations:
+      required: false
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Redacted logs (optional)
+      description: Remove Windows usernames, local paths, media file names, tokens and personal details.
+    validations:
+      required: false

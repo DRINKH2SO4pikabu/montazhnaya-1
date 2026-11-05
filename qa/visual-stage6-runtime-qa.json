@@ -1,0 +1,6653 @@
+{
+  "locales": [
+    {
+      "code": "ru",
+      "lang": "ru",
+      "dir": "ltr",
+      "title": "Монтажная beta 3.6.45 — монтаж фото, аудио и видео",
+      "tourVisible": true,
+      "tourTitle": "Добро пожаловать в «Монтажную»!",
+      "tourTitleExpected": "Добро пожаловать в «Монтажную»!",
+      "tourText": "Покажу основные действия простыми шагами. Ничего не изменится, пока ты сам не нажмёшь нужную кнопку.",
+      "tourTextExpected": "Покажу основные действия простыми шагами. Ничего не изменится, пока ты сам не нажмёшь нужную кнопку.",
+      "tourTip": "Можно идти в своём темпе и в любой момент закрыть знакомство.",
+      "tourTipExpected": "Можно идти в своём темпе и в любой момент закрыть знакомство.",
+      "tourCount": "Знакомство с редактором",
+      "tourCountExpected": "Знакомство с редактором",
+      "tourNext": "Начать знакомство",
+      "tourNextExpected": "Начать знакомство",
+      "tracksHeadingExpected": "Дорожки",
+      "tourBounds": {
+        "left": 302,
+        "top": 206,
+        "right": 722,
+        "bottom": 495,
+        "width": 420,
+        "height": 289
+      },
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "transportWidth": 448,
+      "transportScroll": 448,
+      "transportHeight": 111,
+      "topbarWidth": 1024,
+      "topbarScroll": 1024,
+      "topbarHeight": 78,
+      "menuButtons": [
+        {
+          "text": "Файл",
+          "width": 41,
+          "scroll": 41,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Правка",
+          "width": 51,
+          "scroll": 51,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Вид",
+          "width": 33,
+          "scroll": 33,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Переходы",
+          "width": 68,
+          "scroll": 68,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Справка",
+          "width": 58,
+          "scroll": 58,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Язык интерфейса…",
+          "width": 124,
+          "scroll": 124,
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "toolbarButtons": [
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "?Включить подсказкиПодсказки ВКЛ",
+          "width": 78,
+          "scroll": 78
+        },
+        {
+          "text": "×Выключить подсказкиПодсказки ВЫКЛ",
+          "width": 87,
+          "scroll": 87
+        },
+        {
+          "text": "Сохранить",
+          "width": 67,
+          "scroll": 67
+        },
+        {
+          "text": "Импорт медиа",
+          "width": 91,
+          "scroll": 91
+        },
+        {
+          "text": "Слайд-шоу",
+          "width": 69,
+          "scroll": 69
+        },
+        {
+          "text": "Экспорт",
+          "width": 57,
+          "scroll": 57
+        },
+        {
+          "text": "Разделить",
+          "width": 65,
+          "scroll": 65
+        },
+        {
+          "text": "Удалить",
+          "width": 54,
+          "scroll": 54
+        }
+      ],
+      "timelineHint": "Перетащите материал из библиотеки на дорожку",
+      "tracksHeading": "Дорожки",
+      "emptyNoteParts": [
+        "Перетащите файлы сюда",
+        "или нажмите «Импорт медиа»",
+        "Видео · Аудио · Изображения"
+      ],
+      "emptyNoteExpected": [
+        "Перетащите файлы сюда",
+        "или нажмите «Импорт медиа»",
+        "Видео · Аудио · Изображения"
+      ],
+      "cyrillicVisible": [
+        "Монтажная",
+        "Файл",
+        "Правка",
+        "Вид",
+        "Переходы",
+        "Справка",
+        "Язык интерфейса…",
+        "Подсказки ВКЛ",
+        "Подсказки ВЫКЛ",
+        "Сохранить",
+        "Импорт медиа",
+        "Слайд-шоу",
+        "Экспорт",
+        "Разделить",
+        "Удалить",
+        "Медиа",
+        "Переходы",
+        "⇅ Расставить по нумерации",
+        "Числовой порядок: 1, 2, 3… или 001, 002, 003…",
+        "Перетащите файлы сюда",
+        "или нажмите «Импорт медиа»",
+        "Видео · Аудио · Изображения",
+        "Предпросмотр",
+        "Последовательность 01",
+        "Формат",
+        "Размер",
+        "Свойства",
+        "Проект",
+        "Формат",
+        "Разрешение"
+      ],
+      "viewportChecks": [
+        {
+          "size": "1366x768",
+          "width": 1366,
+          "viewport": 1366,
+          "topbarScroll": 1366,
+          "topbarWidth": 1366,
+          "transportScroll": 790,
+          "transportWidth": 790,
+          "card": {
+            "left": 473,
+            "top": 240,
+            "right": 893,
+            "bottom": 529
+          }
+        },
+        {
+          "size": "1920x1080",
+          "width": 1920,
+          "viewport": 1920,
+          "topbarScroll": 1920,
+          "topbarWidth": 1920,
+          "transportScroll": 1344,
+          "transportWidth": 1344,
+          "card": {
+            "left": 750,
+            "top": 396,
+            "right": 1170,
+            "bottom": 685
+          }
+        }
+      ],
+      "failures": [],
+      "firstStep": {
+        "title": "Шаг 1. Добавь свои файлы",
+        "text": "Нажми «Импорт медиа» и выбери видео, фотографии или музыку на компьютере. Можно выбрать несколько файлов сразу.",
+        "tip": "После выбора файлы появятся слева в разделе «Медиа». Само добавление не меняет оригиналы на компьютере.",
+        "count": "Шаг 1 из 7"
+      },
+      "firstStepFallback": false
+    },
+    {
+      "code": "en",
+      "lang": "en",
+      "dir": "ltr",
+      "title": "Montazhnaya beta 3.6.45 — photo, audio and video editor",
+      "tourVisible": true,
+      "tourTitle": "Welcome to Montazhnaya!",
+      "tourTitleExpected": "Welcome to Montazhnaya!",
+      "tourText": "I'll walk you through the basics step by step. Nothing in your project changes until you choose an action.",
+      "tourTextExpected": "I'll walk you through the basics step by step. Nothing in your project changes until you choose an action.",
+      "tourTip": "Take your time and close the tour whenever you like.",
+      "tourTipExpected": "Take your time and close the tour whenever you like.",
+      "tourCount": "Editor Tour",
+      "tourCountExpected": "Editor Tour",
+      "tourNext": "Start tour",
+      "tourNextExpected": "Start tour",
+      "tracksHeadingExpected": "Tracks",
+      "tourBounds": {
+        "left": 302,
+        "top": 215,
+        "right": 722,
+        "bottom": 486,
+        "width": 420,
+        "height": 271
+      },
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "transportWidth": 448,
+      "transportScroll": 448,
+      "transportHeight": 114,
+      "topbarWidth": 1024,
+      "topbarScroll": 1024,
+      "topbarHeight": 78,
+      "menuButtons": [
+        {
+          "text": "File",
+          "width": 30,
+          "scroll": 30,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Edit",
+          "width": 32,
+          "scroll": 32,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "View",
+          "width": 37,
+          "scroll": 37,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Transitions",
+          "width": 74,
+          "scroll": 74,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Help",
+          "width": 36,
+          "scroll": 36,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Language…",
+          "width": 77,
+          "scroll": 77,
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "toolbarButtons": [
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "?Enable TipsTips ON",
+          "width": 47,
+          "scroll": 47
+        },
+        {
+          "text": "×Disable TipsTips OFF",
+          "width": 50,
+          "scroll": 50
+        },
+        {
+          "text": "Save",
+          "width": 36,
+          "scroll": 36
+        },
+        {
+          "text": "Import media",
+          "width": 88,
+          "scroll": 88
+        },
+        {
+          "text": "Slideshow",
+          "width": 64,
+          "scroll": 64
+        },
+        {
+          "text": "Export",
+          "width": 49,
+          "scroll": 49
+        },
+        {
+          "text": "Split",
+          "width": 34,
+          "scroll": 34
+        },
+        {
+          "text": "Delete",
+          "width": 45,
+          "scroll": 45
+        }
+      ],
+      "timelineHint": "Drag media from the library onto a track",
+      "tracksHeading": "Tracks",
+      "emptyNoteParts": [
+        "Drop files here",
+        "or click Import Media",
+        "Video · Audio · Images"
+      ],
+      "emptyNoteExpected": [
+        "Drop files here",
+        "or click Import Media",
+        "Video · Audio · Images"
+      ],
+      "cyrillicVisible": [
+        "Монтажная"
+      ],
+      "viewportChecks": [
+        {
+          "size": "1366x768",
+          "width": 1366,
+          "viewport": 1366,
+          "topbarScroll": 1366,
+          "topbarWidth": 1366,
+          "transportScroll": 790,
+          "transportWidth": 790,
+          "card": {
+            "left": 473,
+            "top": 249,
+            "right": 893,
+            "bottom": 520
+          }
+        },
+        {
+          "size": "1920x1080",
+          "width": 1920,
+          "viewport": 1920,
+          "topbarScroll": 1920,
+          "topbarWidth": 1920,
+          "transportScroll": 1344,
+          "transportWidth": 1344,
+          "card": {
+            "left": 750,
+            "top": 405,
+            "right": 1170,
+            "bottom": 676
+          }
+        }
+      ],
+      "failures": [],
+      "firstStep": {
+        "title": "Step 1. Add your files",
+        "text": "Click Import Media and choose videos, photos, or music from your computer. You can select several files at once.",
+        "tip": "The selected files appear in the Media panel on the left. Importing does not change the originals on your computer.",
+        "count": "Step 1 of 7"
+      },
+      "firstStepFallback": false
+    },
+    {
+      "code": "de",
+      "lang": "de",
+      "dir": "ltr",
+      "title": "Montazhnaya — Videoeditor",
+      "tourVisible": true,
+      "tourTitle": "Willkommen bei Montazhnaya!",
+      "tourTitleExpected": "Willkommen bei Montazhnaya!",
+      "tourText": "Ich führe dich Schritt für Schritt durch die Grundlagen. An deinem Projekt wird nichts geändert, bis du selbst eine Aktion auswählst.",
+      "tourTextExpected": "Ich führe dich Schritt für Schritt durch die Grundlagen. An deinem Projekt wird nichts geändert, bis du selbst eine Aktion auswählst.",
+      "tourTip": "Nimm dir Zeit und schließe die Tour jederzeit, wenn du möchtest.",
+      "tourTipExpected": "Nimm dir Zeit und schließe die Tour jederzeit, wenn du möchtest.",
+      "tourCount": "Editor-Tour",
+      "tourCountExpected": "Editor-Tour",
+      "tourNext": "Tour starten",
+      "tourNextExpected": "Tour starten",
+      "tracksHeadingExpected": "Spuren",
+      "tourBounds": {
+        "left": 302,
+        "top": 204,
+        "right": 722,
+        "bottom": 496,
+        "width": 420,
+        "height": 292
+      },
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "transportWidth": 448,
+      "transportScroll": 448,
+      "transportHeight": 111,
+      "topbarWidth": 1024,
+      "topbarScroll": 1024,
+      "topbarHeight": 78,
+      "menuButtons": [
+        {
+          "text": "Datei",
+          "width": 38,
+          "scroll": 38,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Bearbeiten",
+          "width": 69,
+          "scroll": 69,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Ansicht",
+          "width": 52,
+          "scroll": 52,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Übergänge",
+          "width": 70,
+          "scroll": 70,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Hilfe",
+          "width": 35,
+          "scroll": 35,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Sprache der Benutzeroberfläche…",
+          "width": 199,
+          "scroll": 199,
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "toolbarButtons": [
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "?Tipps aktivierenTipps EIN",
+          "width": 53,
+          "scroll": 53
+        },
+        {
+          "text": "×Tipps deaktivierenTipps AUS",
+          "width": 57,
+          "scroll": 57
+        },
+        {
+          "text": "Speichern",
+          "width": 62,
+          "scroll": 62
+        },
+        {
+          "text": "Medien importieren",
+          "width": 113,
+          "scroll": 113
+        },
+        {
+          "text": "Diashow",
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "text": "Exportieren",
+          "width": 73,
+          "scroll": 73
+        },
+        {
+          "text": "Teilen",
+          "width": 41,
+          "scroll": 41
+        },
+        {
+          "text": "Löschen",
+          "width": 54,
+          "scroll": 54
+        }
+      ],
+      "timelineHint": "Medien aus der Bibliothek auf eine Spur ziehen",
+      "tracksHeading": "Spuren",
+      "emptyNoteParts": [
+        "Dateien hier ablegen",
+        "oder auf „Medien importieren“ klicken",
+        "Video · Audio · Bilder"
+      ],
+      "emptyNoteExpected": [
+        "Dateien hier ablegen",
+        "oder auf „Medien importieren“ klicken",
+        "Video · Audio · Bilder"
+      ],
+      "cyrillicVisible": [
+        "Монтажная"
+      ],
+      "viewportChecks": [
+        {
+          "size": "1366x768",
+          "width": 1366,
+          "viewport": 1366,
+          "topbarScroll": 1366,
+          "topbarWidth": 1366,
+          "transportScroll": 790,
+          "transportWidth": 790,
+          "card": {
+            "left": 473,
+            "top": 238,
+            "right": 893,
+            "bottom": 530
+          }
+        },
+        {
+          "size": "1920x1080",
+          "width": 1920,
+          "viewport": 1920,
+          "topbarScroll": 1920,
+          "topbarWidth": 1920,
+          "transportScroll": 1344,
+          "transportWidth": 1344,
+          "card": {
+            "left": 750,
+            "top": 394,
+            "right": 1170,
+            "bottom": 686
+          }
+        }
+      ],
+      "failures": [],
+      "firstStep": {
+        "title": "Step 1. Add your files",
+        "text": "Click Import Media and choose videos, photos, or music from your computer. You can select several files at once.",
+        "tip": "The selected files appear in the Media panel on the left. Importing does not change the originals on your computer.",
+        "count": "Schritt 1 von 7"
+      },
+      "firstStepFallback": true
+    },
+    {
+      "code": "fr",
+      "lang": "fr",
+      "dir": "ltr",
+      "title": "Montazhnaya — éditeur vidéo",
+      "tourVisible": true,
+      "tourTitle": "Bienvenue dans Montazhnaya !",
+      "tourTitleExpected": "Bienvenue dans Montazhnaya !",
+      "tourText": "Je vais vous présenter les fonctions essentielles étape par étape. Rien ne sera modifié dans votre projet tant que vous n’aurez pas choisi une action.",
+      "tourTextExpected": "Je vais vous présenter les fonctions essentielles étape par étape. Rien ne sera modifié dans votre projet tant que vous n’aurez pas choisi une action.",
+      "tourTip": "Prenez votre temps et fermez la visite guidée quand vous le souhaitez.",
+      "tourTipExpected": "Prenez votre temps et fermez la visite guidée quand vous le souhaitez.",
+      "tourCount": "Visite guidée de l’éditeur",
+      "tourCountExpected": "Visite guidée de l’éditeur",
+      "tourNext": "Démarrer la visite",
+      "tourNextExpected": "Démarrer la visite",
+      "tracksHeadingExpected": "Pistes",
+      "tourBounds": {
+        "left": 302,
+        "top": 195,
+        "right": 722,
+        "bottom": 505,
+        "width": 420,
+        "height": 310
+      },
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "transportWidth": 448,
+      "transportScroll": 448,
+      "transportHeight": 111,
+      "topbarWidth": 1024,
+      "topbarScroll": 1024,
+      "topbarHeight": 78,
+      "menuButtons": [
+        {
+          "text": "Fichier",
+          "width": 48,
+          "scroll": 48,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Édition",
+          "width": 49,
+          "scroll": 49,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Affichage",
+          "width": 62,
+          "scroll": 62,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Transitions",
+          "width": 71,
+          "scroll": 71,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Aide",
+          "width": 35,
+          "scroll": 35,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Langue de l’interface…",
+          "width": 137,
+          "scroll": 137,
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "toolbarButtons": [
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "?Activer les astucesAstuces activées",
+          "width": 83,
+          "scroll": 83
+        },
+        {
+          "text": "×Désactiver les astucesAstuces désactivées",
+          "width": 99,
+          "scroll": 99
+        },
+        {
+          "text": "Enregistrer",
+          "width": 66,
+          "scroll": 66
+        },
+        {
+          "text": "Importer des médias",
+          "width": 120,
+          "scroll": 120
+        },
+        {
+          "text": "Diaporama",
+          "width": 66,
+          "scroll": 66
+        },
+        {
+          "text": "Exporter",
+          "width": 57,
+          "scroll": 57
+        },
+        {
+          "text": "Scinder",
+          "width": 49,
+          "scroll": 49
+        },
+        {
+          "text": "Supprimer",
+          "width": 63,
+          "scroll": 63
+        }
+      ],
+      "timelineHint": "Faites glisser les médias de la bibliothèque vers une piste",
+      "tracksHeading": "Pistes",
+      "emptyNoteParts": [
+        "Déposez les fichiers ici",
+        "ou cliquez sur Importer des médias",
+        "Vidéo · Audio · Images"
+      ],
+      "emptyNoteExpected": [
+        "Déposez les fichiers ici",
+        "ou cliquez sur Importer des médias",
+        "Vidéo · Audio · Images"
+      ],
+      "cyrillicVisible": [
+        "Монтажная"
+      ],
+      "viewportChecks": [
+        {
+          "size": "1366x768",
+          "width": 1366,
+          "viewport": 1366,
+          "topbarScroll": 1366,
+          "topbarWidth": 1366,
+          "transportScroll": 790,
+          "transportWidth": 790,
+          "card": {
+            "left": 473,
+            "top": 229,
+            "right": 893,
+            "bottom": 539
+          }
+        },
+        {
+          "size": "1920x1080",
+          "width": 1920,
+          "viewport": 1920,
+          "topbarScroll": 1920,
+          "topbarWidth": 1920,
+          "transportScroll": 1344,
+          "transportWidth": 1344,
+          "card": {
+            "left": 750,
+            "top": 385,
+            "right": 1170,
+            "bottom": 695
+          }
+        }
+      ],
+      "failures": [],
+      "firstStep": {
+        "title": "Step 1. Add your files",
+        "text": "Click Import Media and choose videos, photos, or music from your computer. You can select several files at once.",
+        "tip": "The selected files appear in the Media panel on the left. Importing does not change the originals on your computer.",
+        "count": "Étape 1 sur 7"
+      },
+      "firstStepFallback": true
+    },
+    {
+      "code": "es",
+      "lang": "es",
+      "dir": "ltr",
+      "title": "Montazhnaya — editor de vídeo",
+      "tourVisible": true,
+      "tourTitle": "¡Te damos la bienvenida a Montazhnaya!",
+      "tourTitleExpected": "¡Te damos la bienvenida a Montazhnaya!",
+      "tourText": "Te mostraré las funciones básicas paso a paso. Nada cambiará en tu proyecto hasta que elijas una acción.",
+      "tourTextExpected": "Te mostraré las funciones básicas paso a paso. Nada cambiará en tu proyecto hasta que elijas una acción.",
+      "tourTip": "Tómate tu tiempo y cierra el recorrido cuando quieras.",
+      "tourTipExpected": "Tómate tu tiempo y cierra el recorrido cuando quieras.",
+      "tourCount": "Recorrido por el editor",
+      "tourCountExpected": "Recorrido por el editor",
+      "tourNext": "Iniciar recorrido",
+      "tourNextExpected": "Iniciar recorrido",
+      "tracksHeadingExpected": "Pistas",
+      "tourBounds": {
+        "left": 302,
+        "top": 215,
+        "right": 722,
+        "bottom": 486,
+        "width": 420,
+        "height": 271
+      },
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "transportWidth": 448,
+      "transportScroll": 448,
+      "transportHeight": 111,
+      "topbarWidth": 1024,
+      "topbarScroll": 1024,
+      "topbarHeight": 78,
+      "menuButtons": [
+        {
+          "text": "Archivo",
+          "width": 53,
+          "scroll": 53,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Edición",
+          "width": 52,
+          "scroll": 52,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Vista",
+          "width": 37,
+          "scroll": 37,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Transiciones",
+          "width": 80,
+          "scroll": 80,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Ayuda",
+          "width": 45,
+          "scroll": 45,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Idioma de la interfaz…",
+          "width": 132,
+          "scroll": 132,
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "toolbarButtons": [
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "?Activar consejosConsejos activados",
+          "width": 94,
+          "scroll": 94
+        },
+        {
+          "text": "×Desactivar consejosConsejos desactivados",
+          "width": 110,
+          "scroll": 110
+        },
+        {
+          "text": "Guardar",
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "text": "Importar medios",
+          "width": 98,
+          "scroll": 98
+        },
+        {
+          "text": "Presentación",
+          "width": 76,
+          "scroll": 76
+        },
+        {
+          "text": "Exportar",
+          "width": 57,
+          "scroll": 57
+        },
+        {
+          "text": "Dividir",
+          "width": 43,
+          "scroll": 43
+        },
+        {
+          "text": "Eliminar",
+          "width": 52,
+          "scroll": 52
+        }
+      ],
+      "timelineHint": "Arrastra los archivos multimedia de la biblioteca a una pista",
+      "tracksHeading": "Pistas",
+      "emptyNoteParts": [
+        "Suelta los archivos aquí",
+        "o haz clic en Importar medios",
+        "Vídeo · Audio · Imágenes"
+      ],
+      "emptyNoteExpected": [
+        "Suelta los archivos aquí",
+        "o haz clic en Importar medios",
+        "Vídeo · Audio · Imágenes"
+      ],
+      "cyrillicVisible": [
+        "Монтажная"
+      ],
+      "viewportChecks": [
+        {
+          "size": "1366x768",
+          "width": 1366,
+          "viewport": 1366,
+          "topbarScroll": 1366,
+          "topbarWidth": 1366,
+          "transportScroll": 790,
+          "transportWidth": 790,
+          "card": {
+            "left": 473,
+            "top": 249,
+            "right": 893,
+            "bottom": 520
+          }
+        },
+        {
+          "size": "1920x1080",
+          "width": 1920,
+          "viewport": 1920,
+          "topbarScroll": 1920,
+          "topbarWidth": 1920,
+          "transportScroll": 1344,
+          "transportWidth": 1344,
+          "card": {
+            "left": 750,
+            "top": 405,
+            "right": 1170,
+            "bottom": 676
+          }
+        }
+      ],
+      "failures": [],
+      "firstStep": {
+        "title": "Step 1. Add your files",
+        "text": "Click Import Media and choose videos, photos, or music from your computer. You can select several files at once.",
+        "tip": "The selected files appear in the Media panel on the left. Importing does not change the originals on your computer.",
+        "count": "Paso 1 de 7"
+      },
+      "firstStepFallback": true
+    },
+    {
+      "code": "pt-BR",
+      "lang": "pt-BR",
+      "dir": "ltr",
+      "title": "Montazhnaya — editor de vídeo",
+      "tourVisible": true,
+      "tourTitle": "Boas-vindas ao Montazhnaya!",
+      "tourTitleExpected": "Boas-vindas ao Montazhnaya!",
+      "tourText": "Vou mostrar as operações básicas passo a passo. Nada no seu projeto será alterado até você escolher uma ação.",
+      "tourTextExpected": "Vou mostrar as operações básicas passo a passo. Nada no seu projeto será alterado até você escolher uma ação.",
+      "tourTip": "Faça no seu ritmo e feche o tour quando quiser.",
+      "tourTipExpected": "Faça no seu ritmo e feche o tour quando quiser.",
+      "tourCount": "Tour pelo editor",
+      "tourCountExpected": "Tour pelo editor",
+      "tourNext": "Iniciar tour",
+      "tourNextExpected": "Iniciar tour",
+      "tracksHeadingExpected": "Faixas",
+      "tourBounds": {
+        "left": 302,
+        "top": 215,
+        "right": 722,
+        "bottom": 486,
+        "width": 420,
+        "height": 271
+      },
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "transportWidth": 448,
+      "transportScroll": 448,
+      "transportHeight": 111,
+      "topbarWidth": 1024,
+      "topbarScroll": 1024,
+      "topbarHeight": 78,
+      "menuButtons": [
+        {
+          "text": "Arquivo",
+          "width": 53,
+          "scroll": 53,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Editar",
+          "width": 43,
+          "scroll": 43,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Exibir",
+          "width": 42,
+          "scroll": 42,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Transições",
+          "width": 70,
+          "scroll": 70,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Ajuda",
+          "width": 42,
+          "scroll": 42,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Idioma da interface…",
+          "width": 126,
+          "scroll": 126,
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "toolbarButtons": [
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "?Ativar dicasDicas ativadas",
+          "width": 74,
+          "scroll": 74
+        },
+        {
+          "text": "×Desativar dicasDicas desativadas",
+          "width": 89,
+          "scroll": 89
+        },
+        {
+          "text": "Salvar",
+          "width": 43,
+          "scroll": 43
+        },
+        {
+          "text": "Importar mídia",
+          "width": 88,
+          "scroll": 88
+        },
+        {
+          "text": "Apresentação de slides",
+          "width": 126,
+          "scroll": 126
+        },
+        {
+          "text": "Exportar",
+          "width": 57,
+          "scroll": 57
+        },
+        {
+          "text": "Dividir",
+          "width": 43,
+          "scroll": 43
+        },
+        {
+          "text": "Excluir",
+          "width": 45,
+          "scroll": 45
+        }
+      ],
+      "timelineHint": "Arraste a mídia da biblioteca para uma faixa",
+      "tracksHeading": "Faixas",
+      "emptyNoteParts": [
+        "Solte os arquivos aqui",
+        "ou clique em Importar mídia",
+        "Vídeo · Áudio · Imagens"
+      ],
+      "emptyNoteExpected": [
+        "Solte os arquivos aqui",
+        "ou clique em Importar mídia",
+        "Vídeo · Áudio · Imagens"
+      ],
+      "cyrillicVisible": [
+        "Монтажная"
+      ],
+      "viewportChecks": [
+        {
+          "size": "1366x768",
+          "width": 1366,
+          "viewport": 1366,
+          "topbarScroll": 1366,
+          "topbarWidth": 1366,
+          "transportScroll": 790,
+          "transportWidth": 790,
+          "card": {
+            "left": 473,
+            "top": 249,
+            "right": 893,
+            "bottom": 520
+          }
+        },
+        {
+          "size": "1920x1080",
+          "width": 1920,
+          "viewport": 1920,
+          "topbarScroll": 1920,
+          "topbarWidth": 1920,
+          "transportScroll": 1344,
+          "transportWidth": 1344,
+          "card": {
+            "left": 750,
+            "top": 405,
+            "right": 1170,
+            "bottom": 676
+          }
+        }
+      ],
+      "failures": [],
+      "firstStep": {
+        "title": "Step 1. Add your files",
+        "text": "Click Import Media and choose videos, photos, or music from your computer. You can select several files at once.",
+        "tip": "The selected files appear in the Media panel on the left. Importing does not change the originals on your computer.",
+        "count": "Etapa 1 de 7"
+      },
+      "firstStepFallback": true
+    },
+    {
+      "code": "it",
+      "lang": "it",
+      "dir": "ltr",
+      "title": "Montazhnaya — editor video",
+      "tourVisible": true,
+      "tourTitle": "Benvenuto in Montazhnaya!",
+      "tourTitleExpected": "Benvenuto in Montazhnaya!",
+      "tourText": "Ti guiderò passo dopo passo nelle operazioni di base. Il progetto non verrà modificato finché non sceglierai un’azione.",
+      "tourTextExpected": "Ti guiderò passo dopo passo nelle operazioni di base. Il progetto non verrà modificato finché non sceglierai un’azione.",
+      "tourTip": "Prenditi tutto il tempo necessario e chiudi il tour quando vuoi.",
+      "tourTipExpected": "Prenditi tutto il tempo necessario e chiudi il tour quando vuoi.",
+      "tourCount": "Tour dell’editor",
+      "tourCountExpected": "Tour dell’editor",
+      "tourNext": "Avvia il tour",
+      "tourNextExpected": "Avvia il tour",
+      "tracksHeadingExpected": "Tracce",
+      "tourBounds": {
+        "left": 302,
+        "top": 215,
+        "right": 722,
+        "bottom": 486,
+        "width": 420,
+        "height": 271
+      },
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "transportWidth": 448,
+      "transportScroll": 448,
+      "transportHeight": 111,
+      "topbarWidth": 1024,
+      "topbarScroll": 1024,
+      "topbarHeight": 78,
+      "menuButtons": [
+        {
+          "text": "File",
+          "width": 30,
+          "scroll": 30,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Modifica",
+          "width": 57,
+          "scroll": 57,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Visualizza",
+          "width": 65,
+          "scroll": 65,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Transizioni",
+          "width": 70,
+          "scroll": 70,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Aiuto",
+          "width": 39,
+          "scroll": 39,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Lingua dell’interfaccia…",
+          "width": 143,
+          "scroll": 143,
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "toolbarButtons": [
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "?Attiva suggerimentiSuggerimenti attivi",
+          "width": 90,
+          "scroll": 90
+        },
+        {
+          "text": "×Disattiva suggerimentiSuggerimenti disattivati",
+          "width": 110,
+          "scroll": 110
+        },
+        {
+          "text": "Salva",
+          "width": 40,
+          "scroll": 40
+        },
+        {
+          "text": "Importa media",
+          "width": 87,
+          "scroll": 87
+        },
+        {
+          "text": "Presentazione",
+          "width": 82,
+          "scroll": 82
+        },
+        {
+          "text": "Esporta",
+          "width": 53,
+          "scroll": 53
+        },
+        {
+          "text": "Dividi",
+          "width": 39,
+          "scroll": 39
+        },
+        {
+          "text": "Elimina",
+          "width": 48,
+          "scroll": 48
+        }
+      ],
+      "timelineHint": "Trascina i contenuti multimediali dalla libreria su una traccia",
+      "tracksHeading": "Tracce",
+      "emptyNoteParts": [
+        "Trascina qui i file",
+        "oppure fai clic su Importa media",
+        "Video · Audio · Immagini"
+      ],
+      "emptyNoteExpected": [
+        "Trascina qui i file",
+        "oppure fai clic su Importa media",
+        "Video · Audio · Immagini"
+      ],
+      "cyrillicVisible": [
+        "Монтажная"
+      ],
+      "viewportChecks": [
+        {
+          "size": "1366x768",
+          "width": 1366,
+          "viewport": 1366,
+          "topbarScroll": 1366,
+          "topbarWidth": 1366,
+          "transportScroll": 790,
+          "transportWidth": 790,
+          "card": {
+            "left": 473,
+            "top": 249,
+            "right": 893,
+            "bottom": 520
+          }
+        },
+        {
+          "size": "1920x1080",
+          "width": 1920,
+          "viewport": 1920,
+          "topbarScroll": 1920,
+          "topbarWidth": 1920,
+          "transportScroll": 1344,
+          "transportWidth": 1344,
+          "card": {
+            "left": 750,
+            "top": 405,
+            "right": 1170,
+            "bottom": 676
+          }
+        }
+      ],
+      "failures": [],
+      "firstStep": {
+        "title": "Step 1. Add your files",
+        "text": "Click Import Media and choose videos, photos, or music from your computer. You can select several files at once.",
+        "tip": "The selected files appear in the Media panel on the left. Importing does not change the originals on your computer.",
+        "count": "Passaggio 1 di 7"
+      },
+      "firstStepFallback": true
+    },
+    {
+      "code": "pl",
+      "lang": "pl",
+      "dir": "ltr",
+      "title": "Montazhnaya — edytor wideo",
+      "tourVisible": true,
+      "tourTitle": "Witamy w Montazhnaya!",
+      "tourTitleExpected": "Witamy w Montazhnaya!",
+      "tourText": "Pokażę Ci podstawowe czynności krok po kroku. W projekcie nic się nie zmieni, dopóki samodzielnie nie wybierzesz działania.",
+      "tourTextExpected": "Pokażę Ci podstawowe czynności krok po kroku. W projekcie nic się nie zmieni, dopóki samodzielnie nie wybierzesz działania.",
+      "tourTip": "Nie spiesz się i zamknij przewodnik w dowolnym momencie.",
+      "tourTipExpected": "Nie spiesz się i zamknij przewodnik w dowolnym momencie.",
+      "tourCount": "Przewodnik po edytorze",
+      "tourCountExpected": "Przewodnik po edytorze",
+      "tourNext": "Rozpocznij przewodnik",
+      "tourNextExpected": "Rozpocznij przewodnik",
+      "tracksHeadingExpected": "Ścieżki",
+      "tourBounds": {
+        "left": 302,
+        "top": 204,
+        "right": 722,
+        "bottom": 496,
+        "width": 420,
+        "height": 292
+      },
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "transportWidth": 448,
+      "transportScroll": 448,
+      "transportHeight": 111,
+      "topbarWidth": 1024,
+      "topbarScroll": 1024,
+      "topbarHeight": 78,
+      "menuButtons": [
+        {
+          "text": "Plik",
+          "width": 30,
+          "scroll": 30,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Edycja",
+          "width": 47,
+          "scroll": 47,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Widok",
+          "width": 44,
+          "scroll": 44,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Przejścia",
+          "width": 60,
+          "scroll": 60,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Pomoc",
+          "width": 48,
+          "scroll": 48,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Język interfejsu…",
+          "width": 108,
+          "scroll": 108,
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "toolbarButtons": [
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "?Włącz wskazówkiPodpowiedzi włączone",
+          "width": 108,
+          "scroll": 108
+        },
+        {
+          "text": "×Wyłącz podpowiedziPodpowiedzi wyłączone",
+          "width": 113,
+          "scroll": 113
+        },
+        {
+          "text": "Zapisz",
+          "width": 44,
+          "scroll": 44
+        },
+        {
+          "text": "Importuj multimedia",
+          "width": 117,
+          "scroll": 117
+        },
+        {
+          "text": "Pokaz slajdów",
+          "width": 82,
+          "scroll": 82
+        },
+        {
+          "text": "Eksportuj",
+          "width": 63,
+          "scroll": 63
+        },
+        {
+          "text": "Podziel",
+          "width": 48,
+          "scroll": 48
+        },
+        {
+          "text": "Usuń",
+          "width": 38,
+          "scroll": 38
+        }
+      ],
+      "timelineHint": "Przeciągnij multimedia z biblioteki na ścieżkę",
+      "tracksHeading": "Ścieżki",
+      "emptyNoteParts": [
+        "Upuść pliki tutaj",
+        "lub kliknij Importuj multimedia",
+        "Wideo · Audio · Obrazy"
+      ],
+      "emptyNoteExpected": [
+        "Upuść pliki tutaj",
+        "lub kliknij Importuj multimedia",
+        "Wideo · Audio · Obrazy"
+      ],
+      "cyrillicVisible": [
+        "Монтажная"
+      ],
+      "viewportChecks": [
+        {
+          "size": "1366x768",
+          "width": 1366,
+          "viewport": 1366,
+          "topbarScroll": 1366,
+          "topbarWidth": 1366,
+          "transportScroll": 790,
+          "transportWidth": 790,
+          "card": {
+            "left": 473,
+            "top": 238,
+            "right": 893,
+            "bottom": 530
+          }
+        },
+        {
+          "size": "1920x1080",
+          "width": 1920,
+          "viewport": 1920,
+          "topbarScroll": 1920,
+          "topbarWidth": 1920,
+          "transportScroll": 1344,
+          "transportWidth": 1344,
+          "card": {
+            "left": 750,
+            "top": 394,
+            "right": 1170,
+            "bottom": 686
+          }
+        }
+      ],
+      "failures": [],
+      "firstStep": {
+        "title": "Step 1. Add your files",
+        "text": "Click Import Media and choose videos, photos, or music from your computer. You can select several files at once.",
+        "tip": "The selected files appear in the Media panel on the left. Importing does not change the originals on your computer.",
+        "count": "Krok 1 z 7"
+      },
+      "firstStepFallback": true
+    },
+    {
+      "code": "uk",
+      "lang": "uk",
+      "dir": "ltr",
+      "title": "Montazhnaya — відеоредактор",
+      "tourVisible": true,
+      "tourTitle": "Вітаємо в Montazhnaya!",
+      "tourTitleExpected": "Вітаємо в Montazhnaya!",
+      "tourText": "Я покажу основні дії крок за кроком. У вашому проєкті нічого не зміниться, доки ви самі не виберете дію.",
+      "tourTextExpected": "Я покажу основні дії крок за кроком. У вашому проєкті нічого не зміниться, доки ви самі не виберете дію.",
+      "tourTip": "Не поспішайте й закрийте огляд у будь-який момент.",
+      "tourTipExpected": "Не поспішайте й закрийте огляд у будь-який момент.",
+      "tourCount": "Огляд редактора",
+      "tourCountExpected": "Огляд редактора",
+      "tourNext": "Почати огляд",
+      "tourNextExpected": "Почати огляд",
+      "tracksHeadingExpected": "Доріжки",
+      "tourBounds": {
+        "left": 302,
+        "top": 215,
+        "right": 722,
+        "bottom": 486,
+        "width": 420,
+        "height": 271
+      },
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "transportWidth": 448,
+      "transportScroll": 448,
+      "transportHeight": 111,
+      "topbarWidth": 1024,
+      "topbarScroll": 1024,
+      "topbarHeight": 78,
+      "menuButtons": [
+        {
+          "text": "Файл",
+          "width": 41,
+          "scroll": 41,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Редагування",
+          "width": 83,
+          "scroll": 83,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Вигляд",
+          "width": 51,
+          "scroll": 51,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Переходи",
+          "width": 65,
+          "scroll": 65,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Довідка",
+          "width": 55,
+          "scroll": 55,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Мова інтерфейсу…",
+          "width": 120,
+          "scroll": 120,
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "toolbarButtons": [
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "?Увімкнути підказкиПідказки увімкнено",
+          "width": 96,
+          "scroll": 96
+        },
+        {
+          "text": "×Вимкнути підказкиПідказки вимкнено",
+          "width": 95,
+          "scroll": 95
+        },
+        {
+          "text": "Зберегти",
+          "width": 58,
+          "scroll": 58
+        },
+        {
+          "text": "Імпортувати медіа",
+          "width": 113,
+          "scroll": 113
+        },
+        {
+          "text": "Слайдшоу",
+          "width": 65,
+          "scroll": 65
+        },
+        {
+          "text": "Експорт",
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "text": "Розділити",
+          "width": 62,
+          "scroll": 62
+        },
+        {
+          "text": "Видалити",
+          "width": 62,
+          "scroll": 62
+        }
+      ],
+      "timelineHint": "Перетягніть медіафайли з бібліотеки на доріжку",
+      "tracksHeading": "Доріжки",
+      "emptyNoteParts": [
+        "Перетягніть файли сюди",
+        "або натисніть «Імпорт медіа»",
+        "Відео · Аудіо · Зображення"
+      ],
+      "emptyNoteExpected": [
+        "Перетягніть файли сюди",
+        "або натисніть «Імпорт медіа»",
+        "Відео · Аудіо · Зображення"
+      ],
+      "cyrillicVisible": [
+        "Монтажная",
+        "Файл",
+        "Редагування",
+        "Вигляд",
+        "Переходи",
+        "Довідка",
+        "Мова інтерфейсу…",
+        "Підказки увімкнено",
+        "Підказки вимкнено",
+        "Зберегти",
+        "Імпортувати медіа",
+        "Слайдшоу",
+        "Експорт",
+        "Розділити",
+        "Видалити",
+        "Медіа",
+        "Переходи",
+        "⇅ Упорядкувати за номером",
+        "Числовий порядок: 1, 2, 3… або 001, 002, 003…",
+        "Перетягніть файли сюди",
+        "або натисніть «Імпорт медіа»",
+        "Відео · Аудіо · Зображення",
+        "Попередній перегляд",
+        "Послідовність 01",
+        "Формат",
+        "Розмір",
+        "Властивості",
+        "Проєкт",
+        "Формат",
+        "Роздільна здатність"
+      ],
+      "viewportChecks": [
+        {
+          "size": "1366x768",
+          "width": 1366,
+          "viewport": 1366,
+          "topbarScroll": 1366,
+          "topbarWidth": 1366,
+          "transportScroll": 790,
+          "transportWidth": 790,
+          "card": {
+            "left": 473,
+            "top": 249,
+            "right": 893,
+            "bottom": 520
+          }
+        },
+        {
+          "size": "1920x1080",
+          "width": 1920,
+          "viewport": 1920,
+          "topbarScroll": 1920,
+          "topbarWidth": 1920,
+          "transportScroll": 1344,
+          "transportWidth": 1344,
+          "card": {
+            "left": 750,
+            "top": 405,
+            "right": 1170,
+            "bottom": 676
+          }
+        }
+      ],
+      "failures": [],
+      "firstStep": {
+        "title": "Step 1. Add your files",
+        "text": "Click Import Media and choose videos, photos, or music from your computer. You can select several files at once.",
+        "tip": "The selected files appear in the Media panel on the left. Importing does not change the originals on your computer.",
+        "count": "Крок 1 із 7"
+      },
+      "firstStepFallback": true
+    },
+    {
+      "code": "tr",
+      "lang": "tr",
+      "dir": "ltr",
+      "title": "Montazhnaya — video düzenleyici",
+      "tourVisible": true,
+      "tourTitle": "Montazhnaya'ya hoş geldiniz!",
+      "tourTitleExpected": "Montazhnaya'ya hoş geldiniz!",
+      "tourText": "Temel işlemleri adım adım göstereceğim. Siz bir işlem seçene kadar projenizde hiçbir şey değişmez.",
+      "tourTextExpected": "Temel işlemleri adım adım göstereceğim. Siz bir işlem seçene kadar projenizde hiçbir şey değişmez.",
+      "tourTip": "Acele etmeyin; turu istediğiniz zaman kapatabilirsiniz.",
+      "tourTipExpected": "Acele etmeyin; turu istediğiniz zaman kapatabilirsiniz.",
+      "tourCount": "Düzenleyici turu",
+      "tourCountExpected": "Düzenleyici turu",
+      "tourNext": "Turu başlat",
+      "tourNextExpected": "Turu başlat",
+      "tracksHeadingExpected": "Parçalar",
+      "tourBounds": {
+        "left": 302,
+        "top": 215,
+        "right": 722,
+        "bottom": 486,
+        "width": 420,
+        "height": 271
+      },
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "transportWidth": 448,
+      "transportScroll": 448,
+      "transportHeight": 111,
+      "topbarWidth": 1024,
+      "topbarScroll": 1024,
+      "topbarHeight": 78,
+      "menuButtons": [
+        {
+          "text": "Dosya",
+          "width": 45,
+          "scroll": 45,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Düzenle",
+          "width": 54,
+          "scroll": 54,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Görünüm",
+          "width": 62,
+          "scroll": 62,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Geçişler",
+          "width": 55,
+          "scroll": 55,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Yardım",
+          "width": 48,
+          "scroll": 48,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Arayüz dili…",
+          "width": 80,
+          "scroll": 80,
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "toolbarButtons": [
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "?İpuçlarını Etkinleştirİpuçları AÇIK",
+          "width": 67,
+          "scroll": 67
+        },
+        {
+          "text": "×İpuçlarını kapatİpuçları KAPALI",
+          "width": 78,
+          "scroll": 78
+        },
+        {
+          "text": "Kaydet",
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "text": "Medya içe aktar",
+          "width": 94,
+          "scroll": 94
+        },
+        {
+          "text": "Slayt Gösterisi",
+          "width": 83,
+          "scroll": 83
+        },
+        {
+          "text": "Dışa Aktar",
+          "width": 66,
+          "scroll": 66
+        },
+        {
+          "text": "Böl",
+          "width": 28,
+          "scroll": 28
+        },
+        {
+          "text": "Sil",
+          "width": 24,
+          "scroll": 24
+        }
+      ],
+      "timelineHint": "Medya kitaplığından bir parçaya sürükleyin",
+      "tracksHeading": "Parçalar",
+      "emptyNoteParts": [
+        "Dosyaları buraya bırakın",
+        "veya Medya İçe Aktar'a tıklayın",
+        "Video · Ses · Görüntüler"
+      ],
+      "emptyNoteExpected": [
+        "Dosyaları buraya bırakın",
+        "veya Medya İçe Aktar'a tıklayın",
+        "Video · Ses · Görüntüler"
+      ],
+      "cyrillicVisible": [
+        "Монтажная"
+      ],
+      "viewportChecks": [
+        {
+          "size": "1366x768",
+          "width": 1366,
+          "viewport": 1366,
+          "topbarScroll": 1366,
+          "topbarWidth": 1366,
+          "transportScroll": 790,
+          "transportWidth": 790,
+          "card": {
+            "left": 473,
+            "top": 249,
+            "right": 893,
+            "bottom": 520
+          }
+        },
+        {
+          "size": "1920x1080",
+          "width": 1920,
+          "viewport": 1920,
+          "topbarScroll": 1920,
+          "topbarWidth": 1920,
+          "transportScroll": 1344,
+          "transportWidth": 1344,
+          "card": {
+            "left": 750,
+            "top": 405,
+            "right": 1170,
+            "bottom": 676
+          }
+        }
+      ],
+      "failures": [],
+      "firstStep": {
+        "title": "Step 1. Add your files",
+        "text": "Click Import Media and choose videos, photos, or music from your computer. You can select several files at once.",
+        "tip": "The selected files appear in the Media panel on the left. Importing does not change the originals on your computer.",
+        "count": "Adım 1 / 7"
+      },
+      "firstStepFallback": true
+    },
+    {
+      "code": "zh-CN",
+      "lang": "zh-CN",
+      "dir": "ltr",
+      "title": "Montazhnaya — 视频编辑器",
+      "tourVisible": true,
+      "tourTitle": "欢迎使用 Montazhnaya！",
+      "tourTitleExpected": "欢迎使用 Montazhnaya！",
+      "tourText": "我会逐步介绍基本操作。除非您主动选择操作，否则项目不会发生任何更改。",
+      "tourTextExpected": "我会逐步介绍基本操作。除非您主动选择操作，否则项目不会发生任何更改。",
+      "tourTip": "您可以按照自己的节奏操作，并随时关闭导览。",
+      "tourTipExpected": "您可以按照自己的节奏操作，并随时关闭导览。",
+      "tourCount": "编辑器导览",
+      "tourCountExpected": "编辑器导览",
+      "tourNext": "开始导览",
+      "tourNextExpected": "开始导览",
+      "tracksHeadingExpected": "轨道",
+      "tourBounds": {
+        "left": 302,
+        "top": 212,
+        "right": 722,
+        "bottom": 487,
+        "width": 420,
+        "height": 275
+      },
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "transportWidth": 448,
+      "transportScroll": 448,
+      "transportHeight": 114,
+      "topbarWidth": 1024,
+      "topbarScroll": 1024,
+      "topbarHeight": 78,
+      "menuButtons": [
+        {
+          "text": "文件",
+          "width": 33,
+          "scroll": 33,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "编辑",
+          "width": 33,
+          "scroll": 33,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "视图",
+          "width": 33,
+          "scroll": 33,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "转场",
+          "width": 33,
+          "scroll": 33,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "帮助",
+          "width": 33,
+          "scroll": 33,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "界面语言…",
+          "width": 68,
+          "scroll": 68,
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "toolbarButtons": [
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "?启用提示提示已开启",
+          "width": 60,
+          "scroll": 60
+        },
+        {
+          "text": "×关闭提示提示已关闭",
+          "width": 60,
+          "scroll": 60
+        },
+        {
+          "text": "保存",
+          "width": 34,
+          "scroll": 34
+        },
+        {
+          "text": "导入媒体",
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "text": "幻灯片",
+          "width": 45,
+          "scroll": 45
+        },
+        {
+          "text": "导出",
+          "width": 34,
+          "scroll": 34
+        },
+        {
+          "text": "分割",
+          "width": 34,
+          "scroll": 34
+        },
+        {
+          "text": "删除",
+          "width": 34,
+          "scroll": 34
+        }
+      ],
+      "timelineHint": "将媒体库中的素材拖到轨道上",
+      "tracksHeading": "轨道",
+      "emptyNoteParts": [
+        "将文件拖到此处",
+        "或点击“导入媒体”",
+        "视频 · 音频 · 图像"
+      ],
+      "emptyNoteExpected": [
+        "将文件拖到此处",
+        "或点击“导入媒体”",
+        "视频 · 音频 · 图像"
+      ],
+      "cyrillicVisible": [
+        "Монтажная"
+      ],
+      "viewportChecks": [
+        {
+          "size": "1366x768",
+          "width": 1366,
+          "viewport": 1366,
+          "topbarScroll": 1366,
+          "topbarWidth": 1366,
+          "transportScroll": 790,
+          "transportWidth": 790,
+          "card": {
+            "left": 473,
+            "top": 246,
+            "right": 893,
+            "bottom": 521
+          }
+        },
+        {
+          "size": "1920x1080",
+          "width": 1920,
+          "viewport": 1920,
+          "topbarScroll": 1920,
+          "topbarWidth": 1920,
+          "transportScroll": 1344,
+          "transportWidth": 1344,
+          "card": {
+            "left": 750,
+            "top": 402,
+            "right": 1170,
+            "bottom": 677
+          }
+        }
+      ],
+      "failures": [],
+      "firstStep": {
+        "title": "Step 1. Add your files",
+        "text": "Click Import Media and choose videos, photos, or music from your computer. You can select several files at once.",
+        "tip": "The selected files appear in the Media panel on the left. Importing does not change the originals on your computer.",
+        "count": "第 1 步，共 7 步"
+      },
+      "firstStepFallback": true
+    },
+    {
+      "code": "zh-TW",
+      "lang": "zh-TW",
+      "dir": "ltr",
+      "title": "Montazhnaya — 影片編輯器",
+      "tourVisible": true,
+      "tourTitle": "歡迎使用 Montazhnaya！",
+      "tourTitleExpected": "歡迎使用 Montazhnaya！",
+      "tourText": "我會逐步介紹基本操作。在您選擇動作之前，專案不會有任何變更。",
+      "tourTextExpected": "我會逐步介紹基本操作。在您選擇動作之前，專案不會有任何變更。",
+      "tourTip": "請依照自己的步調操作，並可隨時關閉導覽。",
+      "tourTipExpected": "請依照自己的步調操作，並可隨時關閉導覽。",
+      "tourCount": "編輯器導覽",
+      "tourCountExpected": "編輯器導覽",
+      "tourNext": "開始導覽",
+      "tourNextExpected": "開始導覽",
+      "tracksHeadingExpected": "軌道",
+      "tourBounds": {
+        "left": 302,
+        "top": 212,
+        "right": 722,
+        "bottom": 487,
+        "width": 420,
+        "height": 275
+      },
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "transportWidth": 448,
+      "transportScroll": 448,
+      "transportHeight": 114,
+      "topbarWidth": 1024,
+      "topbarScroll": 1024,
+      "topbarHeight": 78,
+      "menuButtons": [
+        {
+          "text": "檔案",
+          "width": 33,
+          "scroll": 33,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "編輯",
+          "width": 33,
+          "scroll": 33,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "檢視",
+          "width": 33,
+          "scroll": 33,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "轉場",
+          "width": 33,
+          "scroll": 33,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "說明",
+          "width": 33,
+          "scroll": 33,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "介面語言…",
+          "width": 68,
+          "scroll": 68,
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "toolbarButtons": [
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "?啟用提示提示已開啟",
+          "width": 60,
+          "scroll": 60
+        },
+        {
+          "text": "×關閉提示提示已關閉",
+          "width": 60,
+          "scroll": 60
+        },
+        {
+          "text": "儲存",
+          "width": 34,
+          "scroll": 34
+        },
+        {
+          "text": "匯入媒體",
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "text": "投影片",
+          "width": 45,
+          "scroll": 45
+        },
+        {
+          "text": "匯出",
+          "width": 34,
+          "scroll": 34
+        },
+        {
+          "text": "分割",
+          "width": 34,
+          "scroll": 34
+        },
+        {
+          "text": "刪除",
+          "width": 34,
+          "scroll": 34
+        }
+      ],
+      "timelineHint": "將媒體庫中的素材拖曳到軌道",
+      "tracksHeading": "軌道",
+      "emptyNoteParts": [
+        "將檔案拖放到這裡",
+        "或按一下「匯入媒體」",
+        "影片 · 音訊 · 圖片"
+      ],
+      "emptyNoteExpected": [
+        "將檔案拖放到這裡",
+        "或按一下「匯入媒體」",
+        "影片 · 音訊 · 圖片"
+      ],
+      "cyrillicVisible": [
+        "Монтажная"
+      ],
+      "viewportChecks": [
+        {
+          "size": "1366x768",
+          "width": 1366,
+          "viewport": 1366,
+          "topbarScroll": 1366,
+          "topbarWidth": 1366,
+          "transportScroll": 790,
+          "transportWidth": 790,
+          "card": {
+            "left": 473,
+            "top": 246,
+            "right": 893,
+            "bottom": 521
+          }
+        },
+        {
+          "size": "1920x1080",
+          "width": 1920,
+          "viewport": 1920,
+          "topbarScroll": 1920,
+          "topbarWidth": 1920,
+          "transportScroll": 1344,
+          "transportWidth": 1344,
+          "card": {
+            "left": 750,
+            "top": 402,
+            "right": 1170,
+            "bottom": 677
+          }
+        }
+      ],
+      "failures": [],
+      "firstStep": {
+        "title": "Step 1. Add your files",
+        "text": "Click Import Media and choose videos, photos, or music from your computer. You can select several files at once.",
+        "tip": "The selected files appear in the Media panel on the left. Importing does not change the originals on your computer.",
+        "count": "第 1 步，共 7 步"
+      },
+      "firstStepFallback": true
+    },
+    {
+      "code": "ja",
+      "lang": "ja",
+      "dir": "ltr",
+      "title": "Montazhnaya — 動画編集ソフト",
+      "tourVisible": true,
+      "tourTitle": "Montazhnaya へようこそ！",
+      "tourTitleExpected": "Montazhnaya へようこそ！",
+      "tourText": "基本操作を順番に説明します。操作を選択するまで、プロジェクトは変更されません。",
+      "tourTextExpected": "基本操作を順番に説明します。操作を選択するまで、プロジェクトは変更されません。",
+      "tourTip": "自分のペースで進め、いつでもガイドを閉じられます。",
+      "tourTipExpected": "自分のペースで進め、いつでもガイドを閉じられます。",
+      "tourCount": "エディターガイド",
+      "tourCountExpected": "エディターガイド",
+      "tourNext": "ガイドを開始",
+      "tourNextExpected": "ガイドを開始",
+      "tracksHeadingExpected": "トラック",
+      "tourBounds": {
+        "left": 302,
+        "top": 212,
+        "right": 722,
+        "bottom": 487,
+        "width": 420,
+        "height": 275
+      },
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "transportWidth": 448,
+      "transportScroll": 448,
+      "transportHeight": 114,
+      "topbarWidth": 1024,
+      "topbarScroll": 1024,
+      "topbarHeight": 78,
+      "menuButtons": [
+        {
+          "text": "ファイル",
+          "width": 56,
+          "scroll": 56,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "編集",
+          "width": 33,
+          "scroll": 33,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "表示",
+          "width": 33,
+          "scroll": 33,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "トランジション",
+          "width": 91,
+          "scroll": 91,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "ヘルプ",
+          "width": 45,
+          "scroll": 45,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "インターフェース言語…",
+          "width": 135,
+          "scroll": 135,
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "toolbarButtons": [
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "?ヒントを有効にするヒント：オン",
+          "width": 69,
+          "scroll": 69
+        },
+        {
+          "text": "×ヒントをオフにするヒント：オフ",
+          "width": 69,
+          "scroll": 69
+        },
+        {
+          "text": "保存",
+          "width": 34,
+          "scroll": 34
+        },
+        {
+          "text": "メディアを読み込む",
+          "width": 110,
+          "scroll": 110
+        },
+        {
+          "text": "スライドショー",
+          "width": 89,
+          "scroll": 89
+        },
+        {
+          "text": "書き出し",
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "text": "分割",
+          "width": 34,
+          "scroll": 34
+        },
+        {
+          "text": "削除",
+          "width": 34,
+          "scroll": 34
+        }
+      ],
+      "timelineHint": "メディアライブラリからトラックへ素材をドラッグ",
+      "tracksHeading": "トラック",
+      "emptyNoteParts": [
+        "ここにファイルをドロップ",
+        "または「メディアをインポート」をクリック",
+        "動画・音声・画像"
+      ],
+      "emptyNoteExpected": [
+        "ここにファイルをドロップ",
+        "または「メディアをインポート」をクリック",
+        "動画・音声・画像"
+      ],
+      "cyrillicVisible": [
+        "Монтажная"
+      ],
+      "viewportChecks": [
+        {
+          "size": "1366x768",
+          "width": 1366,
+          "viewport": 1366,
+          "topbarScroll": 1366,
+          "topbarWidth": 1366,
+          "transportScroll": 790,
+          "transportWidth": 790,
+          "card": {
+            "left": 473,
+            "top": 246,
+            "right": 893,
+            "bottom": 521
+          }
+        },
+        {
+          "size": "1920x1080",
+          "width": 1920,
+          "viewport": 1920,
+          "topbarScroll": 1920,
+          "topbarWidth": 1920,
+          "transportScroll": 1344,
+          "transportWidth": 1344,
+          "card": {
+            "left": 750,
+            "top": 402,
+            "right": 1170,
+            "bottom": 677
+          }
+        }
+      ],
+      "failures": [],
+      "firstStep": {
+        "title": "Step 1. Add your files",
+        "text": "Click Import Media and choose videos, photos, or music from your computer. You can select several files at once.",
+        "tip": "The selected files appear in the Media panel on the left. Importing does not change the originals on your computer.",
+        "count": "ステップ 1/7"
+      },
+      "firstStepFallback": true
+    },
+    {
+      "code": "ko",
+      "lang": "ko",
+      "dir": "ltr",
+      "title": "Montazhnaya — 동영상 편집기",
+      "tourVisible": true,
+      "tourTitle": "Montazhnaya에 오신 것을 환영합니다!",
+      "tourTitleExpected": "Montazhnaya에 오신 것을 환영합니다!",
+      "tourText": "기본 작업을 단계별로 안내합니다. 직접 작업을 선택하기 전까지 프로젝트는 변경되지 않습니다.",
+      "tourTextExpected": "기본 작업을 단계별로 안내합니다. 직접 작업을 선택하기 전까지 프로젝트는 변경되지 않습니다.",
+      "tourTip": "천천히 진행하고 언제든지 둘러보기를 닫을 수 있습니다.",
+      "tourTipExpected": "천천히 진행하고 언제든지 둘러보기를 닫을 수 있습니다.",
+      "tourCount": "편집기 둘러보기",
+      "tourCountExpected": "편집기 둘러보기",
+      "tourNext": "둘러보기 시작",
+      "tourNextExpected": "둘러보기 시작",
+      "tracksHeadingExpected": "트랙",
+      "tourBounds": {
+        "left": 302,
+        "top": 212,
+        "right": 722,
+        "bottom": 487,
+        "width": 420,
+        "height": 275
+      },
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "transportWidth": 448,
+      "transportScroll": 448,
+      "transportHeight": 114,
+      "topbarWidth": 1024,
+      "topbarScroll": 1024,
+      "topbarHeight": 78,
+      "menuButtons": [
+        {
+          "text": "파일",
+          "width": 31,
+          "scroll": 31,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "편집",
+          "width": 31,
+          "scroll": 31,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "보기",
+          "width": 31,
+          "scroll": 31,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "전환",
+          "width": 31,
+          "scroll": 31,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "도움말",
+          "width": 42,
+          "scroll": 42,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "인터페이스 언어…",
+          "width": 99,
+          "scroll": 99,
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "toolbarButtons": [
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "?팁 활성화도움말 켜짐",
+          "width": 58,
+          "scroll": 58
+        },
+        {
+          "text": "×도움말 끄기도움말 꺼짐",
+          "width": 58,
+          "scroll": 58
+        },
+        {
+          "text": "저장",
+          "width": 32,
+          "scroll": 32
+        },
+        {
+          "text": "미디어 가져오기",
+          "width": 86,
+          "scroll": 86
+        },
+        {
+          "text": "슬라이드쇼",
+          "width": 63,
+          "scroll": 63
+        },
+        {
+          "text": "내보내기",
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "text": "분할",
+          "width": 32,
+          "scroll": 32
+        },
+        {
+          "text": "삭제",
+          "width": 32,
+          "scroll": 32
+        }
+      ],
+      "timelineHint": "라이브러리에서 미디어를 트랙으로 드래그",
+      "tracksHeading": "트랙",
+      "emptyNoteParts": [
+        "여기에 파일 놓기",
+        "또는 미디어 가져오기를 클릭",
+        "동영상 · 오디오 · 이미지"
+      ],
+      "emptyNoteExpected": [
+        "여기에 파일 놓기",
+        "또는 미디어 가져오기를 클릭",
+        "동영상 · 오디오 · 이미지"
+      ],
+      "cyrillicVisible": [
+        "Монтажная"
+      ],
+      "viewportChecks": [
+        {
+          "size": "1366x768",
+          "width": 1366,
+          "viewport": 1366,
+          "topbarScroll": 1366,
+          "topbarWidth": 1366,
+          "transportScroll": 790,
+          "transportWidth": 790,
+          "card": {
+            "left": 473,
+            "top": 246,
+            "right": 893,
+            "bottom": 521
+          }
+        },
+        {
+          "size": "1920x1080",
+          "width": 1920,
+          "viewport": 1920,
+          "topbarScroll": 1920,
+          "topbarWidth": 1920,
+          "transportScroll": 1344,
+          "transportWidth": 1344,
+          "card": {
+            "left": 750,
+            "top": 402,
+            "right": 1170,
+            "bottom": 677
+          }
+        }
+      ],
+      "failures": [],
+      "firstStep": {
+        "title": "Step 1. Add your files",
+        "text": "Click Import Media and choose videos, photos, or music from your computer. You can select several files at once.",
+        "tip": "The selected files appear in the Media panel on the left. Importing does not change the originals on your computer.",
+        "count": "7단계 중 1단계"
+      },
+      "firstStepFallback": true
+    },
+    {
+      "code": "ar",
+      "lang": "ar",
+      "dir": "rtl",
+      "title": "Montazhnaya — محرر فيديو",
+      "tourVisible": true,
+      "tourTitle": "مرحبًا بك في Montazhnaya!",
+      "tourTitleExpected": "مرحبًا بك في Montazhnaya!",
+      "tourText": "سأرشدك إلى العمليات الأساسية خطوة بخطوة. لن يتغير أي شيء في مشروعك حتى تختار إجراءً بنفسك.",
+      "tourTextExpected": "سأرشدك إلى العمليات الأساسية خطوة بخطوة. لن يتغير أي شيء في مشروعك حتى تختار إجراءً بنفسك.",
+      "tourTip": "خذ وقتك وأغلق الجولة متى شئت.",
+      "tourTipExpected": "خذ وقتك وأغلق الجولة متى شئت.",
+      "tourCount": "جولة في المحرر",
+      "tourCountExpected": "جولة في المحرر",
+      "tourNext": "بدء الجولة",
+      "tourNextExpected": "بدء الجولة",
+      "tracksHeadingExpected": "المسارات",
+      "tourBounds": {
+        "left": 302,
+        "top": 211,
+        "right": 722,
+        "bottom": 489,
+        "width": 420,
+        "height": 278
+      },
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "transportWidth": 448,
+      "transportScroll": 448,
+      "transportHeight": 130,
+      "topbarWidth": 1024,
+      "topbarScroll": 1024,
+      "topbarHeight": 78,
+      "menuButtons": [
+        {
+          "text": "ملف",
+          "width": 33,
+          "scroll": 33,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "تحرير",
+          "width": 36,
+          "scroll": 36,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "عرض",
+          "width": 38,
+          "scroll": 38,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "الانتقالات",
+          "width": 58,
+          "scroll": 58,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "مساعدة",
+          "width": 50,
+          "scroll": 50,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "لغة الواجهة…",
+          "width": 77,
+          "scroll": 77,
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "toolbarButtons": [
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "?تفعيل التلميحاتالتلميحات مفعّلة",
+          "width": 75,
+          "scroll": 75
+        },
+        {
+          "text": "×إيقاف التلميحاتالتلميحات متوقفة",
+          "width": 79,
+          "scroll": 79
+        },
+        {
+          "text": "حفظ",
+          "width": 33,
+          "scroll": 33
+        },
+        {
+          "text": "استيراد الوسائط",
+          "width": 90,
+          "scroll": 90
+        },
+        {
+          "text": "عرض شرائح",
+          "width": 65,
+          "scroll": 65
+        },
+        {
+          "text": "تصدير",
+          "width": 43,
+          "scroll": 43
+        },
+        {
+          "text": "تقسيم",
+          "width": 40,
+          "scroll": 40
+        },
+        {
+          "text": "حذف",
+          "width": 35,
+          "scroll": 35
+        }
+      ],
+      "timelineHint": "اسحب الوسائط من المكتبة إلى مسار",
+      "tracksHeading": "المسارات",
+      "emptyNoteParts": [
+        "أفلت الملفات هنا",
+        "أو انقر على استيراد الوسائط",
+        "فيديو · صوت · صور"
+      ],
+      "emptyNoteExpected": [
+        "أفلت الملفات هنا",
+        "أو انقر على استيراد الوسائط",
+        "فيديو · صوت · صور"
+      ],
+      "cyrillicVisible": [
+        "Монтажная"
+      ],
+      "viewportChecks": [
+        {
+          "size": "1366x768",
+          "width": 1366,
+          "viewport": 1366,
+          "topbarScroll": 1366,
+          "topbarWidth": 1366,
+          "transportScroll": 790,
+          "transportWidth": 790,
+          "card": {
+            "left": 473,
+            "top": 245,
+            "right": 893,
+            "bottom": 523
+          }
+        },
+        {
+          "size": "1920x1080",
+          "width": 1920,
+          "viewport": 1920,
+          "topbarScroll": 1920,
+          "topbarWidth": 1920,
+          "transportScroll": 1344,
+          "transportWidth": 1344,
+          "card": {
+            "left": 750,
+            "top": 401,
+            "right": 1170,
+            "bottom": 679
+          }
+        }
+      ],
+      "failures": [],
+      "firstStep": {
+        "title": "Step 1. Add your files",
+        "text": "Click Import Media and choose videos, photos, or music from your computer. You can select several files at once.",
+        "tip": "The selected files appear in the Media panel on the left. Importing does not change the originals on your computer.",
+        "count": "الخطوة 1 من 7"
+      },
+      "firstStepFallback": true
+    },
+    {
+      "code": "he",
+      "lang": "he",
+      "dir": "rtl",
+      "title": "Montazhnaya — עורך וידאו",
+      "tourVisible": true,
+      "tourTitle": "ברוכים הבאים ל-Montazhnaya!",
+      "tourTitleExpected": "ברוכים הבאים ל-Montazhnaya!",
+      "tourText": "אציג את הפעולות הבסיסיות שלב אחר שלב. שום דבר בפרויקט לא ישתנה עד שתבחר פעולה בעצמך.",
+      "tourTextExpected": "אציג את הפעולות הבסיסיות שלב אחר שלב. שום דבר בפרויקט לא ישתנה עד שתבחר פעולה בעצמך.",
+      "tourTip": "אפשר להתקדם בקצב שלך ולסגור את הסיור בכל עת.",
+      "tourTipExpected": "אפשר להתקדם בקצב שלך ולסגור את הסיור בכל עת.",
+      "tourCount": "סיור בעורך",
+      "tourCountExpected": "סיור בעורך",
+      "tourNext": "התחלת הסיור",
+      "tourNextExpected": "התחלת הסיור",
+      "tracksHeadingExpected": "רצועות",
+      "tourBounds": {
+        "left": 302,
+        "top": 211,
+        "right": 722,
+        "bottom": 489,
+        "width": 420,
+        "height": 278
+      },
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "transportWidth": 448,
+      "transportScroll": 448,
+      "transportHeight": 114,
+      "topbarWidth": 1024,
+      "topbarScroll": 1024,
+      "topbarHeight": 78,
+      "menuButtons": [
+        {
+          "text": "קובץ",
+          "width": 35,
+          "scroll": 35,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "עריכה",
+          "width": 41,
+          "scroll": 41,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "תצוגה",
+          "width": 41,
+          "scroll": 41,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "מעברים",
+          "width": 50,
+          "scroll": 50,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "עזרה",
+          "width": 35,
+          "scroll": 35,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "שפת הממשק…",
+          "width": 89,
+          "scroll": 89,
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "toolbarButtons": [
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "?הפעלת טיפיםטיפים מופעלים",
+          "width": 72,
+          "scroll": 72
+        },
+        {
+          "text": "×כבה טיפיםטיפים כבויים",
+          "width": 63,
+          "scroll": 63
+        },
+        {
+          "text": "שמירה",
+          "width": 43,
+          "scroll": 43
+        },
+        {
+          "text": "ייבוא מדיה",
+          "width": 64,
+          "scroll": 64
+        },
+        {
+          "text": "מצגת שקופיות",
+          "width": 79,
+          "scroll": 79
+        },
+        {
+          "text": "ייצוא",
+          "width": 38,
+          "scroll": 38
+        },
+        {
+          "text": "פיצול",
+          "width": 37,
+          "scroll": 37
+        },
+        {
+          "text": "מחיקה",
+          "width": 44,
+          "scroll": 44
+        }
+      ],
+      "timelineHint": "גרור מדיה מהספרייה אל רצועה",
+      "tracksHeading": "רצועות",
+      "emptyNoteParts": [
+        "שחרר קבצים כאן",
+        "או לחץ על ייבוא מדיה",
+        "וידאו · שמע · תמונות"
+      ],
+      "emptyNoteExpected": [
+        "שחרר קבצים כאן",
+        "או לחץ על ייבוא מדיה",
+        "וידאו · שמע · תמונות"
+      ],
+      "cyrillicVisible": [
+        "Монтажная"
+      ],
+      "viewportChecks": [
+        {
+          "size": "1366x768",
+          "width": 1366,
+          "viewport": 1366,
+          "topbarScroll": 1366,
+          "topbarWidth": 1366,
+          "transportScroll": 790,
+          "transportWidth": 790,
+          "card": {
+            "left": 473,
+            "top": 245,
+            "right": 893,
+            "bottom": 523
+          }
+        },
+        {
+          "size": "1920x1080",
+          "width": 1920,
+          "viewport": 1920,
+          "topbarScroll": 1920,
+          "topbarWidth": 1920,
+          "transportScroll": 1344,
+          "transportWidth": 1344,
+          "card": {
+            "left": 750,
+            "top": 401,
+            "right": 1170,
+            "bottom": 679
+          }
+        }
+      ],
+      "failures": [],
+      "firstStep": {
+        "title": "Step 1. Add your files",
+        "text": "Click Import Media and choose videos, photos, or music from your computer. You can select several files at once.",
+        "tip": "The selected files appear in the Media panel on the left. Importing does not change the originals on your computer.",
+        "count": "שלב 1 מתוך 7"
+      },
+      "firstStepFallback": true
+    },
+    {
+      "code": "hi",
+      "lang": "hi",
+      "dir": "ltr",
+      "title": "Montazhnaya — वीडियो संपादक",
+      "tourVisible": true,
+      "tourTitle": "Montazhnaya में आपका स्वागत है!",
+      "tourTitleExpected": "Montazhnaya में आपका स्वागत है!",
+      "tourText": "मैं आपको बुनियादी काम चरण-दर-चरण दिखाऊँगा। जब तक आप स्वयं कोई कार्रवाई नहीं चुनते, आपके प्रोजेक्ट में कुछ भी नहीं बदलेगा।",
+      "tourTextExpected": "मैं आपको बुनियादी काम चरण-दर-चरण दिखाऊँगा। जब तक आप स्वयं कोई कार्रवाई नहीं चुनते, आपके प्रोजेक्ट में कुछ भी नहीं बदलेगा।",
+      "tourTip": "अपनी गति से आगे बढ़ें और जब चाहें टूर बंद कर दें।",
+      "tourTipExpected": "अपनी गति से आगे बढ़ें और जब चाहें टूर बंद कर दें।",
+      "tourCount": "एडिटर टूर",
+      "tourCountExpected": "एडिटर टूर",
+      "tourNext": "टूर शुरू करें",
+      "tourNextExpected": "टूर शुरू करें",
+      "tracksHeadingExpected": "ट्रैक",
+      "tourBounds": {
+        "left": 302,
+        "top": 210,
+        "right": 722,
+        "bottom": 490,
+        "width": 420,
+        "height": 280
+      },
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "transportWidth": 448,
+      "transportScroll": 448,
+      "transportHeight": 113,
+      "topbarWidth": 1024,
+      "topbarScroll": 1024,
+      "topbarHeight": 78,
+      "menuButtons": [
+        {
+          "text": "फ़ाइल",
+          "width": 37,
+          "scroll": 37,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "संपादन",
+          "width": 43,
+          "scroll": 43,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "दृश्य",
+          "width": 29,
+          "scroll": 29,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "ट्रांज़िशन",
+          "width": 48,
+          "scroll": 48,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "सहायता",
+          "width": 46,
+          "scroll": 46,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "इंटरफ़ेस भाषा…",
+          "width": 81,
+          "scroll": 81,
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "toolbarButtons": [
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "?सुझाव सक्षम करेंटिप्स चालू",
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "text": "×टिप्स बंद करेंटिप्स बंद",
+          "width": 41,
+          "scroll": 41
+        },
+        {
+          "text": "सहेजें",
+          "width": 33,
+          "scroll": 33
+        },
+        {
+          "text": "मीडिया आयात करें",
+          "width": 92,
+          "scroll": 92
+        },
+        {
+          "text": "स्लाइडशो",
+          "width": 49,
+          "scroll": 49
+        },
+        {
+          "text": "निर्यात",
+          "width": 40,
+          "scroll": 40
+        },
+        {
+          "text": "विभाजित करें",
+          "width": 65,
+          "scroll": 65
+        },
+        {
+          "text": "हटाएँ",
+          "width": 32,
+          "scroll": 32
+        }
+      ],
+      "timelineHint": "मीडिया लाइब्रेरी से सामग्री को ट्रैक पर खींचें",
+      "tracksHeading": "ट्रैक",
+      "emptyNoteParts": [
+        "फ़ाइलें यहाँ छोड़ें",
+        "या मीडिया आयात करें पर क्लिक करें",
+        "वीडियो · ऑडियो · छवियाँ"
+      ],
+      "emptyNoteExpected": [
+        "फ़ाइलें यहाँ छोड़ें",
+        "या मीडिया आयात करें पर क्लिक करें",
+        "वीडियो · ऑडियो · छवियाँ"
+      ],
+      "cyrillicVisible": [
+        "Монтажная"
+      ],
+      "viewportChecks": [
+        {
+          "size": "1366x768",
+          "width": 1366,
+          "viewport": 1366,
+          "topbarScroll": 1366,
+          "topbarWidth": 1366,
+          "transportScroll": 790,
+          "transportWidth": 790,
+          "card": {
+            "left": 473,
+            "top": 244,
+            "right": 893,
+            "bottom": 524
+          }
+        },
+        {
+          "size": "1920x1080",
+          "width": 1920,
+          "viewport": 1920,
+          "topbarScroll": 1920,
+          "topbarWidth": 1920,
+          "transportScroll": 1344,
+          "transportWidth": 1344,
+          "card": {
+            "left": 750,
+            "top": 400,
+            "right": 1170,
+            "bottom": 680
+          }
+        }
+      ],
+      "failures": [],
+      "firstStep": {
+        "title": "Step 1. Add your files",
+        "text": "Click Import Media and choose videos, photos, or music from your computer. You can select several files at once.",
+        "tip": "The selected files appear in the Media panel on the left. Importing does not change the originals on your computer.",
+        "count": "चरण 1 / 7"
+      },
+      "firstStepFallback": true
+    },
+    {
+      "code": "nl",
+      "lang": "nl",
+      "dir": "ltr",
+      "title": "Montazhnaya — videobewerker",
+      "tourVisible": true,
+      "tourTitle": "Welkom bij Montazhnaya!",
+      "tourTitleExpected": "Welkom bij Montazhnaya!",
+      "tourText": "Ik laat je stap voor stap de basis zien. Er verandert niets aan je project totdat je zelf een actie kiest.",
+      "tourTextExpected": "Ik laat je stap voor stap de basis zien. Er verandert niets aan je project totdat je zelf een actie kiest.",
+      "tourTip": "Neem de tijd en sluit de rondleiding wanneer je wilt.",
+      "tourTipExpected": "Neem de tijd en sluit de rondleiding wanneer je wilt.",
+      "tourCount": "Rondleiding door de editor",
+      "tourCountExpected": "Rondleiding door de editor",
+      "tourNext": "Rondleiding starten",
+      "tourNextExpected": "Rondleiding starten",
+      "tracksHeadingExpected": "Sporen",
+      "tourBounds": {
+        "left": 302,
+        "top": 215,
+        "right": 722,
+        "bottom": 486,
+        "width": 420,
+        "height": 271
+      },
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "transportWidth": 448,
+      "transportScroll": 448,
+      "transportHeight": 111,
+      "topbarWidth": 1024,
+      "topbarScroll": 1024,
+      "topbarHeight": 78,
+      "menuButtons": [
+        {
+          "text": "Bestand",
+          "width": 55,
+          "scroll": 55,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Bewerken",
+          "width": 64,
+          "scroll": 64,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Beeld",
+          "width": 41,
+          "scroll": 41,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Overgangen",
+          "width": 77,
+          "scroll": 77,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Help",
+          "width": 35,
+          "scroll": 35,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Interfacetaal…",
+          "width": 89,
+          "scroll": 89,
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "toolbarButtons": [
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "?Tips inschakelenTips AAN",
+          "width": 51,
+          "scroll": 51
+        },
+        {
+          "text": "×Tips uitschakelenTips UIT",
+          "width": 48,
+          "scroll": 48
+        },
+        {
+          "text": "Opslaan",
+          "width": 53,
+          "scroll": 53
+        },
+        {
+          "text": "Media importeren",
+          "width": 104,
+          "scroll": 104
+        },
+        {
+          "text": "Diavoorstelling",
+          "width": 84,
+          "scroll": 84
+        },
+        {
+          "text": "Exporteren",
+          "width": 70,
+          "scroll": 70
+        },
+        {
+          "text": "Splitsen",
+          "width": 51,
+          "scroll": 51
+        },
+        {
+          "text": "Verwijderen",
+          "width": 69,
+          "scroll": 69
+        }
+      ],
+      "timelineHint": "Sleep media uit de bibliotheek naar een spoor",
+      "tracksHeading": "Sporen",
+      "emptyNoteParts": [
+        "Zet bestanden hier neer",
+        "of klik op Media importeren",
+        "Video · Audio · Afbeeldingen"
+      ],
+      "emptyNoteExpected": [
+        "Zet bestanden hier neer",
+        "of klik op Media importeren",
+        "Video · Audio · Afbeeldingen"
+      ],
+      "cyrillicVisible": [
+        "Монтажная"
+      ],
+      "viewportChecks": [
+        {
+          "size": "1366x768",
+          "width": 1366,
+          "viewport": 1366,
+          "topbarScroll": 1366,
+          "topbarWidth": 1366,
+          "transportScroll": 790,
+          "transportWidth": 790,
+          "card": {
+            "left": 473,
+            "top": 249,
+            "right": 893,
+            "bottom": 520
+          }
+        },
+        {
+          "size": "1920x1080",
+          "width": 1920,
+          "viewport": 1920,
+          "topbarScroll": 1920,
+          "topbarWidth": 1920,
+          "transportScroll": 1344,
+          "transportWidth": 1344,
+          "card": {
+            "left": 750,
+            "top": 405,
+            "right": 1170,
+            "bottom": 676
+          }
+        }
+      ],
+      "failures": [],
+      "firstStep": {
+        "title": "Step 1. Add your files",
+        "text": "Click Import Media and choose videos, photos, or music from your computer. You can select several files at once.",
+        "tip": "The selected files appear in the Media panel on the left. Importing does not change the originals on your computer.",
+        "count": "Stap 1 van 7"
+      },
+      "firstStepFallback": true
+    },
+    {
+      "code": "sv",
+      "lang": "sv",
+      "dir": "ltr",
+      "title": "Montazhnaya — videoredigerare",
+      "tourVisible": true,
+      "tourTitle": "Välkommen till Montazhnaya!",
+      "tourTitleExpected": "Välkommen till Montazhnaya!",
+      "tourText": "Jag visar de grundläggande momenten steg för steg. Inget i projektet ändras förrän du själv väljer en åtgärd.",
+      "tourTextExpected": "Jag visar de grundläggande momenten steg för steg. Inget i projektet ändras förrän du själv väljer en åtgärd.",
+      "tourTip": "Ta den tid du behöver och stäng introduktionen när du vill.",
+      "tourTipExpected": "Ta den tid du behöver och stäng introduktionen när du vill.",
+      "tourCount": "Introduktion till redigeraren",
+      "tourCountExpected": "Introduktion till redigeraren",
+      "tourNext": "Starta introduktionen",
+      "tourNextExpected": "Starta introduktionen",
+      "tracksHeadingExpected": "Spår",
+      "tourBounds": {
+        "left": 302,
+        "top": 215,
+        "right": 722,
+        "bottom": 486,
+        "width": 420,
+        "height": 271
+      },
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "transportWidth": 448,
+      "transportScroll": 448,
+      "transportHeight": 111,
+      "topbarWidth": 1024,
+      "topbarScroll": 1024,
+      "topbarHeight": 78,
+      "menuButtons": [
+        {
+          "text": "Arkiv",
+          "width": 39,
+          "scroll": 39,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Redigera",
+          "width": 59,
+          "scroll": 59,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Visa",
+          "width": 33,
+          "scroll": 33,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Övergångar",
+          "width": 75,
+          "scroll": 75,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Hjälp",
+          "width": 38,
+          "scroll": 38,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Gränssnittsspråk…",
+          "width": 116,
+          "scroll": 116,
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "toolbarButtons": [
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "?Aktivera tipsTips PÅ",
+          "width": 45,
+          "scroll": 45
+        },
+        {
+          "text": "×Stäng av tipsTips AV",
+          "width": 44,
+          "scroll": 44
+        },
+        {
+          "text": "Spara",
+          "width": 41,
+          "scroll": 41
+        },
+        {
+          "text": "Importera media",
+          "width": 98,
+          "scroll": 98
+        },
+        {
+          "text": "Bildspel",
+          "width": 51,
+          "scroll": 51
+        },
+        {
+          "text": "Exportera",
+          "width": 63,
+          "scroll": 63
+        },
+        {
+          "text": "Dela",
+          "width": 35,
+          "scroll": 35
+        },
+        {
+          "text": "Ta bort",
+          "width": 46,
+          "scroll": 46
+        }
+      ],
+      "timelineHint": "Dra media från biblioteket till ett spår",
+      "tracksHeading": "Spår",
+      "emptyNoteParts": [
+        "Släpp filer här",
+        "eller klicka på Importera media",
+        "Video · Ljud · Bilder"
+      ],
+      "emptyNoteExpected": [
+        "Släpp filer här",
+        "eller klicka på Importera media",
+        "Video · Ljud · Bilder"
+      ],
+      "cyrillicVisible": [
+        "Монтажная"
+      ],
+      "viewportChecks": [
+        {
+          "size": "1366x768",
+          "width": 1366,
+          "viewport": 1366,
+          "topbarScroll": 1366,
+          "topbarWidth": 1366,
+          "transportScroll": 790,
+          "transportWidth": 790,
+          "card": {
+            "left": 473,
+            "top": 249,
+            "right": 893,
+            "bottom": 520
+          }
+        },
+        {
+          "size": "1920x1080",
+          "width": 1920,
+          "viewport": 1920,
+          "topbarScroll": 1920,
+          "topbarWidth": 1920,
+          "transportScroll": 1344,
+          "transportWidth": 1344,
+          "card": {
+            "left": 750,
+            "top": 405,
+            "right": 1170,
+            "bottom": 676
+          }
+        }
+      ],
+      "failures": [],
+      "firstStep": {
+        "title": "Step 1. Add your files",
+        "text": "Click Import Media and choose videos, photos, or music from your computer. You can select several files at once.",
+        "tip": "The selected files appear in the Media panel on the left. Importing does not change the originals on your computer.",
+        "count": "Steg 1 av 7"
+      },
+      "firstStepFallback": true
+    },
+    {
+      "code": "fi",
+      "lang": "fi",
+      "dir": "ltr",
+      "title": "Montazhnaya — videoeditori",
+      "tourVisible": true,
+      "tourTitle": "Tervetuloa Montazhnayaan!",
+      "tourTitleExpected": "Tervetuloa Montazhnayaan!",
+      "tourText": "Esittelen perustoiminnot vaihe vaiheelta. Projektissasi ei tapahdu muutoksia, ennen kuin valitset toiminnon.",
+      "tourTextExpected": "Esittelen perustoiminnot vaihe vaiheelta. Projektissasi ei tapahdu muutoksia, ennen kuin valitset toiminnon.",
+      "tourTip": "Voit edetä omaan tahtiisi ja sulkea esittelyn milloin tahansa.",
+      "tourTipExpected": "Voit edetä omaan tahtiisi ja sulkea esittelyn milloin tahansa.",
+      "tourCount": "Muokkaimen esittely",
+      "tourCountExpected": "Muokkaimen esittely",
+      "tourNext": "Aloita esittely",
+      "tourNextExpected": "Aloita esittely",
+      "tracksHeadingExpected": "Raidat",
+      "tourBounds": {
+        "left": 302,
+        "top": 215,
+        "right": 722,
+        "bottom": 486,
+        "width": 420,
+        "height": 271
+      },
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "transportWidth": 448,
+      "transportScroll": 448,
+      "transportHeight": 111,
+      "topbarWidth": 1024,
+      "topbarScroll": 1024,
+      "topbarHeight": 78,
+      "menuButtons": [
+        {
+          "text": "Tiedosto",
+          "width": 58,
+          "scroll": 58,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Muokkaa",
+          "width": 59,
+          "scroll": 59,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Näytä",
+          "width": 41,
+          "scroll": 41,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Siirtymät",
+          "width": 59,
+          "scroll": 59,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Ohje",
+          "width": 36,
+          "scroll": 36,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Käyttöliittymän kieli…",
+          "width": 130,
+          "scroll": 130,
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "toolbarButtons": [
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "?Ota vinkit käyttöönVihjeet PÄÄLLÄ",
+          "width": 79,
+          "scroll": 79
+        },
+        {
+          "text": "×Poista vihjeet käytöstäVihjeet POIS",
+          "width": 66,
+          "scroll": 66
+        },
+        {
+          "text": "Tallenna",
+          "width": 53,
+          "scroll": 53
+        },
+        {
+          "text": "Tuo media",
+          "width": 66,
+          "scroll": 66
+        },
+        {
+          "text": "Diaesitys",
+          "width": 57,
+          "scroll": 57
+        },
+        {
+          "text": "Vie",
+          "width": 28,
+          "scroll": 28
+        },
+        {
+          "text": "Jaa",
+          "width": 30,
+          "scroll": 30
+        },
+        {
+          "text": "Poista",
+          "width": 43,
+          "scroll": 43
+        }
+      ],
+      "timelineHint": "Vedä media kirjastosta raidalle",
+      "tracksHeading": "Raidat",
+      "emptyNoteParts": [
+        "Pudota tiedostot tähän",
+        "tai napsauta Tuo media",
+        "Video · Ääni · Kuvat"
+      ],
+      "emptyNoteExpected": [
+        "Pudota tiedostot tähän",
+        "tai napsauta Tuo media",
+        "Video · Ääni · Kuvat"
+      ],
+      "cyrillicVisible": [
+        "Монтажная"
+      ],
+      "viewportChecks": [
+        {
+          "size": "1366x768",
+          "width": 1366,
+          "viewport": 1366,
+          "topbarScroll": 1366,
+          "topbarWidth": 1366,
+          "transportScroll": 790,
+          "transportWidth": 790,
+          "card": {
+            "left": 473,
+            "top": 249,
+            "right": 893,
+            "bottom": 520
+          }
+        },
+        {
+          "size": "1920x1080",
+          "width": 1920,
+          "viewport": 1920,
+          "topbarScroll": 1920,
+          "topbarWidth": 1920,
+          "transportScroll": 1344,
+          "transportWidth": 1344,
+          "card": {
+            "left": 750,
+            "top": 405,
+            "right": 1170,
+            "bottom": 676
+          }
+        }
+      ],
+      "failures": [],
+      "firstStep": {
+        "title": "Step 1. Add your files",
+        "text": "Click Import Media and choose videos, photos, or music from your computer. You can select several files at once.",
+        "tip": "The selected files appear in the Media panel on the left. Importing does not change the originals on your computer.",
+        "count": "Vaihe 1/7"
+      },
+      "firstStepFallback": true
+    },
+    {
+      "code": "cs",
+      "lang": "cs",
+      "dir": "ltr",
+      "title": "Montazhnaya — editor videa",
+      "tourVisible": true,
+      "tourTitle": "Vítejte v Montazhnaya!",
+      "tourTitleExpected": "Vítejte v Montazhnaya!",
+      "tourText": "Základní postupy vám ukážu krok za krokem. V projektu se nic nezmění, dokud sami nevyberete akci.",
+      "tourTextExpected": "Základní postupy vám ukážu krok za krokem. V projektu se nic nezmění, dokud sami nevyberete akci.",
+      "tourTip": "Nespěchejte a průvodce kdykoli zavřete.",
+      "tourTipExpected": "Nespěchejte a průvodce kdykoli zavřete.",
+      "tourCount": "Průvodce editorem",
+      "tourCountExpected": "Průvodce editorem",
+      "tourNext": "Spustit průvodce",
+      "tourNextExpected": "Spustit průvodce",
+      "tracksHeadingExpected": "Stopy",
+      "tourBounds": {
+        "left": 302,
+        "top": 215,
+        "right": 722,
+        "bottom": 486,
+        "width": 420,
+        "height": 271
+      },
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "transportWidth": 448,
+      "transportScroll": 448,
+      "transportHeight": 111,
+      "topbarWidth": 1024,
+      "topbarScroll": 1024,
+      "topbarHeight": 78,
+      "menuButtons": [
+        {
+          "text": "Soubor",
+          "width": 50,
+          "scroll": 50,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Úpravy",
+          "width": 49,
+          "scroll": 49,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Zobrazení",
+          "width": 64,
+          "scroll": 64,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Přechody",
+          "width": 62,
+          "scroll": 62,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Nápověda",
+          "width": 65,
+          "scroll": 65,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Jazyk rozhraní…",
+          "width": 101,
+          "scroll": 101,
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "toolbarButtons": [
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "?Zapnout tipyTipy zapnuty",
+          "width": 66,
+          "scroll": 66
+        },
+        {
+          "text": "×Vypnout tipyTipy vypnuty",
+          "width": 65,
+          "scroll": 65
+        },
+        {
+          "text": "Uložit",
+          "width": 40,
+          "scroll": 40
+        },
+        {
+          "text": "Importovat média",
+          "width": 104,
+          "scroll": 104
+        },
+        {
+          "text": "Prezentace",
+          "width": 68,
+          "scroll": 68
+        },
+        {
+          "text": "Export",
+          "width": 47,
+          "scroll": 47
+        },
+        {
+          "text": "Rozdělit",
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "text": "Odstranit",
+          "width": 57,
+          "scroll": 57
+        }
+      ],
+      "timelineHint": "Přetáhněte média z knihovny na stopu",
+      "tracksHeading": "Stopy",
+      "emptyNoteParts": [
+        "Přetáhněte soubory sem",
+        "nebo klikněte na Importovat média",
+        "Video · Zvuk · Obrázky"
+      ],
+      "emptyNoteExpected": [
+        "Přetáhněte soubory sem",
+        "nebo klikněte na Importovat média",
+        "Video · Zvuk · Obrázky"
+      ],
+      "cyrillicVisible": [
+        "Монтажная"
+      ],
+      "viewportChecks": [
+        {
+          "size": "1366x768",
+          "width": 1366,
+          "viewport": 1366,
+          "topbarScroll": 1366,
+          "topbarWidth": 1366,
+          "transportScroll": 790,
+          "transportWidth": 790,
+          "card": {
+            "left": 473,
+            "top": 249,
+            "right": 893,
+            "bottom": 520
+          }
+        },
+        {
+          "size": "1920x1080",
+          "width": 1920,
+          "viewport": 1920,
+          "topbarScroll": 1920,
+          "topbarWidth": 1920,
+          "transportScroll": 1344,
+          "transportWidth": 1344,
+          "card": {
+            "left": 750,
+            "top": 405,
+            "right": 1170,
+            "bottom": 676
+          }
+        }
+      ],
+      "failures": [],
+      "firstStep": {
+        "title": "Step 1. Add your files",
+        "text": "Click Import Media and choose videos, photos, or music from your computer. You can select several files at once.",
+        "tip": "The selected files appear in the Media panel on the left. Importing does not change the originals on your computer.",
+        "count": "Krok 1 z 7"
+      },
+      "firstStepFallback": true
+    },
+    {
+      "code": "ro",
+      "lang": "ro",
+      "dir": "ltr",
+      "title": "Montazhnaya — editor video",
+      "tourVisible": true,
+      "tourTitle": "Bun venit în Montazhnaya!",
+      "tourTitleExpected": "Bun venit în Montazhnaya!",
+      "tourText": "Vă voi prezenta funcțiile de bază pas cu pas. Nimic din proiect nu se schimbă până când nu alegeți o acțiune.",
+      "tourTextExpected": "Vă voi prezenta funcțiile de bază pas cu pas. Nimic din proiect nu se schimbă până când nu alegeți o acțiune.",
+      "tourTip": "Parcurgeți turul în ritmul propriu și închideți-l oricând doriți.",
+      "tourTipExpected": "Parcurgeți turul în ritmul propriu și închideți-l oricând doriți.",
+      "tourCount": "Turul editorului",
+      "tourCountExpected": "Turul editorului",
+      "tourNext": "Începe turul",
+      "tourNextExpected": "Începe turul",
+      "tracksHeadingExpected": "Piste",
+      "tourBounds": {
+        "left": 302,
+        "top": 215,
+        "right": 722,
+        "bottom": 486,
+        "width": 420,
+        "height": 271
+      },
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "transportWidth": 448,
+      "transportScroll": 448,
+      "transportHeight": 111,
+      "topbarWidth": 1024,
+      "topbarScroll": 1024,
+      "topbarHeight": 78,
+      "menuButtons": [
+        {
+          "text": "Fișier",
+          "width": 41,
+          "scroll": 41,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Editare",
+          "width": 49,
+          "scroll": 49,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Vizualizare",
+          "width": 69,
+          "scroll": 69,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Tranziții",
+          "width": 53,
+          "scroll": 53,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Ajutor",
+          "width": 44,
+          "scroll": 44,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Limba interfeței…",
+          "width": 107,
+          "scroll": 107,
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "toolbarButtons": [
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "?Activează sfaturileIndicații PORNITE",
+          "width": 89,
+          "scroll": 89
+        },
+        {
+          "text": "×Dezactivează indicațiileIndicații OPRITE",
+          "width": 82,
+          "scroll": 82
+        },
+        {
+          "text": "Salvează",
+          "width": 57,
+          "scroll": 57
+        },
+        {
+          "text": "Importă media",
+          "width": 87,
+          "scroll": 87
+        },
+        {
+          "text": "Prezentare",
+          "width": 66,
+          "scroll": 66
+        },
+        {
+          "text": "Exportă",
+          "width": 53,
+          "scroll": 53
+        },
+        {
+          "text": "Taie",
+          "width": 32,
+          "scroll": 32
+        },
+        {
+          "text": "Șterge",
+          "width": 44,
+          "scroll": 44
+        }
+      ],
+      "timelineHint": "Trageți elementele media din bibliotecă pe o pistă",
+      "tracksHeading": "Piste",
+      "emptyNoteParts": [
+        "Plasează fișierele aici",
+        "sau fă clic pe Importă media",
+        "Video · Audio · Imagini"
+      ],
+      "emptyNoteExpected": [
+        "Plasează fișierele aici",
+        "sau fă clic pe Importă media",
+        "Video · Audio · Imagini"
+      ],
+      "cyrillicVisible": [
+        "Монтажная"
+      ],
+      "viewportChecks": [
+        {
+          "size": "1366x768",
+          "width": 1366,
+          "viewport": 1366,
+          "topbarScroll": 1366,
+          "topbarWidth": 1366,
+          "transportScroll": 790,
+          "transportWidth": 790,
+          "card": {
+            "left": 473,
+            "top": 249,
+            "right": 893,
+            "bottom": 520
+          }
+        },
+        {
+          "size": "1920x1080",
+          "width": 1920,
+          "viewport": 1920,
+          "topbarScroll": 1920,
+          "topbarWidth": 1920,
+          "transportScroll": 1344,
+          "transportWidth": 1344,
+          "card": {
+            "left": 750,
+            "top": 405,
+            "right": 1170,
+            "bottom": 676
+          }
+        }
+      ],
+      "failures": [],
+      "firstStep": {
+        "title": "Step 1. Add your files",
+        "text": "Click Import Media and choose videos, photos, or music from your computer. You can select several files at once.",
+        "tip": "The selected files appear in the Media panel on the left. Importing does not change the originals on your computer.",
+        "count": "Pasul 1 din 7"
+      },
+      "firstStepFallback": true
+    },
+    {
+      "code": "el",
+      "lang": "el",
+      "dir": "ltr",
+      "title": "Montazhnaya — πρόγραμμα επεξεργασίας βίντεο",
+      "tourVisible": true,
+      "tourTitle": "Καλώς ήρθατε στο Montazhnaya!",
+      "tourTitleExpected": "Καλώς ήρθατε στο Montazhnaya!",
+      "tourText": "Θα σας δείξω τις βασικές λειτουργίες βήμα προς βήμα. Τίποτα στο έργο σας δεν θα αλλάξει μέχρι να επιλέξετε μια ενέργεια.",
+      "tourTextExpected": "Θα σας δείξω τις βασικές λειτουργίες βήμα προς βήμα. Τίποτα στο έργο σας δεν θα αλλάξει μέχρι να επιλέξετε μια ενέργεια.",
+      "tourTip": "Προχωρήστε με τον ρυθμό σας και κλείστε την ξενάγηση όποτε θέλετε.",
+      "tourTipExpected": "Προχωρήστε με τον ρυθμό σας και κλείστε την ξενάγηση όποτε θέλετε.",
+      "tourCount": "Ξενάγηση στον επεξεργαστή",
+      "tourCountExpected": "Ξενάγηση στον επεξεργαστή",
+      "tourNext": "Έναρξη ξενάγησης",
+      "tourNextExpected": "Έναρξη ξενάγησης",
+      "tracksHeadingExpected": "Κομμάτια",
+      "tourBounds": {
+        "left": 302,
+        "top": 195,
+        "right": 722,
+        "bottom": 505,
+        "width": 420,
+        "height": 310
+      },
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "transportWidth": 448,
+      "transportScroll": 448,
+      "transportHeight": 114,
+      "topbarWidth": 1024,
+      "topbarScroll": 1024,
+      "topbarHeight": 78,
+      "menuButtons": [
+        {
+          "text": "Αρχείο",
+          "width": 50,
+          "scroll": 50,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Επεξεργασία",
+          "width": 84,
+          "scroll": 84,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Προβολή",
+          "width": 62,
+          "scroll": 62,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Μεταβάσεις",
+          "width": 80,
+          "scroll": 80,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Βοήθεια",
+          "width": 58,
+          "scroll": 58,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Γλώσσα περιβάλλοντος…",
+          "width": 157,
+          "scroll": 157,
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "toolbarButtons": [
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "?Ενεργοποίηση συμβουλώνΣυμβουλές ΕΝΕΡΓΕΣ",
+          "width": 103,
+          "scroll": 103
+        },
+        {
+          "text": "×Απενεργοποίηση συμβουλώνΣυμβουλές ΑΝΕΝΕΡΓΕΣ",
+          "width": 116,
+          "scroll": 116
+        },
+        {
+          "text": "Αποθήκευση",
+          "width": 78,
+          "scroll": 78
+        },
+        {
+          "text": "Εισαγωγή πολυμέσων",
+          "width": 134,
+          "scroll": 134
+        },
+        {
+          "text": "Παρουσίαση",
+          "width": 78,
+          "scroll": 78
+        },
+        {
+          "text": "Εξαγωγή",
+          "width": 61,
+          "scroll": 61
+        },
+        {
+          "text": "Διαχωρισμός",
+          "width": 80,
+          "scroll": 80
+        },
+        {
+          "text": "Διαγραφή",
+          "width": 63,
+          "scroll": 63
+        }
+      ],
+      "timelineHint": "Σύρετε πολυμέσα από τη βιβλιοθήκη σε ένα κομμάτι",
+      "tracksHeading": "Κομμάτια",
+      "emptyNoteParts": [
+        "Αποθέστε τα αρχεία εδώ",
+        "ή κάντε κλικ στην Εισαγωγή πολυμέσων",
+        "Βίντεο · Ήχος · Εικόνες"
+      ],
+      "emptyNoteExpected": [
+        "Αποθέστε τα αρχεία εδώ",
+        "ή κάντε κλικ στην Εισαγωγή πολυμέσων",
+        "Βίντεο · Ήχος · Εικόνες"
+      ],
+      "cyrillicVisible": [
+        "Монтажная"
+      ],
+      "viewportChecks": [
+        {
+          "size": "1366x768",
+          "width": 1366,
+          "viewport": 1366,
+          "topbarScroll": 1366,
+          "topbarWidth": 1366,
+          "transportScroll": 790,
+          "transportWidth": 790,
+          "card": {
+            "left": 473,
+            "top": 229,
+            "right": 893,
+            "bottom": 539
+          }
+        },
+        {
+          "size": "1920x1080",
+          "width": 1920,
+          "viewport": 1920,
+          "topbarScroll": 1920,
+          "topbarWidth": 1920,
+          "transportScroll": 1344,
+          "transportWidth": 1344,
+          "card": {
+            "left": 750,
+            "top": 385,
+            "right": 1170,
+            "bottom": 695
+          }
+        }
+      ],
+      "failures": [],
+      "firstStep": {
+        "title": "Step 1. Add your files",
+        "text": "Click Import Media and choose videos, photos, or music from your computer. You can select several files at once.",
+        "tip": "The selected files appear in the Media panel on the left. Importing does not change the originals on your computer.",
+        "count": "Βήμα 1 από 7"
+      },
+      "firstStepFallback": true
+    },
+    {
+      "code": "vi",
+      "lang": "vi",
+      "dir": "ltr",
+      "title": "Montazhnaya — trình chỉnh sửa video",
+      "tourVisible": true,
+      "tourTitle": "Chào mừng bạn đến với Montazhnaya!",
+      "tourTitleExpected": "Chào mừng bạn đến với Montazhnaya!",
+      "tourText": "Tôi sẽ hướng dẫn các thao tác cơ bản từng bước. Dự án sẽ không thay đổi cho đến khi bạn tự chọn một thao tác.",
+      "tourTextExpected": "Tôi sẽ hướng dẫn các thao tác cơ bản từng bước. Dự án sẽ không thay đổi cho đến khi bạn tự chọn một thao tác.",
+      "tourTip": "Hãy làm theo tốc độ của bạn và đóng phần hướng dẫn bất cứ lúc nào.",
+      "tourTipExpected": "Hãy làm theo tốc độ của bạn và đóng phần hướng dẫn bất cứ lúc nào.",
+      "tourCount": "Hướng dẫn sử dụng trình biên tập",
+      "tourCountExpected": "Hướng dẫn sử dụng trình biên tập",
+      "tourNext": "Bắt đầu hướng dẫn",
+      "tourNextExpected": "Bắt đầu hướng dẫn",
+      "tracksHeadingExpected": "Rãnh",
+      "tourBounds": {
+        "left": 302,
+        "top": 202,
+        "right": 722,
+        "bottom": 498,
+        "width": 420,
+        "height": 296
+      },
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "transportWidth": 448,
+      "transportScroll": 448,
+      "transportHeight": 111,
+      "topbarWidth": 1024,
+      "topbarScroll": 1024,
+      "topbarHeight": 78,
+      "menuButtons": [
+        {
+          "text": "Tệp",
+          "width": 30,
+          "scroll": 30,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Chỉnh sửa",
+          "width": 67,
+          "scroll": 67,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Xem",
+          "width": 34,
+          "scroll": 34,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Chuyển cảnh",
+          "width": 82,
+          "scroll": 82,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Trợ giúp",
+          "width": 57,
+          "scroll": 57,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Ngôn ngữ giao diện…",
+          "width": 130,
+          "scroll": 130,
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "toolbarButtons": [
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "?Bật gợi ýBật gợi ý",
+          "width": 50,
+          "scroll": 50
+        },
+        {
+          "text": "×Tắt gợi ýĐã tắt gợi ý",
+          "width": 61,
+          "scroll": 61
+        },
+        {
+          "text": "Lưu",
+          "width": 32,
+          "scroll": 32
+        },
+        {
+          "text": "Nhập phương tiện",
+          "width": 108,
+          "scroll": 108
+        },
+        {
+          "text": "Trình chiếu",
+          "width": 67,
+          "scroll": 67
+        },
+        {
+          "text": "Xuất",
+          "width": 36,
+          "scroll": 36
+        },
+        {
+          "text": "Tách",
+          "width": 36,
+          "scroll": 36
+        },
+        {
+          "text": "Xóa",
+          "width": 32,
+          "scroll": 32
+        }
+      ],
+      "timelineHint": "Kéo phương tiện từ thư viện vào một track",
+      "tracksHeading": "Rãnh",
+      "emptyNoteParts": [
+        "Thả tệp vào đây",
+        "hoặc nhấp vào Nhập phương tiện",
+        "Video · Âm thanh · Hình ảnh"
+      ],
+      "emptyNoteExpected": [
+        "Thả tệp vào đây",
+        "hoặc nhấp vào Nhập phương tiện",
+        "Video · Âm thanh · Hình ảnh"
+      ],
+      "cyrillicVisible": [
+        "Монтажная"
+      ],
+      "viewportChecks": [
+        {
+          "size": "1366x768",
+          "width": 1366,
+          "viewport": 1366,
+          "topbarScroll": 1366,
+          "topbarWidth": 1366,
+          "transportScroll": 790,
+          "transportWidth": 790,
+          "card": {
+            "left": 473,
+            "top": 236,
+            "right": 893,
+            "bottom": 532
+          }
+        },
+        {
+          "size": "1920x1080",
+          "width": 1920,
+          "viewport": 1920,
+          "topbarScroll": 1920,
+          "topbarWidth": 1920,
+          "transportScroll": 1344,
+          "transportWidth": 1344,
+          "card": {
+            "left": 750,
+            "top": 392,
+            "right": 1170,
+            "bottom": 688
+          }
+        }
+      ],
+      "failures": [],
+      "firstStep": {
+        "title": "Step 1. Add your files",
+        "text": "Click Import Media and choose videos, photos, or music from your computer. You can select several files at once.",
+        "tip": "The selected files appear in the Media panel on the left. Importing does not change the originals on your computer.",
+        "count": "Bước 1/7"
+      },
+      "firstStepFallback": true
+    },
+    {
+      "code": "id",
+      "lang": "id",
+      "dir": "ltr",
+      "title": "Montazhnaya — editor video",
+      "tourVisible": true,
+      "tourTitle": "Selamat datang di Montazhnaya!",
+      "tourTitleExpected": "Selamat datang di Montazhnaya!",
+      "tourText": "Saya akan memandu Anda melalui operasi dasar langkah demi langkah. Tidak ada yang berubah dalam proyek sampai Anda memilih tindakan.",
+      "tourTextExpected": "Saya akan memandu Anda melalui operasi dasar langkah demi langkah. Tidak ada yang berubah dalam proyek sampai Anda memilih tindakan.",
+      "tourTip": "Ikuti tempo Anda sendiri dan tutup tur kapan saja.",
+      "tourTipExpected": "Ikuti tempo Anda sendiri dan tutup tur kapan saja.",
+      "tourCount": "Tur editor",
+      "tourCountExpected": "Tur editor",
+      "tourNext": "Mulai tur",
+      "tourNextExpected": "Mulai tur",
+      "tracksHeadingExpected": "Trek",
+      "tourBounds": {
+        "left": 302,
+        "top": 204,
+        "right": 722,
+        "bottom": 496,
+        "width": 420,
+        "height": 292
+      },
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "transportWidth": 448,
+      "transportScroll": 448,
+      "transportHeight": 111,
+      "topbarWidth": 1024,
+      "topbarScroll": 1024,
+      "topbarHeight": 78,
+      "menuButtons": [
+        {
+          "text": "Berkas",
+          "width": 48,
+          "scroll": 48,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Edit",
+          "width": 32,
+          "scroll": 32,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Tampilan",
+          "width": 60,
+          "scroll": 60,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Transisi",
+          "width": 53,
+          "scroll": 53,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Bantuan",
+          "width": 56,
+          "scroll": 56,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Bahasa antarmuka…",
+          "width": 124,
+          "scroll": 124,
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "toolbarButtons": [
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "?Aktifkan TipsTips AKTIF",
+          "width": 59,
+          "scroll": 59
+        },
+        {
+          "text": "×Nonaktifkan tipsTips NONAKTIF",
+          "width": 80,
+          "scroll": 80
+        },
+        {
+          "text": "Simpan",
+          "width": 49,
+          "scroll": 49
+        },
+        {
+          "text": "Impor media",
+          "width": 77,
+          "scroll": 77
+        },
+        {
+          "text": "Slideshow",
+          "width": 62,
+          "scroll": 62
+        },
+        {
+          "text": "Ekspor",
+          "width": 49,
+          "scroll": 49
+        },
+        {
+          "text": "Potong",
+          "width": 47,
+          "scroll": 47
+        },
+        {
+          "text": "Hapus",
+          "width": 44,
+          "scroll": 44
+        }
+      ],
+      "timelineHint": "Seret media dari pustaka ke trek",
+      "tracksHeading": "Trek",
+      "emptyNoteParts": [
+        "Letakkan file di sini",
+        "atau klik Impor Media",
+        "Video · Audio · Gambar"
+      ],
+      "emptyNoteExpected": [
+        "Letakkan file di sini",
+        "atau klik Impor Media",
+        "Video · Audio · Gambar"
+      ],
+      "cyrillicVisible": [
+        "Монтажная"
+      ],
+      "viewportChecks": [
+        {
+          "size": "1366x768",
+          "width": 1366,
+          "viewport": 1366,
+          "topbarScroll": 1366,
+          "topbarWidth": 1366,
+          "transportScroll": 790,
+          "transportWidth": 790,
+          "card": {
+            "left": 473,
+            "top": 238,
+            "right": 893,
+            "bottom": 530
+          }
+        },
+        {
+          "size": "1920x1080",
+          "width": 1920,
+          "viewport": 1920,
+          "topbarScroll": 1920,
+          "topbarWidth": 1920,
+          "transportScroll": 1344,
+          "transportWidth": 1344,
+          "card": {
+            "left": 750,
+            "top": 394,
+            "right": 1170,
+            "bottom": 686
+          }
+        }
+      ],
+      "failures": [],
+      "firstStep": {
+        "title": "Step 1. Add your files",
+        "text": "Click Import Media and choose videos, photos, or music from your computer. You can select several files at once.",
+        "tip": "The selected files appear in the Media panel on the left. Importing does not change the originals on your computer.",
+        "count": "Langkah 1 dari 7"
+      },
+      "firstStepFallback": true
+    },
+    {
+      "code": "th",
+      "lang": "th",
+      "dir": "ltr",
+      "title": "Montazhnaya — โปรแกรมตัดต่อวิดีโอ",
+      "tourVisible": true,
+      "tourTitle": "ยินดีต้อนรับสู่ Montazhnaya!",
+      "tourTitleExpected": "ยินดีต้อนรับสู่ Montazhnaya!",
+      "tourText": "ฉันจะแนะนำการทำงานพื้นฐานทีละขั้นตอน โปรเจกต์จะไม่เปลี่ยนแปลงจนกว่าคุณจะเลือกคำสั่งด้วยตนเอง",
+      "tourTextExpected": "ฉันจะแนะนำการทำงานพื้นฐานทีละขั้นตอน โปรเจกต์จะไม่เปลี่ยนแปลงจนกว่าคุณจะเลือกคำสั่งด้วยตนเอง",
+      "tourTip": "ใช้เวลาได้ตามต้องการและปิดคำแนะนำได้ทุกเมื่อ",
+      "tourTipExpected": "ใช้เวลาได้ตามต้องการและปิดคำแนะนำได้ทุกเมื่อ",
+      "tourCount": "แนะนำการใช้งานโปรแกรมตัดต่อ",
+      "tourCountExpected": "แนะนำการใช้งานโปรแกรมตัดต่อ",
+      "tourNext": "เริ่มคำแนะนำ",
+      "tourNextExpected": "เริ่มคำแนะนำ",
+      "tracksHeadingExpected": "แทร็ก",
+      "tourBounds": {
+        "left": 302,
+        "top": 209,
+        "right": 722,
+        "bottom": 491,
+        "width": 420,
+        "height": 282
+      },
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "transportWidth": 448,
+      "transportScroll": 448,
+      "transportHeight": 116,
+      "topbarWidth": 1024,
+      "topbarScroll": 1024,
+      "topbarHeight": 78,
+      "menuButtons": [
+        {
+          "text": "แฟ้ม",
+          "width": 33,
+          "scroll": 33,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "แก้ไข",
+          "width": 35,
+          "scroll": 35,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "มุมมอง",
+          "width": 46,
+          "scroll": 46,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "ทรานซิชัน",
+          "width": 57,
+          "scroll": 57,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "วิธีใช้",
+          "width": 33,
+          "scroll": 33,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "ภาษาของอินเทอร์เฟซ…",
+          "width": 124,
+          "scroll": 124,
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "toolbarButtons": [
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "?เปิดใช้คำแนะนำเปิดคำแนะนำ",
+          "width": 60,
+          "scroll": 60
+        },
+        {
+          "text": "×ปิดคำแนะนำปิดคำแนะนำแล้ว",
+          "width": 73,
+          "scroll": 73
+        },
+        {
+          "text": "บันทึก",
+          "width": 39,
+          "scroll": 39
+        },
+        {
+          "text": "นำเข้าสื่อ",
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "text": "สไลด์โชว์",
+          "width": 49,
+          "scroll": 49
+        },
+        {
+          "text": "ส่งออก",
+          "width": 45,
+          "scroll": 45
+        },
+        {
+          "text": "แยก",
+          "width": 31,
+          "scroll": 31
+        },
+        {
+          "text": "ลบ",
+          "width": 25,
+          "scroll": 25
+        }
+      ],
+      "timelineHint": "ลากสื่อจากไลบรารีไปยังแทร็ก",
+      "tracksHeading": "แทร็ก",
+      "emptyNoteParts": [
+        "วางไฟล์ที่นี่",
+        "หรือคลิกนำเข้าสื่อ",
+        "วิดีโอ · เสียง · รูปภาพ"
+      ],
+      "emptyNoteExpected": [
+        "วางไฟล์ที่นี่",
+        "หรือคลิกนำเข้าสื่อ",
+        "วิดีโอ · เสียง · รูปภาพ"
+      ],
+      "cyrillicVisible": [
+        "Монтажная"
+      ],
+      "viewportChecks": [
+        {
+          "size": "1366x768",
+          "width": 1366,
+          "viewport": 1366,
+          "topbarScroll": 1366,
+          "topbarWidth": 1366,
+          "transportScroll": 790,
+          "transportWidth": 790,
+          "card": {
+            "left": 473,
+            "top": 243,
+            "right": 893,
+            "bottom": 525
+          }
+        },
+        {
+          "size": "1920x1080",
+          "width": 1920,
+          "viewport": 1920,
+          "topbarScroll": 1920,
+          "topbarWidth": 1920,
+          "transportScroll": 1344,
+          "transportWidth": 1344,
+          "card": {
+            "left": 750,
+            "top": 399,
+            "right": 1170,
+            "bottom": 681
+          }
+        }
+      ],
+      "failures": [],
+      "firstStep": {
+        "title": "Step 1. Add your files",
+        "text": "Click Import Media and choose videos, photos, or music from your computer. You can select several files at once.",
+        "tip": "The selected files appear in the Media panel on the left. Importing does not change the originals on your computer.",
+        "count": "ขั้นตอนที่ 1 จาก 7"
+      },
+      "firstStepFallback": true
+    },
+    {
+      "code": "kk",
+      "lang": "kk",
+      "dir": "ltr",
+      "title": "Montazhnaya beta 3.6.45 — фото, дыбыс және бейне редакторы",
+      "tourVisible": true,
+      "tourTitle": "«Монтажнаяға» қош келдіңіз!",
+      "tourTitleExpected": "«Монтажнаяға» қош келдіңіз!",
+      "tourText": "Негізгі әрекеттерді қарапайым қадамдармен көрсетемін. Қажетті түймені өзіңіз баспайынша жобаңызда ештеңе өзгермейді.",
+      "tourTextExpected": "Негізгі әрекеттерді қарапайым қадамдармен көрсетемін. Қажетті түймені өзіңіз баспайынша жобаңызда ештеңе өзгермейді.",
+      "tourTip": "Өз қарқыныңызбен жүріп, танысуды кез келген уақытта жаба аласыз.",
+      "tourTipExpected": "Өз қарқыныңызбен жүріп, танысуды кез келген уақытта жаба аласыз.",
+      "tourCount": "Редактормен танысу",
+      "tourCountExpected": "Редактормен танысу",
+      "tourNext": "Танысуды бастау",
+      "tourNextExpected": "Танысуды бастау",
+      "tracksHeadingExpected": "Жолақтар",
+      "tourBounds": {
+        "left": 302,
+        "top": 195,
+        "right": 722,
+        "bottom": 505,
+        "width": 420,
+        "height": 310
+      },
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "transportWidth": 448,
+      "transportScroll": 448,
+      "transportHeight": 111,
+      "topbarWidth": 1024,
+      "topbarScroll": 1024,
+      "topbarHeight": 78,
+      "menuButtons": [
+        {
+          "text": "Файл",
+          "width": 41,
+          "scroll": 41,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Өңдеу",
+          "width": 46,
+          "scroll": 46,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Көрініс",
+          "width": 51,
+          "scroll": 51,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Өтулер",
+          "width": 52,
+          "scroll": 52,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Анықтама",
+          "width": 68,
+          "scroll": 68,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Интерфейс тілі…",
+          "width": 108,
+          "scroll": 108,
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "toolbarButtons": [
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "?Кеңестерді қосуКеңестер ҚОСУЛЫ",
+          "width": 95,
+          "scroll": 95
+        },
+        {
+          "text": "×Кеңестерді өшіруКеңестер ӨШІРУЛІ",
+          "width": 95,
+          "scroll": 95
+        },
+        {
+          "text": "Сақтау",
+          "width": 47,
+          "scroll": 47
+        },
+        {
+          "text": "Медианы импорттау",
+          "width": 124,
+          "scroll": 124
+        },
+        {
+          "text": "Слайд-шоу",
+          "width": 69,
+          "scroll": 69
+        },
+        {
+          "text": "Экспорттау",
+          "width": 74,
+          "scroll": 74
+        },
+        {
+          "text": "Бөлу",
+          "width": 37,
+          "scroll": 37
+        },
+        {
+          "text": "Жою",
+          "width": 36,
+          "scroll": 36
+        }
+      ],
+      "timelineHint": "Кітапханадан медианы жолға сүйреңіз",
+      "tracksHeading": "Жолақтар",
+      "emptyNoteParts": [
+        "Файлдарды осында сүйреңіз",
+        "немесе «Медианы импорттау» түймесін басыңыз",
+        "Бейне · Аудио · Суреттер"
+      ],
+      "emptyNoteExpected": [
+        "Файлдарды осында сүйреңіз",
+        "немесе «Медианы импорттау» түймесін басыңыз",
+        "Бейне · Аудио · Суреттер"
+      ],
+      "cyrillicVisible": [
+        "Монтажная",
+        "Файл",
+        "Өңдеу",
+        "Көрініс",
+        "Өтулер",
+        "Анықтама",
+        "Интерфейс тілі…",
+        "Кеңестер ҚОСУЛЫ",
+        "Кеңестер ӨШІРУЛІ",
+        "Сақтау",
+        "Медианы импорттау",
+        "Слайд-шоу",
+        "Экспорттау",
+        "Бөлу",
+        "Жою",
+        "Медиа",
+        "Өтулер",
+        "⇅ Нөмір бойынша орналастыру",
+        "Сандық рет: 1, 2, 3… немесе 001, 002, 003…",
+        "Файлдарды осында сүйреңіз",
+        "немесе «Медианы импорттау» түймесін басыңыз",
+        "Бейне · Аудио · Суреттер",
+        "Алдын ала қарау",
+        "01 тізбегі",
+        "Пішім",
+        "Өлшем",
+        "Қасиеттер",
+        "Жоба",
+        "Пішім",
+        "Ажыратымдылық"
+      ],
+      "viewportChecks": [
+        {
+          "size": "1366x768",
+          "width": 1366,
+          "viewport": 1366,
+          "topbarScroll": 1366,
+          "topbarWidth": 1366,
+          "transportScroll": 790,
+          "transportWidth": 790,
+          "card": {
+            "left": 473,
+            "top": 229,
+            "right": 893,
+            "bottom": 539
+          }
+        },
+        {
+          "size": "1920x1080",
+          "width": 1920,
+          "viewport": 1920,
+          "topbarScroll": 1920,
+          "topbarWidth": 1920,
+          "transportScroll": 1344,
+          "transportWidth": 1344,
+          "card": {
+            "left": 750,
+            "top": 385,
+            "right": 1170,
+            "bottom": 695
+          }
+        }
+      ],
+      "failures": [],
+      "firstStep": {
+        "title": "Step 1. Add your files",
+        "text": "Click Import Media and choose videos, photos, or music from your computer. You can select several files at once.",
+        "tip": "The selected files appear in the Media panel on the left. Importing does not change the originals on your computer.",
+        "count": "7 ішіндегі 1-қадам"
+      },
+      "firstStepFallback": true
+    },
+    {
+      "code": "uz",
+      "lang": "uz",
+      "dir": "ltr",
+      "title": "Montazhnaya beta 3.6.45 — foto, audio va video muharriri",
+      "tourVisible": true,
+      "tourTitle": "Montazhnaya dasturiga xush kelibsiz!",
+      "tourTitleExpected": "Montazhnaya dasturiga xush kelibsiz!",
+      "tourText": "Asosiy amallarni sodda qadamlar bilan ko‘rsataman. Kerakli tugmani o‘zingiz bosmaguningizcha loyihangizda hech narsa o‘zgarmaydi.",
+      "tourTextExpected": "Asosiy amallarni sodda qadamlar bilan ko‘rsataman. Kerakli tugmani o‘zingiz bosmaguningizcha loyihangizda hech narsa o‘zgarmaydi.",
+      "tourTip": "O‘zingizga qulay tezlikda davom eting va tanishuvni istalgan payt yopishingiz mumkin.",
+      "tourTipExpected": "O‘zingizga qulay tezlikda davom eting va tanishuvni istalgan payt yopishingiz mumkin.",
+      "tourCount": "Muharrir bilan tanishuv",
+      "tourCountExpected": "Muharrir bilan tanishuv",
+      "tourNext": "Tanishuvni boshlash",
+      "tourNextExpected": "Tanishuvni boshlash",
+      "tracksHeadingExpected": "Yo‘laklar",
+      "tourBounds": {
+        "left": 302,
+        "top": 195,
+        "right": 722,
+        "bottom": 505,
+        "width": 420,
+        "height": 310
+      },
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "transportWidth": 448,
+      "transportScroll": 448,
+      "transportHeight": 111,
+      "topbarWidth": 1024,
+      "topbarScroll": 1024,
+      "topbarHeight": 78,
+      "menuButtons": [
+        {
+          "text": "Fayl",
+          "width": 33,
+          "scroll": 33,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Tahrirlash",
+          "width": 65,
+          "scroll": 65,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Ko‘rinish",
+          "width": 60,
+          "scroll": 60,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "O‘tishlar",
+          "width": 57,
+          "scroll": 57,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Yordam",
+          "width": 52,
+          "scroll": 52,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Interfeys tili…",
+          "width": 86,
+          "scroll": 86,
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "toolbarButtons": [
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "?Maslahatlarni yoqishMaslahatlar YOQILGAN",
+          "width": 113,
+          "scroll": 113
+        },
+        {
+          "text": "×Maslahatlarni o‘chirishMaslahatlar O‘CHIRILGAN",
+          "width": 125,
+          "scroll": 125
+        },
+        {
+          "text": "Saqlash",
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "text": "Mediani import qilish",
+          "width": 122,
+          "scroll": 122
+        },
+        {
+          "text": "Slayd-shou",
+          "width": 67,
+          "scroll": 67
+        },
+        {
+          "text": "Eksport",
+          "width": 53,
+          "scroll": 53
+        },
+        {
+          "text": "Bo‘lish",
+          "width": 44,
+          "scroll": 44
+        },
+        {
+          "text": "O‘chirish",
+          "width": 55,
+          "scroll": 55
+        }
+      ],
+      "timelineHint": "Kutubxonadagi mediani trekka sudrang",
+      "tracksHeading": "Yo‘laklar",
+      "emptyNoteParts": [
+        "Fayllarni bu yerga sudrang",
+        "yoki “Medianı import qilish” tugmasini bosing",
+        "Video · Audio · Rasmlar"
+      ],
+      "emptyNoteExpected": [
+        "Fayllarni bu yerga sudrang",
+        "yoki “Medianı import qilish” tugmasini bosing",
+        "Video · Audio · Rasmlar"
+      ],
+      "cyrillicVisible": [
+        "Монтажная"
+      ],
+      "viewportChecks": [
+        {
+          "size": "1366x768",
+          "width": 1366,
+          "viewport": 1366,
+          "topbarScroll": 1366,
+          "topbarWidth": 1366,
+          "transportScroll": 790,
+          "transportWidth": 790,
+          "card": {
+            "left": 473,
+            "top": 229,
+            "right": 893,
+            "bottom": 539
+          }
+        },
+        {
+          "size": "1920x1080",
+          "width": 1920,
+          "viewport": 1920,
+          "topbarScroll": 1920,
+          "topbarWidth": 1920,
+          "transportScroll": 1344,
+          "transportWidth": 1344,
+          "card": {
+            "left": 750,
+            "top": 385,
+            "right": 1170,
+            "bottom": 695
+          }
+        }
+      ],
+      "failures": [],
+      "firstStep": {
+        "title": "Step 1. Add your files",
+        "text": "Click Import Media and choose videos, photos, or music from your computer. You can select several files at once.",
+        "tip": "The selected files appear in the Media panel on the left. Importing does not change the originals on your computer.",
+        "count": "7 tadan 1-qadam"
+      },
+      "firstStepFallback": true
+    },
+    {
+      "code": "ka",
+      "lang": "ka",
+      "dir": "ltr",
+      "title": "Montazhnaya beta 3.6.45 — ფოტო, აუდიო და ვიდეო რედაქტორი",
+      "tourVisible": true,
+      "tourTitle": "კეთილი იყოს თქვენი მობრძანება Montazhnaya-ში!",
+      "tourTitleExpected": "კეთილი იყოს თქვენი მობრძანება Montazhnaya-ში!",
+      "tourText": "ძირითად მოქმედებებს მარტივი ნაბიჯებით გაჩვენებთ. თქვენს პროექტში არაფერი შეიცვლება, სანამ შესაბამის ღილაკს თავად არ დააჭერთ.",
+      "tourTextExpected": "ძირითად მოქმედებებს მარტივი ნაბიჯებით გაჩვენებთ. თქვენს პროექტში არაფერი შეიცვლება, სანამ შესაბამის ღილაკს თავად არ დააჭერთ.",
+      "tourTip": "შეგიძლიათ თქვენთვის სასურველი ტემპით იმოძრაოთ და გაცნობა ნებისმიერ დროს დახუროთ.",
+      "tourTipExpected": "შეგიძლიათ თქვენთვის სასურველი ტემპით იმოძრაოთ და გაცნობა ნებისმიერ დროს დახუროთ.",
+      "tourCount": "რედაქტორთან გაცნობა",
+      "tourCountExpected": "რედაქტორთან გაცნობა",
+      "tourNext": "გაცნობის დაწყება",
+      "tourNextExpected": "გაცნობის დაწყება",
+      "tracksHeadingExpected": "ტრეკები",
+      "tourBounds": {
+        "left": 302,
+        "top": 182,
+        "right": 722,
+        "bottom": 518,
+        "width": 420,
+        "height": 336
+      },
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "transportWidth": 448,
+      "transportScroll": 448,
+      "transportHeight": 114,
+      "topbarWidth": 1024,
+      "topbarScroll": 1024,
+      "topbarHeight": 78,
+      "menuButtons": [
+        {
+          "text": "ფაილი",
+          "width": 54,
+          "scroll": 54,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "რედაქტირება",
+          "width": 96,
+          "scroll": 96,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "ხედი",
+          "width": 41,
+          "scroll": 41,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "გადასვლები",
+          "width": 88,
+          "scroll": 88,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "დახმარება",
+          "width": 78,
+          "scroll": 78,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "ინტერფეისის ენა…",
+          "width": 130,
+          "scroll": 130,
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "toolbarButtons": [
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "?რჩევების ჩართვარჩევები ჩართულია",
+          "width": 109,
+          "scroll": 109
+        },
+        {
+          "text": "×რჩევების გამორთვარჩევები გამორთულია",
+          "width": 122,
+          "scroll": 122
+        },
+        {
+          "text": "შენახვა",
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "text": "მედიის იმპორტი",
+          "width": 112,
+          "scroll": 112
+        },
+        {
+          "text": "სლაიდშოუ",
+          "width": 75,
+          "scroll": 75
+        },
+        {
+          "text": "ექსპორტი",
+          "width": 74,
+          "scroll": 74
+        },
+        {
+          "text": "გაყოფა",
+          "width": 55,
+          "scroll": 55
+        },
+        {
+          "text": "წაშლა",
+          "width": 49,
+          "scroll": 49
+        }
+      ],
+      "timelineHint": "ბიბლიოთეკიდან მედია ტრეკზე გადაათრიეთ",
+      "tracksHeading": "ტრეკები",
+      "emptyNoteParts": [
+        "ფაილები აქ გადმოიტანეთ",
+        "ან დააჭირეთ „მედიის იმპორტს“",
+        "ვიდეო · აუდიო · სურათები"
+      ],
+      "emptyNoteExpected": [
+        "ფაილები აქ გადმოიტანეთ",
+        "ან დააჭირეთ „მედიის იმპორტს“",
+        "ვიდეო · აუდიო · სურათები"
+      ],
+      "cyrillicVisible": [
+        "Монтажная"
+      ],
+      "viewportChecks": [
+        {
+          "size": "1366x768",
+          "width": 1366,
+          "viewport": 1366,
+          "topbarScroll": 1366,
+          "topbarWidth": 1366,
+          "transportScroll": 790,
+          "transportWidth": 790,
+          "card": {
+            "left": 473,
+            "top": 216,
+            "right": 893,
+            "bottom": 552
+          }
+        },
+        {
+          "size": "1920x1080",
+          "width": 1920,
+          "viewport": 1920,
+          "topbarScroll": 1920,
+          "topbarWidth": 1920,
+          "transportScroll": 1344,
+          "transportWidth": 1344,
+          "card": {
+            "left": 750,
+            "top": 372,
+            "right": 1170,
+            "bottom": 708
+          }
+        }
+      ],
+      "failures": [],
+      "firstStep": {
+        "title": "Step 1. Add your files",
+        "text": "Click Import Media and choose videos, photos, or music from your computer. You can select several files at once.",
+        "tip": "The selected files appear in the Media panel on the left. Importing does not change the originals on your computer.",
+        "count": "ნაბიჯი 1 / 7"
+      },
+      "firstStepFallback": true
+    },
+    {
+      "code": "hy",
+      "lang": "hy",
+      "dir": "ltr",
+      "title": "Montazhnaya beta 3.6.45 — լուսանկարների, ձայնի և տեսանյութի խմբագրիչ",
+      "tourVisible": true,
+      "tourTitle": "Բարի գալուստ «Մոնտաժնայա»։",
+      "tourTitleExpected": "Բարի գալուստ «Մոնտաժնայա»։",
+      "tourText": "Կցուցադրեմ հիմնական գործողությունները պարզ քայլերով։ Նախագծում ոչինչ չի փոխվի, մինչև ինքներդ չընտրեք գործողությունը։",
+      "tourTextExpected": "Կցուցադրեմ հիմնական գործողությունները պարզ քայլերով։ Նախագծում ոչինչ չի փոխվի, մինչև ինքներդ չընտրեք գործողությունը։",
+      "tourTip": "Աշխատեք ձեր տեմպով և ցանկացած պահի փակեք ծանոթացումը։",
+      "tourTipExpected": "Աշխատեք ձեր տեմպով և ցանկացած պահի փակեք ծանոթացումը։",
+      "tourCount": "Ծանոթացում խմբագրիչին",
+      "tourCountExpected": "Ծանոթացում խմբագրիչին",
+      "tourNext": "Սկսել ծանոթացումը",
+      "tourNextExpected": "Սկսել ծանոթացումը",
+      "tracksHeadingExpected": "Տրեքեր",
+      "tourBounds": {
+        "left": 302,
+        "top": 195,
+        "right": 722,
+        "bottom": 505,
+        "width": 420,
+        "height": 310
+      },
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "transportWidth": 448,
+      "transportScroll": 448,
+      "transportHeight": 114,
+      "topbarWidth": 1024,
+      "topbarScroll": 1024,
+      "topbarHeight": 78,
+      "menuButtons": [
+        {
+          "text": "Ֆայլ",
+          "width": 37,
+          "scroll": 37,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Խմբագրել",
+          "width": 73,
+          "scroll": 73,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Տեսք",
+          "width": 39,
+          "scroll": 39,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Անցումներ",
+          "width": 75,
+          "scroll": 75,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Օգնություն",
+          "width": 77,
+          "scroll": 77,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Լեզվի կարգավորումներ…",
+          "width": 168,
+          "scroll": 168,
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "toolbarButtons": [
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "?Միացնել հուշումներըՀուշումները ՄԻԱՑՎԱԾ ԵՆ",
+          "width": 134,
+          "scroll": 134
+        },
+        {
+          "text": "×Անջատել հուշումներըՀուշումները ԱՆՋԱՏՎԱԾ ԵՆ",
+          "width": 139,
+          "scroll": 139
+        },
+        {
+          "text": "Պահպանել",
+          "width": 73,
+          "scroll": 73
+        },
+        {
+          "text": "Ներմուծել մեդիա",
+          "width": 112,
+          "scroll": 112
+        },
+        {
+          "text": "Սլայդշոու",
+          "width": 64,
+          "scroll": 64
+        },
+        {
+          "text": "Արտահանում",
+          "width": 93,
+          "scroll": 93
+        },
+        {
+          "text": "Բաժանել",
+          "width": 63,
+          "scroll": 63
+        },
+        {
+          "text": "Ջնջել",
+          "width": 41,
+          "scroll": 41
+        }
+      ],
+      "timelineHint": "Մեդիան գրադարանից քաշեք դեպի ուղի",
+      "tracksHeading": "Տրեքեր",
+      "emptyNoteParts": [
+        "Ֆայլերը քաշեք այստեղ",
+        "կամ սեղմեք «Ներմուծել մեդիա»",
+        "Տեսանյութ · Ձայն · Պատկերներ"
+      ],
+      "emptyNoteExpected": [
+        "Ֆայլերը քաշեք այստեղ",
+        "կամ սեղմեք «Ներմուծել մեդիա»",
+        "Տեսանյութ · Ձայն · Պատկերներ"
+      ],
+      "cyrillicVisible": [
+        "Монтажная"
+      ],
+      "viewportChecks": [
+        {
+          "size": "1366x768",
+          "width": 1366,
+          "viewport": 1366,
+          "topbarScroll": 1366,
+          "topbarWidth": 1366,
+          "transportScroll": 790,
+          "transportWidth": 790,
+          "card": {
+            "left": 473,
+            "top": 229,
+            "right": 893,
+            "bottom": 539
+          }
+        },
+        {
+          "size": "1920x1080",
+          "width": 1920,
+          "viewport": 1920,
+          "topbarScroll": 1920,
+          "topbarWidth": 1920,
+          "transportScroll": 1344,
+          "transportWidth": 1344,
+          "card": {
+            "left": 750,
+            "top": 385,
+            "right": 1170,
+            "bottom": 695
+          }
+        }
+      ],
+      "failures": [],
+      "firstStep": {
+        "title": "Step 1. Add your files",
+        "text": "Click Import Media and choose videos, photos, or music from your computer. You can select several files at once.",
+        "tip": "The selected files appear in the Media panel on the left. Importing does not change the originals on your computer.",
+        "count": "Քայլ 1 / 7"
+      },
+      "firstStepFallback": true
+    },
+    {
+      "code": "tk",
+      "lang": "tk",
+      "dir": "ltr",
+      "title": "Montazhnaya beta 3.6.45 — surat, ses we wideo redaktory",
+      "tourVisible": true,
+      "tourTitle": "«Montazhnaya» programmasyna hoş geldiňiz!",
+      "tourTitleExpected": "«Montazhnaya» programmasyna hoş geldiňiz!",
+      "tourText": "Esasy amallary ýönekeý ädimler bilen görkezerin. Siz degişli hereketi saýlaýançaňyz taslamaňyzda hiç zat üýtgemeýär.",
+      "tourTextExpected": "Esasy amallary ýönekeý ädimler bilen görkezerin. Siz degişli hereketi saýlaýançaňyz taslamaňyzda hiç zat üýtgemeýär.",
+      "tourTip": "Öz depgiňizde öwreniň we tanyşlygy islän wagtyňyz ýapyň.",
+      "tourTipExpected": "Öz depgiňizde öwreniň we tanyşlygy islän wagtyňyz ýapyň.",
+      "tourCount": "Redaktor bilen tanyşlyk",
+      "tourCountExpected": "Redaktor bilen tanyşlyk",
+      "tourNext": "Tanyşlygy başlat",
+      "tourNextExpected": "Tanyşlygy başlat",
+      "tracksHeadingExpected": "Ýodalar",
+      "tourBounds": {
+        "left": 302,
+        "top": 202,
+        "right": 722,
+        "bottom": 498,
+        "width": 420,
+        "height": 296
+      },
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "transportWidth": 448,
+      "transportScroll": 448,
+      "transportHeight": 111,
+      "topbarWidth": 1024,
+      "topbarScroll": 1024,
+      "topbarHeight": 78,
+      "menuButtons": [
+        {
+          "text": "Faýl",
+          "width": 33,
+          "scroll": 33,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Redaktirlemek",
+          "width": 89,
+          "scroll": 89,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Görnüş",
+          "width": 51,
+          "scroll": 51,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Geçişler",
+          "width": 55,
+          "scroll": 55,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Kömek",
+          "width": 48,
+          "scroll": 48,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Interfeýs dili…",
+          "width": 89,
+          "scroll": 89,
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "toolbarButtons": [
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "?Maslahatlary açMaslahatlar AÇYK",
+          "width": 89,
+          "scroll": 89
+        },
+        {
+          "text": "×Maslahatlary öçürMaslahatlar ÖÇÜK",
+          "width": 91,
+          "scroll": 91
+        },
+        {
+          "text": "Saklamak",
+          "width": 60,
+          "scroll": 60
+        },
+        {
+          "text": "Media import et",
+          "width": 93,
+          "scroll": 93
+        },
+        {
+          "text": "Slaýdşou",
+          "width": 57,
+          "scroll": 57
+        },
+        {
+          "text": "Eksport",
+          "width": 53,
+          "scroll": 53
+        },
+        {
+          "text": "Bölmek",
+          "width": 49,
+          "scroll": 49
+        },
+        {
+          "text": "Pozmak",
+          "width": 52,
+          "scroll": 52
+        }
+      ],
+      "timelineHint": "Mediýany kitaphanadan traka süýşüriň",
+      "tracksHeading": "Ýodalar",
+      "emptyNoteParts": [
+        "Faýllary şu ýere taşlaň",
+        "ýa-da «Media import et» düwmesine basyň",
+        "Wideo · Audio · Suratlar"
+      ],
+      "emptyNoteExpected": [
+        "Faýllary şu ýere taşlaň",
+        "ýa-da «Media import et» düwmesine basyň",
+        "Wideo · Audio · Suratlar"
+      ],
+      "cyrillicVisible": [
+        "Монтажная"
+      ],
+      "viewportChecks": [
+        {
+          "size": "1366x768",
+          "width": 1366,
+          "viewport": 1366,
+          "topbarScroll": 1366,
+          "topbarWidth": 1366,
+          "transportScroll": 790,
+          "transportWidth": 790,
+          "card": {
+            "left": 473,
+            "top": 236,
+            "right": 893,
+            "bottom": 532
+          }
+        },
+        {
+          "size": "1920x1080",
+          "width": 1920,
+          "viewport": 1920,
+          "topbarScroll": 1920,
+          "topbarWidth": 1920,
+          "transportScroll": 1344,
+          "transportWidth": 1344,
+          "card": {
+            "left": 750,
+            "top": 392,
+            "right": 1170,
+            "bottom": 688
+          }
+        }
+      ],
+      "failures": [],
+      "firstStep": {
+        "title": "Step 1. Add your files",
+        "text": "Click Import Media and choose videos, photos, or music from your computer. You can select several files at once.",
+        "tip": "The selected files appear in the Media panel on the left. Importing does not change the originals on your computer.",
+        "count": "7 sanynyň 1-nji ädimi"
+      },
+      "firstStepFallback": true
+    },
+    {
+      "code": "az",
+      "lang": "az",
+      "dir": "ltr",
+      "title": "Montazhnaya beta 3.6.45 — foto, audio və video redaktoru",
+      "tourVisible": true,
+      "tourTitle": "Montazhnaya proqramına xoş gəlmisiniz!",
+      "tourTitleExpected": "Montazhnaya proqramına xoş gəlmisiniz!",
+      "tourText": "Əsas əməliyyatları sadə addımlarla göstərəcəyəm. Lazım olan düyməni özünüz basmayınca layihənizdə heç nə dəyişməyəcək.",
+      "tourTextExpected": "Əsas əməliyyatları sadə addımlarla göstərəcəyəm. Lazım olan düyməni özünüz basmayınca layihənizdə heç nə dəyişməyəcək.",
+      "tourTip": "Öz tempinizlə davam edə və tanışlığı istənilən vaxt bağlaya bilərsiniz.",
+      "tourTipExpected": "Öz tempinizlə davam edə və tanışlığı istənilən vaxt bağlaya bilərsiniz.",
+      "tourCount": "Redaktorla tanışlıq",
+      "tourCountExpected": "Redaktorla tanışlıq",
+      "tourNext": "Tanışlığa başla",
+      "tourNextExpected": "Tanışlığa başla",
+      "tracksHeadingExpected": "Treklər",
+      "tourBounds": {
+        "left": 302,
+        "top": 182,
+        "right": 722,
+        "bottom": 518,
+        "width": 420,
+        "height": 336
+      },
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "transportWidth": 448,
+      "transportScroll": 448,
+      "transportHeight": 111,
+      "topbarWidth": 1024,
+      "topbarScroll": 1024,
+      "topbarHeight": 78,
+      "menuButtons": [
+        {
+          "text": "Fayl",
+          "width": 33,
+          "scroll": 33,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Redaktə",
+          "width": 55,
+          "scroll": 55,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Görünüş",
+          "width": 58,
+          "scroll": 58,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Keçidlər",
+          "width": 55,
+          "scroll": 55,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Kömək",
+          "width": 48,
+          "scroll": 48,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "İnterfeys dili…",
+          "width": 89,
+          "scroll": 89,
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "toolbarButtons": [
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "?Məsləhətləri aktiv etMəsləhətlər AKTİVDİR",
+          "width": 107,
+          "scroll": 107
+        },
+        {
+          "text": "×Məsləhətləri söndürMəsləhətlər SÖNÜBDÜR",
+          "width": 118,
+          "scroll": 118
+        },
+        {
+          "text": "Saxla",
+          "width": 40,
+          "scroll": 40
+        },
+        {
+          "text": "Medianı idxal et",
+          "width": 94,
+          "scroll": 94
+        },
+        {
+          "text": "Slayd-şou",
+          "width": 61,
+          "scroll": 61
+        },
+        {
+          "text": "İxrac",
+          "width": 38,
+          "scroll": 38
+        },
+        {
+          "text": "Böl",
+          "width": 28,
+          "scroll": 28
+        },
+        {
+          "text": "Sil",
+          "width": 24,
+          "scroll": 24
+        }
+      ],
+      "timelineHint": "Kitabxanadan medianı trekə sürükləyin",
+      "tracksHeading": "Treklər",
+      "emptyNoteParts": [
+        "Faylları bura sürükləyin",
+        "yaxud “Medianı idxal et” düyməsinə klikləyin",
+        "Video · Audio · Şəkillər"
+      ],
+      "emptyNoteExpected": [
+        "Faylları bura sürükləyin",
+        "yaxud “Medianı idxal et” düyməsinə klikləyin",
+        "Video · Audio · Şəkillər"
+      ],
+      "cyrillicVisible": [
+        "Монтажная"
+      ],
+      "viewportChecks": [
+        {
+          "size": "1366x768",
+          "width": 1366,
+          "viewport": 1366,
+          "topbarScroll": 1366,
+          "topbarWidth": 1366,
+          "transportScroll": 790,
+          "transportWidth": 790,
+          "card": {
+            "left": 473,
+            "top": 216,
+            "right": 893,
+            "bottom": 552
+          }
+        },
+        {
+          "size": "1920x1080",
+          "width": 1920,
+          "viewport": 1920,
+          "topbarScroll": 1920,
+          "topbarWidth": 1920,
+          "transportScroll": 1344,
+          "transportWidth": 1344,
+          "card": {
+            "left": 750,
+            "top": 372,
+            "right": 1170,
+            "bottom": 708
+          }
+        }
+      ],
+      "failures": [],
+      "firstStep": {
+        "title": "Step 1. Add your files",
+        "text": "Click Import Media and choose videos, photos, or music from your computer. You can select several files at once.",
+        "tip": "The selected files appear in the Media panel on the left. Importing does not change the originals on your computer.",
+        "count": "7 addımdan 1-ci addım"
+      },
+      "firstStepFallback": true
+    },
+    {
+      "code": "ky",
+      "lang": "ky",
+      "dir": "ltr",
+      "title": "Montazhnaya beta 3.6.45 — сүрөт, үн жана видео редактору",
+      "tourVisible": true,
+      "tourTitle": "«Монтажнаяга» кош келиңиз!",
+      "tourTitleExpected": "«Монтажнаяга» кош келиңиз!",
+      "tourText": "Негизги аракеттерди жөнөкөй кадамдар менен көрсөтөм. Сиз аракетти тандаганга чейин долбоордо эч нерсе өзгөрбөйт.",
+      "tourTextExpected": "Негизги аракеттерди жөнөкөй кадамдар менен көрсөтөм. Сиз аракетти тандаганга чейин долбоордо эч нерсе өзгөрбөйт.",
+      "tourTip": "Өз ыргагыңызда иштеп, таанышууну каалаган убакта жапсаңыз болот.",
+      "tourTipExpected": "Өз ыргагыңызда иштеп, таанышууну каалаган убакта жапсаңыз болот.",
+      "tourCount": "Редактор менен таанышуу",
+      "tourCountExpected": "Редактор менен таанышуу",
+      "tourNext": "Таанышууну баштоо",
+      "tourNextExpected": "Таанышууну баштоо",
+      "tracksHeadingExpected": "Тректер",
+      "tourBounds": {
+        "left": 302,
+        "top": 195,
+        "right": 722,
+        "bottom": 505,
+        "width": 420,
+        "height": 310
+      },
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "transportWidth": 448,
+      "transportScroll": 448,
+      "transportHeight": 111,
+      "topbarWidth": 1024,
+      "topbarScroll": 1024,
+      "topbarHeight": 78,
+      "menuButtons": [
+        {
+          "text": "Файл",
+          "width": 41,
+          "scroll": 41,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Түзөтүү",
+          "width": 55,
+          "scroll": 55,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Көрүнүш",
+          "width": 60,
+          "scroll": 60,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Өтүүлөр",
+          "width": 59,
+          "scroll": 59,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Жардам",
+          "width": 56,
+          "scroll": 56,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Интерфейс тили…",
+          "width": 116,
+          "scroll": 116,
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "toolbarButtons": [
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "?Кеңештерди күйгүзүүКеңештер КҮЙҮК",
+          "width": 87,
+          "scroll": 87
+        },
+        {
+          "text": "×Кеңештерди өчүрүүКеңештер ӨЧҮК",
+          "width": 83,
+          "scroll": 83
+        },
+        {
+          "text": "Сактоо",
+          "width": 48,
+          "scroll": 48
+        },
+        {
+          "text": "Медианы импорттоо",
+          "width": 125,
+          "scroll": 125
+        },
+        {
+          "text": "Слайд-шоу",
+          "width": 69,
+          "scroll": 69
+        },
+        {
+          "text": "Экспорт",
+          "width": 57,
+          "scroll": 57
+        },
+        {
+          "text": "Бөлүү",
+          "width": 43,
+          "scroll": 43
+        },
+        {
+          "text": "Өчүрүү",
+          "width": 49,
+          "scroll": 49
+        }
+      ],
+      "timelineHint": "Медианы китепканадан жолго сүйрөңүз",
+      "tracksHeading": "Тректер",
+      "emptyNoteParts": [
+        "Файлдарды бул жерге таштаңыз",
+        "же «Медианы импорттоо» баскычын басыңыз",
+        "Видео · Аудио · Сүрөттөр"
+      ],
+      "emptyNoteExpected": [
+        "Файлдарды бул жерге таштаңыз",
+        "же «Медианы импорттоо» баскычын басыңыз",
+        "Видео · Аудио · Сүрөттөр"
+      ],
+      "cyrillicVisible": [
+        "Монтажная",
+        "Файл",
+        "Түзөтүү",
+        "Көрүнүш",
+        "Өтүүлөр",
+        "Жардам",
+        "Интерфейс тили…",
+        "Кеңештер КҮЙҮК",
+        "Кеңештер ӨЧҮК",
+        "Сактоо",
+        "Медианы импорттоо",
+        "Слайд-шоу",
+        "Экспорт",
+        "Бөлүү",
+        "Өчүрүү",
+        "Медиа",
+        "Өтүүлөр",
+        "⇅ Номери боюнча жайгаштыруу",
+        "Сандык тартип: 1, 2, 3… же 001, 002, 003…",
+        "Файлдарды бул жерге таштаңыз",
+        "же «Медианы импорттоо» баскычын басыңыз",
+        "Видео · Аудио · Сүрөттөр",
+        "Алдын ала көрүү",
+        "Тизме 01",
+        "Формат",
+        "Өлчөм",
+        "Касиеттер",
+        "Долбоор",
+        "Формат",
+        "Дааналык"
+      ],
+      "viewportChecks": [
+        {
+          "size": "1366x768",
+          "width": 1366,
+          "viewport": 1366,
+          "topbarScroll": 1366,
+          "topbarWidth": 1366,
+          "transportScroll": 790,
+          "transportWidth": 790,
+          "card": {
+            "left": 473,
+            "top": 229,
+            "right": 893,
+            "bottom": 539
+          }
+        },
+        {
+          "size": "1920x1080",
+          "width": 1920,
+          "viewport": 1920,
+          "topbarScroll": 1920,
+          "topbarWidth": 1920,
+          "transportScroll": 1344,
+          "transportWidth": 1344,
+          "card": {
+            "left": 750,
+            "top": 385,
+            "right": 1170,
+            "bottom": 695
+          }
+        }
+      ],
+      "failures": [],
+      "firstStep": {
+        "title": "Step 1. Add your files",
+        "text": "Click Import Media and choose videos, photos, or music from your computer. You can select several files at once.",
+        "tip": "The selected files appear in the Media panel on the left. Importing does not change the originals on your computer.",
+        "count": "7 ичинен 1-кадам"
+      },
+      "firstStepFallback": true
+    },
+    {
+      "code": "tg",
+      "lang": "tg",
+      "dir": "ltr",
+      "title": "Montazhnaya beta 3.6.45 — муҳаррири акс, садо ва видео",
+      "tourVisible": true,
+      "tourTitle": "Ба «Монтажная» хуш омадед!",
+      "tourTitleExpected": "Ба «Монтажная» хуш омадед!",
+      "tourText": "Амалҳои асосиро бо қадамҳои содда нишон медиҳам. То вақте ки худатон амалеро интихоб накунед, дар лоиҳа чизе тағйир намеёбад.",
+      "tourTextExpected": "Амалҳои асосиро бо қадамҳои содда нишон медиҳам. То вақте ки худатон амалеро интихоб накунед, дар лоиҳа чизе тағйир намеёбад.",
+      "tourTip": "Бо суръати худ пеш равед ва ҳар вақт метавонед шиносоиро пӯшед.",
+      "tourTipExpected": "Бо суръати худ пеш равед ва ҳар вақт метавонед шиносоиро пӯшед.",
+      "tourCount": "Шиносоӣ бо муҳаррир",
+      "tourCountExpected": "Шиносоӣ бо муҳаррир",
+      "tourNext": "Оғози шиносоӣ",
+      "tourNextExpected": "Оғози шиносоӣ",
+      "tracksHeadingExpected": "Роҳҳо",
+      "tourBounds": {
+        "left": 302,
+        "top": 195,
+        "right": 722,
+        "bottom": 505,
+        "width": 420,
+        "height": 310
+      },
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "transportWidth": 448,
+      "transportScroll": 448,
+      "transportHeight": 111,
+      "topbarWidth": 1024,
+      "topbarScroll": 1024,
+      "topbarHeight": 78,
+      "menuButtons": [
+        {
+          "text": "Файл",
+          "width": 41,
+          "scroll": 41,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Таҳрир",
+          "width": 51,
+          "scroll": 51,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Намоиш",
+          "width": 57,
+          "scroll": 57,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Гузаришҳо",
+          "width": 71,
+          "scroll": 71,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Кӯмак",
+          "width": 44,
+          "scroll": 44,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Забони интерфейс…",
+          "width": 129,
+          "scroll": 129,
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "toolbarButtons": [
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "?Фаъол кардани маслиҳатҳоМаслиҳатҳо ФАЪОЛ",
+          "width": 102,
+          "scroll": 102
+        },
+        {
+          "text": "×Хомӯш кардани маслиҳатҳоМаслиҳатҳо ХОМӮШ",
+          "width": 104,
+          "scroll": 104
+        },
+        {
+          "text": "Нигоҳ доштан",
+          "width": 83,
+          "scroll": 83
+        },
+        {
+          "text": "Ворид кардани медиа",
+          "width": 132,
+          "scroll": 132
+        },
+        {
+          "text": "Слайд-шоу",
+          "width": 69,
+          "scroll": 69
+        },
+        {
+          "text": "Содирот",
+          "width": 59,
+          "scroll": 59
+        },
+        {
+          "text": "Ҷудо кардан",
+          "width": 76,
+          "scroll": 76
+        },
+        {
+          "text": "Нест кардан",
+          "width": 75,
+          "scroll": 75
+        }
+      ],
+      "timelineHint": "Медиа-ро аз китобхона ба роҳ кашед",
+      "tracksHeading": "Роҳҳо",
+      "emptyNoteParts": [
+        "Файлҳоро ба ин ҷо кашед",
+        "ё тугмаи «Ворид кардани медиа»-ро пахш кунед",
+        "Видео · Аудио · Тасвирҳо"
+      ],
+      "emptyNoteExpected": [
+        "Файлҳоро ба ин ҷо кашед",
+        "ё тугмаи «Ворид кардани медиа»-ро пахш кунед",
+        "Видео · Аудио · Тасвирҳо"
+      ],
+      "cyrillicVisible": [
+        "Монтажная",
+        "Файл",
+        "Таҳрир",
+        "Намоиш",
+        "Гузаришҳо",
+        "Кӯмак",
+        "Забони интерфейс…",
+        "Маслиҳатҳо ФАЪОЛ",
+        "Маслиҳатҳо ХОМӮШ",
+        "Нигоҳ доштан",
+        "Ворид кардани медиа",
+        "Слайд-шоу",
+        "Содирот",
+        "Ҷудо кардан",
+        "Нест кардан",
+        "Медиа",
+        "Гузаришҳо",
+        "⇅ Ҷобаҷогузорӣ аз рӯи рақам",
+        "Тартиби рақамӣ: 1, 2, 3… ё 001, 002, 003…",
+        "Файлҳоро ба ин ҷо кашед",
+        "ё тугмаи «Ворид кардани медиа»-ро пахш кунед",
+        "Видео · Аудио · Тасвирҳо",
+        "Пешнамоиш",
+        "Пайдарпаӣ 01",
+        "Формат",
+        "Андоза",
+        "Хусусиятҳо",
+        "Лоиҳа",
+        "Формат",
+        "Қобилияти тасвир"
+      ],
+      "viewportChecks": [
+        {
+          "size": "1366x768",
+          "width": 1366,
+          "viewport": 1366,
+          "topbarScroll": 1366,
+          "topbarWidth": 1366,
+          "transportScroll": 790,
+          "transportWidth": 790,
+          "card": {
+            "left": 473,
+            "top": 229,
+            "right": 893,
+            "bottom": 539
+          }
+        },
+        {
+          "size": "1920x1080",
+          "width": 1920,
+          "viewport": 1920,
+          "topbarScroll": 1920,
+          "topbarWidth": 1920,
+          "transportScroll": 1344,
+          "transportWidth": 1344,
+          "card": {
+            "left": 750,
+            "top": 385,
+            "right": 1170,
+            "bottom": 695
+          }
+        }
+      ],
+      "failures": [],
+      "firstStep": {
+        "title": "Step 1. Add your files",
+        "text": "Click Import Media and choose videos, photos, or music from your computer. You can select several files at once.",
+        "tip": "The selected files appear in the Media panel on the left. Importing does not change the originals on your computer.",
+        "count": "Қадами 1 аз 7"
+      },
+      "firstStepFallback": true
+    },
+    {
+      "code": "be",
+      "lang": "be",
+      "dir": "ltr",
+      "title": "Montazhnaya beta 3.6.45 — рэдактар фота, аўдыя і відэа",
+      "tourVisible": true,
+      "tourTitle": "Вітаем у «Монтажнай»!",
+      "tourTitleExpected": "Вітаем у «Монтажнай»!",
+      "tourText": "Пакажу асноўныя дзеянні простымі крокамі. У праекце нічога не зменіцца, пакуль вы самі не выбераце дзеянне.",
+      "tourTextExpected": "Пакажу асноўныя дзеянні простымі крокамі. У праекце нічога не зменіцца, пакуль вы самі не выбераце дзеянне.",
+      "tourTip": "Працуйце ў сваім тэмпе і зачыняйце знаёмства ў любы момант.",
+      "tourTipExpected": "Працуйце ў сваім тэмпе і зачыняйце знаёмства ў любы момант.",
+      "tourCount": "Знаёмства з рэдактарам",
+      "tourCountExpected": "Знаёмства з рэдактарам",
+      "tourNext": "Пачаць знаёмства",
+      "tourNextExpected": "Пачаць знаёмства",
+      "tracksHeadingExpected": "Дарожкі",
+      "tourBounds": {
+        "left": 302,
+        "top": 215,
+        "right": 722,
+        "bottom": 486,
+        "width": 420,
+        "height": 271
+      },
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "transportWidth": 448,
+      "transportScroll": 448,
+      "transportHeight": 111,
+      "topbarWidth": 1024,
+      "topbarScroll": 1024,
+      "topbarHeight": 78,
+      "menuButtons": [
+        {
+          "text": "Файл",
+          "width": 41,
+          "scroll": 41,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Рэдагаванне",
+          "width": 82,
+          "scroll": 82,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Выгляд",
+          "width": 54,
+          "scroll": 54,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Пераходы",
+          "width": 68,
+          "scroll": 68,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Даведка",
+          "width": 57,
+          "scroll": 57,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Мова інтэрфейсу…",
+          "width": 120,
+          "scroll": 120,
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "toolbarButtons": [
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "?Уключыць падказкіПадказкі ЎКЛ",
+          "width": 70,
+          "scroll": 70
+        },
+        {
+          "text": "×Выключыць падказкіПадказкі ВЫКЛ",
+          "width": 79,
+          "scroll": 79
+        },
+        {
+          "text": "Захаваць",
+          "width": 60,
+          "scroll": 60
+        },
+        {
+          "text": "Імпартаваць медыя",
+          "width": 120,
+          "scroll": 120
+        },
+        {
+          "text": "Слайд-шоў",
+          "width": 69,
+          "scroll": 69
+        },
+        {
+          "text": "Экспарт",
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "text": "Раздзяліць",
+          "width": 68,
+          "scroll": 68
+        },
+        {
+          "text": "Выдаліць",
+          "width": 61,
+          "scroll": 61
+        }
+      ],
+      "timelineHint": "Перацягніце медыя з бібліятэкі на дарожку",
+      "tracksHeading": "Дарожкі",
+      "emptyNoteParts": [
+        "Перацягніце файлы сюды",
+        "або націсніце «Імпартаваць медыя»",
+        "Відэа · Аўдыя · Выявы"
+      ],
+      "emptyNoteExpected": [
+        "Перацягніце файлы сюды",
+        "або націсніце «Імпартаваць медыя»",
+        "Відэа · Аўдыя · Выявы"
+      ],
+      "cyrillicVisible": [
+        "Монтажная",
+        "Файл",
+        "Рэдагаванне",
+        "Выгляд",
+        "Пераходы",
+        "Даведка",
+        "Мова інтэрфейсу…",
+        "Падказкі ЎКЛ",
+        "Падказкі ВЫКЛ",
+        "Захаваць",
+        "Імпартаваць медыя",
+        "Слайд-шоў",
+        "Экспарт",
+        "Раздзяліць",
+        "Выдаліць",
+        "Медыя",
+        "Пераходы",
+        "⇅ Упарадкаваць паводле нумара",
+        "Лікавы парадак: 1, 2, 3… або 001, 002, 003…",
+        "Перацягніце файлы сюды",
+        "або націсніце «Імпартаваць медыя»",
+        "Відэа · Аўдыя · Выявы",
+        "Папярэдні прагляд",
+        "Паслядоўнасць 01",
+        "Фармат",
+        "Памер",
+        "Уласцівасці",
+        "Праект",
+        "Фармат",
+        "Раздзяляльнасць"
+      ],
+      "viewportChecks": [
+        {
+          "size": "1366x768",
+          "width": 1366,
+          "viewport": 1366,
+          "topbarScroll": 1366,
+          "topbarWidth": 1366,
+          "transportScroll": 790,
+          "transportWidth": 790,
+          "card": {
+            "left": 473,
+            "top": 249,
+            "right": 893,
+            "bottom": 520
+          }
+        },
+        {
+          "size": "1920x1080",
+          "width": 1920,
+          "viewport": 1920,
+          "topbarScroll": 1920,
+          "topbarWidth": 1920,
+          "transportScroll": 1344,
+          "transportWidth": 1344,
+          "card": {
+            "left": 750,
+            "top": 405,
+            "right": 1170,
+            "bottom": 676
+          }
+        }
+      ],
+      "failures": [],
+      "firstStep": {
+        "title": "Step 1. Add your files",
+        "text": "Click Import Media and choose videos, photos, or music from your computer. You can select several files at once.",
+        "tip": "The selected files appear in the Media panel on the left. Importing does not change the originals on your computer.",
+        "count": "Крок 1 з 7"
+      },
+      "firstStepFallback": true
+    },
+    {
+      "code": "uz-Cyrl",
+      "lang": "uz-Cyrl",
+      "dir": "ltr",
+      "title": "Montazhnaya бета 3.6.45 — фото, аудио ва видео муҳаррири",
+      "tourVisible": true,
+      "tourTitle": "Montazhnaya дастурига хуш келибсиз!",
+      "tourTitleExpected": "Montazhnaya дастурига хуш келибсиз!",
+      "tourText": "Асосий амалларни содда қадамлар билан кўрсатаман. Керакли тугмани ўзингиз босмагунингизча лойиҳангизда ҳеч нарса ўзгармайди.",
+      "tourTextExpected": "Асосий амалларни содда қадамлар билан кўрсатаман. Керакли тугмани ўзингиз босмагунингизча лойиҳангизда ҳеч нарса ўзгармайди.",
+      "tourTip": "Ўзингизга қулай тезликда давом этинг ва танишувни исталган пайт ёпишингиз мумкин.",
+      "tourTipExpected": "Ўзингизга қулай тезликда давом этинг ва танишувни исталган пайт ёпишингиз мумкин.",
+      "tourCount": "Муҳаррир билан танишув",
+      "tourCountExpected": "Муҳаррир билан танишув",
+      "tourNext": "Танишувни бошлаш",
+      "tourNextExpected": "Танишувни бошлаш",
+      "tracksHeadingExpected": "Йўлаклар",
+      "tourBounds": {
+        "left": 302,
+        "top": 195,
+        "right": 722,
+        "bottom": 505,
+        "width": 420,
+        "height": 310
+      },
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "transportWidth": 448,
+      "transportScroll": 448,
+      "transportHeight": 111,
+      "topbarWidth": 1024,
+      "topbarScroll": 1024,
+      "topbarHeight": 78,
+      "menuButtons": [
+        {
+          "text": "Файл",
+          "width": 41,
+          "scroll": 41,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Таҳрирлаш",
+          "width": 74,
+          "scroll": 74,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Кўриниш",
+          "width": 61,
+          "scroll": 61,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Ўтишлар",
+          "width": 60,
+          "scroll": 60,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Ёрдам",
+          "width": 47,
+          "scroll": 47,
+          "whiteSpace": "nowrap"
+        },
+        {
+          "text": "Интерфейс тили…",
+          "width": 116,
+          "scroll": 116,
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "toolbarButtons": [
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "",
+          "width": 27,
+          "scroll": 27
+        },
+        {
+          "text": "?Маслаҳатларни ёқишМаслаҳатлар ЁҚИЛГАН",
+          "width": 116,
+          "scroll": 116
+        },
+        {
+          "text": "×Маслаҳатларни ўчиришМаслаҳатлар ЎЧИРИЛГАН",
+          "width": 130,
+          "scroll": 130
+        },
+        {
+          "text": "Сақлаш",
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "text": "Медиани импорт қилиш",
+          "width": 142,
+          "scroll": 142
+        },
+        {
+          "text": "Слайд-шоу",
+          "width": 69,
+          "scroll": 69
+        },
+        {
+          "text": "Экспорт",
+          "width": 57,
+          "scroll": 57
+        },
+        {
+          "text": "Бўлиш",
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "text": "Ўчириш",
+          "width": 52,
+          "scroll": 52
+        }
+      ],
+      "timelineHint": "Кутубхонадаги медиани трекка судранг",
+      "tracksHeading": "Йўлаклар",
+      "emptyNoteParts": [
+        "Файлларни бу ерга судранг",
+        "ёки “Медианı импорт қилиш” тугмасини босинг",
+        "Видео · Аудио · Расмлар"
+      ],
+      "emptyNoteExpected": [
+        "Файлларни бу ерга судранг",
+        "ёки “Медианı импорт қилиш” тугмасини босинг",
+        "Видео · Аудио · Расмлар"
+      ],
+      "cyrillicVisible": [
+        "Монтажная",
+        "Файл",
+        "Таҳрирлаш",
+        "Кўриниш",
+        "Ўтишлар",
+        "Ёрдам",
+        "Интерфейс тили…",
+        "Маслаҳатлар ЁҚИЛГАН",
+        "Маслаҳатлар ЎЧИРИЛГАН",
+        "Сақлаш",
+        "Медиани импорт қилиш",
+        "Слайд-шоу",
+        "Экспорт",
+        "Бўлиш",
+        "Ўчириш",
+        "Медиа",
+        "Ўтишлар",
+        "⇅ Рақам бўйича жойлаштириш",
+        "Рақамли тартиб: 1, 2, 3… ёки 001, 002, 003…",
+        "Файлларни бу ерга судранг",
+        "ёки “Медианı импорт қилиш” тугмасини босинг",
+        "Видео · Аудио · Расмлар",
+        "Олдиндан кўриш",
+        "01-кетма-кетлик",
+        "Формат",
+        "Ўлчам",
+        "Хусусиятлар",
+        "Лойиҳа",
+        "Формат",
+        "Рухсат"
+      ],
+      "viewportChecks": [
+        {
+          "size": "1366x768",
+          "width": 1366,
+          "viewport": 1366,
+          "topbarScroll": 1366,
+          "topbarWidth": 1366,
+          "transportScroll": 790,
+          "transportWidth": 790,
+          "card": {
+            "left": 473,
+            "top": 229,
+            "right": 893,
+            "bottom": 539
+          }
+        },
+        {
+          "size": "1920x1080",
+          "width": 1920,
+          "viewport": 1920,
+          "topbarScroll": 1920,
+          "topbarWidth": 1920,
+          "transportScroll": 1344,
+          "transportWidth": 1344,
+          "card": {
+            "left": 750,
+            "top": 385,
+            "right": 1170,
+            "bottom": 695
+          }
+        }
+      ],
+      "failures": [],
+      "firstStep": {
+        "title": "Step 1. Add your files",
+        "text": "Click Import Media and choose videos, photos, or music from your computer. You can select several files at once.",
+        "tip": "The selected files appear in the Media panel on the left. Importing does not change the originals on your computer.",
+        "count": "7 тадан 1-қадам"
+      },
+      "firstStepFallback": true
+    }
+  ],
+  "pageErrors": [],
+  "count": 36
+}

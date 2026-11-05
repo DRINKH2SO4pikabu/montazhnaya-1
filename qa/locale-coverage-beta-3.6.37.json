@@ -1,0 +1,174 @@
+{
+  "version": "3.6.37",
+  "sourceDictionaryEntries": 436,
+  "locales": {
+    "de": {
+      "sourceKeys": 436,
+      "localeMappedCount": 436,
+      "englishFallbackCount": 0,
+      "translationStage": "translation-draft-complete-review-pending",
+      "direction": "ltr"
+    },
+    "fr": {
+      "sourceKeys": 436,
+      "localeMappedCount": 436,
+      "englishFallbackCount": 0,
+      "translationStage": "translation-draft-complete-review-pending",
+      "direction": "ltr"
+    },
+    "es": {
+      "sourceKeys": 436,
+      "localeMappedCount": 436,
+      "englishFallbackCount": 0,
+      "translationStage": "translation-draft-complete-review-pending",
+      "direction": "ltr"
+    },
+    "pt-BR": {
+      "sourceKeys": 436,
+      "localeMappedCount": 436,
+      "englishFallbackCount": 0,
+      "translationStage": "translation-draft-complete-review-pending",
+      "direction": "ltr"
+    },
+    "it": {
+      "sourceKeys": 436,
+      "localeMappedCount": 436,
+      "englishFallbackCount": 0,
+      "translationStage": "translation-draft-complete-review-pending",
+      "direction": "ltr"
+    },
+    "pl": {
+      "sourceKeys": 436,
+      "localeMappedCount": 436,
+      "englishFallbackCount": 0,
+      "translationStage": "translation-draft-complete-review-pending",
+      "direction": "ltr"
+    },
+    "uk": {
+      "sourceKeys": 436,
+      "localeMappedCount": 301,
+      "englishFallbackCount": 135,
+      "translationStage": "partial-translation",
+      "direction": "ltr"
+    },
+    "tr": {
+      "sourceKeys": 436,
+      "localeMappedCount": 301,
+      "englishFallbackCount": 135,
+      "translationStage": "partial-translation",
+      "direction": "ltr"
+    },
+    "zh-CN": {
+      "sourceKeys": 436,
+      "localeMappedCount": 301,
+      "englishFallbackCount": 135,
+      "translationStage": "partial-translation",
+      "direction": "ltr"
+    },
+    "zh-TW": {
+      "sourceKeys": 436,
+      "localeMappedCount": 301,
+      "englishFallbackCount": 135,
+      "translationStage": "partial-translation",
+      "direction": "ltr"
+    },
+    "ja": {
+      "sourceKeys": 436,
+      "localeMappedCount": 301,
+      "englishFallbackCount": 135,
+      "translationStage": "partial-translation",
+      "direction": "ltr"
+    },
+    "ko": {
+      "sourceKeys": 436,
+      "localeMappedCount": 301,
+      "englishFallbackCount": 135,
+      "translationStage": "partial-translation",
+      "direction": "ltr"
+    },
+    "ar": {
+      "sourceKeys": 436,
+      "localeMappedCount": 301,
+      "englishFallbackCount": 135,
+      "translationStage": "partial-translation",
+      "direction": "rtl"
+    },
+    "he": {
+      "sourceKeys": 436,
+      "localeMappedCount": 301,
+      "englishFallbackCount": 135,
+      "translationStage": "partial-translation",
+      "direction": "rtl"
+    },
+    "hi": {
+      "sourceKeys": 436,
+      "localeMappedCount": 301,
+      "englishFallbackCount": 135,
+      "translationStage": "partial-translation",
+      "direction": "ltr"
+    },
+    "nl": {
+      "sourceKeys": 436,
+      "localeMappedCount": 301,
+      "englishFallbackCount": 135,
+      "translationStage": "partial-translation",
+      "direction": "ltr"
+    },
+    "sv": {
+      "sourceKeys": 436,
+      "localeMappedCount": 301,
+      "englishFallbackCount": 135,
+      "translationStage": "partial-translation",
+      "direction": "ltr"
+    },
+    "fi": {
+      "sourceKeys": 436,
+      "localeMappedCount": 301,
+      "englishFallbackCount": 135,
+      "translationStage": "partial-translation",
+      "direction": "ltr"
+    },
+    "cs": {
+      "sourceKeys": 436,
+      "localeMappedCount": 301,
+      "englishFallbackCount": 135,
+      "translationStage": "partial-translation",
+      "direction": "ltr"
+    },
+    "ro": {
+      "sourceKeys": 436,
+      "localeMappedCount": 301,
+      "englishFallbackCount": 135,
+      "translationStage": "partial-translation",
+      "direction": "ltr"
+    },
+    "el": {
+      "sourceKeys": 436,
+      "localeMappedCount": 301,
+      "englishFallbackCount": 135,
+      "translationStage": "partial-translation",
+      "direction": "ltr"
+    },
+    "vi": {
+      "sourceKeys": 436,
+      "localeMappedCount": 301,
+      "englishFallbackCount": 135,
+      "translationStage": "partial-translation",
+      "direction": "ltr"
+    },
+    "id": {
+      "sourceKeys": 436,
+      "localeMappedCount": 301,
+      "englishFallbackCount": 135,
+      "translationStage": "partial-translation",
+      "direction": "ltr"
+    },
+    "th": {
+      "sourceKeys": 436,
+      "localeMappedCount": 301,
+      "englishFallbackCount": 135,
+      "translationStage": "partial-translation",
+      "direction": "ltr"
+    }
+  }
+}

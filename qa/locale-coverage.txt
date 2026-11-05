@@ -1,0 +1,44 @@
+Montazhnaya Beta 3.6.41 — CIS, Caucasus and Central Asia localization wave 1
+Source English keys: 436
+International language packs: 33
+Fully mapped draft packs: 24
+New CIS/Caucasus packs with core coverage: 9
+
+New regional packs (81 core phrases / 83 source mappings including aliases and About title; 353 English fallbacks):
+- kk — Қазақша: 83/436 mapped; 353 English fallbacks; LTR
+- uz — Oʻzbekcha: 83/436 mapped; 353 English fallbacks; LTR
+- ka — ქართული: 83/436 mapped; 353 English fallbacks; LTR
+- hy — Հայերեն: 83/436 mapped; 353 English fallbacks; LTR
+- tk — Türkmençe: 83/436 mapped; 353 English fallbacks; LTR
+- az — Azərbaycanca: 83/436 mapped; 353 English fallbacks; LTR
+- ky — Кыргызча: 83/436 mapped; 353 English fallbacks; LTR
+- tg — Тоҷикӣ: 83/436 mapped; 353 English fallbacks; LTR
+- be — Беларуская: 83/436 mapped; 353 English fallbacks; LTR
+
+Existing international packs:
+- de — Deutsch: 436/436 mapped; 0 English fallbacks; LTR
+- fr — Français: 436/436 mapped; 0 English fallbacks; LTR
+- es — Español: 436/436 mapped; 0 English fallbacks; LTR
+- pt-BR — Português (Brasil): 436/436 mapped; 0 English fallbacks; LTR
+- it — Italiano: 436/436 mapped; 0 English fallbacks; LTR
+- pl — Polski: 436/436 mapped; 0 English fallbacks; LTR
+- uk — Українська: 436/436 mapped; 0 English fallbacks; LTR
+- tr — Türkçe: 436/436 mapped; 0 English fallbacks; LTR
+- zh-CN — 简体中文: 436/436 mapped; 0 English fallbacks; LTR
+- zh-TW — 繁體中文: 436/436 mapped; 0 English fallbacks; LTR
+- ja — 日本語: 436/436 mapped; 0 English fallbacks; LTR
+- ko — 한국어: 436/436 mapped; 0 English fallbacks; LTR
+- ar — العربية: 436/436 mapped; 0 English fallbacks; RTL
+- he — עברית: 436/436 mapped; 0 English fallbacks; RTL
+- hi — हिन्दी: 436/436 mapped; 0 English fallbacks; LTR
+- nl — Nederlands: 436/436 mapped; 0 English fallbacks; LTR
+- sv — Svenska: 436/436 mapped; 0 English fallbacks; LTR
+- fi — Suomi: 436/436 mapped; 0 English fallbacks; LTR
+- cs — Čeština: 436/436 mapped; 0 English fallbacks; LTR
+- ro — Română: 436/436 mapped; 0 English fallbacks; LTR
+- el — Ελληνικά: 436/436 mapped; 0 English fallbacks; LTR
+- vi — Tiếng Việt: 436/436 mapped; 0 English fallbacks; LTR
+- id — Bahasa Indonesia: 436/436 mapped; 0 English fallbacks; LTR
+- th — ไทย: 436/436 mapped; 0 English fallbacks; LTR
+
+All new regional packs are marked Translation preview. Translations are draft quality and require fluent-speaker review and Windows visual QA.

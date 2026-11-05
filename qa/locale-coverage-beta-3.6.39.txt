@@ -1,0 +1,32 @@
+Montazhnaya Beta 3.6.39 — Localization coverage
+English source dictionary: 436 keys
+
+Draft-complete source-key maps (0 English fallback):
+de: 436/436 mapped, 0 English fallback
+fr: 436/436 mapped, 0 English fallback
+es: 436/436 mapped, 0 English fallback
+pt-BR: 436/436 mapped, 0 English fallback
+it: 436/436 mapped, 0 English fallback
+pl: 436/436 mapped, 0 English fallback
+uk: 436/436 mapped, 0 English fallback
+tr: 436/436 mapped, 0 English fallback
+zh-CN: 436/436 mapped, 0 English fallback
+zh-TW: 436/436 mapped, 0 English fallback
+ja: 436/436 mapped, 0 English fallback
+ko: 436/436 mapped, 0 English fallback
+ar: 436/436 mapped, 0 English fallback
+he: 436/436 mapped, 0 English fallback
+hi: 436/436 mapped, 0 English fallback
+nl: 436/436 mapped, 0 English fallback
+sv: 436/436 mapped, 0 English fallback
+fi: 436/436 mapped, 0 English fallback
+
+Partial translation previews (301 locale mappings, 135 English fallback):
+cs: 301/436 mapped, 135 English fallback
+ro: 301/436 mapped, 135 English fallback
+el: 301/436 mapped, 135 English fallback
+vi: 301/436 mapped, 135 English fallback
+id: 301/436 mapped, 135 English fallback
+th: 301/436 mapped, 135 English fallback
+
+All 24 international packs remain marked preview. Arabic and Hebrew use RTL metadata; Hindi uses Devanagari font fallbacks. Native-speaker review and Windows visual QA are pending.

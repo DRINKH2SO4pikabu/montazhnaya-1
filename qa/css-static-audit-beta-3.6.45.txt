@@ -1,0 +1,8 @@
+Montazhnaya Beta 3.6.45 — CSS static audit
+Stylesheet blocks: 1
+CSS rules/at-rules: 590
+Stylesheet parse errors: 0
+Declaration parse errors: 0
+Parser: tinycss2 1.5.1
+
+This is syntax validation only. It does not measure rendered text widths or certify Windows font availability / DPI behavior.

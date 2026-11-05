@@ -1,0 +1,267 @@
+{
+  "generatedAt": "2026-11-04",
+  "projectVersion": "3.6.45",
+  "catalogEntries": 270,
+  "permanentKeyReferences": 240,
+  "unknownKeyReferences": 0,
+  "unknownKeys": [],
+  "csp": {
+    "nonEmptyInlineScripts": 1,
+    "actualHash": "sha256-MIil2UBo8D3HQkCtq1gKngidJ212togdM2eZmZHw7N0=",
+    "declaredHashMatches": true
+  },
+  "localeCoverage": [
+    {
+      "code": "ru",
+      "name": "Русский",
+      "total": 270,
+      "translated": 270,
+      "englishFallback": 0
+    },
+    {
+      "code": "en",
+      "name": "English",
+      "total": 270,
+      "translated": 270,
+      "englishFallback": 0
+    },
+    {
+      "code": "de",
+      "name": "Deutsch",
+      "total": 270,
+      "translated": 36,
+      "englishFallback": 234
+    },
+    {
+      "code": "fr",
+      "name": "Français",
+      "total": 270,
+      "translated": 36,
+      "englishFallback": 234
+    },
+    {
+      "code": "es",
+      "name": "Español",
+      "total": 270,
+      "translated": 36,
+      "englishFallback": 234
+    },
+    {
+      "code": "pt-BR",
+      "name": "Português (Brasil)",
+      "total": 270,
+      "translated": 36,
+      "englishFallback": 234
+    },
+    {
+      "code": "it",
+      "name": "Italiano",
+      "total": 270,
+      "translated": 36,
+      "englishFallback": 234
+    },
+    {
+      "code": "pl",
+      "name": "Polski",
+      "total": 270,
+      "translated": 36,
+      "englishFallback": 234
+    },
+    {
+      "code": "uk",
+      "name": "Українська",
+      "total": 270,
+      "translated": 36,
+      "englishFallback": 234
+    },
+    {
+      "code": "tr",
+      "name": "Türkçe",
+      "total": 270,
+      "translated": 36,
+      "englishFallback": 234
+    },
+    {
+      "code": "zh-CN",
+      "name": "简体中文",
+      "total": 270,
+      "translated": 36,
+      "englishFallback": 234
+    },
+    {
+      "code": "zh-TW",
+      "name": "繁體中文",
+      "total": 270,
+      "translated": 36,
+      "englishFallback": 234
+    },
+    {
+      "code": "ja",
+      "name": "日本語",
+      "total": 270,
+      "translated": 36,
+      "englishFallback": 234
+    },
+    {
+      "code": "ko",
+      "name": "한국어",
+      "total": 270,
+      "translated": 36,
+      "englishFallback": 234
+    },
+    {
+      "code": "ar",
+      "name": "العربية",
+      "total": 270,
+      "translated": 36,
+      "englishFallback": 234
+    },
+    {
+      "code": "he",
+      "name": "עברית",
+      "total": 270,
+      "translated": 36,
+      "englishFallback": 234
+    },
+    {
+      "code": "hi",
+      "name": "हिन्दी",
+      "total": 270,
+      "translated": 36,
+      "englishFallback": 234
+    },
+    {
+      "code": "nl",
+      "name": "Nederlands",
+      "total": 270,
+      "translated": 36,
+      "englishFallback": 234
+    },
+    {
+      "code": "sv",
+      "name": "Svenska",
+      "total": 270,
+      "translated": 36,
+      "englishFallback": 234
+    },
+    {
+      "code": "fi",
+      "name": "Suomi",
+      "total": 270,
+      "translated": 36,
+      "englishFallback": 234
+    },
+    {
+      "code": "cs",
+      "name": "Čeština",
+      "total": 270,
+      "translated": 36,
+      "englishFallback": 234
+    },
+    {
+      "code": "ro",
+      "name": "Română",
+      "total": 270,
+      "translated": 36,
+      "englishFallback": 234
+    },
+    {
+      "code": "el",
+      "name": "Ελληνικά",
+      "total": 270,
+      "translated": 36,
+      "englishFallback": 234
+    },
+    {
+      "code": "vi",
+      "name": "Tiếng Việt",
+      "total": 270,
+      "translated": 36,
+      "englishFallback": 234
+    },
+    {
+      "code": "id",
+      "name": "Bahasa Indonesia",
+      "total": 270,
+      "translated": 36,
+      "englishFallback": 234
+    },
+    {
+      "code": "th",
+      "name": "ไทย",
+      "total": 270,
+      "translated": 36,
+      "englishFallback": 234
+    },
+    {
+      "code": "kk",
+      "name": "Қазақша",
+      "total": 270,
+      "translated": 36,
+      "englishFallback": 234
+    },
+    {
+      "code": "uz",
+      "name": "Oʻzbekcha",
+      "total": 270,
+      "translated": 36,
+      "englishFallback": 234
+    },
+    {
+      "code": "uz-Cyrl",
+      "name": "Ўзбекча (кирилл)",
+      "total": 270,
+      "translated": 36,
+      "englishFallback": 234
+    },
+    {
+      "code": "ka",
+      "name": "ქართული",
+      "total": 270,
+      "translated": 36,
+      "englishFallback": 234
+    },
+    {
+      "code": "hy",
+      "name": "Հայերեն",
+      "total": 270,
+      "translated": 36,
+      "englishFallback": 234
+    },
+    {
+      "code": "tk",
+      "name": "Türkmençe",
+      "total": 270,
+      "translated": 36,
+      "englishFallback": 234
+    },
+    {
+      "code": "az",
+      "name": "Azərbaycanca",
+      "total": 270,
+      "translated": 36,
+      "englishFallback": 234
+    },
+    {
+      "code": "ky",
+      "name": "Кыргызча",
+      "total": 270,
+      "translated": 36,
+      "englishFallback": 234
+    },
+    {
+      "code": "tg",
+      "name": "Тоҷикӣ",
+      "total": 270,
+      "translated": 36,
+      "englishFallback": 234
+    },
+    {
+      "code": "be",
+      "name": "Беларуская",
+      "total": 270,
+      "translated": 36,
+      "englishFallback": 234
+    }
+  ]
+}

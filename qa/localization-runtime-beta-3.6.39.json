@@ -1,0 +1,17 @@
+{
+  "version": "3.6.39",
+  "localeCount": 24,
+  "sourceKeyCount": 436,
+  "draftCompleteLocales": [
+    "de", "fr", "es", "pt-BR", "it", "pl", "uk", "tr", "zh-CN", "zh-TW", "ja", "ko", "ar", "he", "hi", "nl", "sv", "fi"
+  ],
+  "partialLocales": ["cs", "ro", "el", "vi", "id", "th"],
+  "fallbacksPerPartialLocale": 135,
+  "emptyTranslations": 0,
+  "placeholderMismatches": 0,
+  "rtl": {"ar": true, "he": true},
+  "fontFallbacks": {"ar": "Noto Sans Arabic / Segoe UI / Tahoma", "he": "Noto Sans Hebrew / Segoe UI", "hi": "Noto Sans Devanagari / Mangal / Nirmala UI"},
+  "tests": {"passed": 274, "failed": 0},
+  "windowsVisualQa": "pending",
+  "nativeSpeakerReview": "pending"
+}

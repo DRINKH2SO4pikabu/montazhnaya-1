@@ -1,0 +1,131 @@
+name: Dependency security refresh and Windows x64 build
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  security-and-build-windows-x64:
+    runs-on: windows-latest
+    timeout-minutes: 60
+    steps:
+      - name: Check out source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Set up Node.js 24
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install FFmpeg for integration tests
+        shell: pwsh
+        run: choco install ffmpeg --yes --no-progress
+
+      - name: Install locked application dependencies and run npm audit
+        id: app_deps
+        continue-on-error: true
+        run: npm run deps:ci
+
+      - name: Install checksum-verified Electron runtime
+        id: electron_runtime
+        if: steps.app_deps.outcome == 'success'
+        continue-on-error: true
+        run: npm run electron:install
+
+      - name: Verify Electron runtime version
+        if: steps.electron_runtime.outcome == 'success'
+        continue-on-error: true
+        run: npm run electron:version
+
+      - name: Generate separate electron-builder lockfile, install and audit
+        id: release_tools
+        continue-on-error: true
+        run: npm run release-tools:install
+
+      - name: Replay strict locked install and audit for release toolchain
+        id: release_tools_replay
+        if: steps.release_tools.outcome == 'success'
+        continue-on-error: true
+        run: npm run release-tools:ci
+
+      - name: Run localization quality audit
+        id: locales
+        if: always()
+        continue-on-error: true
+        run: npm run qa:locales
+
+      - name: Run regression suite
+        id: tests
+        if: always()
+        continue-on-error: true
+        run: npm test
+
+      - name: Enforce security and regression gates
+        if: always()
+        shell: pwsh
+        env:
+          APP_DEPS_RESULT: ${{ steps.app_deps.outcome }}
+          ELECTRON_RESULT: ${{ steps.electron_runtime.outcome }}
+          RELEASE_TOOLS_RESULT: ${{ steps.release_tools.outcome }}
+          RELEASE_TOOLS_REPLAY_RESULT: ${{ steps.release_tools_replay.outcome }}
+          LOCALES_RESULT: ${{ steps.locales.outcome }}
+          TESTS_RESULT: ${{ steps.tests.outcome }}
+        run: |
+          $checks = @{
+            'Application npm ci + audit' = $env:APP_DEPS_RESULT
+            'Electron runtime install' = $env:ELECTRON_RESULT
+            'Release-toolchain lock + npm ci + audit' = $env:RELEASE_TOOLS_RESULT
+            'Release-toolchain strict replay' = $env:RELEASE_TOOLS_REPLAY_RESULT
+            'Localization QA' = $env:LOCALES_RESULT
+            'Regression tests' = $env:TESTS_RESULT
+          }
+          $failed = @($checks.GetEnumerator() | Where-Object { $_.Value -ne 'success' })
+          $checks.GetEnumerator() | Sort-Object Name | ForEach-Object { Write-Host ("{0}: {1}" -f $_.Name, $_.Value) }
+          if ($failed.Count -gt 0) { throw "Security/build gate failed: $($failed.Name -join ', ')" }
+
+      - name: Build NSIS Setup and Portable for Windows x64
+        run: npm run dist:win
+
+      - name: Verify artifacts and generate SHA-256 checksums
+        shell: pwsh
+        run: |
+          $executables = @(Get-ChildItem -Path release -Filter *.exe)
+          if ($executables.Count -lt 2) { throw "Expected Setup and Portable EXE; found $($executables.Count)." }
+          $names = $executables.Name -join "`n"
+          if ($names -notmatch "Setup" -or $names -notmatch "Portable") { throw "Expected both Setup and Portable outputs. Found: $names" }
+          foreach ($file in $executables) {
+            $hash = (Get-FileHash -Algorithm SHA256 -LiteralPath $file.FullName).Hash.ToLowerInvariant()
+            "$hash  $($file.Name)" | Set-Content -Encoding ascii -LiteralPath ($file.FullName + ".sha256.txt")
+          }
+
+      - name: Upload Windows x64 build
+        if: success()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: Montazhnaya-Beta-3.6.45-Windows-x64
+          path: |
+            release/*.exe
+            release/*.sha256.txt
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload dependency lockfiles and audit evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: Montazhnaya-Beta-3.6.45-Dependency-Audit-Evidence
+          path: |
+            package-lock.json
+            tools/release-toolchain/package.json
+            tools/release-toolchain/package-lock.json
+            qa/dependency-audit-app-latest.json
+            qa/dependency-audit-app-latest.summary.json
+            qa/dependency-audit-release-toolchain-latest.json
+            qa/dependency-audit-release-toolchain-latest.summary.json
+            qa/dependency-license-metadata-beta-3.6.45.json
+          if-no-files-found: warn
+          retention-days: 30

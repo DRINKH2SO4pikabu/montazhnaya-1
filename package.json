@@ -1,0 +1,109 @@
+{
+  "name": "montazhnaya-1",
+  "version": "3.6.45",
+  "private": true,
+  "description": "Локальный видеоредактор «Монтажная» для монтажа фото, аудио и видео",
+  "main": "electron/main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test --test-concurrency=4 tests/*.test.cjs",
+    "dist:win": "node tools/run-windows-build.cjs",
+    "qa:locales": "node qa/generate-locale-coverage.cjs && node qa/audit-ipc-error-locales.cjs && node qa/localization-quality-audit.cjs && node qa/generate-terminology-glossary.cjs && node qa/generate-long-label-review.cjs && node qa/audit-beginner-tour-locales.cjs && node qa/audit-editorial-terminology-stage9.cjs && node qa/generate-terminology-glossary-stage9.cjs && node qa/audit-full-dictionary-editorial-stage9.cjs",
+    "electron:install": "install-electron",
+    "electron:version": "electron --version",
+    "deps:install": "node tools/sync-app-dependencies.cjs",
+    "release-tools:install": "node tools/sync-release-toolchain.cjs",
+    "deps:ci": "node tools/sync-app-dependencies.cjs --locked",
+    "release-tools:ci": "node tools/sync-release-toolchain.cjs --locked",
+    "deps:refresh": "node tools/sync-app-dependencies.cjs --refresh-lock",
+    "release-tools:refresh": "node tools/sync-release-toolchain.cjs --refresh-lock",
+    "fixtures:generate": "node tools/generate-synthetic-fixtures.cjs"
+  },
+  "devDependencies": {
+    "electron": "45.2.1"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "productName": "Монтажная",
+  "build": {
+    "appId": "ru.montazhnaya.desktop",
+    "productName": "Монтажная",
+    "artifactName": "${productName}-${version}-${arch}.${ext}",
+    "asar": true,
+    "npmRebuild": false,
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "assets/**/*",
+      "electron/**/*",
+      "src/**/*",
+      "package.json",
+      "README.md",
+      "RELEASE_NOTES.md",
+      "SECURITY.md",
+      "tools/Start-Montazhnaya.ps1",
+      "tools/Start-Montazhnaya-NVENC.ps1",
+      "tools/Test-MontazhnayaGpu.ps1",
+      "tools/Test-Montazhnaya-NVENC-API13.0.ps1",
+      "tools/README-NVENC-API13.0-RU.txt",
+      "LICENSE",
+      "THIRD_PARTY_NOTICES.md",
+      "ASSET_LICENSE.md",
+      "ASSET_CREDITS.md"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "executableName": "Montazhnaya",
+      "artifactName": "Montazhnaya-${version}-${arch}.${ext}",
+      "icon": "assets/montazhnaya.ico"
+    },
+    "nsis": {
+      "artifactName": "Montazhnaya-${version}-Setup-${arch}.${ext}",
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "deleteAppDataOnUninstall": false,
+      "runAfterFinish": true,
+      "installerIcon": "assets/montazhnaya.ico",
+      "uninstallerIcon": "assets/montazhnaya.ico",
+      "shortcutName": "Монтажная"
+    },
+    "portable": {
+      "artifactName": "Montazhnaya-${version}-Portable-${arch}.${ext}"
+    },
+    "executableName": "Montazhnaya",
+    "extraFiles": [
+      {
+        "from": "assets/montazhnaya.ico",
+        "to": "Montazhnaya.ico"
+      },
+      {
+        "from": "assets/montazhnaya-icon.png",
+        "to": "Montazhnaya.png"
+      }
+    ]
+  },
+  "overrides": {
+    "electron": {
+      "@electron-internal/extract-zip": "1.0.8"
+    }
+  },
+  "license": "GPL-3.0-or-later"
+}

@@ -1,0 +1,27 @@
+node_modules/
+release/
+dist/
+out/
+coverage/
+*.log
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+.env
+.env.*
+!.env.example
+*.user
+*.suo
+*.code-workspace
+# Personal QA captures and source footage are never committed by default.
+docs/qa-assets/
+# Transition demo previews are tracked with their provenance and asset-license notices.
+
+# Synthetic FFmpeg test media is generated locally and is not committed.
+tests/fixtures/*.mp4
+tests/fixtures/*.wav
+# Local npm registry diagnostics (not release evidence)
+qa/npm-audit-registry-blocked.stderr
+qa/npm-audit-registry-blocked.json
+qa/dependency-audit-app-latest.json

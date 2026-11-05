@@ -1,0 +1,38 @@
+Montazhnaya Beta 3.6.44 runtime locale audit
+Reference keys: 436
+Preview locale count: 34
+de	436/436	fallback=0	empty=0	placeholder_mismatch=0	translation-draft-complete-review-pending
+fr	436/436	fallback=0	empty=0	placeholder_mismatch=0	translation-draft-complete-review-pending
+es	436/436	fallback=0	empty=0	placeholder_mismatch=0	translation-draft-complete-review-pending
+pt-BR	436/436	fallback=0	empty=0	placeholder_mismatch=0	translation-draft-complete-review-pending
+it	436/436	fallback=0	empty=0	placeholder_mismatch=0	translation-draft-complete-review-pending
+pl	436/436	fallback=0	empty=0	placeholder_mismatch=0	translation-draft-complete-review-pending
+uk	436/436	fallback=0	empty=0	placeholder_mismatch=0	translation-draft-complete-review-pending
+tr	436/436	fallback=0	empty=0	placeholder_mismatch=0	translation-draft-complete-review-pending
+zh-CN	436/436	fallback=0	empty=0	placeholder_mismatch=0	translation-draft-complete-review-pending
+zh-TW	436/436	fallback=0	empty=0	placeholder_mismatch=0	translation-draft-complete-review-pending
+ja	436/436	fallback=0	empty=0	placeholder_mismatch=0	translation-draft-complete-review-pending
+ko	436/436	fallback=0	empty=0	placeholder_mismatch=0	translation-draft-complete-review-pending
+ar	436/436	fallback=0	empty=0	placeholder_mismatch=0	translation-draft-complete-review-pending
+he	436/436	fallback=0	empty=0	placeholder_mismatch=0	translation-draft-complete-review-pending
+hi	436/436	fallback=0	empty=0	placeholder_mismatch=0	translation-draft-complete-review-pending
+nl	436/436	fallback=0	empty=0	placeholder_mismatch=0	translation-draft-complete-review-pending
+sv	436/436	fallback=0	empty=0	placeholder_mismatch=0	translation-draft-complete-review-pending
+fi	436/436	fallback=0	empty=0	placeholder_mismatch=0	translation-draft-complete-review-pending
+cs	436/436	fallback=0	empty=0	placeholder_mismatch=0	translation-draft-complete-review-pending
+ro	436/436	fallback=0	empty=0	placeholder_mismatch=0	translation-draft-complete-review-pending
+el	436/436	fallback=0	empty=0	placeholder_mismatch=0	translation-draft-complete-review-pending
+vi	436/436	fallback=0	empty=0	placeholder_mismatch=0	translation-draft-complete-review-pending
+id	436/436	fallback=0	empty=0	placeholder_mismatch=0	translation-draft-complete-review-pending
+th	436/436	fallback=0	empty=0	placeholder_mismatch=0	translation-draft-complete-review-pending
+kk	436/436	fallback=0	empty=0	placeholder_mismatch=0	cis-central-asia-wave-3-review-pending
+uz	436/436	fallback=0	empty=0	placeholder_mismatch=0	cis-central-asia-wave-3-review-pending
+uz-Cyrl	436/436	fallback=0	empty=0	placeholder_mismatch=0	uzbek-cyrillic-transliteration-review-pending
+ka	436/436	fallback=0	empty=0	placeholder_mismatch=0	cis-central-asia-wave-3-review-pending
+hy	436/436	fallback=0	empty=0	placeholder_mismatch=0	regional-translation-draft-complete-review-pending
+tk	436/436	fallback=0	empty=0	placeholder_mismatch=0	regional-translation-draft-complete-review-pending
+az	436/436	fallback=0	empty=0	placeholder_mismatch=0	cis-central-asia-wave-3-review-pending
+ky	436/436	fallback=0	empty=0	placeholder_mismatch=0	regional-translation-draft-complete-review-pending
+tg	436/436	fallback=0	empty=0	placeholder_mismatch=0	regional-translation-draft-complete-review-pending
+be	436/436	fallback=0	empty=0	placeholder_mismatch=0	regional-translation-draft-complete-review-pending
+Failures: 0

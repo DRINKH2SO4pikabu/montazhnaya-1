@@ -1,0 +1,37 @@
+﻿locale,direction,welcome_translated,track_heading,media_empty_state,transport_1024_no_overflow,topbar_1024_no_overflow,tour_card_1024_inside,1366x768_pass,1920x1080_pass,detailed_tour_uses_english_fallback
+ru,ltr,True,Дорожки,Перетащите файлы сюда | или нажмите «Импорт медиа» | Видео · Аудио · Изображения,True,True,True,True,True,False
+en,ltr,True,Tracks,Drop files here | or click Import Media | Video · Audio · Images,True,True,True,True,True,False
+de,ltr,True,Spuren,Dateien hier ablegen | oder auf „Medien importieren“ klicken | Video · Audio · Bilder,True,True,True,True,True,True
+fr,ltr,True,Pistes,Déposez les fichiers ici | ou cliquez sur Importer des médias | Vidéo · Audio · Images,True,True,True,True,True,True
+es,ltr,True,Pistas,Suelta los archivos aquí | o haz clic en Importar medios | Vídeo · Audio · Imágenes,True,True,True,True,True,True
+pt-BR,ltr,True,Faixas,Solte os arquivos aqui | ou clique em Importar mídia | Vídeo · Áudio · Imagens,True,True,True,True,True,True
+it,ltr,True,Tracce,Trascina qui i file | oppure fai clic su Importa media | Video · Audio · Immagini,True,True,True,True,True,True
+pl,ltr,True,Ścieżki,Upuść pliki tutaj | lub kliknij Importuj multimedia | Wideo · Audio · Obrazy,True,True,True,True,True,True
+uk,ltr,True,Доріжки,Перетягніть файли сюди | або натисніть «Імпорт медіа» | Відео · Аудіо · Зображення,True,True,True,True,True,True
+tr,ltr,True,Parçalar,Dosyaları buraya bırakın | veya Medya İçe Aktar'a tıklayın | Video · Ses · Görüntüler,True,True,True,True,True,True
+zh-CN,ltr,True,轨道,将文件拖到此处 | 或点击“导入媒体” | 视频 · 音频 · 图像,True,True,True,True,True,True
+zh-TW,ltr,True,軌道,將檔案拖放到這裡 | 或按一下「匯入媒體」 | 影片 · 音訊 · 圖片,True,True,True,True,True,True
+ja,ltr,True,トラック,ここにファイルをドロップ | または「メディアをインポート」をクリック | 動画・音声・画像,True,True,True,True,True,True
+ko,ltr,True,트랙,여기에 파일 놓기 | 또는 미디어 가져오기를 클릭 | 동영상 · 오디오 · 이미지,True,True,True,True,True,True
+ar,rtl,True,المسارات,أفلت الملفات هنا | أو انقر على استيراد الوسائط | فيديو · صوت · صور,True,True,True,True,True,True
+he,rtl,True,רצועות,שחרר קבצים כאן | או לחץ על ייבוא מדיה | וידאו · שמע · תמונות,True,True,True,True,True,True
+hi,ltr,True,ट्रैक,फ़ाइलें यहाँ छोड़ें | या मीडिया आयात करें पर क्लिक करें | वीडियो · ऑडियो · छवियाँ,True,True,True,True,True,True
+nl,ltr,True,Sporen,Zet bestanden hier neer | of klik op Media importeren | Video · Audio · Afbeeldingen,True,True,True,True,True,True
+sv,ltr,True,Spår,Släpp filer här | eller klicka på Importera media | Video · Ljud · Bilder,True,True,True,True,True,True
+fi,ltr,True,Raidat,Pudota tiedostot tähän | tai napsauta Tuo media | Video · Ääni · Kuvat,True,True,True,True,True,True
+cs,ltr,True,Stopy,Přetáhněte soubory sem | nebo klikněte na Importovat média | Video · Zvuk · Obrázky,True,True,True,True,True,True
+ro,ltr,True,Piste,Plasează fișierele aici | sau fă clic pe Importă media | Video · Audio · Imagini,True,True,True,True,True,True
+el,ltr,True,Κομμάτια,Αποθέστε τα αρχεία εδώ | ή κάντε κλικ στην Εισαγωγή πολυμέσων | Βίντεο · Ήχος · Εικόνες,True,True,True,True,True,True
+vi,ltr,True,Rãnh,Thả tệp vào đây | hoặc nhấp vào Nhập phương tiện | Video · Âm thanh · Hình ảnh,True,True,True,True,True,True
+id,ltr,True,Trek,Letakkan file di sini | atau klik Impor Media | Video · Audio · Gambar,True,True,True,True,True,True
+th,ltr,True,แทร็ก,วางไฟล์ที่นี่ | หรือคลิกนำเข้าสื่อ | วิดีโอ · เสียง · รูปภาพ,True,True,True,True,True,True
+kk,ltr,True,Жолақтар,Файлдарды осында сүйреңіз | немесе «Медианы импорттау» түймесін басыңыз | Бейне · Аудио · Суреттер,True,True,True,True,True,True
+uz,ltr,True,Yo‘laklar,Fayllarni bu yerga sudrang | yoki “Medianı import qilish” tugmasini bosing | Video · Audio · Rasmlar,True,True,True,True,True,True
+ka,ltr,True,ტრეკები,ფაილები აქ გადმოიტანეთ | ან დააჭირეთ „მედიის იმპორტს“ | ვიდეო · აუდიო · სურათები,True,True,True,True,True,True
+hy,ltr,True,Տրեքեր,Ֆայլերը քաշեք այստեղ | կամ սեղմեք «Ներմուծել մեդիա» | Տեսանյութ · Ձայն · Պատկերներ,True,True,True,True,True,True
+tk,ltr,True,Ýodalar,Faýllary şu ýere taşlaň | ýa-da «Media import et» düwmesine basyň | Wideo · Audio · Suratlar,True,True,True,True,True,True
+az,ltr,True,Treklər,Faylları bura sürükləyin | yaxud “Medianı idxal et” düyməsinə klikləyin | Video · Audio · Şəkillər,True,True,True,True,True,True
+ky,ltr,True,Тректер,Файлдарды бул жерге таштаңыз | же «Медианы импорттоо» баскычын басыңыз | Видео · Аудио · Сүрөттөр,True,True,True,True,True,True
+tg,ltr,True,Роҳҳо,Файлҳоро ба ин ҷо кашед | ё тугмаи «Ворид кардани медиа»-ро пахш кунед | Видео · Аудио · Тасвирҳо,True,True,True,True,True,True
+be,ltr,True,Дарожкі,Перацягніце файлы сюды | або націсніце «Імпартаваць медыя» | Відэа · Аўдыя · Выявы,True,True,True,True,True,True
+uz-Cyrl,ltr,True,Йўлаклар,Файлларни бу ерга судранг | ёки “Медианı импорт қилиш” тугмасини босинг | Видео · Аудио · Расмлар,True,True,True,True,True,True
