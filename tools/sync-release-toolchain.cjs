@@ -3,7 +3,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const {
-  runNpm, checkRegistrySRI, readLock, runAndSaveAudit, runPlan, refreshLockfile, assertMinimumLockedPackages, assertNoExactPackageVersions, assertExactPackageVersions, assertExactInstalledPackageVersions
+  runNpm, checkRegistrySRI, readLock, runAndSaveAudit, runPlan, refreshLockfile, assertMinimumLockedPackages, assertNoExactPackageVersions, assertNoInstalledExactPackageVersions, assertExactPackageVersions, assertExactInstalledPackageVersions
 } = require('./dependency-lock-utils.cjs');
 
 const root = path.resolve(__dirname, '..');
