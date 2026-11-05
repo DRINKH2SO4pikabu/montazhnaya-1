@@ -34,6 +34,8 @@ Montazhnaya_1 — независимый локальный видеоредак
 
 Сторонние зависимости, Electron/Chromium и FFmpeg сохраняют собственные лицензии. Видеоматериалы Grok атрибутируются как **Created with Grok**. Логотип и выбранная фирменная графика указаны как созданные с помощью ChatGPT, затем отобранные и интегрированные сопровождающим. Проектные медиаактивы распространяются по CC BY 4.0. Смотри `ASSET_CREDITS.md`, `ASSET_RIGHTS_REGISTER_RU.md`, `SOURCE_CODE_ORIGIN_AUDIT_RU.md` и `THIRD_PARTY_NOTICES.md`.
 
-## Статус подготовки публикации
+## Статус проекта и загрузки
 
-21 демонстрационное MP4-превью и 21 постер включены с атрибуцией Grok; QA-контакт-листы и пользовательские логи исключены. Решение о лицензиях принято: GPL-3.0-or-later для кода и CC BY 4.0 для перечисленных проектных медиаактивов. Ручная инженерная проверка исходного кода завершена; отчёт — `SOURCE_CODE_ORIGIN_AUDIT_RU.md`. До Setup/Portable-релиза остаются отдельные задачи: lockfile для `electron-builder`, сетевой аудит цепочек зависимостей, полный SBOM и проверка сборки на чистой Windows 10/11 x64. Подробности — в `PUBLICATION_READINESS_RU.md`.
+Публичный исходный код размещён в [репозитории Montazhnaya_1](https://github.com/DRINKH2SO4pikabu/montazhnaya-1). Автоматический CI успешно прошёл на Windows, Ubuntu и macOS. Настроены защита ветки `main`, Dependency graph, Dependabot alerts и security updates, Secret Protection, Push protection и Private vulnerability reporting.
+
+Официальные Setup/Portable-сборки пока не опубликованы. До первого бинарного релиза остаются отдельные задачи: lockfile для `electron-builder`, завершение сетевого аудита обеих цепочек зависимостей, полный SBOM, проверка Electron/Chromium notices и испытания сборки на чистой Windows 10/11 x64. Подробности — `PUBLICATION_READINESS_RU.md`.
