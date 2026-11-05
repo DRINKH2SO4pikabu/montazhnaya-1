@@ -1,40 +1,49 @@
 # Настройка GitHub-репозитория Montazhnaya_1
 
+**Актуальное состояние: 5 ноября 2026 года.**
+
 ## Идентификаторы
 
 - Repository: `montazhnaya-1`
 - Product display name: `Montazhnaya_1`
+- URL: https://github.com/DRINKH2SO4pikabu/montazhnaya-1
 - Description: `Free, local-first Windows video editor. Built openly and improved with the community.`
 - Suggested topics: `video-editor`, `electron`, `ffmpeg`, `windows`, `open-source`, `webgl2`, `nonlinear-editor`
 - Default branch: `main`
-- Visibility: Public. The source candidate has completed the licensing and asset-provenance review; perform the final local secret scan before the first push.
+- Visibility: Public
 
-Перед первым push см. пошаговую инструкцию `PUSH_TO_GITHUB_RU.md`.
+## Что уже настроено
 
-## Первые настройки
+- [x] Публичный репозиторий создан; исходный код Stage 19 / 3.6.45 опубликован.
+- [x] README на английском и русском содержит актуальные ссылки на репозиторий.
+- [x] `CITATION.cff` содержит `repository-code`.
+- [x] Issues, issue templates и pull request template находятся в репозитории.
+- [x] Dependabot version updates настроены еженедельно для корневого npm-проекта, `tools/release-toolchain` и GitHub Actions.
+- [x] Dependency graph включён.
+- [x] Dependabot alerts и Dependabot security updates включены.
+- [x] Secret Protection и Push protection включены.
+- [x] Private Vulnerability Reporting включён.
+- [x] Ветка `main` защищена от force-push и удаления. Требование PR и обязательные status checks пока не включены, чтобы не блокировать текущий процесс прямых коммитов сопровождающего.
+- [x] CI прошёл на `windows-latest`, `ubuntu-latest` и `macos-latest`.
+- [x] Внешние GitHub Actions в workflow закреплены полными commit SHA; разрешения workflow минимизированы.
 
-1. Add root `LICENSE` (GPL-3.0-or-later) and `THIRD_PARTY_NOTICES.md`.
-2. Replace README and CHANGELOG with current Stage 19 status and known limitations.
-3. Enable Issues and Discussions; disable Wiki until documentation is maintained.
-4. Enable Dependabot alerts and weekly updates for both `/` and `/tools/release-toolchain`.
-5. Enable Secret Scanning and Push Protection where available.
-6. Enable Private Vulnerability Reporting.
-7. Protect `main`: require pull requests, block force pushes and branch deletion. Do not require approving reviews while the maintainer is working alone. Add required CI status checks only after the first successful Actions run.
-8. Keep workflow default permissions read-only; `contents: write` is scoped to the Windows release job that creates draft releases.
-9. The bundled workflows pin `actions/checkout`, `actions/setup-node`, `actions/upload-artifact` and `softprops/action-gh-release` to full commit SHAs. Recheck upstream action commits when deliberately updating them.
-10. Add CODE_OF_CONDUCT, CONTRIBUTING, SECURITY, issue forms and PR template.
-11. Create a beta prerelease only after dependency, license, asset and Windows build gates pass.
+## Оставшиеся задачи по безопасности и качеству
 
-## First release
+1. Выполнить отдельный полный аудит всей Git-истории на секреты и персональные данные. Предварительный осмотр текущего дерева не обнаружил известных маркеров секретов, ключей или локальных путей.
+2. Включить Malware alerts, если переключатель доступен для этого репозитория.
+3. При переходе на pull request workflow настроить обязательные CI status checks, используя точные имена успешно завершённых проверок.
+4. Рассмотреть включение обязательного PR после перехода на работу через feature-ветки.
 
-Use a prerelease tag such as `v3.6.45-beta.1` only after deciding whether the public product version continues the existing `3.6.45` sequence. Attach:
+## Первый бинарный релиз
 
-- Windows x64 Setup;
-- Windows x64 Portable;
-- SHA-256 file;
-- SBOM;
-- third-party notices and exact FFmpeg acquisition guidance;
-- corresponding source archive/commit;
-- QA summary and known limitations.
+Публичный исходный репозиторий не означает, что установщик уже готов. До официального Setup/Portable-релиза необходимо:
 
-Do not upload a standalone FFmpeg binary unless the exact binary's license/source obligations have been fulfilled.
+- создать и закоммитить `tools/release-toolchain/package-lock.json` для `electron-builder@26.18.1`;
+- завершить сетевой `npm audit` для корневой и release-toolchain цепочек зависимостей;
+- подготовить полный SBOM для release toolchain и Windows-дистрибутива;
+- проверить сохранность Electron/Chromium third-party notices;
+- собрать Setup и Portable на Windows x64 и проверить их на чистой Windows 10/11;
+- проверить экспорт MP4/WebM и аппаратные/программные кодировщики на целевом оборудовании;
+- приложить к prerelease SHA-256, SBOM, third-party notices, QA summary и список известных ограничений.
+
+Не публиковать отдельный бинарный FFmpeg/FFprobe, пока не проверены точная сборка, её лицензия, configure flags, checksum и обязательные уведомления/исходники.
