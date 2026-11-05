@@ -3,7 +3,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const {
-  runNpm, checkRegistrySRI, readLock, runAndSaveAudit, runPlan, refreshLockfile, assertMinimumLockedPackages, assertNoExactPackageVersions, assertNoInstalledExactPackageVersions, assertExactPackageVersions, assertExactInstalledPackageVersions
+  runNpm, checkRegistrySRI, readLock, runAndSaveAudit, runPlan, refreshLockfile, assertMinimumLockedPackages, assertMinimumInstalledPackages, assertExactPackageVersions, assertExactInstalledPackageVersions
 } = require('./dependency-lock-utils.cjs');
 
 const root = path.resolve(__dirname, '..');
@@ -21,21 +21,18 @@ function validateTargetLock() {
   }
   const securityVersions = assertMinimumLockedPackages(lock, {
     'app-builder-lib': '26.15.0',
-    'builder-util-runtime': '9.7.0'
+    'builder-util-runtime': '9.7.0',
+    'minimatch': '11.0.1'
   });
+  const minimatchVersions = securityVersions.minimatch;
   const globalAgentVersions = assertExactPackageVersions(lock, 'global-agent', '4.1.3');
-  const minimatchVersions = assertNoExactPackageVersions(lock, 'minimatch', ['10.2.6']);
-  const builderScopedMinimatch = minimatchVersions.filter(item => item.path.includes('app-builder-lib') || item.path === 'node_modules/minimatch');
-  if (builderScopedMinimatch.length === 0 || builderScopedMinimatch.some(item => item.version !== '10.2.5' && item.version.startsWith('10.'))) {
-    throw new Error(`Ожидался upstream-pinned minimatch@10.2.5 внутри app-builder-lib; найдено: ${builderScopedMinimatch.map(x => `${x.version} (${x.path})`).join(', ') || 'нет записи'}`);
-  }
-  return { lock, sri: checkRegistrySRI(lockPath), securityVersions, minimatchVersions, globalAgentVersions };
+  return { lock, sri: checkRegistrySRI(lockPath), securityVersions, minimatchVersions, globalAgentVersions };  return { lock, sri: checkRegistrySRI(lockPath), securityVersions, minimatchVersions, globalAgentVersions };
 }
 
 if (process.argv.includes('--plan')) {
   runPlan('План синхронизации Windows release toolchain', [
     'При отсутствии lockfile: npm install --package-lock-only --ignore-scripts --no-audit --no-fund (cwd: tools/release-toolchain)',
-    'Проверить electron-builder 26.18.1, app-builder-lib >=26.15.0, builder-util-runtime >=9.7.0, minimatch@10.2.5, global-agent@4.1.3 и валидный SRI',
+    'Проверить electron-builder 26.18.1, app-builder-lib >=26.15.0, builder-util-runtime >=9.7.0, minimatch >=11.0.1 во всех копиях, global-agent@4.1.3 и валидный SRI',
     'npm ci --ignore-scripts --no-audit --no-fund (cwd: tools/release-toolchain)',
     'npm audit --prefix tools/release-toolchain --audit-level=low --json',
     'CI использует --locked и не меняет release-toolchain/package-lock.json'
@@ -68,12 +65,12 @@ try {
   console.log('2/4 Проверяю SRI и устанавливаю release toolchain из lockfile...');
   runNpm(['ci', '--ignore-scripts', '--no-audit', '--no-fund'], toolRoot, 'npm ci release toolchain');
   const installedBuilder = JSON.parse(fs.readFileSync(path.join(toolRoot, 'node_modules/electron-builder/package.json'), 'utf8'));
+  const installedSecurityVersions = assertMinimumInstalledPackages(validation.lock, path.join(toolRoot, 'node_modules'), {
+    'app-builder-lib': '26.15.0',
+    'builder-util-runtime': '9.7.0',
+    'minimatch': '11.0.1'
+  });
   const installedGlobalAgent = assertExactInstalledPackageVersions(validation.lock, path.join(toolRoot, 'node_modules'), 'global-agent', '4.1.3');
-  const installedMinimatch = assertNoInstalledExactPackageVersions(validation.lock, path.join(toolRoot, 'node_modules'), 'minimatch', ['10.2.6']);
-  const installedBuilderMinimatch = installedMinimatch.filter(item => item.path.includes('app-builder-lib') || item.path === 'node_modules/minimatch');
-  if (installedBuilderMinimatch.length === 0 || installedBuilderMinimatch.some(item => item.version !== '10.2.5' && item.version.startsWith('10.'))) {
-    throw new Error(`Установлен неожиданный minimatch в дереве app-builder-lib: ${installedBuilderMinimatch.map(x => `${x.version} (${x.path})`).join(', ') || 'нет записи'}`);
-  }
   if (installedBuilder.version !== expectedVersion) {
     throw new Error(`Установлен electron-builder ${installedBuilder.version}; ожидался ${expectedVersion}`);
   }
@@ -88,7 +85,7 @@ try {
     minimatchVersions: validation.minimatchVersions,
     globalAgentVersions: validation.globalAgentVersions,
     installedGlobalAgent,
-    installedMinimatchVersions: installedBuilderMinimatch,
+    installedMinimatchVersions: installedSecurityVersions.minimatch,
     auditSummary: audit?.metadata?.vulnerabilities || null,
     status: 'PASS'
   };

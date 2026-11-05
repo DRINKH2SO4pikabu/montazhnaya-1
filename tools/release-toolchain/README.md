@@ -1,10 +1,18 @@
 # Release toolchain
 
-This folder contains the separately pinned Windows packaging tool. `electron-builder` is fixed to `26.18.1`; it is isolated from editor runtime dependencies and has its own npm lockfile. `app-builder-lib` resolves its `minimatch` dependency to `10.2.5`, matching the upstream v26.18.1 pnpm lock. The nested `@electron/get` downloader resolves `global-agent` to `4.1.3`, removing the older optional `global-agent@3` → `roarr` → `sprintf-js` chain. GHSA-hp3w-g68c-fv3c was withdrawn on 22 October 2026; this override is dependency-tree hygiene, not a claim to fix an active advisory. Both exact overrides are enforced by lockfile and installed-tree gates. This avoids the exact `10.2.6` release named by the maintainer's GHSA-g3hv-75wg-m249 advisory. The public GitHub Advisory Database currently shows a broader `<11.0.1` range; the maintainer's advisory text identifies `10.2.6` specifically, and an open advisory-database issue requests clarification of the broad range. Do not silently treat this as a universal clean bill: review future advisory updates and the actual audit output before release.
+This folder contains the separately pinned Windows packaging tool. `electron-builder` is fixed to `26.18.1`; it is isolated from editor runtime dependencies and has its own npm lockfile.
+
+## Security overrides
+
+- `minimatch` is globally overridden to `11.0.1` or newer. GitHub Advisory Database advisory GHSA-g3hv-75wg-m249 / CVE-2026-118764 marks versions below 11.0.1 as affected. The former 10.2.5 pin is not a safe version for this advisory.
+- The override is global because the resolved graph includes both `app-builder-lib` and `@electron/universal`; validating only the root copy is insufficient.
+- `app-builder-lib -> @electron/get -> global-agent` remains pinned to `4.1.3` to avoid the older optional `global-agent@3` -> `roarr` -> `sprintf-js` chain.
+
+The global minimatch override intentionally supersedes the dependency ranges currently declared by electron-builder 26.18.1 and @electron/universal 2.0.3. The code paths inspected use the named `minimatch()` function and `Minimatch` class / `match()` API; minimatch 11 changes internal matcher representations and removes some older internals. Do not treat the override as compatibility-certified until the locked install, npm audit, Windows NSIS/Portable build and resulting package smoke checks all pass.
 
 ## First online setup
 
-Run `npm run release-tools:install`. If the lockfile is missing, the helper creates it from this exact manifest. It then validates every npm registry SRI entry, installs with `npm ci --ignore-scripts`, checks the installed builder version, verifies `app-builder-lib` and `builder-util-runtime` patch floors plus exact `minimatch@10.2.5` and `global-agent@4.1.3`, and runs `npm audit --audit-level=low` (fail-closed: no vulnerability severity is silently ignored). Keep the generated `package-lock.json` under version control after the first successful online setup.
+Run `npm run release-tools:install`. If the lockfile is missing, the helper creates it from this exact manifest. It then validates every npm registry SRI entry, installs with `npm ci --ignore-scripts`, checks the installed builder version, verifies `app-builder-lib`, `builder-util-runtime` and every nested `minimatch` copy against their security floors, verifies exact `global-agent@4.1.3`, and runs `npm audit --audit-level=low`. The audit is fail-closed: no vulnerability severity is silently ignored. Keep the generated `package-lock.json` under version control after the first successful online setup.
 
 ## Reproducible CI/release setup
 

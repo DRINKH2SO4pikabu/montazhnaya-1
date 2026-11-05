@@ -6,7 +6,7 @@ const fs = require('node:fs');
 const os = require('node:os');
 const path = require('node:path');
 const crypto = require('node:crypto');
-const { npmInvocation, checkRegistrySRI, isValidSRI, readLock, snapshotLock, restoreLock, compareNumericVersions, assertMinimumLockedPackages, assertMinimumInstalledPackages, assertNoExactPackageVersions, assertNoInstalledExactPackageVersions, assertExactPackageVersions, assertExactInstalledPackageVersions } = require('../tools/dependency-lock-utils.cjs');
+const { npmInvocation, checkRegistrySRI, isValidSRI, readLock, snapshotLock, restoreLock, compareNumericVersions, assertMinimumLockedPackages, assertMinimumInstalledPackages, assertExactPackageVersions, assertExactInstalledPackageVersions } = require('../tools/dependency-lock-utils.cjs');
 
 function withTempLock(lock, callback) {
   const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'montazhnaya-lock-test-'));
@@ -188,35 +188,47 @@ test('installed package versions must match every lockfile path and meet the sec
 });
 
 
-test('release toolchain excludes the specifically affected minimatch 10.2.6 release', () => {
+test('release toolchain requires minimatch 11.0.1 or newer in every lockfile copy', () => {
   const lock = { packages: {
-    'node_modules/minimatch': { version: '10.2.5' },
-    'node_modules/legacy/node_modules/minimatch': { version: '3.1.5' }
+    'node_modules/minimatch': { version: '11.0.1' },
+    'node_modules/app-builder-lib/node_modules/minimatch': { version: '11.0.1' },
+    'node_modules/@electron/universal/node_modules/minimatch': { version: '11.0.1' }
   } };
-  const versions = assertNoExactPackageVersions(lock, 'minimatch', ['10.2.6']);
-  assert.deepEqual(versions.map(item => item.version), ['10.2.5', '3.1.5']);
-  lock.packages['node_modules/legacy/node_modules/minimatch'].version = '10.2.6';
-  assert.throws(() => assertNoExactPackageVersions(lock, 'minimatch', ['10.2.6']), /запрещённая версия minimatch/);
+  const versions = assertMinimumLockedPackages(lock, { minimatch: '11.0.1' });
+  assert.deepEqual(versions.minimatch, ['11.0.1', '11.0.1', '11.0.1']);
+  lock.packages['node_modules/@electron/universal/node_modules/minimatch'].version = '9.0.9';
+  assert.throws(() => assertMinimumLockedPackages(lock, { minimatch: '11.0.1' }), /устаревшая версия minimatch/);
 });
 
-test('release toolchain pins minimatch 10.2.5 within app-builder-lib subtree', () => {
+test('release toolchain uses a global patched minimatch override', () => {
   const manifest = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'tools/release-toolchain/package.json'), 'utf8'));
-  assert.equal(manifest.overrides?.['app-builder-lib']?.minimatch, '10.2.5');
+  assert.equal(manifest.overrides?.minimatch, '11.0.1');
+  assert.equal(manifest.overrides?.['app-builder-lib']?.minimatch, undefined);
+  assert.equal(manifest.overrides?.['app-builder-lib']?.['@electron/get']?.['global-agent'], '4.1.3');
 });
 
-
-test('installed release toolchain rejects the specifically affected minimatch 10.2.6', () => {
+test('installed release toolchain enforces minimatch 11.0.1 for root and nested dependency copies', () => {
   const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'montazhnaya-minimatch-installed-'));
   try {
-    const pkg = path.join(directory, 'app-builder-lib/node_modules/minimatch');
-    fs.mkdirSync(pkg, { recursive: true });
-    fs.writeFileSync(path.join(pkg, 'package.json'), JSON.stringify({ name: 'minimatch', version: '10.2.5' }));
+    const paths = [
+      'minimatch',
+      'app-builder-lib/node_modules/minimatch',
+      '@electron/universal/node_modules/minimatch'
+    ];
+    for (const relative of paths) {
+      const pkg = path.join(directory, relative);
+      fs.mkdirSync(pkg, { recursive: true });
+      fs.writeFileSync(path.join(pkg, 'package.json'), JSON.stringify({ name: 'minimatch', version: '11.0.1' }));
+    }
     const lock = { packages: {
-      'node_modules/app-builder-lib/node_modules/minimatch': { version: '10.2.5' }
+      'node_modules/minimatch': { version: '11.0.1' },
+      'node_modules/app-builder-lib/node_modules/minimatch': { version: '11.0.1' },
+      'node_modules/@electron/universal/node_modules/minimatch': { version: '11.0.1' }
     } };
-    assert.equal(assertNoInstalledExactPackageVersions(lock, directory, 'minimatch', ['10.2.6'])[0].version, '10.2.5');
-    fs.writeFileSync(path.join(pkg, 'package.json'), JSON.stringify({ name: 'minimatch', version: '10.2.6' }));
-    assert.throws(() => assertNoInstalledExactPackageVersions(lock, directory, 'minimatch', ['10.2.6']), /установленном дереве найдена запрещённая версия/);
+    const versions = assertMinimumInstalledPackages(lock, directory, { minimatch: '11.0.1' });
+    assert.deepEqual(versions.minimatch, ['11.0.1', '11.0.1', '11.0.1']);
+    fs.writeFileSync(path.join(directory, '@electron/universal/node_modules/minimatch/package.json'), JSON.stringify({ name: 'minimatch', version: '9.0.9' }));
+    assert.throws(() => assertMinimumInstalledPackages(lock, directory, { minimatch: '11.0.1' }), /не совпадает с lockfile|требуется не ниже/);
   } finally {
     fs.rmSync(directory, { recursive: true, force: true });
   }
