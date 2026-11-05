@@ -36,10 +36,10 @@
 - [ ] Полная проверка всей Git-истории на секреты и персональные данные.
 
 ## Тесты и бинарный выпуск
-- [ ] `npm run deps:ci` PASS на чистой сетевой машине.
-- [ ] `npm run electron:version` PASS.
-- [ ] `npm run qa:locales` PASS из чистой установки.
-- [ ] `npm test` PASS из чистой установки.
+- [x] `npm run deps:ci` PASS в GitHub Actions на чистых runner Windows, Ubuntu и macOS.
+- [x] `npm run electron:version` (на Linux с `npm exec -- electron --no-sandbox --version`) PASS в CI.
+- [x] `npm run qa:locales` PASS из чистых runner.
+- [x] `npm test` PASS из чистых runner; FFmpeg integration suite прошёл на Windows, Ubuntu и macOS.
 - [ ] `npm run release-tools:ci` PASS.
 - [ ] Windows Setup/Portable собраны на Windows x64.
 - [ ] Чистая установка Windows 10/11 x64 проверена.
