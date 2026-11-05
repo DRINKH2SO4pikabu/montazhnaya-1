@@ -73,4 +73,4 @@ jobs:
       - name: Report pending Windows release toolchain lockfile
         if: runner.os == 'Windows' && hashFiles('tools/release-toolchain/package-lock.json') == ''
         shell: pwsh
-        run: Write-Output 'SKIPPED: release-toolchain lockfile is not committed yet. Windows Setup/Portable releases remain blocked.'
+        run: "Write-Output 'SKIPPED: release-toolchain lockfile is not committed yet. Windows Setup/Portable releases remain blocked.'"
