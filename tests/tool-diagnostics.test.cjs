@@ -33,8 +33,10 @@ test("resolveExecutable finds executable in PATH", async () => {
   try {
     const bin = path.join(root, "bin");
     await fs.mkdir(bin);
-    const expected = await makeExecutable(bin, "ffmpeg");
-    const found = await resolveExecutable("ffmpeg", { platform: "linux", env: { PATH: bin } });
+    const platform = process.platform;
+    const executableName = platform === "win32" ? "ffmpeg.exe" : "ffmpeg";
+    const expected = await makeExecutable(bin, executableName);
+    const found = await resolveExecutable("ffmpeg", { platform, env: { PATH: bin } });
     assert.equal(found, expected);
   } finally {
     await fs.rm(root, { recursive: true, force: true });

@@ -114,7 +114,8 @@ test("FFmpeg normalizes MP3, AAC, OGG, FLAC and WAV to one PCM profile", { skip:
   const cases = [
     { name: "music.mp3", args: ["-c:a", "libmp3lame", "-b:a", "128k"] },
     { name: "music.m4a", args: ["-c:a", "aac", "-b:a", "128k"] },
-    { name: "music.ogg", args: ["-c:a", "libvorbis", "-q:a", "4"] },
+    // OGG fixture is generated only when this FFmpeg build provides libvorbis.
+    ...(hasEncoder("libvorbis") ? [{ name: "music.ogg", args: ["-c:a", "libvorbis", "-q:a", "4"] }] : []),
     { name: "music.flac", args: ["-c:a", "flac"] },
     { name: "music.wav", args: ["-c:a", "pcm_s24le", "-ac", "2"] },
     ...(hasEncoder("ac3") ? [{ name: "music.ac3", args: ["-c:a", "ac3", "-b:a", "192k"] }] : []),
