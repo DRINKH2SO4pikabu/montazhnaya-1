@@ -52,7 +52,7 @@ jobs:
 
       - name: Verify Electron runtime version (Linux CI)
         if: runner.os == 'Linux'
-        run: electron --no-sandbox --version
+        run: npm exec -- electron --no-sandbox --version
       - name: Verify Electron runtime version
         if: runner.os != 'Linux'
         run: npm run electron:version
