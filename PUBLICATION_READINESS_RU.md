@@ -29,12 +29,20 @@
 - В архиве нет `node_modules`, логов и пользовательских путей Windows.
 - Все внешние GitHub Actions в поставляемых workflow закреплены полными commit SHA; по умолчанию `GITHUB_TOKEN` имеет read-only permissions, а `contents: write` ограничен workflow Windows-релиза.
 
-## Что остаётся перед публичным GitHub push
+## Публичный GitHub-репозиторий и безопасность — состояние на 5 ноября 2026 г.
 
-1. Создать репозиторий `montazhnaya-1` под выбранным аккаунтом GitHub и заполнить owner/URL в `CITATION.cff`.
-2. Перед первым push включить private vulnerability reporting, Dependabot alerts, secret scanning, push protection, branch protection и минимальные permissions для Actions.
-3. Выполнить финальную проверку секретов и метаданных в том архиве, который будет отправлен в GitHub.
-4. После первого запуска CI выбрать реально успешные обязательные status checks для защиты `main`.
+Публичный репозиторий создан: https://github.com/DRINKH2SO4pikabu/montazhnaya-1. URL добавлен в `CITATION.cff`; английский и русский README содержат актуальные ссылки и статус beta source release.
+
+- [x] Публичный репозиторий `montazhnaya-1` создан.
+- [x] `CITATION.cff` содержит `repository-code`.
+- [x] Ветка `main` защищена от force-push и удаления; обязательный PR не включён, чтобы сохранить текущий процесс работы сопровождающего.
+- [x] Dependabot alerts, Dependabot security updates и Dependency graph включены.
+- [x] Secret Protection и Push protection включены.
+- [x] Private vulnerability reporting включён.
+- [x] CI успешно прошёл на Windows, Ubuntu и macOS.
+- [x] Основные GitHub Actions закреплены полными commit SHA; права `GITHUB_TOKEN` ограничены настройками workflow.
+- [x] Выполнен структурный осмотр текущего дерева и поиск известных маркеров секретов: подозрительных имён файлов, ключей и совпадений не обнаружено.
+- [ ] Полная независимая проверка всей Git-истории на ранее опубликованные секреты и персональные данные — отдельный оставшийся пункт.
 
 ## Отдельные блокеры для Setup/Portable и бинарного релиза
 
