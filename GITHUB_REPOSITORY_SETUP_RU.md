@@ -4,6 +4,8 @@
 
 ## Идентификаторы
 
+**Статус:** репозиторий уже создан и опубликован. Этот файл теперь служит справкой по его текущей конфигурации, а не инструкцией перед первым push.
+
 - Repository: `montazhnaya-1`
 - Product display name: `Montazhnaya_1`
 - URL: https://github.com/DRINKH2SO4pikabu/montazhnaya-1
