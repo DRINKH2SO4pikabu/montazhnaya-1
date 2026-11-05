@@ -3,5 +3,6 @@ message: "If Montazhnaya_1 is useful in your work, please cite the project repos
 title: "Montazhnaya_1"
 type: software
 version: "3.6.45-beta"
+repository-code: "https://github.com/DRINKH2SO4pikabu/montazhnaya-1"
 license: GPL-3.0-or-later
 abstract: "A free, local-first Windows video editor developed with community participation."
