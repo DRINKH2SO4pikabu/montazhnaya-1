@@ -143,16 +143,20 @@ test('local Windows distribution builder checks prerequisites and creates both t
   assert.match(script, /release\\\*\.exe/i);
 });
 
-test('GitHub Windows release workflow tests, builds, hashes and keeps tag releases as drafts', () => {
+test('GitHub Windows release workflow audits, verifies, smoke-tests and publishes the Beta release', () => {
   const workflow = readText('.github/workflows/release-windows.yml');
   assert.match(workflow, /workflow_dispatch/);
   assert.match(workflow, /tags:\s*\n\s*- "v\*"/);
   assert.match(workflow, /npm run deps:ci/);
+  assert.match(workflow, /npm run release-tools:install/);
   assert.match(workflow, /npm run release-tools:ci/);
   assert.match(workflow, /npm test/);
   assert.match(workflow, /npm run dist:win/);
+  assert.match(workflow, /tools\\verify-release-package\\.cjs/);
+  assert.match(workflow, /Smoke-test Setup installation and Portable startup/);
+  assert.match(workflow, /npm sbom.*cyclonedx/);
   assert.match(workflow, /Get-FileHash -Algorithm SHA256/);
-  assert.match(workflow, /draft: true/);
+  assert.match(workflow, /draft: false/);
   assert.match(workflow, /prerelease: true/);
 });
 
@@ -160,7 +164,7 @@ test('GitHub Windows release workflow tests, builds, hashes and keeps tag releas
 test('release notes disclose external media tools and unsigned Windows packages', () => {
   const notes = readText('RELEASE_NOTES.md');
   assert.match(notes, /FFmpeg\/FFprobe/);
-  assert.match(notes, /not a signed Windows binary release|unsigned/i);
+  assert.match(notes, /not digitally signed|unsigned/i);
   assert.match(readText('README.md'), /Node\.js 22\.12\.0 or newer/);
 });
 
@@ -178,6 +182,12 @@ test('Windows app, installer and in-app brand use the custom Montazhnaya icon', 
     { from: 'assets/montazhnaya.ico', to: 'Montazhnaya.ico' },
     { from: 'assets/montazhnaya-icon.png', to: 'Montazhnaya.png' }
   ]);
+  assert.deepEqual(pkg.build.extraResources, [
+    { from: 'node_modules/electron/dist/LICENSE', to: 'ThirdPartyNotices/Electron-LICENSE.txt' },
+    { from: 'node_modules/electron/dist/LICENSES.chromium.html', to: 'ThirdPartyNotices/Chromium-LICENSES.html' }
+  ]);
+  assert.match(readText('tools/verify-release-package.cjs'), /THIRD_PARTY_NOTICES\.md/);
+  assert.match(readText('tools/verify-release-package.cjs'), /Chromium-LICENSES\.html/);
   assert.match(readText('electron/main.cjs'), /montazhnaya\.ico/);
   assert.match(readText('electron/main.cjs'), /setAppUserModelId\(\"ru\.montazhnaya\.desktop\"\)/);
   assert.match(readText('src/renderer/index.html'), /montazhnaya-icon-256\.png/);
