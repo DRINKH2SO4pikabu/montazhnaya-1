@@ -1,59 +1,82 @@
-# Montazhnaya_1 — готовность публичного исходного репозитория
+# Montazhnaya_1 — готовность и проверка публичного Windows-релиза
 
-**Кандидат:** чистое дерево `Montazhnaya_1`, основанное на `Montazhnaya_Beta_3.6.45_FireWhirl_Stage19.zip`.
-**Дата:** 5 ноября 2026 г.
+**Релиз:** `v3.6.45` — Montazhnaya 3.6.45 Beta / Stage 19  
+**Дата публикации:** 6 ноября 2026 г.  
+**Официальная страница:** https://github.com/DRINKH2SO4pikabu/montazhnaya-1/releases/tag/v3.6.45  
+**Сборка:** Windows x64, Electron 45.2.1  
+**Исходный commit релиза:** `b69c724e6c71f4d4928a08f4c5e2687c6436a6c3`
 
-## Принятые решения
+## Статус
+
+<badge-placeholder/>
+
+**Первый официальный Windows Beta-релиз опубликован.** Страница GitHub Release имеет тег `v3.6.45`, статус опубликованного Pre-release, а не Draft. Setup, Portable, отдельные SHA-256, общий манифест, SBOM и отчёты проверки прикреплены к релизу.
+
+## Принятые решения по лицензиям и происхождению
 
 - Исходный код приложения и проектная документация: **GPL-3.0-or-later**.
-- Логотип, выбранная фирменная графика, 21 Grok-generated демонстрационных ролик, MP4-превью и постеры: **CC BY 4.0**.
+- Логотип, выбранная фирменная графика, 21 Grok-generated демонстрационный ролик, MP4-превью и постеры: **CC BY 4.0**.
 - Сторонние библиотеки и бинарные компоненты сохраняют собственные лицензии.
 - В публичных материалах и окне «О программе» сохранена атрибуция `Created with Grok`; происхождение логотипа и выбранной графики ChatGPT раскрыто отдельно.
+- FFmpeg/FFprobe не включены в Setup и Portable. Пользователь устанавливает совместимую сборку отдельно и соблюдает её лицензию.
+- Setup и Portable не подписаны цифровым сертификатом. Это указано в release notes; при запуске Windows может показать SmartScreen или иное предупреждение.
 
-## Подготовка исходного кандидата
+## Завершённые проверки
 
-- В корень добавлен полный текст GPL-3.0; `package.json` и `package-lock.json` помечены `GPL-3.0-or-later`.
-- Добавлены `LICENSE_SCOPE.md`, `COPYRIGHT.md`, `THIRD_PARTY_NOTICES.md`, DCO, CONTRIBUTING, SECURITY, privacy notes и GitHub templates.
-- Root npm-граф: 13 пакетов, лицензии указаны в `THIRD_PARTY_NOTICES.md`; CycloneDX SBOM находится в `SBOM-app-dependencies.cdx.json`.
-- Восстановлены все 21 MP4-превью переходов, 21 постер и фирменный логотип/иконка.
-- `node_modules`, локальные логи, QA-контакт-листы, пользовательские скриншоты и бинарные тестовые MP4/WAV исключены.
-- Синтетические тестовые видео создаются локально скриптом `tools/generate-synthetic-fixtures.cjs` через FFmpeg `lavfi` фильтры.
-- `ASSET_LICENSE.md` содержит финальное решение CC BY 4.0; `ASSET_CREDITS.md` содержит атрибуцию; права на код и медиа описаны раздельно.
-- `SOURCE_CODE_ORIGIN_AUDIT_RU.md` фиксирует ручную инженерную ревизию исходников и зависимостей. Ручная инженерная проверка исходного кода завершена; конкретных внешних фрагментов кода, требующих отдельной лицензии, не обнаружено.
+| Проверка | Результат | Что именно подтверждено |
+|---|---|---|
+| Application dependencies | PASS | Строгая установка из root lockfile, SRI и `npm audit` в GitHub Actions |
+| Windows release toolchain | PASS | Создан и закоммичен `tools/release-toolchain/package-lock.json`; установка и аудит, затем повторная строгая locked-установка |
+| Electron runtime | PASS | Версия Electron 45.2.1 установлена и проверена |
+| Localization QA | PASS | Все предусмотренные проверки локализации прошли |
+| Regression + FFmpeg integration | PASS | 435/435 тестов, 0 failures, 0 skipped; зелёные прогоны на Windows, Ubuntu и macOS |
+| CycloneDX SBOM | PASS | В релиз приложены отдельные SBOM зависимостей приложения и Windows release-toolchain |
+| Package notices | PASS | Проверены проектные LICENSE/NOTICE в app.asar и Electron/Chromium notices в распакованном приложении |
+| Setup installation | PASS | Тихая установка Setup на чистом Windows Actions runner завершилась успешно |
+| Installed app startup | PASS | Установленный `Montazhnaya.exe` запустился и не завершился в smoke-test |
+| Portable startup | PASS | Portable EXE запустился и не завершился в smoke-test |
+| SHA-256 | PASS | Для обоих EXE создан общий `SHA256SUMS.txt` и отдельные файлы `.sha256.txt`; значения повторно вычислены независимо из скачанного release-candidate artifact и совпали |
+| Full Git history secret scan | PASS | Gitleaks workflow просканировал полную историю Git; workflow завершился успешно |
 
-## Проверки исходного кандидата
+### Опубликованные файлы и SHA-256
 
-- `npm test`: **435/435 PASS** на Node.js 22.16.0; прогон выполнен после последних изменений и пересчёта CSP-хеша.
-- `npm run qa:locales`: **PASS после последних изменений**  — 36 вариантов интерфейса, 34 дополнительных языковых пакета, 436 базовых ключей, 14 824 проверенных ячейки, без пропусков и несовпадений плейсхолдеров. Дополнительные переводы остаются машинно-ассистированными и требуют вычитки носителями.
-- CSP SHA-256 для встроенных скриптов проверен после обновления окна «О программе»; текущие изменения затрагивают только текстовые кредиты и документы.
-- В архиве нет `node_modules`, логов и пользовательских путей Windows.
-- Все внешние GitHub Actions в поставляемых workflow закреплены полными commit SHA; по умолчанию `GITHUB_TOKEN` имеет read-only permissions, а `contents: write` ограничен workflow Windows-релиза.
+| Файл | Размер | SHA-256 |
+|---|---:|---|
+| `Montazhnaya-3.6.45-Setup-x64.exe` | 128,816,157 bytes | `c69c10be92733b12ad752bc8d60f223f69b171b28636c0873d41638c796f5ea4` |
+| `Montazhnaya-3.6.45-Portable-x64.exe` | 116,516,849 bytes | `b8f66c8fd1fa9c19d4c8e31958b2697d38cc339bd7c351e872c59f8d01fc74fb` |
 
-## Публичный GitHub-репозиторий и безопасность — состояние на 5 ноября 2026 г.
+Хеши сверены по фактическому содержимому обоих EXE внутри скачанного артефакта GitHub Actions, а не только по тексту checksum-файлов. Артефакт проверки содержит `package-verification.json` со статусом `PASS`, включая обнаруженные файлы Electron и Chromium license notices.
 
-Публичный репозиторий создан: https://github.com/DRINKH2SO4pikabu/montazhnaya-1. URL добавлен в `CITATION.cff`; английский и русский README содержат актуальные ссылки и статус beta source release.
+### SBOM — границы охвата
 
-- [x] Публичный репозиторий `montazhnaya-1` создан.
-- [x] `CITATION.cff` содержит `repository-code`.
-- [x] Ветка `main` защищена от force-push и удаления; обязательный PR не включён, чтобы сохранить текущий процесс работы сопровождающего.
-- [x] Dependabot alerts, Dependabot security updates и Dependency graph включены.
-- [x] Secret Protection и Push protection включены.
-- [x] Private vulnerability reporting включён.
-- [x] CI успешно прошёл на Windows, Ubuntu и macOS.
-- [x] Основные GitHub Actions закреплены полными commit SHA; права `GITHUB_TOKEN` ограничены настройками workflow.
-- [x] Выполнен структурный осмотр текущего дерева и поиск известных маркеров секретов: подозрительных имён файлов, ключей и совпадений не обнаружено.
-- [ ] Полная независимая проверка всей Git-истории на ранее опубликованные секреты и персональные данные — отдельный оставшийся пункт.
+В релиз приложены:
+- `Montazhnaya-app-dependencies.cdx.json` — CycloneDX для root npm dependency graph приложения;
+- `Windows-release-toolchain.cdx.json` — CycloneDX для отдельной цепочки упаковки Windows.
 
-## Отдельные блокеры для Setup/Portable и бинарного релиза
+Это два dependency SBOM, а не единый исчерпывающий inventory каждого бинарного компонента Electron/Chromium и всех файлов EXE. Для Electron/Chromium в сам пакет включены соответствующие upstream license notices; FFmpeg/FFprobe не распространяются.
 
-1. `tools/release-toolchain/package-lock.json` отсутствует для `electron-builder@26.18.1`.
-2. Root dependency gate (`npm run deps:ci`, включая проверку SRI и `npm audit`) прошёл в GitHub CI. Отдельный сетевой audit для Windows release-toolchain остаётся заблокированным до создания его lockfile и запуска соответствующей проверки.
-3. Нужен полный SBOM release-toolchain и Windows-дистрибутива.
-4. Setup/Portable не проверены на чистой Windows 10/11 x64.
-5. Нужно проверить сохранность Electron/Chromium third-party notices в упакованном приложении.
-6. NVIDIA NVENC проверен в одном Windows-сценарии 1080p30; это не сертифицирует AMD, Intel, 4K и разные драйверы.
-7. Не распространять FFmpeg/FFprobe в первом бинарном релизе, пока не проверены точная сборка, лицензия, configure flags, checksum и обязательные исходники/уведомления.
+## Оставшиеся задачи после публикации
 
-## Текущий статус
+Первый публичный бинарный релиз не означает сертификацию всех аппаратных и пользовательских сценариев. Следующие задачи остаются открытыми для следующих Beta-итераций:
 
-**Публичный исходный репозиторий опубликован, лицензии кода и перечисленных медиаактивов разведены, ручная инженерная ревизия исходного дерева выполнена, GitHub security settings настроены, а CI подтвердил успешные прогоны на Windows, Ubuntu и macOS.** Дополнительная выборочная secret-проверка текущего дерева не обнаружила типовых маркеров; полная проверка всей Git-истории остаётся отдельной задачей. Setup/Portable и бинарный выпуск остаются отдельным этапом и не объявляются готовыми.
+1. **Ручная проверка Portable на компьютере сопровождающего.** Автоматический smoke-test на Windows runner прошёл; отдельное подтверждение на пользовательском ПК ещё нужно.
+2. **Аппаратная совместимость.** Провести воспроизводимую матрицу тестов NVIDIA NVENC, AMD AMF и Intel Quick Sync на реальном оборудовании, с разными драйверами, 1080p/4K и 24/30/60 FPS. Ранее NVIDIA NVENC проверялся в одном сценарии 1080p30; это не подтверждает остальные комбинации.
+3. **Длительные и сложные проекты.** Проверить большие исходники, длинные таймлайны, сочетания видео/изображений/аудио, повторные экспорты и восстановление после ошибок.
+4. **Поддержка Windows.** Проверить установку, обновление и удаление на нескольких реальных конфигурациях Windows 10/11, а не только на GitHub runner.
+5. **Переводы.** 34 дополнительных языка остаются машинно-ассистированными черновиками и нуждаются в проверке носителями.
+6. **Цифровая подпись.** Сейчас EXE не подписаны. Подписание можно добавить позже при наличии сертификата и защищённого механизма хранения ключа; для публикации текущей Beta это не было настроено.
+
+Эти пункты не отменяют публикацию v3.6.45, но должны учитываться при описании совместимости и при подготовке следующих релизов. Не заявлять поддержку GPU или формата только на основании прохождения CI.
+
+## Команды и подтверждения
+
+- Windows Beta release workflow: https://github.com/DRINKH2SO4pikabu/montazhnaya-1/actions/runs/42211601483
+- Cross-platform CI: https://github.com/DRINKH2SO4pikabu/montazhnaya-1/actions/runs/42211601449
+- Full-history Gitleaks scan: https://github.com/DRINKH2SO4pikabu/montazhnaya-1/actions/runs/42211601443
+- Официальный релиз: https://github.com/DRINKH2SO4pikabu/montazhnaya-1/releases/tag/v3.6.45
+
+## Исходники и лицензии
+
+- Repository: https://github.com/DRINKH2SO4pikabu/montazhnaya-1
+- `LICENSE`, `LICENSE_SCOPE.md`, `ASSET_LICENSE.md`, `ASSET_CREDITS.md`, `THIRD_PARTY_NOTICES.md` — основные документы о лицензиях и атрибуции.
+- `SOURCE_CODE_ORIGIN_AUDIT_RU.md`, `ASSET_RIGHTS_REGISTER_RU.md`, `AI_ASSISTANCE_DISCLOSURE.md` и `COPYRIGHT_AND_AI_PROVENANCE_RU.md` — документы о происхождении кода и медиа.
