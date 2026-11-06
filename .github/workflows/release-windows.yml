@@ -1,4 +1,4 @@
-name: Windows release build
+name: Windows Beta release build and publish
 
 on:
   workflow_dispatch:
