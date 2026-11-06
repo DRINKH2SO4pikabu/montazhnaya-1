@@ -9,6 +9,10 @@ on:
         default: "3.6.45"
         type: string
   push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/release-windows.yml"
     tags:
       - "v*"
 
@@ -21,6 +25,7 @@ concurrency:
 
 jobs:
   build-windows-x64:
+    if: github.event_name != 'push' || github.ref_type == 'tag' || contains(github.event.head_commit.message, '[publish-beta-3.6.45]')
     runs-on: windows-latest
     timeout-minutes: 90
     permissions:
@@ -48,16 +53,21 @@ jobs:
             throw "Dispatch the first public release from the main branch."
           }
           $packageVersion = (Get-Content package.json -Raw | ConvertFrom-Json).version
-          $requestedVersion = $env:RELEASE_VERSION.Trim() -replace '^v', ''
+          if ($env:GITHUB_EVENT_NAME -eq 'push' -and $env:GITHUB_REF -eq 'refs/heads/main') {
+            $requestedVersion = $packageVersion
+          } else {
+            $requestedVersion = $env:RELEASE_VERSION.Trim() -replace '^v', ''
+          }
           if ($requestedVersion -ne $packageVersion) {
             throw "Requested release $requestedVersion does not match package.json version $packageVersion."
           }
           $tagName = "v$requestedVersion"
-          if ($env:GITHUB_EVENT_NAME -eq 'workflow_dispatch') {
+          if ($env:GITHUB_REF -notlike 'refs/tags/*') {
             $existingTag = git ls-remote --refs origin "refs/tags/$tagName"
             if ($LASTEXITCODE -ne 0) { throw "Could not check whether tag $tagName already exists." }
             if ($existingTag) { throw "Tag $tagName already exists. Refusing to overwrite an existing release." }
-          } elseif (-not (Test-Path "tools/release-toolchain/package-lock.json")) {
+          }
+          if ($env:GITHUB_REF -like 'refs/tags/*' -and -not (Test-Path "tools/release-toolchain/package-lock.json")) {
             throw "Tagged releases require the committed Windows release-toolchain lockfile. Run this workflow from main first."
           }
           "version=$requestedVersion" >> $env:GITHUB_OUTPUT
@@ -84,7 +94,7 @@ jobs:
         run: npm run release-tools:ci
 
       - name: Commit the verified release-toolchain lockfile
-        if: github.event_name == 'workflow_dispatch'
+        if: github.ref == 'refs/heads/main'
         id: pin-release-lock
         shell: pwsh
         run: |
