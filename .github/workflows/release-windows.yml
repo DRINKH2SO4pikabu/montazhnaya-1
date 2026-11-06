@@ -2,6 +2,12 @@ name: Windows release build
 
 on:
   workflow_dispatch:
+    inputs:
+      release_version:
+        description: "Release version (must match package.json)"
+        required: true
+        default: "3.6.45"
+        type: string
   push:
     tags:
       - "v*"
@@ -9,27 +15,60 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: montazhnaya-windows-release-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   build-windows-x64:
     runs-on: windows-latest
+    timeout-minutes: 90
     permissions:
-      contents: write # Needed only for creating the draft release.
+      contents: write
     steps:
       - name: Check out source
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
 
-      - name: Set up Node.js
+      - name: Set up Node.js 24
         uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: 24
           cache: npm
           cache-dependency-path: package-lock.json
 
-      - name: Install FFmpeg
+      - name: Validate release version and target
+        id: release-meta
+        shell: pwsh
+        env:
+          RELEASE_VERSION: ${{ inputs.release_version || github.ref_name }}
+        run: |
+          if ($env:GITHUB_EVENT_NAME -eq 'workflow_dispatch' -and $env:GITHUB_REF -ne 'refs/heads/main') {
+            throw "Dispatch the first public release from the main branch."
+          }
+          $packageVersion = (Get-Content package.json -Raw | ConvertFrom-Json).version
+          $requestedVersion = $env:RELEASE_VERSION.Trim() -replace '^v', ''
+          if ($requestedVersion -ne $packageVersion) {
+            throw "Requested release $requestedVersion does not match package.json version $packageVersion."
+          }
+          $tagName = "v$requestedVersion"
+          if ($env:GITHUB_EVENT_NAME -eq 'workflow_dispatch') {
+            $existingTag = git ls-remote --refs origin "refs/tags/$tagName"
+            if ($LASTEXITCODE -ne 0) { throw "Could not check whether tag $tagName already exists." }
+            if ($existingTag) { throw "Tag $tagName already exists. Refusing to overwrite an existing release." }
+          } elseif (-not (Test-Path "tools/release-toolchain/package-lock.json")) {
+            throw "Tagged releases require the committed Windows release-toolchain lockfile. Run this workflow from main first."
+          }
+          "version=$requestedVersion" >> $env:GITHUB_OUTPUT
+          "tag_name=$tagName" >> $env:GITHUB_OUTPUT
+          Write-Host "Preparing $tagName from $env:GITHUB_SHA"
+
+      - name: Install FFmpeg for integration tests
         shell: pwsh
         run: choco install ffmpeg --yes --no-progress
 
-      - name: Verify locked app dependencies, SRI and security audit
+      - name: Verify locked application dependencies, SRI and npm audit
         run: npm run deps:ci
 
       - name: Download checksum-verified Electron runtime
@@ -38,52 +77,153 @@ jobs:
       - name: Verify Electron runtime version
         run: npm run electron:version
 
+      - name: Generate the release-toolchain lockfile, install and audit
+        run: npm run release-tools:install
+
+      - name: Replay strict locked install and audit for the release toolchain
+        run: npm run release-tools:ci
+
+      - name: Commit the verified release-toolchain lockfile
+        if: github.event_name == 'workflow_dispatch'
+        id: pin-release-lock
+        shell: pwsh
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- tools/release-toolchain/package-lock.json
+          git diff --cached --quiet
+          if ($LASTEXITCODE -ne 0) {
+            git commit -m "chore(release): lock Windows packaging toolchain"
+            if ($LASTEXITCODE -ne 0) { throw "Could not commit the verified release-toolchain lockfile." }
+            git push origin "HEAD:$env:GITHUB_REF_NAME"
+            if ($LASTEXITCODE -ne 0) { throw "Could not push the verified lockfile to $env:GITHUB_REF_NAME." }
+          }
+          $commit = (git rev-parse HEAD).Trim()
+          "commit_sha=$commit" >> $env:GITHUB_OUTPUT
+          Write-Host "Release source commit: $commit"
+
+      - name: Record release source commit
+        id: source-commit
+        shell: pwsh
+        run: |
+          $commit = (git rev-parse HEAD).Trim()
+          "commit_sha=$commit" >> $env:GITHUB_OUTPUT
+          Write-Host "Building source commit $commit"
+
       - name: Run localization quality audit
         run: npm run qa:locales
 
-      - name: Run regression tests
+      - name: Run the complete regression suite
         run: npm test
 
-      - name: Verify locked electron-builder toolchain and audit
-        run: npm run release-tools:ci
-
-      - name: Build NSIS installer and portable executable
-        run: npm run dist:win
-
-      - name: Verify installer and portable outputs
+      - name: Build CycloneDX dependency SBOMs
         shell: pwsh
         run: |
-          $executables = @(Get-ChildItem -Path release -Filter *.exe)
-          if ($executables.Count -lt 2) { throw "Expected both NSIS Setup and Portable EXE; found $($executables.Count)." }
-          $names = $executables.Name -join "`n"
-          if ($names -notmatch "Setup" -or $names -notmatch "Portable") { throw "Expected one Setup and one Portable output. Found: $names" }
-
-      - name: Generate SHA-256 checksums
-        shell: pwsh
-        run: |
-          Get-ChildItem -Path release -Filter *.exe | ForEach-Object {
-            $hash = (Get-FileHash -Algorithm SHA256 -LiteralPath $_.FullName).Hash.ToLowerInvariant()
-            "$hash  $($_.Name)" | Set-Content -Encoding ascii -LiteralPath ($_.FullName + ".sha256.txt")
+          New-Item -ItemType Directory -Force -Path release-metadata | Out-Null
+          npm sbom --package-lock-only --sbom-format cyclonedx | Set-Content -Encoding utf8NoBOM release-metadata/Montazhnaya-app-dependencies.cdx.json
+          if ($LASTEXITCODE -ne 0) { throw "Application dependency SBOM generation failed." }
+          npm sbom --prefix tools/release-toolchain --package-lock-only --sbom-format cyclonedx | Set-Content -Encoding utf8NoBOM release-metadata/Windows-release-toolchain.cdx.json
+          if ($LASTEXITCODE -ne 0) { throw "Windows release-toolchain SBOM generation failed." }
+          foreach ($file in Get-ChildItem release-metadata -File) {
+            if ($file.Length -lt 100) { throw "SBOM output looks incomplete: $($file.Name)" }
           }
 
-      - name: Upload Windows build artifacts
+      - name: Build NSIS installer and Portable executable
+        run: npm run dist:win
+
+      - name: Verify packaged application and third-party license notices
+        run: node tools/verify-release-package.cjs
+
+      - name: Smoke-test Setup installation and Portable startup
+        shell: pwsh
+        run: |
+          $setup = @(Get-ChildItem -Path release -Filter "*Setup-x64.exe")
+          $portable = @(Get-ChildItem -Path release -Filter "*Portable-x64.exe")
+          if ($setup.Count -ne 1) { throw "Expected exactly one Setup x64 executable; found $($setup.Count)." }
+          if ($portable.Count -ne 1) { throw "Expected exactly one Portable x64 executable; found $($portable.Count)." }
+
+          $installDir = Join-Path $env:RUNNER_TEMP "Montazhnaya-Setup-Smoke"
+          if (Test-Path $installDir) { Remove-Item -LiteralPath $installDir -Recurse -Force }
+          $installerProcess = Start-Process -FilePath $setup[0].FullName -ArgumentList @("/S", "/D=$installDir") -Wait -PassThru
+          if ($installerProcess.ExitCode -ne 0) { throw "Silent Setup returned exit code $($installerProcess.ExitCode)." }
+
+          $installedApp = Get-ChildItem -Path $installDir -Filter "Montazhnaya.exe" -Recurse -File | Select-Object -First 1
+          if (-not $installedApp) { throw "Setup completed but Montazhnaya.exe was not found in $installDir." }
+
+          Get-Process -Name "Montazhnaya" -ErrorAction SilentlyContinue | Stop-Process -Force -ErrorAction SilentlyContinue
+          $installedProcess = Start-Process -FilePath $installedApp.FullName -ArgumentList @("--disable-gpu") -PassThru
+          Start-Sleep -Seconds 8
+          $installedProcess.Refresh()
+          if ($installedProcess.HasExited) { throw "Installed Montazhnaya process exited during the startup smoke test." }
+          Get-Process -Name "Montazhnaya" -ErrorAction SilentlyContinue | Stop-Process -Force -ErrorAction SilentlyContinue
+
+          $portableProcess = Start-Process -FilePath $portable[0].FullName -ArgumentList @("--disable-gpu") -PassThru
+          Start-Sleep -Seconds 8
+          $portableProcess.Refresh()
+          if ($portableProcess.HasExited) { throw "Portable Montazhnaya process exited during the startup smoke test." }
+          Get-Process -Name "Montazhnaya" -ErrorAction SilentlyContinue | Stop-Process -Force -ErrorAction SilentlyContinue
+          Write-Host "Setup install, installed app startup, and Portable startup: PASS"
+
+      - name: Assemble release assets and SHA-256 manifest
+        shell: pwsh
+        run: |
+          Copy-Item -Path "release-metadata/*.cdx.json" -Destination release -Force
+          $executables = @(Get-ChildItem -Path release -Filter "*.exe")
+          if ($executables.Count -ne 2) { throw "Expected exactly Setup and Portable executables; found $($executables.Count)." }
+          $setupName = @($executables.Name | Where-Object { $_ -match "Setup-x64\\.exe$" })
+          $portableName = @($executables.Name | Where-Object { $_ -match "Portable-x64\\.exe$" })
+          if ($setupName.Count -ne 1 -or $portableName.Count -ne 1) { throw "The release must contain one Setup and one Portable x64 executable." }
+
+          $manifest = @()
+          foreach ($file in $executables) {
+            $hash = (Get-FileHash -Algorithm SHA256 -LiteralPath $file.FullName).Hash.ToLowerInvariant()
+            $line = "$hash  $($file.Name)"
+            $manifest += $line
+            $line | Set-Content -Encoding ascii -LiteralPath ($file.FullName + ".sha256.txt")
+          }
+          $manifest | Set-Content -Encoding ascii -LiteralPath "release/SHA256SUMS.txt"
+          $metadata = [ordered]@{
+            product = "Montazhnaya"
+            version = "${{ steps.release-meta.outputs.version }}"
+            tag = "${{ steps.release-meta.outputs.tag_name }}"
+            sourceCommit = (git rev-parse HEAD).Trim()
+            architecture = "x64"
+            platform = "Windows"
+            beta = $true
+            ffmpegBundled = $false
+            generatedAtUtc = (Get-Date).ToUniversalTime().ToString("o")
+          }
+          $metadata | ConvertTo-Json -Depth 5 | Set-Content -Encoding utf8NoBOM "release/BUILD-METADATA.json"
+
+      - name: Upload Windows release candidate artifact
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
-          name: Montazhnaya-beta-${{ github.ref_name }}-Windows-x64
+          name: Montazhnaya-${{ steps.release-meta.outputs.version }}-Windows-x64-Release-Candidate
           path: |
             release/*.exe
             release/*.sha256.txt
+            release/SHA256SUMS.txt
+            release/*.cdx.json
+            release/package-verification.json
+            release/BUILD-METADATA.json
           if-no-files-found: error
-          retention-days: 30
+          retention-days: 90
 
-      - name: Create draft GitHub release for tagged builds
-        if: startsWith(github.ref, 'refs/tags/')
+      - name: Publish official GitHub Beta release
         uses: softprops/action-gh-release@3bb12739c298aeb8a4eeaf626c5b8d85266b0e65 # v2
         with:
-          draft: true
+          tag_name: ${{ steps.release-meta.outputs.tag_name }}
+          target_commitish: ${{ steps.pin-release-lock.outputs.commit_sha || steps.source-commit.outputs.commit_sha || github.sha }}
+          name: Montazhnaya ${{ steps.release-meta.outputs.version }} Beta
+          draft: false
           prerelease: true
+          fail_on_unmatched_files: true
+          generate_release_notes: true
+          body_path: RELEASE_NOTES.md
           files: |
             release/*.exe
             release/*.sha256.txt
-          fail_on_unmatched_files: true
-          generate_release_notes: true
+            release/SHA256SUMS.txt
+            release/*.cdx.json
+            release/package-verification.json
+            release/BUILD-METADATA.json
