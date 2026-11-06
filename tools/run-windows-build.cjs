@@ -49,7 +49,8 @@ try {
   }
   const cliPath = path.join(toolRoot, 'node_modules/electron-builder/cli.js');
   if (!fs.existsSync(cliPath)) throw new Error(`Не найден локальный CLI electron-builder: ${cliPath}`);
-  const result = spawnSync(process.execPath, [cliPath, '--win', '--x64'], {
+  // CI builds are uploaded as workflow artifacts; do not trigger implicit GitHub Releases publishing.
+  const result = spawnSync(process.execPath, [cliPath, '--win', '--x64', '--publish', 'never'], {
     cwd: root,
     stdio: 'inherit',
     windowsHide: false,
