@@ -170,8 +170,8 @@ jobs:
           Copy-Item -Path "release-metadata/*.cdx.json" -Destination release -Force
           $executables = @(Get-ChildItem -Path release -Filter "*.exe")
           if ($executables.Count -ne 2) { throw "Expected exactly Setup and Portable executables; found $($executables.Count)." }
-          $setupName = @($executables.Name | Where-Object { $_ -match "Setup-x64\\.exe$" })
-          $portableName = @($executables.Name | Where-Object { $_ -match "Portable-x64\\.exe$" })
+          $setupName = @($executables.Name | Where-Object { $_ -match "Setup-x64\.exe$" })
+          $portableName = @($executables.Name | Where-Object { $_ -match "Portable-x64\.exe$" })
           if ($setupName.Count -ne 1 -or $portableName.Count -ne 1) { throw "The release must contain one Setup and one Portable x64 executable." }
 
           $manifest = @()
