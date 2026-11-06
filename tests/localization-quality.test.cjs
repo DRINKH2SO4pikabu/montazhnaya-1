@@ -91,6 +91,6 @@ test("package, lockfile, release notes and localization metadata share the same 
   assert.equal(pkg.version, "3.6.45");
   assert.equal(lock.version, "3.6.45");
   assert.equal(lock.packages[""].version, "3.6.45");
-  assert.match(read("RELEASE_NOTES.md"), /^## 3\.6\.45/m);
+  assert.match(read("RELEASE_NOTES.md"), /^# Montazhnaya 3\.6\.45 Beta/m);
   assert.match(read("README.md"), /beta[^\n]*3\.6\.45/i);
 });
