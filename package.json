@@ -98,6 +98,16 @@
         "from": "assets/montazhnaya-icon.png",
         "to": "Montazhnaya.png"
       }
+    ],
+    "extraResources": [
+      {
+        "from": "node_modules/electron/dist/LICENSE",
+        "to": "ThirdPartyNotices/Electron-LICENSE.txt"
+      },
+      {
+        "from": "node_modules/electron/dist/LICENSES.chromium.html",
+        "to": "ThirdPartyNotices/Chromium-LICENSES.html"
+      }
     ]
   },
   "overrides": {
