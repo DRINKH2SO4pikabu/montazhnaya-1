@@ -1,6 +1,6 @@
-# Montazhnaya 3.6.45 Beta
+# Montazhnaya 3.6.45 Beta / Stage 19
 
-The first public Windows x64 binary release of Montazhnaya_1.
+The first public Windows x64 beta release of Montazhnaya_1. The packaged application uses Electron 45.2.1.
 
 ## What is included
 
@@ -24,6 +24,7 @@ The release contains:
 ## System requirements and important notes
 
 - Windows 10/11 x64.
+- The Windows Setup and Portable executables are **not digitally signed**. Windows SmartScreen or security software may display a warning; verify the SHA-256 checksum and download only from this official GitHub release.
 - FFmpeg and FFprobe are **not bundled**. Install a compatible build separately and configure it through PATH or the application's FFmpeg/FFprobe settings. Do not download FFmpeg from unofficial mirrors.
 - Hardware encoding depends on the GPU, driver and FFmpeg build. NVIDIA, AMD and Intel hardware configurations are not universally certified.
 - This is a beta release for testing and smaller editing tasks. It is not presented as a replacement for mature professional editing suites. Export speed and supported media formats can vary by system.
