@@ -4,7 +4,6 @@
 
 [Русская версия](README_RU.md) · [GitHub repository](https://github.com/DRINKH2SO4pikabu/montazhnaya-1) · [Official releases](https://github.com/DRINKH2SO4pikabu/montazhnaya-1/releases)
 
-<badge-placeholder/>
 
 ## Download the first Windows Beta
 
