@@ -1,25 +1,40 @@
-# Montazhnaya_1 — public source candidate
+# Montazhnaya 3.6.45 Beta
 
-## 3.6.45 Beta / Stage 19
+The first public Windows x64 binary release of Montazhnaya_1.
 
-The root application dependency manifest pins Electron 45.2.1. This source candidate is based on the Stage 19 development snapshot. It includes the lower timeline Split command, clip speed controls (0.25×–4×), linked-audio speed handling, procedural WebGL2 Fire Whirl, frame-grid MP4/WebM export and FFprobe validation.
+## What is included
 
-### Open-source preparation changes
+- Multi-track timeline for video, images and audio.
+- Import and arrangement of media, including drag-and-drop workflows.
+- Project preview and clip parameter controls.
+- Transition library with animated previews.
+- MP4 export (H.264/AAC) and WebM export, depending on the available FFmpeg build.
+- Frame-grid export and FFprobe validation.
+- Clip splitting and playback speed controls from 0.25× to 4×.
+- 36 interface language variants. Russian and English are the reference interfaces; the other 34 language packs are machine-assisted drafts and need fluent-speaker review.
 
-- Selected GPL-3.0-or-later for original application source and project documentation.
-- Added complete `LICENSE`, `LICENSE_SCOPE.md`, `THIRD_PARTY_NOTICES.md`, DCO, contribution and security guidance.
-- Added a root npm dependency license inventory and partial CycloneDX SBOM.
-- Removed local runtime logs, QA contact sheets and user-context screenshots.
-- Restored the 21 transition demo preview MP4s and 21 poster JPGs after the maintainer clarified their Grok-generated provenance; added the required `Created with Grok` attribution to the repository and Help → About dialog.
-- Restored the ChatGPT-generated Montazhnaya logo/application icon, with transparent credit that the maintainer selected and integrated the result.
-- Adopted CC BY 4.0 for project-controlled logo/brand graphics and the 21 Grok-generated transition demonstrations, preview clips and posters; retained the required `Created with Grok` attribution.
+## Windows downloads
 
-### Known release blockers
+The release contains:
+- **Setup** — standard Windows installer.
+- **Portable** — standalone package that does not require a conventional installation.
+- SHA-256 checksums for both executables and a consolidated `SHA256SUMS.txt`.
+- CycloneDX SBOMs for the application dependencies and Windows release toolchain.
 
-- Manual engineering review of source-code origin completed; no specific third-party code fragments requiring separate licensing were found.
-- Synthetic test fixtures are generated locally by the project-owned generator and are not committed.
-- Generate and commit the missing `tools/release-toolchain/package-lock.json`; run network-backed `npm audit` for both dependency graphs.
-- Complete the binary SBOM, verify Electron/Chromium notices in the packaged files, and build/test Windows Setup + Portable on a clean Windows x64 machine.
-- Verify actual GPU encoders and exports on physical NVIDIA, AMD and Intel hardware.
+## System requirements and important notes
 
-This is a beta source candidate, not a signed Windows binary release. FFmpeg/FFprobe are external tools and are not bundled.
+- Windows 10/11 x64.
+- FFmpeg and FFprobe are **not bundled**. Install a compatible build separately and configure it through PATH or the application's FFmpeg/FFprobe settings. Do not download FFmpeg from unofficial mirrors.
+- Hardware encoding depends on the GPU, driver and FFmpeg build. NVIDIA, AMD and Intel hardware configurations are not universally certified.
+- This is a beta release for testing and smaller editing tasks. It is not presented as a replacement for mature professional editing suites. Export speed and supported media formats can vary by system.
+
+## Licensing
+
+- Original application source code and project documentation: GPL-3.0-or-later.
+- Project-controlled logo, selected brand graphics and transition demonstration media: CC BY 4.0, with attribution described in the repository.
+- Electron/Chromium and all other third-party components retain their own licenses. The packaged application includes Electron and Chromium license notices.
+- FFmpeg/FFprobe are external tools and are not redistributed in this release.
+
+## Feedback
+
+Please report reproducible bugs, export problems, translation issues and compatibility results through [GitHub Issues](https://github.com/DRINKH2SO4pikabu/montazhnaya-1/issues). Include Windows version, CPU/GPU, driver version, source media details and the export settings when relevant.
