@@ -152,7 +152,7 @@ test('GitHub Windows release workflow audits, verifies, smoke-tests and publishe
   assert.match(workflow, /npm run release-tools:ci/);
   assert.match(workflow, /npm test/);
   assert.match(workflow, /npm run dist:win/);
-  assert.match(workflow, /tools\/verify-release-package\\.cjs/);
+  assert.match(workflow, /tools\/verify-release-package[.]cjs/);
   assert.match(workflow, /Smoke-test Setup installation and Portable startup/);
   assert.match(workflow, /npm sbom.*cyclonedx/);
   assert.match(workflow, /Get-FileHash -Algorithm SHA256/);
