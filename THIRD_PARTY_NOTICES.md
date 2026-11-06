@@ -1,10 +1,10 @@
 # Third-party notices
 
-This inventory describes the **source repository candidate** at Montazhnaya_1 Beta 3.6.45 / Stage 19. It is not yet a complete SBOM for a Windows installer or Portable executable. The root application dependency graph is locked in `package-lock.json`; license identifiers below are the metadata recorded by that lockfile and must be retained with upstream notices.
+This inventory describes Montazhnaya 3.6.45 Beta / Stage 19. It accompanies the Windows x64 Setup and Portable packages. The official release also publishes CycloneDX SBOMs for the application dependency graph and the isolated Windows release toolchain.
 
 ## Root npm dependency graph
 
-The locked root application dependency graph currently contains **13 packages** including Electron. This inventory excludes the not-yet-locked Windows release toolchain and the downloaded Electron/Chromium runtime.
+The locked root application dependency graph currently contains **13 packages** including Electron. The inventory below records the license identifiers from the committed `package-lock.json`.
 
 | Package | Locked version | License metadata |
 |---|---:|---|
@@ -22,21 +22,23 @@ The locked root application dependency graph currently contains **13 packages** 
 | `undici` | 7.30.1 | MIT |
 | `undici-types` | 7.18.2 | MIT |
 
-The CycloneDX inventory for this root dependency graph is `SBOM-app-dependencies.cdx.json`. Package metadata is not a substitute for retaining the actual LICENSE/NOTICE files from the exact installed versions.
+The application dependency CycloneDX SBOM is published as a separate asset in the GitHub release. Package metadata is not a substitute for retaining the actual LICENSE/NOTICE files from exact installed versions.
 
 ## Electron and Chromium
 
-The `electron` npm package is MIT-licensed. Electron's downloaded runtime includes Chromium and other third-party components with their own licenses/notices. The current source repository does not include the Electron runtime binary. Any Setup/Portable package must preserve the upstream Electron `LICENSE` and the exact runtime's `LICENSES.chromium.html` (or equivalent third-party notices) and must be checked after packaging.
+The `electron` npm package is MIT-licensed. Electron's downloaded runtime includes Chromium and other third-party components with their own licenses/notices. The Windows Setup and Portable packages include the exact downloaded runtime's `LICENSE` and `LICENSES.chromium.html` files under `resources/ThirdPartyNotices/`. The release workflow checks that both files are present and non-empty in the unpacked packaged application before publication.
 
 ## FFmpeg / FFprobe
 
-FFmpeg and FFprobe executables are **not bundled in this source repository**. The application resolves them from `PATH`, `FFMPEG_PATH` / `FFPROBE_PATH`, or the user's managed local tool directory. The Windows helper currently references a Gyan FFmpeg 8.0.1 Full Build download. Gyan's build page states that its Windows builds are GPLv3 and that the Full build includes `libx264`; FFmpeg's own licensing page explains that enabling GPL components changes the resulting FFmpeg build's license. The exact 8.0.1 archive's configure flags, embedded notices and checksum must be verified before anyone republishes that binary. References: [Gyan FFmpeg builds](https://www.gyan.dev/ffmpeg/builds/) and [FFmpeg licensing](https://ffmpeg.org/legal.html).
+FFmpeg and FFprobe executables are **not bundled** in the Windows packages. The application resolves them from `PATH`, `FFMPEG_PATH` / `FFPROBE_PATH`, or the user's managed local tool directory. The Windows helper references a Gyan FFmpeg 8.0.1 Full Build download. Gyan's build page states that its Windows builds are GPLv3 and that the Full build includes `libx264`; FFmpeg's own licensing page explains that enabling GPL components changes the resulting FFmpeg build's license. Users obtain and install a compatible FFmpeg build directly from its provider and remain subject to that build's license. The project does not redistribute FFmpeg in this release.
 
-Project policy for the first open-source source release: do not place FFmpeg binaries in this Git repository or the first GitHub Release. Users obtain a compatible FFmpeg build directly from its provider and remain subject to that build's license. If Montazhnaya later redistributes FFmpeg, provide the exact corresponding source, build configuration, notices, licenses and required source access/offer.
+References: [Gyan FFmpeg builds](https://www.gyan.dev/ffmpeg/builds/) and [FFmpeg licensing](https://ffmpeg.org/legal.html).
+
+If Montazhnaya later redistributes FFmpeg, the exact corresponding source, build configuration, notices, licenses and required source access/offer must accompany that distribution.
 
 ## Windows release toolchain
 
-`tools/release-toolchain/package.json` pins `electron-builder@26.18.1`, but the separate `tools/release-toolchain/package-lock.json` is not present in this source snapshot. Its transitive package versions and licenses are therefore not fully locked or inventoried. Create and commit that lockfile from a trusted network environment, run `npm audit`, and extend the SBOM before producing an installer.
+The Windows packaging tool is isolated under `tools/release-toolchain/` and pins `electron-builder@26.18.1`. Its separate `package-lock.json` is now committed. The locked CI path validates registry SRI values, performs `npm ci`, checks security-version floors and runs `npm audit`; CI also replays the strict locked installation. A separate CycloneDX SBOM for this toolchain is included in the official Windows release assets.
 
 ## Other project content
 
@@ -55,7 +57,7 @@ Project policy for the first open-source source release: do not place FFmpeg bin
 For each release candidate:
 
 1. Install strictly from the committed root and release-toolchain lockfiles.
-2. Generate a fresh SPDX or CycloneDX SBOM for both dependency graphs and the packaged runtime.
+2. Generate fresh SPDX or CycloneDX SBOMs for both dependency graphs and include them in the release assets.
 3. Inspect packages with unknown, custom, dual or non-SPDX license metadata manually.
 4. Preserve the exact upstream license/notice files for binaries and libraries included in Setup/Portable.
 5. Re-run the asset-rights register and secret scan before tagging a release.
