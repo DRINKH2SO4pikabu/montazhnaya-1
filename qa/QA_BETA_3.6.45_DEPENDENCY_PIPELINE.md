@@ -1,5 +1,8 @@
 # «Монтажная» Beta 3.6.45 — dependency security and Windows build completion attempt
 
+> **Исторический журнал попытки от 3 ноября 2026 года.** В этом снимке зафиксированы сетевые ограничения и отсутствие Windows-сборки именно на дату данного запуска. Позднее release-toolchain lockfile был создан и закоммичен, оба дерева зависимостей прошли аудит, а Windows Setup/Portable были собраны, проверены и опубликованы в [релизе v3.6.45](https://github.com/DRINKH2SO4pikabu/montazhnaya-1/releases/tag/v3.6.45). Текущий итоговый статус находится в [PUBLICATION_READINESS_RU.md](../PUBLICATION_READINESS_RU.md).
+
+
 **Дата:** 3 ноября 2026 года
 **Тип:** source maintenance update; Setup/Portable не собраны в текущей среде.
 
