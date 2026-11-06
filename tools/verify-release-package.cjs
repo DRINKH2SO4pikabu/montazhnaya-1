@@ -41,7 +41,7 @@ if (typeof asar.listPackage !== 'function') fail('@electron/asar does not expose
 
 let entries;
 try {
-  entries = new Set(asar.listPackage(appAsar).map((entry) => String(entry).replace(/^\/+/, '').replace(/\\/g, '/')));
+  entries = new Set(asar.listPackage(appAsar).map((entry) => String(entry).replace(/\\/g, '/').replace(/^\/+/, '')));
 } catch (error) {
   fail('Cannot read app.asar file table: ' + error.message);
 }
