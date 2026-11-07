@@ -163,6 +163,9 @@ function buildLocaleExpression(code, viewport) {
     "const packs=window.MontazhnayaTooltipTranslations;" +
     "if(!source||!Array.isArray(source.textKeys)||!packs) throw new Error('Tooltip source registry is unavailable');" +
     "const keys=source.textKeys;" +
+    "const tooltipPack=packs.packs[locale]||{};" +
+    "const tooltipPackCount=Object.keys(tooltipPack).length;" +
+    "const missingPackKeys=keys.filter(key=>!Object.prototype.hasOwnProperty.call(tooltipPack,key));" +
     "const translated=[]; const unchanged=[]; const empty=[];" +
     "for(const key of keys){" +
       "const value=api.translate(key);" +
@@ -243,7 +246,7 @@ function buildLocaleExpression(code, viewport) {
     "if(longest){showFunctionHelp(longest.sample.element);}" +
     "const summary={" +
       "locale,languageName:meta.nativeName||locale,direction,expectedDirection," +
-      "tooltipKeyCount:keys.length,unchangedCyrillicKeys:unchanged.length,emptyTooltipKeys:empty.length," +
+      "tooltipKeyCount:keys.length,tooltipPackCount,missingPackKeys,unchangedCyrillicKeys:unchanged.length,emptyTooltipKeys:empty.length," +
       "actionDefinitions:actionEntries.length,controlDefinitions:idEntries.length," +
       "beginnerActionOverrides:Object.keys(beginnerAction).length,beginnerControlOverrides:Object.keys(beginnerIds).length," +
       "syntheticSamples:fixtures.length,liveTargets:liveUnique.length,samples:sampleResults.length," +
@@ -316,8 +319,12 @@ async function main() {
           actualDirection: result.direction,
           metadata: result.metadata,
           detailedTooltipFragments: result.tooltipKeyCount,
+          tooltipPackEntries: result.tooltipPackCount,
+          missingTooltipPackKeys: result.missingPackKeys.length,
           unchangedCyrillicKeys: result.unchangedCyrillicKeys,
           emptyTooltipKeys: result.emptyTooltipKeys,
+          tooltipPackCount: result.tooltipPackCount,
+          missingTooltipPackKeys: result.missingPackKeys.length,
           actionDefinitions: result.actionDefinitions,
           controlDefinitions: result.controlDefinitions,
           beginnerActionOverrides: result.beginnerActionOverrides,
@@ -333,6 +340,15 @@ async function main() {
           criticalFailures.push(locale.code + ": expected direction " + result.expectedDirection + ", got " + result.actualDirection);
         }
         if (result.emptyTooltipKeys) criticalFailures.push(locale.code + ": " + result.emptyTooltipKeys + " empty detailed tooltip strings");
+        if (locale.code !== "ru" && result.tooltipPackCount !== sourceCount) {
+          criticalFailures.push(locale.code + ": expected " + sourceCount + " registered tooltip strings, found " + result.tooltipPackCount);
+        }
+        if (locale.code !== "ru" && result.missingPackKeys.length) {
+          criticalFailures.push(locale.code + ": " + result.missingPackKeys.length + " detailed tooltip pack keys are missing");
+        }
+        if (locale.code !== "ru" && result.metadata === "missing") {
+          criticalFailures.push(locale.code + ": detailed tooltip translation metadata is missing");
+        }
         if (result.unchangedCyrillicKeys) {
           reviewFlags.push({
             locale: locale.code,
