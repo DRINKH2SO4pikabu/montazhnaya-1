@@ -1,4 +1,4 @@
-param(
+﻿param(
     [string]$OutputDirectory = '',
     [int]$DevToolsPort = 9337,
     [switch]$KeepWorkingCopy
@@ -88,14 +88,11 @@ try {
         throw 'В исходном коде пока нет GUI-аудита подсказок. Проверь, что загружена актуальная ветка main.'
     }
 
-    Push-Location -LiteralPath $projectRoot
-    try {
-        Invoke-NpmChecked -NpmArguments @('run', 'deps:install')
-        Invoke-NpmChecked -NpmArguments @('run', 'electron:install')
-    }
-    finally {
-        Pop-Location
-    }
+    $originalLocation = Get-Location
+    Set-Location -LiteralPath $projectRoot
+    Invoke-NpmChecked -NpmArguments @('run', 'deps:install')
+    Invoke-NpmChecked -NpmArguments @('run', 'electron:install')
+    Set-Location -Path $originalLocation
 
     $electronExe = Join-Path $projectRoot 'node_modules\electron\dist\electron.exe'
     if (-not (Test-Path -LiteralPath $electronExe -PathType Leaf)) {
@@ -120,18 +117,14 @@ try {
     Write-Host 'Окно Montazhnaya должно появиться на рабочем столе.' -ForegroundColor Green
     Write-Host 'Тест проверит 36 языков и реальные подсказки в трёх размерах окна.' -ForegroundColor Gray
 
-    Push-Location -LiteralPath $projectRoot
-    try {
-        & $nodeCommand.Source $auditScript --port $DevToolsPort --output $OutputDirectory
-        $auditExitCode = $LASTEXITCODE
-        if ($auditExitCode -ne 0) {
-            $exitCode = $auditExitCode
-            Write-Warning ('Аудит завершился с замечаниями или критическими ошибками. Отчёты сохранены в ' + $OutputDirectory)
-        }
+    Set-Location -LiteralPath $projectRoot
+    & $nodeCommand.Source $auditScript --port $DevToolsPort --output $OutputDirectory
+    $auditExitCode = $LASTEXITCODE
+    if ($auditExitCode -ne 0) {
+        $exitCode = $auditExitCode
+        Write-Warning ('Аудит завершился с замечаниями или критическими ошибками. Отчёты сохранены в ' + $OutputDirectory)
     }
-    finally {
-        Pop-Location
-    }
+    Set-Location -Path $originalLocation
 
     Write-Host ''
     Write-Host 'Готово. Отчёты и снимки экрана:' -ForegroundColor Green
@@ -153,6 +146,10 @@ catch {
     Write-Host ('ОШИБКА: ' + $_.Exception.Message) -ForegroundColor Red
 }
 finally {
+    if ($originalLocation) {
+        Set-Location -Path $originalLocation
+    }
+
     if ($appProcess) {
         $taskkillPath = Join-Path -Path $env:SystemRoot -ChildPath 'System32\taskkill.exe'
         if (Test-Path -LiteralPath $taskkillPath) {
