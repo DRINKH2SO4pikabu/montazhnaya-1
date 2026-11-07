@@ -418,3 +418,15 @@ test("Belarusian detailed tooltip translations register all 364 source fragments
   assert.equal(Object.keys(window.MontazhnayaTooltipTranslations.packs.be).length, 364);
   assert.equal(window.MontazhnayaTooltipTranslations.metadata.be, "machine-assisted-draft-native-speaker-review-pending");
 });
+
+
+test("Azerbaijani adapted tooltip draft registers all 364 source fragments", () => {
+  const window = {};
+  const context = { window };
+  vm.createContext(context);
+  for (const file of ["tooltip-source.js", "tooltips-tr.js", "tooltips-az.js"]) {
+    vm.runInContext(read("src/renderer/locales/" + file), context, { filename: file });
+  }
+  assert.equal(Object.keys(window.MontazhnayaTooltipTranslations.packs.az).length, 364);
+  assert.equal(window.MontazhnayaTooltipTranslations.metadata.az, "turkic-adaptation-draft-native-speaker-review-pending");
+});
