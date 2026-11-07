@@ -3914,7 +3914,7 @@ function renderSequenceMarkers(ruler) {
     button.addEventListener("click", event => {
       event.preventDefault(); event.stopPropagation();
       AppState.selectedMarkerId = marker.id;
-      $(".sequence-marker").forEach(el => el.classList.toggle("selected", el.dataset.markerId === marker.id));
+      $$(".sequence-marker").forEach(el => el.classList.toggle("selected", el.dataset.markerId === marker.id));
       showSequenceMarkerTooltip(button, marker);
       goTo(marker.time);
     });
@@ -3925,7 +3925,7 @@ function renderSequenceMarkers(ruler) {
     button.addEventListener("contextmenu", event => {
       event.preventDefault(); event.stopPropagation();
       AppState.selectedMarkerId = marker.id;
-      $(".sequence-marker").forEach(el => el.classList.toggle("selected", el.dataset.markerId === marker.id));
+      $$(".sequence-marker").forEach(el => el.classList.toggle("selected", el.dataset.markerId === marker.id));
       showSequenceMarkerTooltip(button, marker);
       showContextMenu(event.clientX, event.clientY, [
         { label: "Перейти к маркеру", action: () => goTo(marker.time) },
