@@ -137,6 +137,10 @@ const criticalFailures = [];
 const reviewFlags = [];
 let totalTooltipStrings = 0;
 let totalRenderedHelpSamples = 0;
+let totalRenderedTooltipFragments = 0;
+let totalFragmentDisplayFailures = 0;
+let totalFragmentOverflowCount = 0;
+let totalFragmentOutsideViewport = 0;
 let totalViewportChecks = 0;
 let totalOutsideViewport = 0;
 
