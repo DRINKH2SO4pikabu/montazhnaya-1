@@ -171,7 +171,7 @@ for (const locale of ["pt-BR", "it"]) {
 }
 
 
-for (const locale of ["pl", "uk", "tr", "nl", "zh-CN", "zh-TW", "ja", "ko", "ar", "he", "hi", "sv", "fi", "cs", "ro", "el", "vi", "id", "th"]) {
+for (const locale of ["pl", "uk", "tr", "nl", "zh-CN", "zh-TW", "ja", "ko", "ar", "he", "hi", "sv", "fi", "cs", "ro", "el", "vi", "id", "th", "kk", "uz", "ka", "hy", "tk", "az", "ky", "tg", "be"]) {
   test(locale.toUpperCase() + " tooltip translations register all 364 source fragments", () => {
     const window = {};
     const context = { window };
@@ -193,4 +193,15 @@ test("Arabic and Hebrew locale metadata retain right-to-left direction", () => {
   assert.equal(locales.find(locale => locale.code === "ar")?.direction, "rtl");
   assert.equal(locales.find(locale => locale.code === "he")?.direction, "rtl");
   assert.equal(locales.find(locale => locale.code === "hi")?.direction, "ltr");
+});
+
+
+test("Uzbek Cyrillic detailed tooltips are marked as a transliteration draft", () => {
+  const window = {};
+  const context = { window };
+  vm.createContext(context);
+  vm.runInContext(read("src/renderer/locales/tooltip-source.js"), context, { filename: "tooltip-source.js" });
+  vm.runInContext(read("src/renderer/locales/tooltips-uz-Cyrl.js"), context, { filename: "tooltips-uz-Cyrl.js" });
+  assert.equal(Object.keys(window.MontazhnayaTooltipTranslations.packs["uz-Cyrl"]).length, 364);
+  assert.equal(window.MontazhnayaTooltipTranslations.metadata["uz-Cyrl"], "transliteration-draft-native-speaker-review-pending");
 });
