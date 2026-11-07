@@ -297,3 +297,21 @@ test("PowerShell tooltip GUI runner downloads a temporary source copy and writes
   assert.match(script, /Compress-Archive/);
   assert.match(script, /Remove-Item -LiteralPath \$workRoot -Recurse -Force/);
 });
+
+
+test("PowerShell tooltip GUI runner parses on Windows", () => {
+  if (process.platform !== "win32") return;
+
+  const scriptPath = path.join(root, "tools/Test-Montazhnaya-Tooltips.ps1");
+  const escapedPath = scriptPath.replace(/'/g, "''");
+  const command = "$tokens=$null; $errors=$null; " +
+    "[System.Management.Automation.Language.Parser]::ParseFile('" + escapedPath +
+    "', [ref]$tokens, [ref]$errors) | Out-Null; " +
+    "if ($errors.Count -gt 0) { $errors | ForEach-Object { Write-Error $_.Message }; exit 1 }";
+
+  const result = spawnSync("powershell.exe", ["-NoProfile", "-Command", command], {
+    cwd: root,
+    encoding: "utf8"
+  });
+  assert.equal(result.status, 0, result.stderr || "PowerShell tooltip GUI runner has invalid syntax");
+});
