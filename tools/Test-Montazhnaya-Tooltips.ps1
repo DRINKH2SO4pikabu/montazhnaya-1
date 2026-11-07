@@ -105,7 +105,7 @@ try {
     Write-Host "Запускаем окно редактора с локальным каналом автоматической проверки..." -ForegroundColor Cyan
     New-Item -ItemType Directory -Force -Path $profilePath | Out-Null
 
-    $electronArguments = "--remote-debugging-port=$DevToolsPort --remote-allow-origins=* --user-data-dir=""$profilePath"" --no-first-run --no-default-browser-check ."
+    $electronArguments = "--remote-debugging-address=127.0.0.1 --remote-debugging-port=$DevToolsPort --remote-allow-origins=* --user-data-dir=""$profilePath"" --no-first-run --no-default-browser-check ."
     $appProcess = Start-Process -FilePath $electronExe -ArgumentList $electronArguments -WorkingDirectory $projectRoot -PassThru
 
     Write-Host "Окно Montazhnaya должно появиться на рабочем столе." -ForegroundColor Green
