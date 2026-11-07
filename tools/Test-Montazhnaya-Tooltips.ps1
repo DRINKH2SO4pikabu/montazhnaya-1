@@ -144,10 +144,12 @@ catch {
     Write-Error $_
 }
 finally {
-    if ($appProcess -and -not $appProcess.HasExited) {
+    if ($appProcess) {
         try {
-            Stop-Process -Id $appProcess.Id -Force -ErrorAction SilentlyContinue
-        } catch { }
+            & "$env:SystemRoot\System32\taskkill.exe" /PID $appProcess.Id /T /F *> $null
+        } catch {
+            try { Stop-Process -Id $appProcess.Id -Force -ErrorAction SilentlyContinue } catch { }
+        }
     }
 
     if (-not $KeepWorkingCopy) {
