@@ -41,7 +41,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File $script
 
 - `tooltip-gui-audit-summary.md` — сводка по всем языкам.
 - `tooltip-gui-audit.json` — полный машинно-читаемый отчёт.
-- `tooltip-gui-audit-details.csv` — строки по каждой проверенной карточке, каждому из 364 фрагментов и размеру окна.
+- `tooltip-gui-audit-details.csv` — строки по каждой проверенной карточке, каждому из 364 фрагментов и размеру области отображения.
 - `tooltip-<locale>.png` — 36 скриншотов.
 - ZIP-архив со всеми перечисленными результатами.
 
