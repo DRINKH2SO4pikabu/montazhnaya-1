@@ -407,3 +407,14 @@ test("all 36 selectable locales resolve every tooltip without Russian leakage", 
     }
   }
 });
+
+
+test("Belarusian detailed tooltip translations register all 364 source fragments", () => {
+  const window = {};
+  const context = { window };
+  vm.createContext(context);
+  vm.runInContext(read("src/renderer/locales/tooltip-source.js"), context, { filename: "tooltip-source.js" });
+  vm.runInContext(read("src/renderer/locales/tooltips-be.js"), context, { filename: "tooltips-be.js" });
+  assert.equal(Object.keys(window.MontazhnayaTooltipTranslations.packs.be).length, 364);
+  assert.equal(window.MontazhnayaTooltipTranslations.metadata.be, "machine-assisted-draft-native-speaker-review-pending");
+});
