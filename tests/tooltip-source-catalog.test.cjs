@@ -300,8 +300,8 @@ test("PowerShell tooltip GUI runner downloads a temporary source copy and writes
   assert.doesNotMatch(script, /--user-data-dir=""\$profilePath""/);
   assert.match(script, /\$taskkillPath = Join-Path -Path \$env:SystemRoot/);
   assert.match(script, /Get-Process -Id \$appProcess\.Id/);
-  assert.doesNotMatch(script, /try\s*\{[^\\r\\n]*\}\s*catch\s*\{/m);
-  assert.doesNotMatch(script, /try\s*\{[^\\r\\n]*\}\s*finally\s*\{/m);
+  assert.doesNotMatch(script, /try\s*\{[^\n]*\}\s*catch\s*\{/m);
+  assert.doesNotMatch(script, /try\s*\{[^\n]*\}\s*finally\s*\{/m);
   assert.doesNotMatch(script, /try \{ Stop-Process/);
 });
 
