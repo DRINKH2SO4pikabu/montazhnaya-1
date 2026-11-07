@@ -430,3 +430,17 @@ test("Azerbaijani adapted tooltip draft registers all 364 source fragments", () 
   assert.equal(Object.keys(window.MontazhnayaTooltipTranslations.packs.az).length, 364);
   assert.equal(window.MontazhnayaTooltipTranslations.metadata.az, "turkic-adaptation-draft-native-speaker-review-pending");
 });
+
+for (const locale of ["tk", "ky"]) {
+  test(locale.toUpperCase() + " related-language tooltip draft registers all 364 source fragments", () => {
+    const window = {};
+    const context = { window };
+    vm.createContext(context);
+    const dependency = locale === "tk" ? "tr" : "kk";
+    for (const file of ["tooltip-source.js", "tooltips-" + dependency + ".js", "tooltips-" + locale + ".js"]) {
+      vm.runInContext(read("src/renderer/locales/" + file), context, { filename: file });
+    }
+    assert.equal(Object.keys(window.MontazhnayaTooltipTranslations.packs[locale]).length, 364);
+    assert.equal(window.MontazhnayaTooltipTranslations.metadata[locale], "turkic-adaptation-draft-native-speaker-review-pending".replace("turkic", locale === "ky" ? "related-language" : "turkic"));
+  });
+}
