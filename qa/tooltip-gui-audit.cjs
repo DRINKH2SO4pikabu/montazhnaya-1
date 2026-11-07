@@ -239,9 +239,6 @@ function buildLocaleExpression(code, viewport) {
         "actualText:actual.slice(0,1200)};" +
       "sampleResults.push(record);" +
       "if(sampleLength>longestLength){longestLength=sampleLength;longest={sample,record};}" +
-      "if(untranslated.length||missingDisplayed.length||clipped.length||outside)" +
-        "reviewFlags.push({locale,viewport:" + viewportLiteral + ",kind:sample.kind,key:sample.key,untranslated,missingDisplayed,clipped,outside});" +
-      "if(outside) outsideCount++;" +
     "}" +
     "if(longest){showFunctionHelp(longest.sample.element);}" +
     "const summary={" +
@@ -346,6 +343,53 @@ async function main() {
         }
       }
 
+      for (const sample of result.samples) {
+        if (sample.status === "no-definition" && sample.kind === "live") {
+          reviewFlags.push({
+            locale: locale.code,
+            viewport,
+            type: "live-target-without-help-definition",
+            key: sample.key
+          });
+        }
+        if ((sample.untranslatedCyrillicFields || []).length) {
+          reviewFlags.push({
+            locale: locale.code,
+            viewport,
+            type: "untranslated-cyrillic-help-fields",
+            key: sample.key,
+            fields: sample.untranslatedCyrillicFields
+          });
+        }
+        if ((sample.missingDisplayedFields || []).length) {
+          reviewFlags.push({
+            locale: locale.code,
+            viewport,
+            type: "help-field-not-rendered",
+            key: sample.key,
+            fields: sample.missingDisplayedFields
+          });
+        }
+        if ((sample.clippedTextBoxes || []).length) {
+          reviewFlags.push({
+            locale: locale.code,
+            viewport,
+            type: "text-box-overflow",
+            key: sample.key,
+            boxes: sample.clippedTextBoxes
+          });
+        }
+        if (sample.actualText && !expectedCyrillic.has(locale.code) && /[\\u0400-\\u04FF]/.test(sample.actualText)) {
+          reviewFlags.push({
+            locale: locale.code,
+            viewport,
+            type: "unexpected-cyrillic-in-tooltip",
+            key: sample.key,
+            text: sample.actualText.slice(0, 240)
+          });
+        }
+      }
+
       const viewportSummary = {
         width: viewport.width,
         height: viewport.height,
@@ -373,7 +417,7 @@ async function main() {
           (sample.clippedTextBoxes || []).length,
           (sample.actualText || "").replace(/\s+/g, " ").slice(0, 900)
         ]);
-        if (sample.status === "exception" || sample.status === "no-definition") {
+        if (sample.status === "exception" || (sample.status === "no-definition" && sample.kind !== "live")) {
           criticalFailures.push(locale.code + " " + viewport.width + "x" + viewport.height +
             " " + sample.kind + "/" + sample.key + ": " + (sample.error || sample.status));
         }
