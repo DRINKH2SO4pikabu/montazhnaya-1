@@ -265,3 +265,25 @@ test("detailed tooltip quality audit covers all preview locales and produces a r
   assert.equal(report.localeSummaries.length, 34);
   assert.ok(report.localeSummaries.every(locale => locale.entries === 364));
 });
+
+
+test("Electron tooltip GUI audit script has valid Node.js syntax", () => {
+  const auditPath = path.join(root, "qa/tooltip-gui-audit.cjs");
+  const result = spawnSync(process.execPath, ["--check", auditPath], {
+    cwd: root,
+    encoding: "utf8"
+  });
+  assert.equal(result.status, 0, result.stderr || "tooltip GUI audit script has invalid syntax");
+});
+
+
+test("PowerShell tooltip GUI runner downloads a temporary source copy and writes visual audit artifacts", () => {
+  const script = read("tools/Test-Montazhnaya-Tooltips.ps1");
+  assert.match(script, /codeload\.github\.com\/DRINKH2SO4pikabu\/montazhnaya-1/);
+  assert.match(script, /remote-debugging-port=/);
+  assert.match(script, /qa\\tooltip-gui-audit\.cjs/);
+  assert.match(script, /tooltip-gui-audit-summary\.md/);
+  assert.match(script, /tooltip-gui-audit\.json/);
+  assert.match(script, /tooltip-gui-audit-details\.csv/);
+  assert.match(script, /Remove-Item -LiteralPath \$workRoot -Recurse -Force/);
+});
