@@ -79,3 +79,10 @@ The 24 international locales and 10 CIS/regional variants now have separate 364-
 ## Editorial overrides — Stage 9
 
 `editorial-overrides.js` is the runtime layer for reviewed locale-specific fixes. It clones a language pack, applies stable source-label overrides, records an editorial revision/status and leaves the Russian and English reference packs unchanged. The current Stage 9 catalogue has 191 locale-specific overrides across 34 preview locales. These are machine-assisted editorial corrections, not native-speaker approvals. Run `npm run qa:locales` to regenerate the 436-key matrix, placeholder checks, coverage reports and Stage 9 terminology glossary.
+
+
+## Detailed tooltip quality audit
+
+The dedicated audit `qa/audit-detailed-tooltip-locales.cjs` checks all 364 detailed tooltip fragments across the 34 preview locales. It verifies that every pack registers, that no translation is missing or empty, and that interpolation placeholders match the English reference. It also records possible losses of file extensions, codec/platform identifiers, format labels, keyboard shortcuts and editor command names for manual review. Run `npm run qa:locales` to generate `qa/detailed-tooltip-quality-audit.md` and its JSON companion. Protected-token findings are review candidates rather than automatic failures because some terminology can be legitimately localized.
+
+This audit is structural and technical only. It does not certify grammar, naturalness, regional terminology or accessibility. All 34 preview packs remain machine-assisted drafts pending native-speaker review; `uz-Cyrl` remains a transliteration-derived draft requiring independent review.
