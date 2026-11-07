@@ -261,9 +261,24 @@ function refreshLockfile({ lockPath, cwd, label, args, validate }) {
   }
 }
 
+function npmAuditEnvironment(baseEnv = process.env) {
+  const env = { ...baseEnv };
+  // npm audit uses the registry's security-advisory endpoint. Some third-party
+  // mirrors do not implement that endpoint, even when tarball downloads work.
+  // Normalize case first because Windows environment-variable names are
+  // case-insensitive, then pin this one audit process to the canonical registry.
+  for (const key of Object.keys(env)) {
+    if (key.toLowerCase() === 'npm_config_registry') delete env[key];
+  }
+  env.npm_config_registry = 'https://registry.npmjs.org/';
+  env.npm_config_fund = 'false';
+  env.npm_config_progress = 'false';
+  return env;
+}
+
 function runAndSaveAudit(cwd, prefixArgs, reportPath, label) {
-  const auditArgs = [...prefixArgs, 'audit', '--audit-level=low', '--json'];
-  const env = { ...process.env, npm_config_fund: 'false', npm_config_progress: 'false' };
+  const auditArgs = [...prefixArgs, 'audit', '--audit-level=low', '--json', '--registry=https://registry.npmjs.org/'];
+  const env = npmAuditEnvironment();
   const invocation = npmInvocation(auditArgs, env);
   const result = spawnSync(invocation.command, invocation.args, {
     ...invocation.options,
@@ -281,7 +296,7 @@ function runAndSaveAudit(cwd, prefixArgs, reportPath, label) {
   const report = {
     label,
     checkedAt: new Date().toISOString(),
-    command: `npm ${[...prefixArgs, 'audit', '--audit-level=low', '--json'].join(' ')}`,
+    command: `npm ${auditArgs.join(' ')}`,
     exitCode: result.status,
     spawnError: result.error ? result.error.message : null,
     audit: parsed,
@@ -301,6 +316,6 @@ function runPlan(title, steps) {
 }
 
 module.exports = {
-  npmCommand, npmInvocation, runNpm, readLock, checkRegistrySRI, isValidSRI,
+  npmCommand, npmInvocation, npmAuditEnvironment, runNpm, readLock, checkRegistrySRI, isValidSRI,
   compareNumericVersions, assertMinimumLockedPackages, assertMinimumInstalledPackages, assertNoExactPackageVersions, assertNoInstalledExactPackageVersions, assertExactPackageVersions, assertExactInstalledPackageVersions, snapshotLock, restoreLock, refreshLockfile, runAndSaveAudit, runPlan
 };
