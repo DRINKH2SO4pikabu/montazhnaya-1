@@ -107,6 +107,7 @@
     "Verwende Shift+Alt+→.",
     "Prüfe nach dem Verschieben den Schnitt und die Audiosynchronisierung.",
     "Hebt die Auswahl des aktuellen Objekts auf, damit du es nicht versehentlich änderst.",
+    "Klicke, wenn du die Bearbeitung des ausgewählten Clips oder Markers abgeschlossen hast.",
     "Prüfe vor dem Löschen oder Ändern von Eigenschaften, welches Objekt ausgewählt ist.",
     "Zeitleiste vergrößern",
     "Erhöht die Anzahl der Bildschirmpixel pro Sekunde und erleichtert die präzise Bearbeitung kleiner Abschnitte.",
