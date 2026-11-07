@@ -171,7 +171,7 @@ for (const locale of ["pt-BR", "it"]) {
 }
 
 
-for (const locale of ["pl", "uk", "tr", "nl", "zh-CN", "zh-TW", "ja", "ko"]) {
+for (const locale of ["pl", "uk", "tr", "nl", "zh-CN", "zh-TW", "ja", "ko", "ar", "he", "hi"]) {
   test(locale.toUpperCase() + " tooltip translations register all 364 source fragments", () => {
     const window = {};
     const context = { window };
@@ -182,3 +182,15 @@ for (const locale of ["pl", "uk", "tr", "nl", "zh-CN", "zh-TW", "ja", "ko"]) {
     assert.equal(window.MontazhnayaTooltipTranslations.metadata[locale], "machine-assisted-draft-native-speaker-review-pending");
   });
 }
+
+
+test("Arabic and Hebrew locale metadata retain right-to-left direction", () => {
+  const window = {};
+  const context = { window };
+  vm.createContext(context);
+  vm.runInContext(read("src/renderer/locales/manifest.js"), context, { filename: "manifest.js" });
+  const locales = window.MontazhnayaLocaleManifest.available;
+  assert.equal(locales.find(locale => locale.code === "ar")?.direction, "rtl");
+  assert.equal(locales.find(locale => locale.code === "he")?.direction, "rtl");
+  assert.equal(locales.find(locale => locale.code === "hi")?.direction, "ltr");
+});
