@@ -85,6 +85,7 @@ if (previewLocales.length !== expectedLocaleCount) {
 }
 
 let inspectedCells = 0;
+let missingOrEmptyTranslations = 0;
 let placeholderChecks = 0;
 let exactEnglishMatches = 0;
 let technicalTokensChecked = 0;
@@ -95,6 +96,7 @@ for (const locale of previewLocales) {
   const relativePath = "src/renderer/locales/tooltips-" + code + ".js";
   if (!fs.existsSync(path.join(root, relativePath))) {
     structuralProblems.push(code + ": tooltip file is missing");
+    missingOrEmptyTranslations += sourceKeys.length;
     continue;
   }
 
@@ -102,12 +104,14 @@ for (const locale of previewLocales) {
     vm.runInContext(read(relativePath), context, { filename: relativePath });
   } catch (error) {
     structuralProblems.push(code + ": tooltip file failed to load: " + error.message);
+    missingOrEmptyTranslations += sourceKeys.length;
     continue;
   }
 
   const pack = registry.packs[code];
   if (!pack || typeof pack !== "object") {
     structuralProblems.push(code + ": translation pack did not register");
+    missingOrEmptyTranslations += sourceKeys.length;
     continue;
   }
 
@@ -116,6 +120,7 @@ for (const locale of previewLocales) {
   const extraKeys = packKeys.filter(key => !sourceKeys.includes(key));
   if (missingKeys.length) {
     structuralProblems.push(code + ": " + missingKeys.length + " missing tooltip keys");
+    missingOrEmptyTranslations += missingKeys.length;
   }
   if (extraKeys.length) {
     structuralProblems.push(code + ": " + extraKeys.length + " unexpected tooltip keys");
@@ -131,6 +136,7 @@ for (const locale of previewLocales) {
     const translation = pack[key];
     if (typeof translation !== "string" || !translation.trim()) {
       structuralProblems.push(code + ": empty or non-string translation for key: " + key);
+      missingOrEmptyTranslations++;
       continue;
     }
 
@@ -201,7 +207,7 @@ const report = {
   previewLocaleCount: previewLocales.length,
   inspectedTranslationCells: inspectedCells,
   expectedTranslationCells: expectedLocaleCount * sourceKeys.length,
-  missingOrEmptyTranslations: structuralProblems.filter(problem => /missing|empty|non-string|incomplete|unexpected|failed to load/i.test(problem)).length,
+  missingOrEmptyTranslations,
   placeholderChecks,
   placeholderMismatches: placeholderProblems.length,
   exactEnglishMatches,
