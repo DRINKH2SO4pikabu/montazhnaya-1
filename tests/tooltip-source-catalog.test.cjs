@@ -249,3 +249,17 @@ test("English short-help translations register all 408 quick messages and merge 
   assert.equal(pack[source.quickTextKeys[0]], "New project");
   assert.equal(pack[source.quickTextKeys.at(-1)], "If a file cannot be decoded in the browser, try converting it to a supported format.");
 });
+
+
+for (const locale of ["ja", "zh-CN"]) {
+  test(locale + " detailed tooltip translations register all 364 source fragments", () => {
+    const window = {};
+    const context = { window };
+    vm.createContext(context);
+    vm.runInContext(read("src/renderer/locales/tooltip-source.js"), context, { filename: "tooltip-source.js" });
+    vm.runInContext(read("src/renderer/locales/tooltips-" + locale + ".js"), context, { filename: "tooltips-" + locale + ".js" });
+    assert.equal(window.MontazhnayaTooltipSource.textKeys.length, 364);
+    assert.equal(Object.keys(window.MontazhnayaTooltipTranslations.packs[locale]).length, 364);
+    assert.equal(window.MontazhnayaTooltipTranslations.metadata[locale], "machine-assisted-draft-native-speaker-review-pending");
+  });
+}
