@@ -7,6 +7,7 @@ const root = path.resolve(__dirname, '..');
 const rendererHtml = fs.readFileSync(path.join(root, 'src/renderer/index.html'), 'utf8');
 const mainSource = fs.readFileSync(path.join(root, 'electron/main.cjs'), 'utf8');
 const preloadSource = fs.readFileSync(path.join(root, 'electron/preload.cjs'), 'utf8');
+const tooltipSource = fs.readFileSync(path.join(root, 'src/renderer/locales/tooltip-source.js'), 'utf8');
 
 test('the editor markup contains no duplicate element IDs', () => {
   const ids = [...rendererHtml.matchAll(/\bid=["']([^"']+)["']/g)].map(match => match[1]);
@@ -117,9 +118,9 @@ test('tool diagnostics UI reports MP4 and both local WebM codec smoke tests', ()
 });
 
 test('export help and long-project warnings describe local CFR MP4/WebM separately from realtime fallback', () => {
-  assert.match(rendererHtml, /WebM VP8 \+ Opus и WebM VP9 \+ Opus кодируются FFmpeg по покадровой временной сетке/,
+  assert.match(tooltipSource, /WebM VP8 \+ Opus и WebM VP9 \+ Opus кодируются FFmpeg по покадровой временной сетке/,
     'main help must describe deterministic local WebM variants');
-  assert.match(rendererHtml, /Браузерный вариант используется только как fallback и помечается «FPS не гарантирован»/,
+  assert.match(tooltipSource, /Браузерный вариант используется только как fallback и помечается «FPS не гарантирован»/,
     'help must disclose the realtime fallback limitation');
   assert.doesNotMatch(rendererHtml, /WebM и встроенный MP4 записываются MediaRecorder в реальном времени/,
     'retired blanket MediaRecorder description must not return');
