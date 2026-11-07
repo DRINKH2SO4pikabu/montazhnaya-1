@@ -34,7 +34,7 @@ if (process.argv.includes('--plan')) {
     'При отсутствии lockfile: npm install --package-lock-only --ignore-scripts --no-audit --no-fund (cwd: tools/release-toolchain)',
     'Проверить electron-builder 26.18.1, app-builder-lib >=26.15.0, builder-util-runtime >=9.7.0, minimatch >=11.0.1 во всех копиях, global-agent@4.1.3 и валидный SRI',
     'npm ci --ignore-scripts --no-audit --no-fund (cwd: tools/release-toolchain)',
-    'npm audit --prefix tools/release-toolchain --audit-level=low --json',
+    'npm audit --prefix tools/release-toolchain --audit-level=low --json --registry=https://registry.npmjs.org/',
     'CI использует --locked и не меняет release-toolchain/package-lock.json'
   ]);
   process.exit(0);
