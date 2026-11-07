@@ -647,6 +647,7 @@ async function main() {
 }
 
 main().catch(error => {
+  if (activeClient) activeClient.close();
   process.stderr.write("Tooltip GUI audit failed: " + (error.stack || error.message) + "\n");
   process.exitCode = 1;
 });
