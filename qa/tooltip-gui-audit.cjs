@@ -171,7 +171,7 @@ function buildLocaleExpression(code, viewport) {
       "const value=api.translate(key);" +
       "translated.push({key,value});" +
       "if(typeof value!=='string'||!value.trim()) empty.push(key);" +
-      "else if(locale!=='ru'&&value===key&&/[\\u0400-\\u04FF]/.test(key)) unchanged.push(key);" +
+      "else if(locale!=='ru'&&value===key&&/[А-Яа-яЁё]/.test(key)) unchanged.push(key);" +
     "}" +
     "const expectedDirection=(locale==='ar'||locale==='he')?'rtl':'ltr';" +
     "const direction=document.documentElement.dir;" +
@@ -226,7 +226,7 @@ function buildLocaleExpression(code, viewport) {
         "if(field!=='tip'&&(!value||!String(value).trim())) missingFields.push(field);" +
         "if(typeof value==='string'&&value.trim()){" +
           "const display=uiText(value); expectedText.push(display);" +
-          "if(locale!=='ru'&&display===value&&/[\\u0400-\\u04FF]/.test(value)) untranslated.push(field);" +
+          "if(locale!=='ru'&&display===value&&/[А-Яа-яЁё]/.test(value)) untranslated.push(field);" +
         "}" +
       "}" +
       "const missingDisplayed=expectedText.filter(value=>value&& !actual.includes(value));" +
@@ -395,7 +395,7 @@ async function main() {
             boxes: sample.clippedTextBoxes
           });
         }
-        if (sample.actualText && !expectedCyrillic.has(locale.code) && /[\\u0400-\\u04FF]/.test(sample.actualText)) {
+        if (sample.actualText && !expectedCyrillic.has(locale.code) && /[А-Яа-яЁё]/.test(sample.actualText)) {
           reviewFlags.push({
             locale: locale.code,
             viewport,
