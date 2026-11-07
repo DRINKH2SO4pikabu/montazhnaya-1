@@ -296,6 +296,9 @@ test("PowerShell tooltip GUI runner downloads a temporary source copy and writes
   assert.match(script, /tooltip-gui-audit-details\.csv/);
   assert.match(script, /Compress-Archive/);
   assert.match(script, /Remove-Item -LiteralPath \$workRoot -Recurse -Force/);
+  assert.match(script, /\$electronArguments = @\(/);
+  assert.doesNotMatch(script, /--user-data-dir=""\$profilePath""/);
+  assert.match(script, /\$taskkillPath = Join-Path/);
 });
 
 
