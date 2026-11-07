@@ -118,3 +118,15 @@ test("tooltip translations register by locale and override the selected i18n mes
   assert.equal(window.MontazhnayaI18n.translate(keys[0]), german[0]);
   assert.equal(window.MontazhnayaI18n.translate(keys.at(-1)), german.at(-1));
 });
+
+
+test("English reference tooltips register a complete 364-string translation pack", () => {
+  const window = {};
+  const context = { window };
+  vm.createContext(context);
+  vm.runInContext(read("src/renderer/locales/tooltip-source.js"), context, { filename: "tooltip-source.js" });
+  vm.runInContext(read("src/renderer/locales/tooltips-en.js"), context, { filename: "tooltips-en.js" });
+  assert.equal(window.MontazhnayaTooltipSource.textKeys.length, 364);
+  assert.equal(Object.keys(window.MontazhnayaTooltipTranslations.packs.en).length, 364);
+  assert.equal(window.MontazhnayaTooltipTranslations.metadata.en, "reference-translation");
+});
