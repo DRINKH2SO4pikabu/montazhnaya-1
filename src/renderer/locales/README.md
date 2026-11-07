@@ -46,6 +46,14 @@ The renderer loads `ipc-error-translations.js` after `notifications.js` and befo
 All 1,020 translations are machine-assisted drafts. Placeholder integrity and runtime catalogue insertion are automated, but native-speaker linguistic review and visual review of real Electron dialogs remain required. Run `npm run qa:locales` to validate the registry and its placeholders.
 
 
+## Detailed tooltip translations — East Asian wave
+
+The dedicated tooltip catalogue contains 364 ordered text fragments. In addition to the Russian source and English reference pack, machine-assisted draft packs are now registered for German (`de`), French (`fr`), Spanish (`es`), Brazilian Portuguese (`pt-BR`), Italian (`it`), Polish (`pl`), Ukrainian (`uk`), Turkish (`tr`), Dutch (`nl`), Simplified Chinese (`zh-CN`), Traditional Chinese (`zh-TW`), Japanese (`ja`) and Korean (`ko`).
+
+Each pack is loaded explicitly by `src/renderer/index.html` before the renderer initializes. The focused test `tests/tooltip-source-catalog.test.cjs` verifies that every pack registers all 364 source fragments. The translation metadata remains `machine-assisted-draft-native-speaker-review-pending`; automated completeness checks do not certify terminology or native-speaker quality. The other preview locales continue to use the original Russian/English fallback until their dedicated tooltip packs are added.
+
+Run `node --test tests/tooltip-source-catalog.test.cjs` for the focused registry checks, then run the full `npm test` suite before merging.
+
 ## Editorial overrides — Stage 9
 
 `editorial-overrides.js` is the runtime layer for reviewed locale-specific fixes. It clones a language pack, applies stable source-label overrides, records an editorial revision/status and leaves the Russian and English reference packs unchanged. The current Stage 9 catalogue has 191 locale-specific overrides across 34 preview locales. These are machine-assisted editorial corrections, not native-speaker approvals. Run `npm run qa:locales` to regenerate the 436-key matrix, placeholder checks, coverage reports and Stage 9 terminology glossary.
