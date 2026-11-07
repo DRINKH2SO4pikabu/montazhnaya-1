@@ -63,3 +63,58 @@ test("renderer loads the tooltip source catalogue before using its definitions",
     assert.doesNotMatch(html, new RegExp("const " + name + " = \\{"));
   }
 });
+
+
+test("the canonical tooltip source key list is complete and unique", () => {
+  const source = loadTooltipSource();
+  assert.equal(source.textKeys.length, 364);
+  assert.equal(new Set(source.textKeys).size, source.textKeys.length);
+  assert.ok(source.textKeys.every(value => typeof value === "string" && value.trim()));
+});
+
+test("tooltip translations register by locale and override the selected i18n message layer", async () => {
+  const window = { dispatchEvent() {} };
+  const context = {
+    window,
+    document: {
+      body: {
+        nodeType: 1,
+        childNodes: [],
+        closest() { return null; },
+        hasAttribute() { return false; },
+        getAttribute() { return null; },
+        setAttribute() {}
+      },
+      documentElement: { dataset: {}, lang: "en", dir: "ltr" },
+      title: ""
+    },
+    navigator: { languages: ["en"], language: "en" },
+    localStorage: { getItem() { return null; }, setItem() {} },
+    CustomEvent: function CustomEvent(type, init) { this.type = type; this.detail = init?.detail; },
+    Intl,
+    console,
+    queueMicrotask
+  };
+  window.MontazhnayaLocaleManifest = {
+    available: [
+      { code: "en", direction: "ltr", file: "./locales/en.js" },
+      { code: "de", direction: "ltr", file: "./locales/international.js" }
+    ],
+    planned: []
+  };
+  window.MontazhnayaLocalePacks = {
+    en: { direction: "ltr", messages: {} },
+    de: { direction: "ltr", messages: {} }
+  };
+  vm.createContext(context);
+  vm.runInContext(read("src/renderer/locales/tooltip-source.js"), context);
+  const keys = window.MontazhnayaTooltipSource.textKeys;
+  const english = keys.map((_, index) => "English tooltip " + index);
+  const german = keys.map((_, index) => "Deutscher Hinweis " + index);
+  window.MontazhnayaTooltipTranslations.register("en", english, "reference-translation");
+  window.MontazhnayaTooltipTranslations.register("de", german, "machine-assisted-draft-native-speaker-review-pending");
+  vm.runInContext(read("src/renderer/i18n.js"), context, { filename: "i18n.js" });
+  await window.MontazhnayaI18n.setLocale("de");
+  assert.equal(window.MontazhnayaI18n.translate(keys[0]), german[0]);
+  assert.equal(window.MontazhnayaI18n.translate(keys.at(-1)), german.at(-1));
+});
