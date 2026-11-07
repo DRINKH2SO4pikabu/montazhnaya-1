@@ -185,3 +185,21 @@ test('audio crossfades use equal-power gains and are sampled in realtime and off
   assert.match(rendererHtml, /Перекрёстное затухание с предыдущим/);
   assert.match(rendererHtml, /audioCrossfadeIn: Number\(c\.audioCrossfadeIn\)/);
 });
+
+
+test('contextual tooltip popovers respect RTL reading direction and isolate keyboard shortcuts', () => {
+  assert.match(rendererHtml, /const isRtl\s*=\s*document\.documentElement\.dir\s*===\s*'rtl'/);
+  assert.match(rendererHtml, /html\[dir="rtl"\]\s+#functionHelpPopover\s*\{[^}]*transform-origin:top right;/s);
+  assert.match(rendererHtml, /html\[dir="rtl"\]\s+\.fhelp-tip\s*\{[^}]*border-right:2px solid #68aaff;/s);
+  assert.match(rendererHtml, /\.fhelp-key\s*\{[^}]*direction:ltr;[^}]*unicode-bidi:isolate;/s);
+  assert.match(rendererHtml, /\.sequence-marker-tooltip-portal\s*\{[^}]*white-space:normal;[^}]*overflow-wrap:anywhere;/s);
+});
+
+
+test('marker tooltips are rendered outside the clipped ruler and remain viewport-positioned', () => {
+  assert.match(rendererHtml, /sequenceMarkerTooltipPortal/);
+  assert.match(rendererHtml, /document\.body\.appendChild\(pop\)/);
+  assert.match(rendererHtml, /\.sequence-marker-tooltip-portal\s*\{[^}]*position:fixed;[^}]*overflow:auto;/s);
+  assert.doesNotMatch(rendererHtml, /button\.appendChild\(tooltip\)/);
+  assert.match(rendererHtml, /document\.addEventListener\("scroll",[\s\S]*?positionSequenceMarkerTooltip/);
+});
