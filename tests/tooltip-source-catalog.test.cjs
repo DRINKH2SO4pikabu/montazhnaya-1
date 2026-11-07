@@ -329,3 +329,47 @@ test("Uzbek Latin detailed tooltip translations register all 364 source fragment
   assert.equal(Object.keys(window.MontazhnayaTooltipTranslations.packs.uz).length, 364);
   assert.equal(window.MontazhnayaTooltipTranslations.metadata.uz, "machine-assisted-draft-native-speaker-review-pending");
 });
+
+
+test("tooltip resolution keeps locale drafts and uses English instead of Russian for gaps", () => {
+  const window = {};
+  const context = { window };
+  vm.createContext(context);
+  vm.runInContext(read("src/renderer/locales/tooltip-source.js"), context, { filename: "tooltip-source.js" });
+  vm.runInContext(read("src/renderer/locales/tooltips-en.js"), context, { filename: "tooltips-en.js" });
+  vm.runInContext(read("src/renderer/locales/tooltips-en-quick.js"), context, { filename: "tooltips-en-quick.js" });
+  vm.runInContext(read("src/renderer/locales/tooltips-de.js"), context, { filename: "tooltips-de.js" });
+  const registry = window.MontazhnayaTooltipTranslations;
+  const source = window.MontazhnayaTooltipSource;
+  const quickKey = source.quickTextKeys[0];
+  const beginnerKey = source.textKeys[0];
+  const germanBase = { [quickKey]: "Lokale Übersetzung aus dem Hauptwörterbuch" };
+  const german = registry.resolveMessages("de", germanBase);
+  assert.equal(german[quickKey], germanBase[quickKey]);
+  assert.equal(german[beginnerKey], registry.packs.de[beginnerKey]);
+  const kazakh = registry.resolveMessages("ka", {});
+  assert.equal(kazakh[quickKey], registry.packs.en[quickKey]);
+  assert.equal(kazakh[beginnerKey], registry.packs.en[beginnerKey]);
+  const russian = registry.resolveMessages("ru", {});
+  assert.equal(Object.prototype.hasOwnProperty.call(russian, quickKey), false);
+  const coverage = registry.getCoverage("ka", {});
+  assert.equal(coverage.total, 772);
+  assert.equal(coverage.englishFallback, 772);
+});
+
+test("locale-specific Chinese Traditional and Uzbek Cyrillic tooltip variants register completely", () => {
+  const window = {};
+  const context = { window };
+  vm.createContext(context);
+  for (const file of [
+    "tooltip-source.js", "tooltips-en.js", "tooltips-en-quick.js",
+    "tooltips-zh-CN.js", "tooltips-zh-TW.js", "tooltips-uz.js", "tooltips-uz-Cyrl.js"
+  ]) {
+    vm.runInContext(read("src/renderer/locales/" + file), context, { filename: file });
+  }
+  const packs = window.MontazhnayaTooltipTranslations.packs;
+  assert.equal(Object.keys(packs["zh-TW"]).length, 364);
+  assert.equal(Object.keys(packs["uz-Cyrl"]).length, 364);
+  assert.equal(window.MontazhnayaTooltipTranslations.metadata["zh-TW"], "script-conversion-draft-native-speaker-review-pending");
+  assert.equal(window.MontazhnayaTooltipTranslations.metadata["uz-Cyrl"], "transliteration-draft-native-speaker-review-pending");
+});
