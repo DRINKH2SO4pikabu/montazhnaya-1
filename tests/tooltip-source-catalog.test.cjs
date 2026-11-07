@@ -4,6 +4,7 @@ const assert = require("node:assert/strict");
 const fs = require("node:fs");
 const path = require("node:path");
 const vm = require("node:vm");
+const { spawnSync } = require("node:child_process");
 
 const root = path.join(__dirname, "..");
 const read = relative => fs.readFileSync(path.join(root, relative), "utf8");
@@ -242,4 +243,25 @@ test("every manifest locale loads a detailed tooltip pack", () => {
     const source = read(filePath);
     assert.ok(source.includes('register("' + locale.code + '"'), locale.code + " tooltip file must register its locale");
   }
+});
+
+
+test("detailed tooltip quality audit covers all preview locales and produces a report", () => {
+  const result = spawnSync(process.execPath, [
+    path.join(root, "qa/audit-detailed-tooltip-locales.cjs")
+  ], {
+    cwd: root,
+    encoding: "utf8",
+    maxBuffer: 1024 * 1024
+  });
+
+  assert.equal(result.status, 0, result.stderr || result.stdout || "tooltip quality audit failed");
+  const report = JSON.parse(read("qa/detailed-tooltip-quality-audit.json"));
+  assert.equal(report.sourceKeyCount, 364);
+  assert.equal(report.previewLocaleCount, 34);
+  assert.equal(report.inspectedTranslationCells, 34 * 364);
+  assert.equal(report.placeholderChecks, 34 * 364);
+  assert.equal(report.placeholderMismatches, 0);
+  assert.equal(report.localeSummaries.length, 34);
+  assert.ok(report.localeSummaries.every(locale => locale.entries === 364));
 });
