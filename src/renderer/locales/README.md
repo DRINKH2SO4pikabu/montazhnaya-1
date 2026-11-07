@@ -50,7 +50,7 @@ All 1,020 translations are machine-assisted drafts. Placeholder integrity and ru
 
 The dedicated tooltip catalogue contains 364 ordered text fragments. In addition to the Russian source and English reference pack, machine-assisted draft packs are now registered for German (`de`), French (`fr`), Spanish (`es`), Brazilian Portuguese (`pt-BR`), Italian (`it`), Polish (`pl`), Ukrainian (`uk`), Turkish (`tr`), Dutch (`nl`), Simplified Chinese (`zh-CN`), Traditional Chinese (`zh-TW`), Japanese (`ja`) and Korean (`ko`).
 
-Each pack is loaded explicitly by `src/renderer/index.html` before the renderer initializes. The focused test `tests/tooltip-source-catalog.test.cjs` verifies that every pack registers all 364 source fragments. The translation metadata remains `machine-assisted-draft-native-speaker-review-pending`; automated completeness checks do not certify terminology or native-speaker quality. The other preview locales continue to use the original Russian/English fallback until their dedicated tooltip packs are added.
+Each pack is loaded explicitly by `src/renderer/index.html` before the renderer initializes. The focused test `tests/tooltip-source-catalog.test.cjs` verifies that every pack registers all 364 source fragments. The translation metadata remains `machine-assisted-draft-native-speaker-review-pending`; automated completeness checks do not certify terminology or native-speaker quality. The ten CIS/regional preview locales continue to use the original Russian/English fallback until their dedicated tooltip packs are added.
 
 Run `node --test tests/tooltip-source-catalog.test.cjs` for the focused registry checks, then run the full `npm test` suite before merging.
 
@@ -59,6 +59,14 @@ Run `node --test tests/tooltip-source-catalog.test.cjs` for the focused registry
 The next detailed-tooltip wave adds 364-entry draft packs for Arabic (`ar`), Hebrew (`he`) and Hindi (`hi`). The packs are loaded explicitly before `i18n.js` and checked by the tooltip catalogue test. Arabic and Hebrew already declare `direction: "rtl"` in the locale manifest; Hindi remains left-to-right. This wave changes tooltip catalogue content only and does not mirror timeline coordinates, track order or editing controls.
 
 All three packs remain machine-assisted drafts pending native-speaker terminology review and visual checks in the Electron UI. The RTL metadata check confirms the locale declarations, not a complete visual certification of every dialog or mixed-direction string.
+
+## Remaining international detailed tooltip translations
+
+The dedicated tooltip catalogue now also has 364-entry machine-assisted draft packs for Swedish (`sv`), Finnish (`fi`), Czech (`cs`), Romanian (`ro`), Greek (`el`), Vietnamese (`vi`), Indonesian (`id`) and Thai (`th`). Together with the earlier European, East Asian, Arabic, Hebrew and Hindi packs, this completes the separate detailed-tooltip catalogue for all 24 international preview locales.
+
+The eight packs are loaded explicitly by `src/renderer/index.html`. The focused test `tests/tooltip-source-catalog.test.cjs` checks that every locale pack registers all 364 source fragments. All eight remain machine-assisted drafts pending native-speaker terminology review; automated coverage does not constitute linguistic approval. Ten CIS/regional preview locales still use the Russian/English fallback for these detailed tooltips.
+
+Run `node --test tests/tooltip-source-catalog.test.cjs` for the focused registry checks and the full `npm test` suite before merging.
 
 ## Editorial overrides — Stage 9
 
