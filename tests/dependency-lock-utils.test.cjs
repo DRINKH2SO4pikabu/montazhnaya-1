@@ -52,6 +52,7 @@ test('npm security audits override unsupported third-party mirrors without mutat
   const original = {
     PATH: 'C:\\\\Windows\\\\System32',
     NPM_CONFIG_REGISTRY: 'https://registry.npmmirror.com/',
+    npm_config_registry: 'https://mirror.example.invalid/',
     npm_config_userconfig: 'C:\\\\Users\\\\tester\\\\.npmrc',
     npm_config_fund: 'true'
   };
@@ -63,7 +64,7 @@ test('npm security audits override unsupported third-party mirrors without mutat
   assert.equal(env.npm_config_progress, 'false');
   assert.equal(original.NPM_CONFIG_REGISTRY, 'https://registry.npmmirror.com/');
   const helper = fs.readFileSync(path.join(__dirname, '..', 'tools/dependency-lock-utils.cjs'), 'utf8');
-  assert.match(helper, /--registry=https:\\/\\/registry\\.npmjs\\.org\\//);
+  assert.ok(helper.includes('--registry=https://registry.npmjs.org/'));
 });
 
 test('SRI parser accepts valid SHA-512, SHA-384 and SHA-256 values', () => {
