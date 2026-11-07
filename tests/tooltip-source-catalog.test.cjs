@@ -217,3 +217,16 @@ test("quick tooltip translations merge with beginner translations by source mess
   assert.equal(window.MontazhnayaTooltipTranslations.scopes.en.beginner, 364);
   assert.equal(window.MontazhnayaTooltipTranslations.scopes.en.quick, 415);
 });
+
+
+for (const locale of ["el", "vi", "id", "th"]) {
+  test(locale + " tooltip translations register all 364 detailed source fragments", () => {
+    const window = {};
+    const context = { window };
+    vm.createContext(context);
+    vm.runInContext(read("src/renderer/locales/tooltip-source.js"), context, { filename: "tooltip-source.js" });
+    vm.runInContext(read("src/renderer/locales/tooltips-" + locale + ".js"), context, { filename: "tooltips-" + locale + ".js" });
+    assert.equal(Object.keys(window.MontazhnayaTooltipTranslations.packs[locale]).length, 364);
+    assert.equal(window.MontazhnayaTooltipTranslations.metadata[locale], "machine-assisted-draft-native-speaker-review-pending");
+  });
+}
