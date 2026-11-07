@@ -165,7 +165,7 @@ function buildLocaleExpression(code, viewport) {
     "const keys=source.textKeys;" +
     "const tooltipPack=packs.packs[locale]||{};" +
     "const tooltipPackCount=Object.keys(tooltipPack).length;" +
-    "const missingPackKeys=keys.filter(key=>!Object.prototype.hasOwnProperty.call(tooltipPack,key));" +
+    "const missingPackKeys=locale==='ru'?[]:keys.filter(key=>!Object.prototype.hasOwnProperty.call(tooltipPack,key));" +
     "const translated=[]; const unchanged=[]; const empty=[];" +
     "for(const key of keys){" +
       "const value=api.translate(key);" +
@@ -502,7 +502,7 @@ async function main() {
     "",
     "- Generated: " + report.generatedAt,
     "- Locales: **" + report.summary.selectableLocales + "**",
-    "- Detailed tooltip translations inspected: **" + report.summary.totalDetailedTooltipTranslationsChecked + " / " + report.summary.expectedDetailedTooltipTranslations + "**",
+    "- Detailed tooltip strings resolved across locales: **" + report.summary.totalDetailedTooltipTranslationsChecked + " / " + report.summary.expectedDetailedTooltipTranslations + "** (Russian is the source language)",
     "- Action help definitions: **" + report.summary.actionDefinitions + "**",
     "- Control/property help definitions: **" + report.summary.controlDefinitions + "**",
     "- Beginner-friendly overrides: **" + report.summary.beginnerFriendlyOverrides + "**",
