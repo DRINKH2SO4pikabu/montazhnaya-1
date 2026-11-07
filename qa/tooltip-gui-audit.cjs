@@ -262,7 +262,7 @@ function buildLocaleExpression(code, viewport) {
         "const cardOverflow=pop.scrollHeight>pop.clientHeight+2&&getComputedStyle(pop).overflowY==='hidden';" +
         "const overflow=clipped||cardOverflow;" +
         "const record={key,field,length:String(value||'').length,missingFromRenderedCard:missing,clipped,cardOverflow,outsideViewport:outside," +
-          "actualText:actual.replace(/\\\\s+/g,' ').slice(0,500)};" +
+          "actualText:actual.replace(/\\s+/g,' ').slice(0,500)};" +
         "fragmentSamples.push(record);" +
         "if(missing) fragmentDisplayFailures++;" +
         "if(overflow) fragmentOverflowCount++;" +
