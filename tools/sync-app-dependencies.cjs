@@ -32,7 +32,7 @@ if (process.argv.includes('--plan')) {
     'При отсутствующем/устаревшем lockfile: npm install --package-lock-only --ignore-scripts --no-audit --no-fund',
     'Проверить Electron 45.2.1, @electron-internal/extract-zip 1.0.8 и валидный SRI у всех registry.npmjs.org записей',
     'npm ci --ignore-scripts --no-audit --no-fund',
-    'npm audit --audit-level=low --json',
+    'npm audit --audit-level=low --json --registry=https://registry.npmjs.org/',
     'CI использует --locked: никаких перегенераций package-lock.json'
   ]);
   process.exit(0);
