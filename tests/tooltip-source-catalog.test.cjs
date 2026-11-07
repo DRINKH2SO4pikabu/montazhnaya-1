@@ -218,7 +218,7 @@ test("Uzbek Cyrillic tooltip transliteration preserves technical identifiers", (
   for (const token of [".json", "Electron", "FFmpeg", "ffprobe", "WAV", "NVENC", "CBR", "VBR", "Full HD", "Mbps", "4K", "Ctrl+C", "Ctrl+V", "Ctrl+D", "Ripple Delete"]) {
     assert.ok(source.includes(token), "Missing preserved identifier: " + token);
   }
-  assert.doesNotMatch(source, /\\.жсон|Элестрон|рendэр|\bendи\b|ВАВ|Ripple Делете|Ctrl\+[СВД]|НВЕНС|СБР|ВБР|Фулл ҲД|Мбпс|4К|ма’лумот/);
+  assert.doesNotMatch(source, /\.жсон|Элестрон|рendэр|\bendи\b|ВАВ|Ripple Делете|Ctrl\+[СВД]|НВЕНС|СБР|ВБР|Фулл ҲД|Мбпс|4К|ма’лумот/);
 });
 
 
