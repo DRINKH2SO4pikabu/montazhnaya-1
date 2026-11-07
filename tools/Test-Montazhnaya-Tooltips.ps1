@@ -105,7 +105,15 @@ try {
     Write-Host "Запускаем окно редактора с локальным каналом автоматической проверки..." -ForegroundColor Cyan
     New-Item -ItemType Directory -Force -Path $profilePath | Out-Null
 
-    $electronArguments = "--remote-debugging-address=127.0.0.1 --remote-debugging-port=$DevToolsPort --remote-allow-origins=* --user-data-dir=""$profilePath"" --no-first-run --no-default-browser-check ."
+    $electronArguments = @(
+        "--remote-debugging-address=127.0.0.1"
+        "--remote-debugging-port=$DevToolsPort"
+        "--remote-allow-origins=*"
+        ('--user-data-dir="{0}"' -f $profilePath)
+        "--no-first-run"
+        "--no-default-browser-check"
+        "."
+    )
     $appProcess = Start-Process -FilePath $electronExe -ArgumentList $electronArguments -WorkingDirectory $projectRoot -PassThru
 
     Write-Host "Окно Montazhnaya должно появиться на рабочем столе." -ForegroundColor Green
@@ -146,7 +154,8 @@ catch {
 finally {
     if ($appProcess) {
         try {
-            & "$env:SystemRoot\System32\taskkill.exe" /PID $appProcess.Id /T /F *> $null
+            $taskkillPath = Join-Path $env:SystemRoot "System32\taskkill.exe"
+            & $taskkillPath /PID $appProcess.Id /T /F *> $null
         } catch {
             try { Stop-Process -Id $appProcess.Id -Force -ErrorAction SilentlyContinue } catch { }
         }
