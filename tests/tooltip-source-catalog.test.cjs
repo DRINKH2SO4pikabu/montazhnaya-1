@@ -196,6 +196,12 @@ test("Arabic and Hebrew locale metadata retain right-to-left direction", () => {
 });
 
 
+test("Tajik detailed tooltip text keeps the object suffix attached", () => {
+  const source = read("src/renderer/locales/tooltips-tg.js");
+  assert.match(source, /видеоро кушоед/);
+  assert.doesNotMatch(source, /видео ро кушоед/);
+});
+
 test("Uzbek Cyrillic detailed tooltips are marked as a transliteration draft", () => {
   const window = {};
   const context = { window };
