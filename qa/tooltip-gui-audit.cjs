@@ -265,7 +265,8 @@ function buildLocaleExpression(code, viewport) {
         "const outside=rect.left<0||rect.top<0||rect.right>window.innerWidth+1||rect.bottom>window.innerHeight+1;" +
         "const cardOverflow=pop.scrollHeight>pop.clientHeight+2&&getComputedStyle(pop).overflowY==='hidden';" +
         "const overflow=clipped||cardOverflow;" +
-        "const record={key,field,length:String(value||'').length,missingFromRenderedCard:missing,clipped,cardOverflow,outsideViewport:outside," +
+        "const untranslatedCyrillic=locale!=='ru'&&value===key&&/[А-Яа-яЁё]/.test(key);" +
+        "const record={key,field,length:String(value||'').length,missingFromRenderedCard:missing,untranslatedCyrillic,clipped,cardOverflow,outsideViewport:outside," +
           "actualText:actual.replace(/\\s+/g,' ').slice(0,500)};" +
         "fragmentSamples.push(record);" +
         "if(missing) fragmentDisplayFailures++;" +
