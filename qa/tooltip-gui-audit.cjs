@@ -244,12 +244,47 @@ function buildLocaleExpression(code, viewport) {
       "if(sampleLength>longestLength){longestLength=sampleLength;longest={sample,record};}" +
     "}" +
     "if(longest){showFunctionHelp(longest.sample.element);}" +
+    "const fragmentSamples=[]; let longestFragment=null; let longestFragmentLength=-1;" +
+    "let fragmentOverflowCount=0; let fragmentDisplayFailures=0; let fragmentOutsideViewport=0;" +
+    "const fragmentRoles=['title','purpose','usage','tip'];" +
+    "for(let i=0;i<keys.length;i++){" +
+      "const key=keys[i]; const value=api.translate(key); const field=fragmentRoles[i%fragmentRoles.length];" +
+      "const def={title:'Подсказка',purpose:'',usage:'',tip:''}; def[field]=value;" +
+      "try{" +
+        "buildFunctionHelpContent(def); pop.classList.add('visible'); pop.style.left='8px'; pop.style.top='8px';" +
+        "const actual=pop.innerText||pop.textContent||'';" +
+        "const missing=!value||!actual.includes(value);" +
+        "const selector=field==='title'?'.fhelp-title':field==='tip'?'.fhelp-tip':'.fhelp-text';" +
+        "const node=Array.from(pop.querySelectorAll(selector)).find(item=>(item.innerText||'').includes(value));" +
+        "const clipped=!!node&&(node.scrollWidth>node.clientWidth+2||node.scrollHeight>node.clientHeight+2);" +
+        "const rect=pop.getBoundingClientRect();" +
+        "const outside=rect.left<0||rect.top<0||rect.right>window.innerWidth+1||rect.bottom>window.innerHeight+1;" +
+        "const cardOverflow=pop.scrollHeight>pop.clientHeight+2&&getComputedStyle(pop).overflowY==='hidden';" +
+        "const overflow=clipped||cardOverflow;" +
+        "const record={key,field,length:String(value||'').length,missingFromRenderedCard:missing,clipped,cardOverflow,outsideViewport:outside," +
+          "actualText:actual.replace(/\\\\s+/g,' ').slice(0,500)};" +
+        "fragmentSamples.push(record);" +
+        "if(missing) fragmentDisplayFailures++;" +
+        "if(overflow) fragmentOverflowCount++;" +
+        "if(outside) fragmentOutsideViewport++;" +
+        "if(String(value||'').length>longestFragmentLength){longestFragmentLength=String(value||'').length;longestFragment={key,field,value};}" +
+      "}catch(error){" +
+        "fragmentDisplayFailures++; fragmentSamples.push({key,field,status:'exception',error:String(error&&error.message||error)});" +
+      "}" +
+    "}" +
+    "if(longestFragment){" +
+      "const def={title:'Подсказка',purpose:'',usage:'',tip:''}; def[longestFragment.field]=longestFragment.value;" +
+      "buildFunctionHelpContent(def); pop.classList.add('visible'); pop.style.left='8px'; pop.style.top='8px';" +
+    "}" +
     "const summary={" +
       "locale,languageName:meta.nativeName||locale,direction,expectedDirection," +
       "tooltipKeyCount:keys.length,tooltipPackCount,missingPackKeys,unchangedCyrillicKeys:unchanged.length,emptyTooltipKeys:empty.length," +
       "actionDefinitions:actionEntries.length,controlDefinitions:idEntries.length," +
       "beginnerActionOverrides:Object.keys(beginnerAction).length,beginnerControlOverrides:Object.keys(beginnerIds).length," +
       "syntheticSamples:fixtures.length,liveTargets:liveUnique.length,samples:sampleResults.length," +
+      "renderedTooltipFragments:fragmentSamples.length,fragmentDisplayFailures,fragmentOverflowCount,fragmentOutsideViewport," +
+      "longestTooltipFragment:longestFragment?longestFragment.key:null,longestTooltipFragmentLength:longestFragmentLength," +
+      "fragmentSamples," +
       "outsideViewport:sampleResults.filter(item=>item.outsideViewport).length," +
       "untranslatedCyrillicFields:sampleResults.reduce((sum,item)=>sum+(item.untranslatedCyrillicFields||[]).length,0)," +
       "clippedTextBoxes:sampleResults.reduce((sum,item)=>sum+(item.clippedTextBoxes||[]).length,0)," +
