@@ -156,3 +156,16 @@ for (const locale of ["fr", "es"]) {
     assert.equal(window.MontazhnayaTooltipTranslations.metadata[locale], "machine-assisted-draft-native-speaker-review-pending");
   });
 }
+
+
+for (const locale of ["pt-BR", "it"]) {
+  test(locale + " tooltip translations register all 364 source fragments", () => {
+    const window = {};
+    const context = { window };
+    vm.createContext(context);
+    vm.runInContext(read("src/renderer/locales/tooltip-source.js"), context, { filename: "tooltip-source.js" });
+    vm.runInContext(read("src/renderer/locales/tooltips-" + locale + ".js"), context, { filename: "tooltips-" + locale + ".js" });
+    assert.equal(Object.keys(window.MontazhnayaTooltipTranslations.packs[locale]).length, 364);
+    assert.equal(window.MontazhnayaTooltipTranslations.metadata[locale], "machine-assisted-draft-native-speaker-review-pending");
+  });
+}
