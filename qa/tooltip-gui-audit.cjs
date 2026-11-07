@@ -610,7 +610,7 @@ async function main() {
     "## Locale results",
     "",
     "| Locale | Direction | Detailed strings | Action help | Control help | Detailed fragments rendered | Action/control samples | Outside viewport | Review flags |",
-    "|---|---|---:|---:|---:|---:|---:|---:|",
+    "|---|---|---:|---:|---:|---:|---:|---:|---:|",
     ...localeSummaries.map(item => {
       const fragmentCount = item.viewports.reduce((sum, viewport) => sum + viewport.renderedTooltipFragments, 0);
       const sampleCount = item.viewports.reduce((sum, viewport) => sum + viewport.renderedSamples, 0);
@@ -629,7 +629,7 @@ async function main() {
     "",
     "## Interpretation",
     "",
-    "This test ran inside the live Electron renderer and called the editor's actual localization API and tooltip-rendering function. It covers the dedicated 364-fragment tooltip packs, action/control help definitions, beginner-friendly overrides, live DOM targets and popover placement at three viewport sizes.",
+    "This test ran inside the live Electron renderer and called the editor's actual localization API and tooltip-rendering function. Every one of the 364 detailed tooltip fragments is rendered in the real card for every locale at each of the three viewport sizes; action/control help definitions, beginner-friendly overrides and live DOM targets are also exercised.",
     "",
     "It is a technical GUI smoke test, not a native-speaker linguistic certification. Untranslated Cyrillic, clipped text boxes, unchanged Russian source strings and screenshots still require human review. Dynamic clips and media-specific tooltips may require a separate project fixture with imported sample media.",
     ""
