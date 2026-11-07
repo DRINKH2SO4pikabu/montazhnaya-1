@@ -171,7 +171,7 @@ for (const locale of ["pt-BR", "it"]) {
 }
 
 
-for (const locale of ["pl", "uk", "tr", "nl", "zh-CN"]) {
+for (const locale of ["pl", "uk", "tr", "nl", "zh-CN", "zh-TW", "ja", "ko"]) {
   test(locale.toUpperCase() + " tooltip translations register all 364 source fragments", () => {
     const window = {};
     const context = { window };
