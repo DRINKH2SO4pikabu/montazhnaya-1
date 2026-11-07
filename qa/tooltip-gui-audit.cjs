@@ -290,6 +290,7 @@ function buildLocaleExpression(code, viewport) {
       "beginnerActionOverrides:Object.keys(beginnerAction).length,beginnerControlOverrides:Object.keys(beginnerIds).length," +
       "syntheticSamples:fixtures.length,liveTargets:liveUnique.length,samples:sampleResults.length," +
       "renderedTooltipFragments:fragmentSamples.length,fragmentDisplayFailures,fragmentOverflowCount,fragmentOutsideViewport," +
+      "fragmentUntranslatedCyrillic:fragmentSamples.filter(item=>item.untranslatedCyrillic).length," +
       "longestTooltipFragment:longestFragment?longestFragment.key:null,longestTooltipFragmentLength:longestFragmentLength," +
       "fragmentSamples," +
       "outsideViewport:sampleResults.filter(item=>item.outsideViewport).length," +
@@ -460,6 +461,7 @@ async function main() {
         fragmentDisplayFailures: result.fragmentDisplayFailures,
         fragmentOverflowCount: result.fragmentOverflowCount,
         fragmentOutsideViewport: result.fragmentOutsideViewport,
+        fragmentUntranslatedCyrillic: result.fragmentUntranslatedCyrillic,
         longestTooltipFragment: result.longestTooltipFragment,
         longestTooltipFragmentLength: result.longestTooltipFragmentLength,
         longestTooltip: result.longestTooltip,
@@ -565,6 +567,7 @@ async function main() {
     fragmentDisplayFailures: totalFragmentDisplayFailures,
     fragmentOverflowCount: totalFragmentOverflowCount,
     fragmentOutsideViewport: totalFragmentOutsideViewport,
+    fragmentUntranslatedCyrillic: reviewFlags.filter(flag => flag.type === "untranslated-detailed-tooltip-fragment").length,
     popoverViewportChecks: totalViewportChecks,
     outsideViewportCount: totalOutsideViewport,
     criticalFailureCount: criticalFailures.length,
@@ -595,6 +598,7 @@ async function main() {
     "- Individual detailed tooltip fragments rendered: **" + report.summary.renderedTooltipFragments + "**",
     "- Detailed tooltip fragments not rendered: **" + report.summary.fragmentDisplayFailures + "**",
     "- Detailed tooltip overflow flags: **" + report.summary.fragmentOverflowCount + "**",
+    '- Untranslated detailed tooltip fragments: **' + report.summary.fragmentUntranslatedCyrillic + '** (review candidates),',
     "- Popover viewport checks: **" + report.summary.popoverViewportChecks + "**",
     "- Popovers outside the visible viewport: **" + report.summary.outsideViewportCount + "**",
     "- Critical failures: **" + report.summary.criticalFailureCount + "**",
@@ -608,7 +612,8 @@ async function main() {
       const sampleCount = item.viewports.reduce((sum, viewport) => sum + viewport.renderedSamples, 0);
       const outside = item.viewports.reduce((sum, viewport) => sum + viewport.outsideViewport, 0);
       const flags = item.viewports.reduce((sum, viewport) =>
-        sum + viewport.untranslatedCyrillicFields + viewport.clippedTextBoxes + viewport.missingDisplayedFields, 0);
+        sum + viewport.untranslatedCyrillicFields + viewport.clippedTextBoxes + viewport.missingDisplayedFields +
+          viewport.fragmentOverflowCount + viewport.fragmentUntranslatedCyrillic + viewport.fragmentDisplayFailures, 0);
       return "| " + item.code + " | " + item.actualDirection + " | " + item.detailedTooltipFragments +
         " | " + item.actionDefinitions + " | " + item.controlDefinitions + " | " + sampleCount +
         " | " + outside + " | " + flags + " |";
