@@ -296,3 +296,14 @@ test("Hindi detailed tooltip translations register all 364 source fragments", ()
   assert.equal(Object.keys(window.MontazhnayaTooltipTranslations.packs.hi).length, 364);
   assert.equal(window.MontazhnayaTooltipTranslations.metadata.hi, "machine-assisted-draft-native-speaker-review-pending");
 });
+
+
+test("Hebrew detailed tooltip translations register all 364 source fragments", () => {
+  const window = {};
+  const context = { window };
+  vm.createContext(context);
+  vm.runInContext(read("src/renderer/locales/tooltip-source.js"), context, { filename: "tooltip-source.js" });
+  vm.runInContext(read("src/renderer/locales/tooltips-he.js"), context, { filename: "tooltips-he.js" });
+  assert.equal(Object.keys(window.MontazhnayaTooltipTranslations.packs.he).length, 364);
+  assert.equal(window.MontazhnayaTooltipTranslations.metadata.he, "machine-assisted-draft-native-speaker-review-pending");
+});
