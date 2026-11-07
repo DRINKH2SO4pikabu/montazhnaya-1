@@ -50,7 +50,7 @@ All 1,020 translations are machine-assisted drafts. Placeholder integrity and ru
 
 The dedicated tooltip catalogue contains 364 ordered text fragments. In addition to the Russian source and English reference pack, machine-assisted draft packs are now registered for German (`de`), French (`fr`), Spanish (`es`), Brazilian Portuguese (`pt-BR`), Italian (`it`), Polish (`pl`), Ukrainian (`uk`), Turkish (`tr`), Dutch (`nl`), Simplified Chinese (`zh-CN`), Traditional Chinese (`zh-TW`), Japanese (`ja`) and Korean (`ko`).
 
-Each pack is loaded explicitly by `src/renderer/index.html` before the renderer initializes. The focused test `tests/tooltip-source-catalog.test.cjs` verifies that every pack registers all 364 source fragments. The translation metadata remains `machine-assisted-draft-native-speaker-review-pending`; automated completeness checks do not certify terminology or native-speaker quality. The ten CIS/regional preview locales continue to use the original Russian/English fallback until their dedicated tooltip packs are added.
+Each pack is loaded explicitly by `src/renderer/index.html` before the renderer initializes. The focused test `tests/tooltip-source-catalog.test.cjs` verifies that every pack registers all 364 source fragments. The translation metadata remains `machine-assisted-draft-native-speaker-review-pending`; automated completeness checks do not certify terminology or native-speaker quality. The CIS/regional preview locales are covered in the regional tooltip wave documented below.
 
 Run `node --test tests/tooltip-source-catalog.test.cjs` for the focused registry checks, then run the full `npm test` suite before merging.
 
@@ -67,6 +67,14 @@ The dedicated tooltip catalogue now also has 364-entry machine-assisted draft pa
 The eight packs are loaded explicitly by `src/renderer/index.html`. The focused test `tests/tooltip-source-catalog.test.cjs` checks that every locale pack registers all 364 source fragments. All eight remain machine-assisted drafts pending native-speaker terminology review; automated coverage does not constitute linguistic approval. Ten CIS/regional preview locales still use the Russian/English fallback for these detailed tooltips.
 
 Run `node --test tests/tooltip-source-catalog.test.cjs` for the focused registry checks and the full `npm test` suite before merging.
+
+## CIS and regional detailed tooltip translations
+
+The dedicated tooltip catalogue now has 364-entry packs for all 10 regional preview variants: Kazakh (`kk`), Uzbek Latin (`uz`), Uzbek Cyrillic (`uz-Cyrl`), Georgian (`ka`), Armenian (`hy`), Turkmen (`tk`), Azerbaijani (`az`), Kyrgyz (`ky`), Tajik (`tg`) and Belarusian (`be`). The files are loaded explicitly by `src/renderer/index.html` and covered by `tests/tooltip-source-catalog.test.cjs`.
+
+Uzbek Cyrillic is a deterministic transliteration draft derived from the Uzbek Latin tooltip pack, not an independent translation. Its registry metadata is `transliteration-draft-native-speaker-review-pending`; all other regional tooltip packs are marked `machine-assisted-draft-native-speaker-review-pending`.
+
+The 24 international locales and 10 CIS/regional variants now have separate 364-fragment detailed-tooltip catalogues. These are coverage-complete drafts, not linguistically approved translations. Native-speaker terminology review and visual verification in the Electron UI remain necessary. Run `node --test tests/tooltip-source-catalog.test.cjs` and the full `npm test` suite before merging.
 
 ## Editorial overrides — Stage 9
 
