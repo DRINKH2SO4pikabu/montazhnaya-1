@@ -148,10 +148,12 @@
   }
 
   function messagesWithTooltipTranslations(locale, messages) {
-    const translations = root.MontazhnayaTooltipTranslations?.packs?.[locale];
-    return translations
-      ? Object.assign(Object.create(null), messages, translations)
-      : messages;
+    const tooltipTranslations = root.MontazhnayaTooltipTranslations;
+    if (typeof tooltipTranslations?.resolveMessages === "function") {
+      return tooltipTranslations.resolveMessages(locale, messages);
+    }
+    const translations = tooltipTranslations?.packs?.[locale];
+    return translations ? Object.assign(Object.create(null), messages, translations) : messages;
   }
 
   const PLURAL_CATEGORIES = new Set(["zero", "one", "two", "few", "many", "other"]);
