@@ -185,3 +185,12 @@ test('audio crossfades use equal-power gains and are sampled in realtime and off
   assert.match(rendererHtml, /Перекрёстное затухание с предыдущим/);
   assert.match(rendererHtml, /audioCrossfadeIn: Number\(c\.audioCrossfadeIn\)/);
 });
+
+
+test('contextual tooltip popovers respect RTL reading direction and isolate keyboard shortcuts', () => {
+  assert.match(rendererHtml, /const isRtl\s*=\s*document\.documentElement\.dir\s*===\s*'rtl'/);
+  assert.match(rendererHtml, /html\[dir="rtl"\]\s+#functionHelpPopover\s*\{[^}]*transform-origin:top right;/s);
+  assert.match(rendererHtml, /html\[dir="rtl"\]\s+\.fhelp-tip\s*\{[^}]*border-right:2px solid #68aaff;/s);
+  assert.match(rendererHtml, /\.fhelp-key\s*\{[^}]*direction:ltr;[^}]*unicode-bidi:isolate;/s);
+  assert.match(rendererHtml, /\.sequence-marker \.marker-tooltip\s*\{[^}]*white-space:normal;[^}]*overflow-wrap:anywhere;/s);
+});
