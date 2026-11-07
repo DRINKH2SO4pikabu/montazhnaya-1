@@ -54,6 +54,12 @@ Each pack is loaded explicitly by `src/renderer/index.html` before the renderer 
 
 Run `node --test tests/tooltip-source-catalog.test.cjs` for the focused registry checks, then run the full `npm test` suite before merging.
 
+## RTL and Hindi detailed tooltip translations
+
+The next detailed-tooltip wave adds 364-entry draft packs for Arabic (`ar`), Hebrew (`he`) and Hindi (`hi`). The packs are loaded explicitly before `i18n.js` and checked by the tooltip catalogue test. Arabic and Hebrew already declare `direction: "rtl"` in the locale manifest; Hindi remains left-to-right. This wave changes tooltip catalogue content only and does not mirror timeline coordinates, track order or editing controls.
+
+All three packs remain machine-assisted drafts pending native-speaker terminology review and visual checks in the Electron UI. The RTL metadata check confirms the locale declarations, not a complete visual certification of every dialog or mixed-direction string.
+
 ## Editorial overrides — Stage 9
 
 `editorial-overrides.js` is the runtime layer for reviewed locale-specific fixes. It clones a language pack, applies stable source-label overrides, records an editorial revision/status and leaves the Russian and English reference packs unchanged. The current Stage 9 catalogue has 191 locale-specific overrides across 34 preview locales. These are machine-assisted editorial corrections, not native-speaker approvals. Run `npm run qa:locales` to regenerate the 436-key matrix, placeholder checks, coverage reports and Stage 9 terminology glossary.
