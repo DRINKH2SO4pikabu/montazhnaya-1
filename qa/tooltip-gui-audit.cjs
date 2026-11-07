@@ -454,13 +454,53 @@ async function main() {
         untranslatedCyrillicFields: result.untranslatedCyrillicFields,
         clippedTextBoxes: result.clippedTextBoxes,
         missingDisplayedFields: result.missingDisplayedFields,
+        renderedTooltipFragments: result.renderedTooltipFragments,
+        fragmentDisplayFailures: result.fragmentDisplayFailures,
+        fragmentOverflowCount: result.fragmentOverflowCount,
+        fragmentOutsideViewport: result.fragmentOutsideViewport,
+        longestTooltipFragment: result.longestTooltipFragment,
+        longestTooltipFragmentLength: result.longestTooltipFragmentLength,
         longestTooltip: result.longestTooltip,
         longestTooltipLength: result.longestTooltipLength
       };
       localeSummary.viewports.push(viewportSummary);
       totalRenderedHelpSamples += result.samples;
-      totalViewportChecks += result.samples;
-      totalOutsideViewport += result.outsideViewport;
+      totalRenderedTooltipFragments += result.renderedTooltipFragments;
+      totalFragmentDisplayFailures += result.fragmentDisplayFailures;
+      totalFragmentOverflowCount += result.fragmentOverflowCount;
+      totalFragmentOutsideViewport += result.fragmentOutsideViewport;
+      totalViewportChecks += result.samples + result.renderedTooltipFragments;
+      totalOutsideViewport += result.outsideViewport + result.fragmentOutsideViewport;
+
+      for (const fragment of result.fragmentSamples) {
+        if (fragment.missingFromRenderedCard) {
+          criticalFailures.push(locale.code + " " + viewport.width + "x" + viewport.height +
+            " detailed tooltip fragment was not rendered: " + fragment.key);
+        }
+        if (fragment.status === "exception") {
+          criticalFailures.push(locale.code + " " + viewport.width + "x" + viewport.height +
+            " detailed tooltip fragment threw an exception: " + fragment.key + " — " + fragment.error);
+        }
+        if (fragment.untranslatedCyrillic) {
+          reviewFlags.push({locale: locale.code, viewport, type: "untranslated-detailed-tooltip-fragment", key: fragment.key});
+        }
+        if (fragment.clipped || fragment.cardOverflow) {
+          reviewFlags.push({locale: locale.code, viewport, type: "detailed-tooltip-text-overflow", key: fragment.key,
+            field: fragment.field, clipped: fragment.clipped, cardOverflow: fragment.cardOverflow});
+        }
+        if (fragment.outsideViewport) {
+          criticalFailures.push(locale.code + " detailed tooltip fragment outside viewport at " +
+            viewport.width + "x" + viewport.height + " (" + fragment.key + ")");
+        }
+        detailRows.push([
+          locale.code, viewport.width, viewport.height, "fragment/" + fragment.field, fragment.key,
+          fragment.length, fragment.outsideViewport,
+          fragment.untranslatedCyrillic ? "untranslated" : "",
+          fragment.missingFromRenderedCard ? "not-rendered" : "",
+          (fragment.clipped || fragment.cardOverflow) ? 1 : 0,
+          fragment.actualText || fragment.error || ""
+        ]);
+      }
 
       for (const sample of result.samples) {
         detailRows.push([
