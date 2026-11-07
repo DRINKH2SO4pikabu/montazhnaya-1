@@ -107,6 +107,7 @@
     "Utilisez Shift+Alt+→.",
     "Après le déplacement, vérifiez la coupe et la synchronisation audio.",
     "Désélectionne l’objet actuel pour éviter de le modifier par accident.",
+    "Cliquez lorsque vous avez terminé de modifier le clip ou le marqueur sélectionné.",
     "Avant de supprimer un objet ou de modifier ses propriétés, vérifiez lequel est sélectionné.",
     "Zoomer sur la timeline",
     "Augmente le nombre de pixels d’écran par seconde et facilite le montage précis de petits segments.",
