@@ -131,6 +131,13 @@ try {
     Write-Host "Подробный отчёт: tooltip-gui-audit.json"
     Write-Host "Таблица проверок: tooltip-gui-audit-details.csv"
     Write-Host "Скриншоты: tooltip-<код языка>.png"
+
+    $bundlePath = $OutputDirectory + ".zip"
+    if (Test-Path -LiteralPath $bundlePath) {
+        Remove-Item -LiteralPath $bundlePath -Force
+    }
+    Compress-Archive -Path (Join-Path $OutputDirectory "*") -DestinationPath $bundlePath -CompressionLevel Optimal
+    Write-Host "Архив для отправки: $bundlePath" -ForegroundColor Yellow
 }
 catch {
     $exitCode = 1
