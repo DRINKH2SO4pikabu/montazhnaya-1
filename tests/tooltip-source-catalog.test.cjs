@@ -230,3 +230,22 @@ for (const locale of ["el", "vi", "id", "th"]) {
     assert.equal(window.MontazhnayaTooltipTranslations.metadata[locale], "machine-assisted-draft-native-speaker-review-pending");
   });
 }
+
+
+test("English short-help translations register all 410 quick messages and merge to full coverage", () => {
+  const window = {};
+  const context = { window };
+  vm.createContext(context);
+  vm.runInContext(read("src/renderer/locales/tooltip-source.js"), context, { filename: "tooltip-source.js" });
+  vm.runInContext(read("src/renderer/locales/tooltips-en.js"), context, { filename: "tooltips-en.js" });
+  vm.runInContext(read("src/renderer/locales/tooltips-en-quick.js"), context, { filename: "tooltips-en-quick.js" });
+  const source = window.MontazhnayaTooltipSource;
+  const pack = window.MontazhnayaTooltipTranslations.packs.en;
+  assert.equal(source.quickTextKeys.length, 410);
+  assert.equal(source.allTextKeys.length, 774);
+  assert.equal(Object.keys(pack).length, 774);
+  assert.equal(window.MontazhnayaTooltipTranslations.scopes.en.beginner, 364);
+  assert.equal(window.MontazhnayaTooltipTranslations.scopes.en.quick, 410);
+  assert.equal(pack[source.quickTextKeys[0]], "New project");
+  assert.equal(pack[source.quickTextKeys.at(-1)], "If a file cannot be decoded in the browser, try converting it to a supported format.");
+});
