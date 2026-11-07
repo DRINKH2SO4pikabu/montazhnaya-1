@@ -215,7 +215,7 @@ test('marker click and context-menu handlers update selection using a collection
   const contextHandler = source.slice(contextStart);
   assert.match(clickHandler, /\$\$\("\.sequence-marker"\)\.forEach/);
   assert.match(contextHandler, /\$\$\("\.sequence-marker"\)\.forEach/);
-  assert.doesNotMatch(source, /\$\("\.sequence-marker"\)\.forEach/);
+  assert.doesNotMatch(source, /(^|[^$])\$\("\.sequence-marker"\)\.forEach/);
   assert.match(clickHandler, /goTo\(marker\.time\)/);
   assert.match(contextHandler, /showContextMenu\(/);
 });
