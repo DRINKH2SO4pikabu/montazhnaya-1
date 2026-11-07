@@ -211,3 +211,35 @@ test("Uzbek Cyrillic detailed tooltips are marked as a transliteration draft", (
   assert.equal(Object.keys(window.MontazhnayaTooltipTranslations.packs["uz-Cyrl"]).length, 364);
   assert.equal(window.MontazhnayaTooltipTranslations.metadata["uz-Cyrl"], "transliteration-draft-native-speaker-review-pending");
 });
+
+
+test("Uzbek Cyrillic tooltip transliteration preserves technical identifiers", () => {
+  const source = read("src/renderer/locales/tooltips-uz-Cyrl.js");
+  for (const token of [".json", "Electron", "FFmpeg", "ffprobe", "WAV", "NVENC", "CBR", "VBR", "Full HD", "Mbps", "4K", "Ctrl+C", "Ctrl+V", "Ctrl+D", "Ripple Delete"]) {
+    assert.ok(source.includes(token), "Missing preserved identifier: " + token);
+  }
+  assert.doesNotMatch(source, /\.жсон|Элестрон|рendэр|\bendи\b|ВАВ|Ripple Делете|Ctrl\+[СВД]|НВЕНС|СБР|ВБР|Фулл ҲД|Мбпс|4К|ма’лумот/);
+});
+
+
+test("every manifest locale loads a detailed tooltip pack", () => {
+  const window = {};
+  const context = { window };
+  vm.createContext(context);
+  vm.runInContext(read("src/renderer/locales/manifest.js"), context, { filename: "manifest.js" });
+  const locales = window.MontazhnayaLocaleManifest.available;
+  const html = read("src/renderer/index.html");
+  assert.equal(locales.length, 36);
+  for (const locale of locales) {
+    if (locale.code === "ru") {
+      assert.equal(locale.file, "./locales/ru.js", "Russian uses its canonical source locale");
+      continue;
+    }
+    const scriptPath = "./locales/tooltips-" + locale.code + ".js";
+    assert.ok(html.includes(scriptPath), locale.code + " tooltip script must be loaded by the renderer");
+    const filePath = "src/renderer/locales/tooltips-" + locale.code + ".js";
+    assert.ok(fs.existsSync(path.join(root, filePath)), locale.code + " tooltip file must exist");
+    const source = read(filePath);
+    assert.ok(source.includes('register("' + locale.code + '"'), locale.code + " tooltip file must register its locale");
+  }
+});
