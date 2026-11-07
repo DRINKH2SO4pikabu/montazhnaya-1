@@ -147,6 +147,13 @@
     return packs[locale] || packs.en || { direction: "ltr", messages: {} };
   }
 
+  function messagesWithTooltipTranslations(locale, messages) {
+    const translations = root.MontazhnayaTooltipTranslations?.packs?.[locale];
+    return translations
+      ? Object.assign(Object.create(null), messages, translations)
+      : messages;
+  }
+
   const PLURAL_CATEGORIES = new Set(["zero", "one", "two", "few", "many", "other"]);
 
   function safeSemanticData(data) {
@@ -401,12 +408,12 @@
     currentLocale = AVAILABLE.some(item => item.code === locale) ? locale : "en";
     if (preference) currentPreference = preference;
     const pack = getPack(currentLocale);
-    activeMessages = safeMessages(pack);
+    activeMessages = messagesWithTooltipTranslations(currentLocale, safeMessages(pack));
     activePatterns = compilePatterns(activeMessages);
     activeSemanticData = semanticDataFor(currentLocale);
     fallbackSemanticData = semanticDataFor("en");
     const englishPack = getPack("en");
-    fallbackMessages = safeMessages(englishPack);
+    fallbackMessages = messagesWithTooltipTranslations("en", safeMessages(englishPack));
     fallbackPatterns = compilePatterns(fallbackMessages);
     const direction = pack.direction || (RTL.has(currentLocale.split("-")[0]) ? "rtl" : "ltr");
     document.documentElement.lang = currentLocale;

@@ -47,14 +47,17 @@ test('renderer registers the supplemental guide pack before starting the i18n ru
   const html = read('src/renderer/index.html');
   const en = html.indexOf('./locales/en.js');
   const guides = html.indexOf('./locales/guides-en.js');
+  const tooltipSource = html.indexOf('./locales/tooltip-source.js');
   const runtime = html.indexOf('./i18n.js');
-  assert.ok(en >= 0 && guides > en && runtime > guides);
+  assert.ok(en >= 0 && guides > en && tooltipSource > guides && runtime > tooltipSource);
 });
 
 test('English reference pack covers all instructional help and beginner-tour copy', () => {
   const html = read('src/renderer/index.html');
-  const actionsText = extractBalanced(html, 'const UI_HELP_ACTIONS = ');
-  const actions = JSON.parse(actionsText);
+  const sourceContext = { window: {} };
+  vm.runInNewContext(read('src/renderer/locales/tooltip-source.js'), sourceContext, { filename: 'tooltip-source.js' });
+  const tooltipSource = sourceContext.window.MontazhnayaTooltipSource;
+  const actions = tooltipSource.UI_HELP_ACTIONS;
   const tourText = extractBalanced(html, 'const BEGINNER_TOUR_STEPS = ', '[', ']');
   const context = {};
   vm.runInNewContext(`const BEGINNER_TOUR_STEPS = ${tourText}; this.steps = BEGINNER_TOUR_STEPS;`, context);
@@ -73,8 +76,7 @@ test('English reference pack covers all instructional help and beginner-tour cop
   const missingHelp = helpStrings.filter(value => !Object.prototype.hasOwnProperty.call(messages, value));
   assert.deepEqual(missingHelp, [], `Untranslated help strings: ${missingHelp.join(' | ')}`);
 
-  const idsText = extractBalanced(html, 'const UI_HELP_IDS = ');
-  const ids = JSON.parse(idsText);
+  const ids = tooltipSource.UI_HELP_IDS;
   const helpIdStrings = [...new Set(Object.values(ids).flat())].filter(value => value !== '');
   const missingHelpIds = helpIdStrings.filter(value => !Object.prototype.hasOwnProperty.call(messages, value));
   assert.deepEqual(missingHelpIds, [], `Untranslated property/control help strings: ${missingHelpIds.join(' | ')}`);
