@@ -303,6 +303,9 @@ test("PowerShell tooltip GUI runner downloads a temporary source copy and writes
   assert.doesNotMatch(script, /try\s*\{[^\n]*\}\s*catch\s*\{/m);
   assert.doesNotMatch(script, /try\s*\{[^\n]*\}\s*finally\s*\{/m);
   assert.doesNotMatch(script, /try \{ Stop-Process/);
+  assert.equal((script.match(/^try \\{$/gm) || []).length, 1);
+  assert.doesNotMatch(script, /Push-Location|Pop-Location/);
+  assert.ok(script.charCodeAt(0) === 0xFEFF, "PowerShell 5.1 script must use a UTF-8 BOM");
 });
 
 
