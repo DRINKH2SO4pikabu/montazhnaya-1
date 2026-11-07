@@ -257,9 +257,11 @@ function buildLocaleExpression(code, viewport) {
       "try{" +
         "buildFunctionHelpContent(def); pop.classList.add('visible'); pop.style.left='8px'; pop.style.top='8px';" +
         "const actual=pop.innerText||pop.textContent||'';" +
-        "const missing=!value||!actual.includes(value);" +
+        "const normalizedValue=String(value||'').normalize('NFC').replace(/\\s+/g,' ').trim();" +
+        "const normalizedActual=String(actual).normalize('NFC').replace(/\\s+/g,' ').trim();" +
+        "const missing=!normalizedValue||!normalizedActual.includes(normalizedValue);" +
         "const selector=field==='title'?'.fhelp-title':field==='tip'?'.fhelp-tip':'.fhelp-text';" +
-        "const node=Array.from(pop.querySelectorAll(selector)).find(item=>(item.innerText||'').includes(value));" +
+        "const node=Array.from(pop.querySelectorAll(selector)).find(item=>String(item.innerText||'').normalize('NFC').replace(/\\s+/g,' ').includes(normalizedValue));" +
         "const clipped=!!node&&(node.scrollWidth>node.clientWidth+2||node.scrollHeight>node.clientHeight+2);" +
         "const rect=pop.getBoundingClientRect();" +
         "const outside=rect.left<0||rect.top<0||rect.right>window.innerWidth+1||rect.bottom>window.innerHeight+1;" +
