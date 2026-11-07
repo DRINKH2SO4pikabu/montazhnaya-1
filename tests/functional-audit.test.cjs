@@ -194,3 +194,12 @@ test('contextual tooltip popovers respect RTL reading direction and isolate keyb
   assert.match(rendererHtml, /\.fhelp-key\s*\{[^}]*direction:ltr;[^}]*unicode-bidi:isolate;/s);
   assert.match(rendererHtml, /\.sequence-marker \.marker-tooltip\s*\{[^}]*white-space:normal;[^}]*overflow-wrap:anywhere;/s);
 });
+
+
+test('marker tooltips are rendered outside the clipped ruler and remain viewport-positioned', () => {
+  assert.match(rendererHtml, /sequenceMarkerTooltipPortal/);
+  assert.match(rendererHtml, /document\.body\.appendChild\(pop\)/);
+  assert.match(rendererHtml, /\.sequence-marker-tooltip-portal\s*\{[^}]*position:fixed;[^}]*overflow:auto;/s);
+  assert.doesNotMatch(rendererHtml, /button\.appendChild\(tooltip\)/);
+  assert.match(rendererHtml, /document\.addEventListener\("scroll",[\s\S]*?positionSequenceMarkerTooltip/);
+});
