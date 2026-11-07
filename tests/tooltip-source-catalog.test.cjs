@@ -200,8 +200,8 @@ for (const locale of ["sv", "fi", "cs", "ro"]) {
 test("tooltip source catalogue includes every short help message as well as beginner guidance", () => {
   const source = loadTooltipSource();
   assert.equal(source.textKeys.length, 364);
-  assert.equal(source.quickTextKeys.length, 415);
-  assert.equal(source.allTextKeys.length, 779);
+  assert.equal(source.quickTextKeys.length, 410);
+  assert.equal(source.allTextKeys.length, 774);
   assert.equal(new Set(source.allTextKeys).size, source.allTextKeys.length);
 });
 
@@ -213,9 +213,9 @@ test("quick tooltip translations merge with beginner translations by source mess
   const source = window.MontazhnayaTooltipSource;
   window.MontazhnayaTooltipTranslations.register("en", source.textKeys.map((_, i) => "Beginner " + i), "reference-translation");
   window.MontazhnayaTooltipTranslations.registerQuick("en", source.quickTextKeys.map((_, i) => "Quick help " + i), "reference-translation");
-  assert.equal(Object.keys(window.MontazhnayaTooltipTranslations.packs.en).length, 779);
+  assert.equal(Object.keys(window.MontazhnayaTooltipTranslations.packs.en).length, 774);
   assert.equal(window.MontazhnayaTooltipTranslations.scopes.en.beginner, 364);
-  assert.equal(window.MontazhnayaTooltipTranslations.scopes.en.quick, 415);
+  assert.equal(window.MontazhnayaTooltipTranslations.scopes.en.quick, 410);
 });
 
 
