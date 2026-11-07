@@ -192,7 +192,7 @@ test('contextual tooltip popovers respect RTL reading direction and isolate keyb
   assert.match(rendererHtml, /html\[dir="rtl"\]\s+#functionHelpPopover\s*\{[^}]*transform-origin:top right;/s);
   assert.match(rendererHtml, /html\[dir="rtl"\]\s+\.fhelp-tip\s*\{[^}]*border-right:2px solid #68aaff;/s);
   assert.match(rendererHtml, /\.fhelp-key\s*\{[^}]*direction:ltr;[^}]*unicode-bidi:isolate;/s);
-  assert.match(rendererHtml, /\.sequence-marker \.marker-tooltip\s*\{[^}]*white-space:normal;[^}]*overflow-wrap:anywhere;/s);
+  assert.match(rendererHtml, /\.sequence-marker-tooltip-portal\s*\{[^}]*white-space:normal;[^}]*overflow-wrap:anywhere;/s);
 });
 
 
