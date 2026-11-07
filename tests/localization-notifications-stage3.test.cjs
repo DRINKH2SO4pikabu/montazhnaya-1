@@ -66,7 +66,14 @@ test("timeline marker tooltip has an explicit translation in all 36 locale varia
   assert.ok(entry, "Timeline marker tooltip entry must exist");
   const locales = window.MontazhnayaLocaleManifest.available;
   const previewCodes = locales.filter(({ code }) => code !== "ru" && code !== "en").map(({ code }) => code).sort();
-  assert.deepEqual(Object.keys(entry.translations).sort(), previewCodes);
+  const translationCodes = Object.keys(entry.translations);
+  assert.equal(translationCodes.length, previewCodes.length, "every preview locale must have exactly one tooltip translation");
+  for (const code of previewCodes) {
+    assert.ok(translationCodes.includes(code), code + ": explicit marker tooltip translation is missing");
+  }
+  for (const code of translationCodes) {
+    assert.ok(previewCodes.includes(code), code + ": unexpected marker tooltip translation locale");
+  }
 
   for (const { code } of locales) {
     const actual = window.MontazhnayaSemanticCatalog[code]?.messages?.[entry.key];
