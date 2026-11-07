@@ -6,7 +6,7 @@ const fs = require('node:fs');
 const os = require('node:os');
 const path = require('node:path');
 const crypto = require('node:crypto');
-const { npmInvocation, checkRegistrySRI, isValidSRI, readLock, snapshotLock, restoreLock, compareNumericVersions, assertMinimumLockedPackages, assertMinimumInstalledPackages, assertExactPackageVersions, assertExactInstalledPackageVersions } = require('../tools/dependency-lock-utils.cjs');
+const { npmInvocation, npmAuditEnvironment, checkRegistrySRI, isValidSRI, readLock, snapshotLock, restoreLock, compareNumericVersions, assertMinimumLockedPackages, assertMinimumInstalledPackages, assertExactPackageVersions, assertExactInstalledPackageVersions } = require('../tools/dependency-lock-utils.cjs');
 
 function withTempLock(lock, callback) {
   const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'montazhnaya-lock-test-'));
@@ -46,6 +46,24 @@ test('non-Windows npm invocation uses the native npm executable', () => {
   assert.equal(invocation.command, 'npm');
   assert.deepEqual(invocation.args, ['ci']);
   assert.deepEqual(invocation.options, {});
+});
+
+test('npm security audits override unsupported third-party mirrors without mutating caller config', () => {
+  const original = {
+    PATH: 'C:\\\\Windows\\\\System32',
+    NPM_CONFIG_REGISTRY: 'https://registry.npmmirror.com/',
+    npm_config_userconfig: 'C:\\\\Users\\\\tester\\\\.npmrc',
+    npm_config_fund: 'true'
+  };
+  const env = npmAuditEnvironment(original);
+  assert.equal(env.npm_config_registry, 'https://registry.npmjs.org/');
+  assert.equal(Object.keys(env).filter(key => key.toLowerCase() === 'npm_config_registry').length, 1);
+  assert.equal(env.npm_config_userconfig, original.npm_config_userconfig);
+  assert.equal(env.npm_config_fund, 'false');
+  assert.equal(env.npm_config_progress, 'false');
+  assert.equal(original.NPM_CONFIG_REGISTRY, 'https://registry.npmmirror.com/');
+  const helper = fs.readFileSync(path.join(__dirname, '..', 'tools/dependency-lock-utils.cjs'), 'utf8');
+  assert.match(helper, /--registry=https:\\/\\/registry\\.npmjs\\.org\\//);
 });
 
 test('SRI parser accepts valid SHA-512, SHA-384 and SHA-256 values', () => {
