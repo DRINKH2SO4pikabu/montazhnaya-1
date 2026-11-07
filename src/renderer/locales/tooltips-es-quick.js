@@ -107,6 +107,7 @@
     "Usa Shift+Alt+→.",
     "Después del desplazamiento, comprueba el corte y la sincronización del audio.",
     "Quita la selección del objeto actual para evitar modificarlo por accidente.",
+    "Haz clic cuando hayas terminado de editar el clip o el marcador seleccionado.",
     "Antes de eliminar o cambiar propiedades, comprueba qué objeto está seleccionado.",
     "Ampliar la línea de tiempo",
     "Aumenta el número de píxeles de pantalla por segundo y facilita la edición precisa de fragmentos pequeños.",
