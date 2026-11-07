@@ -64,9 +64,15 @@ All three packs remain machine-assisted drafts pending native-speaker terminolog
 
 The dedicated tooltip catalogue now also has 364-entry machine-assisted draft packs for Swedish (`sv`), Finnish (`fi`), Czech (`cs`), Romanian (`ro`), Greek (`el`), Vietnamese (`vi`), Indonesian (`id`) and Thai (`th`). Together with the earlier European, East Asian, Arabic, Hebrew and Hindi packs, this completes the separate detailed-tooltip catalogue for all 24 international preview locales.
 
-The eight packs are loaded explicitly by `src/renderer/index.html`. The focused test `tests/tooltip-source-catalog.test.cjs` checks that every locale pack registers all 364 source fragments. All eight remain machine-assisted drafts pending native-speaker terminology review; automated coverage does not constitute linguistic approval. Ten CIS/regional preview locales still use the Russian/English fallback for these detailed tooltips.
+The eight packs are loaded explicitly by `src/renderer/index.html`. The focused test `tests/tooltip-source-catalog.test.cjs` checks that every locale pack registers all 364 source fragments. All eight remain machine-assisted drafts pending native-speaker terminology review; automated coverage does not constitute linguistic approval. Four CIS/regional preview locales still use the Russian/English fallback for these detailed tooltips.
 
 Run `node --test tests/tooltip-source-catalog.test.cjs` for the focused registry checks and the full `npm test` suite before merging.
+
+## CIS/regional detailed tooltip translations — wave 1
+
+The first regional wave adds 364-entry tooltip packs for Kazakh (`kk`), Uzbek Latin (`uz`), Georgian (`ka`) and Armenian (`hy`), plus Turkmen (`tk`). Uzbek Cyrillic (`uz-Cyrl`) is provided as a separate deterministic transliteration draft generated from the Uzbek Latin tooltip text; it is not an independent translation.
+
+All six packs are loaded explicitly by `src/renderer/index.html`. The focused tooltip catalogue test checks the five machine-assisted language packs for complete 364-entry registration and separately checks the Uzbek Cyrillic pack and its `transliteration-draft` metadata. All five translations remain drafts pending native-speaker review. Four CIS/regional locales — Azerbaijani (`az`), Kyrgyz (`ky`), Tajik (`tg`) and Belarusian (`be`) — still use the Russian/English fallback for detailed tooltip text.
 
 ## Editorial overrides — Stage 9
 
