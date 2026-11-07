@@ -106,6 +106,7 @@
     "Menggeser klip maju sepuluh frame pada urutan yang dipilih.",
     "Gunakan Shift+Alt+→.",
     "Setelah menggeser, periksa sambungan dan sinkronisasi suara.",
+    "Membatalkan pilihan objek saat ini agar tidak berubah secara tidak sengaja.",
     "Klik setelah selesai mengedit klip atau penanda yang dipilih.",
     "Sebelum menghapus atau mengubah properti, periksa objek mana yang sedang dipilih.",
     "Perbesar linimasa",
