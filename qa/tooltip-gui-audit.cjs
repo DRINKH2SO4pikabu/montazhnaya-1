@@ -323,8 +323,6 @@ async function main() {
           missingTooltipPackKeys: result.missingPackKeys.length,
           unchangedCyrillicKeys: result.unchangedCyrillicKeys,
           emptyTooltipKeys: result.emptyTooltipKeys,
-          tooltipPackCount: result.tooltipPackCount,
-          missingTooltipPackKeys: result.missingPackKeys.length,
           actionDefinitions: result.actionDefinitions,
           controlDefinitions: result.controlDefinitions,
           beginnerActionOverrides: result.beginnerActionOverrides,
