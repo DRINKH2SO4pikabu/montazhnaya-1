@@ -121,30 +121,58 @@
       .flatMap(definition => ["title", "purpose", "usage", "tip"].map(field => definition[field]))
       .filter(value => typeof value === "string" && value.trim())
   )]);
+  const tooltipTextKeySet = new Set(tooltipTextKeys);
+  const keyboardShortcutPattern = /^(?:(?:Ctrl|Alt|Shift|Meta|Cmd|Win)(?:\\+|\\b)|F\\d{1,2}$)/i;
+  const quickTooltipTextKeys = Object.freeze([...new Set(
+    [...Object.values(UI_HELP_ACTIONS), ...Object.values(UI_HELP_IDS)]
+      .flat()
+      .filter(value => typeof value === "string" && value.trim())
+      .filter(value => !tooltipTextKeySet.has(value) && !keyboardShortcutPattern.test(value))
+  )]);
+  const allTooltipTextKeys = Object.freeze([...tooltipTextKeys, ...quickTooltipTextKeys]);
 
   const tooltipTranslationPacks = Object.create(null);
   const tooltipTranslationMetadata = Object.create(null);
+  const tooltipTranslationScopes = Object.create(null);
+
+  function registerTooltipMessages(locale, values, status, keys, scope) {
+    if (typeof locale !== "string" || !/^[a-z]{2}(?:-[A-Za-z]{2,4})?$/.test(locale)) {
+      throw new TypeError("Invalid tooltip translation locale");
+    }
+    if (!Array.isArray(values) || values.length !== keys.length) {
+      throw new Error("Tooltip translation count does not match the " + scope + " source catalogue for " + locale);
+    }
+    const messages = Object.create(null);
+    keys.forEach((source, index) => {
+      const value = values[index];
+      if (typeof value !== "string" || !value.trim()) {
+        throw new Error("Missing " + scope + " tooltip translation " + locale + "/" + index);
+      }
+      messages[source] = value.trim();
+    });
+    tooltipTranslationPacks[locale] = Object.freeze(Object.assign(
+      Object.create(null),
+      tooltipTranslationPacks[locale] || {},
+      messages
+    ));
+    tooltipTranslationMetadata[locale] = String(status || "machine-assisted-draft-native-speaker-review-pending");
+    tooltipTranslationScopes[locale] = Object.freeze(Object.assign(
+      Object.create(null),
+      tooltipTranslationScopes[locale] || {},
+      { [scope]: keys.length }
+    ));
+    return tooltipTranslationPacks[locale];
+  }
+
   root.MontazhnayaTooltipTranslations = Object.freeze({
     packs: tooltipTranslationPacks,
     metadata: tooltipTranslationMetadata,
+    scopes: tooltipTranslationScopes,
     register(locale, values, status) {
-      if (typeof locale !== "string" || !/^[a-z]{2}(?:-[A-Za-z]{2,4})?$/.test(locale)) {
-        throw new TypeError("Invalid tooltip translation locale");
-      }
-      if (!Array.isArray(values) || values.length !== tooltipTextKeys.length) {
-        throw new Error("Tooltip translation count does not match the source catalogue for " + locale);
-      }
-      const messages = Object.create(null);
-      tooltipTextKeys.forEach((source, index) => {
-        const value = values[index];
-        if (typeof value !== "string" || !value.trim()) {
-          throw new Error("Missing tooltip translation " + locale + "/" + index);
-        }
-        messages[source] = value.trim();
-      });
-      tooltipTranslationPacks[locale] = Object.freeze(messages);
-      tooltipTranslationMetadata[locale] = String(status || "machine-assisted-draft-native-speaker-review-pending");
-      return tooltipTranslationPacks[locale];
+      return registerTooltipMessages(locale, values, status, tooltipTextKeys, "beginner");
+    },
+    registerQuick(locale, values, status) {
+      return registerTooltipMessages(locale, values, status, quickTooltipTextKeys, "quick");
     }
   });
 
@@ -153,6 +181,8 @@
     UI_HELP_IDS,
     BEGINNER_ACTION_HELP,
     BEGINNER_ID_HELP,
-    textKeys: tooltipTextKeys
+    textKeys: tooltipTextKeys,
+    quickTextKeys: quickTooltipTextKeys,
+    allTextKeys: allTooltipTextKeys
   });
 })(window);
