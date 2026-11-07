@@ -164,6 +164,51 @@
     return tooltipTranslationPacks[locale];
   }
 
+  function resolveMessages(locale, baseMessages) {
+    const resolved = Object.assign(Object.create(null), baseMessages || {});
+    const localPack = tooltipTranslationPacks[locale] || Object.create(null);
+    Object.assign(resolved, localPack);
+
+    // Russian is the source language. Other locales receive an explicit English
+    // fallback for tooltip strings that do not yet have a language-specific draft.
+    if (locale !== "ru") {
+      const englishPack = tooltipTranslationPacks.en || Object.create(null);
+      for (const source of allTooltipTextKeys) {
+        if (!Object.prototype.hasOwnProperty.call(resolved, source) &&
+            typeof englishPack[source] === "string" && englishPack[source].trim()) {
+          resolved[source] = englishPack[source];
+        }
+      }
+    }
+    return resolved;
+  }
+
+  function getCoverage(locale, baseMessages) {
+    const merged = Object.assign(
+      Object.create(null),
+      baseMessages || {},
+      tooltipTranslationPacks[locale] || {}
+    );
+    const englishPack = tooltipTranslationPacks.en || Object.create(null);
+    let translated = 0;
+    let englishFallback = 0;
+    let sourceLanguage = 0;
+    for (const source of allTooltipTextKeys) {
+      const value = merged[source];
+      if (typeof value === "string" && value.trim() && value !== source) translated++;
+      else if (locale === "ru") sourceLanguage++;
+      else if (typeof englishPack[source] === "string" && englishPack[source].trim()) englishFallback++;
+    }
+    return Object.freeze({
+      total: allTooltipTextKeys.length,
+      beginnerTotal: tooltipTextKeys.length,
+      quickTotal: quickTooltipTextKeys.length,
+      translated,
+      englishFallback,
+      sourceLanguage
+    });
+  }
+
   root.MontazhnayaTooltipTranslations = Object.freeze({
     packs: tooltipTranslationPacks,
     metadata: tooltipTranslationMetadata,
@@ -173,9 +218,10 @@
     },
     registerQuick(locale, values, status) {
       return registerTooltipMessages(locale, values, status, quickTooltipTextKeys, "quick");
-    }
+    },
+    resolveMessages,
+    getCoverage
   });
-
   root.MontazhnayaTooltipSource = Object.freeze({
     UI_HELP_ACTIONS,
     UI_HELP_IDS,
