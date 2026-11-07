@@ -450,8 +450,9 @@ button{font-family:inherit;}
 .sequence-marker:hover::before,.sequence-marker.selected::before{width:3px;opacity:1;}
 .sequence-marker.selected::after{filter:brightness(1.25);}
 .sequence-marker .marker-tooltip{
-  position:absolute;left:12px;top:12px;max-width:180px;white-space:nowrap;
-  overflow:hidden;text-overflow:ellipsis;padding:3px 6px;border-radius:4px;
+  position:absolute;left:12px;top:12px;max-width:min(240px,calc(100vw - 24px));white-space:normal;
+  overflow-wrap:anywhere;word-break:normal;unicode-bidi:plaintext;text-overflow:clip;
+  padding:4px 7px;border-radius:4px;line-height:1.4;
   background:#202028;border:1px solid var(--line);color:var(--text);font-size:10px;
   opacity:0;pointer-events:none;z-index:15;box-shadow:0 4px 12px rgba(0,0,0,.4);
 }
@@ -589,6 +590,12 @@ button{font-family:inherit;}
 .tbtn[disabled],.btn-block[disabled]{pointer-events:auto;}
 @media(max-width:650px){#functionHelpPopover{width:min(310px,calc(100vw - 16px));max-height:min(260px,calc(100vh - 16px));padding:11px 12px}.fhelp-text{font-size:11px}}
 @media(prefers-reduced-motion:reduce){#functionHelpPopover{transition:none}}
+
+/* RTL-aware contextual help: mirror the reading edge, not timeline coordinates. */
+html[dir="rtl"] #functionHelpPopover{direction:rtl;text-align:start;transform-origin:top right;}
+html[dir="rtl"] .fhelp-tip{border-left:0;border-right:2px solid #68aaff;border-radius:5px 0 0 5px;}
+.fhelp-key{direction:ltr;unicode-bidi:isolate;text-align:center;}
+.fhelp-title,.fhelp-text,.fhelp-tip{overflow-wrap:anywhere;word-break:normal;}
 
 
 
@@ -11473,8 +11480,10 @@ function positionFunctionHelp(el) {
   const r=el.getBoundingClientRect();
   const p=pop.getBoundingClientRect();
   const gap=12, pad=8, vw=window.innerWidth, vh=window.innerHeight;
-  let left=r.right+gap;
-  if(left+p.width>vw-pad) left=r.left-p.width-gap;
+  const isRtl=document.documentElement.dir==='rtl';
+  let left=isRtl ? r.left-p.width-gap : r.right+gap;
+  if(isRtl && left<pad) left=r.right+gap;
+  else if(!isRtl && left+p.width>vw-pad) left=r.left-p.width-gap;
   if(left<pad || left+p.width>vw-pad) left=Math.min(Math.max(pad,r.left+(r.width-p.width)/2),Math.max(pad,vw-p.width-pad));
   let top=r.top;
   if(top+p.height>vh-pad) top=vh-p.height-pad;
