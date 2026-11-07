@@ -263,3 +263,14 @@ for (const locale of ["ja", "zh-CN"]) {
     assert.equal(window.MontazhnayaTooltipTranslations.metadata[locale], "machine-assisted-draft-native-speaker-review-pending");
   });
 }
+
+
+test("Korean detailed tooltip translations register all 364 source fragments", () => {
+  const window = {};
+  const context = { window };
+  vm.createContext(context);
+  vm.runInContext(read("src/renderer/locales/tooltip-source.js"), context, { filename: "tooltip-source.js" });
+  vm.runInContext(read("src/renderer/locales/tooltips-ko.js"), context, { filename: "tooltips-ko.js" });
+  assert.equal(Object.keys(window.MontazhnayaTooltipTranslations.packs.ko).length, 364);
+  assert.equal(window.MontazhnayaTooltipTranslations.metadata.ko, "machine-assisted-draft-native-speaker-review-pending");
+});
