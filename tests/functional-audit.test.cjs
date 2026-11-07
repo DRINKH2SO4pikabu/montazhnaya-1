@@ -219,3 +219,11 @@ test('marker click and context-menu handlers update selection using a collection
   assert.match(clickHandler, /goTo\(marker\.time\)/);
   assert.match(contextHandler, /showContextMenu\(/);
 });
+
+
+test('marker click and context-menu handlers toggle selection through a collection query', () => {
+  assert.match(rendererHtml, /const \$\$\s*=\s*\(sel, root\)\s*=>\s*Array\.from\(\(root\s*\|\|\s*document\)\.querySelectorAll\(sel\)\)/);
+  const markerRenderer = rendererHtml.match(/function renderSequenceMarkers\(ruler\)\s*\{[\s\S]*?\n\}/)?.[0] || '';
+  assert.equal((markerRenderer.match(/\$\$\("\.sequence-marker"\)\.forEach/g) || []).length, 2);
+  assert.doesNotMatch(markerRenderer, /(?<!\$)\$\("\.sequence-marker"\)\.forEach/);
+});
