@@ -449,14 +449,16 @@ button{font-family:inherit;}
 }
 .sequence-marker:hover::before,.sequence-marker.selected::before{width:3px;opacity:1;}
 .sequence-marker.selected::after{filter:brightness(1.25);}
-.sequence-marker .marker-tooltip{
-  position:absolute;left:12px;top:12px;max-width:min(240px,calc(100vw - 24px));white-space:normal;
-  overflow-wrap:anywhere;word-break:normal;unicode-bidi:plaintext;text-overflow:clip;
-  padding:4px 7px;border-radius:4px;line-height:1.4;
+.sequence-marker-tooltip-portal{
+  position:fixed;display:block;z-index:25000;max-width:min(240px,calc(100vw - 24px));
+  max-height:min(160px,calc(100vh - 24px));overflow:auto;white-space:normal;
+  overflow-wrap:anywhere;word-break:normal;unicode-bidi:plaintext;
+  padding:5px 8px;border-radius:5px;line-height:1.4;
   background:#202028;border:1px solid var(--line);color:var(--text);font-size:10px;
-  opacity:0;pointer-events:none;z-index:15;box-shadow:0 4px 12px rgba(0,0,0,.4);
+  opacity:0;visibility:hidden;pointer-events:none;
+  box-shadow:0 4px 12px rgba(0,0,0,.4);transition:opacity .1s ease,visibility .1s;
 }
-.sequence-marker:hover .marker-tooltip,.sequence-marker.selected .marker-tooltip{opacity:1;}
+.sequence-marker-tooltip-portal.visible{opacity:1;visibility:visible;}
 
 .context-menu{
   position:fixed;background:#22222a;border:1px solid var(--line);border-radius:8px;
@@ -3838,8 +3840,62 @@ function updateRulerTicks() {
 
 const MARKER_COLORS = ["#e8a33d", "#4d9fff", "#43b581", "#d878c9", "#e2584a", "#b6a1ff"];
 
+let activeSequenceMarkerTooltipTarget = null;
+function positionSequenceMarkerTooltip(button) {
+  const pop = $("#sequenceMarkerTooltipPortal");
+  if (!pop || !button?.isConnected) return;
+  const rect = button.getBoundingClientRect();
+  const box = pop.getBoundingClientRect();
+  const gap = 6, pad = 8, vw = window.innerWidth, vh = window.innerHeight;
+  const rtl = document.documentElement.dir === "rtl";
+  let left = rtl ? rect.right - box.width - 12 : rect.left + 12;
+  left = Math.max(pad, Math.min(left, vw - box.width - pad));
+  let top = rect.top + 12;
+  if (top + box.height > vh - pad) top = rect.top - box.height - gap;
+  top = Math.max(pad, Math.min(top, vh - box.height - pad));
+  pop.style.left = Math.round(left) + "px";
+  pop.style.top = Math.round(top) + "px";
+}
+function showSequenceMarkerTooltip(button, marker) {
+  if (!button?.isConnected) return;
+  let pop = $("#sequenceMarkerTooltipPortal");
+  if (!pop) {
+    pop = document.createElement("div");
+    pop.id = "sequenceMarkerTooltipPortal";
+    pop.className = "sequence-marker-tooltip-portal";
+    pop.setAttribute("role", "tooltip");
+    pop.setAttribute("aria-hidden", "true");
+    document.body.appendChild(pop);
+  }
+  pop.textContent = marker.name || uiT("tooltip.timeline.marker");
+  pop.dir = "auto";
+  pop.setAttribute("aria-hidden", "false");
+  pop.classList.add("visible");
+  activeSequenceMarkerTooltipTarget = button;
+  positionSequenceMarkerTooltip(button);
+}
+function hideSequenceMarkerTooltip(button) {
+  if (button && activeSequenceMarkerTooltipTarget !== button) return;
+  const pop = $("#sequenceMarkerTooltipPortal");
+  if (pop) {
+    pop.classList.remove("visible");
+    pop.setAttribute("aria-hidden", "true");
+  }
+  activeSequenceMarkerTooltipTarget = null;
+}
+document.addEventListener("scroll", () => {
+  if (!activeSequenceMarkerTooltipTarget) return;
+  if (!activeSequenceMarkerTooltipTarget.isConnected) hideSequenceMarkerTooltip();
+  else positionSequenceMarkerTooltip(activeSequenceMarkerTooltipTarget);
+}, true);
+window.addEventListener("resize", () => {
+  if (activeSequenceMarkerTooltipTarget?.isConnected) positionSequenceMarkerTooltip(activeSequenceMarkerTooltipTarget);
+  else hideSequenceMarkerTooltip();
+});
+
 function renderSequenceMarkers(ruler) {
   if (!ruler) return;
+  hideSequenceMarkerTooltip();
   const markers = Array.isArray(project.markers) ? project.markers : [];
   for (const marker of markers.slice().sort((a, b) => a.time - b.time)) {
     const button = document.createElement("button");
@@ -3849,14 +3905,17 @@ function renderSequenceMarkers(ruler) {
     button.style.setProperty("--marker-color", /^#[0-9a-f]{6}$/i.test(marker.color || "") ? marker.color : MARKER_COLORS[0]);
     button.dataset.markerId = marker.id;
     button.title = (marker.name || uiT("tooltip.timeline.marker")) + " · " + timecode(marker.time) + "\n" + uiText("ЛКМ — перейти, двойной щелчок — переименовать, ПКМ — действия");
-    const tooltip = document.createElement("span");
-    tooltip.className = "marker-tooltip";
-    tooltip.textContent = marker.name || uiT("tooltip.timeline.marker");
-    button.appendChild(tooltip);
+    button.addEventListener("mouseenter", () => showSequenceMarkerTooltip(button, marker));
+    button.addEventListener("focus", () => showSequenceMarkerTooltip(button, marker));
+    button.addEventListener("mouseleave", () => {
+      if (document.activeElement !== button) hideSequenceMarkerTooltip(button);
+    });
+    button.addEventListener("blur", () => hideSequenceMarkerTooltip(button));
     button.addEventListener("click", event => {
       event.preventDefault(); event.stopPropagation();
       AppState.selectedMarkerId = marker.id;
-      $$(".sequence-marker").forEach(el => el.classList.toggle("selected", el.dataset.markerId === marker.id));
+      $(".sequence-marker").forEach(el => el.classList.toggle("selected", el.dataset.markerId === marker.id));
+      showSequenceMarkerTooltip(button, marker);
       goTo(marker.time);
     });
     button.addEventListener("dblclick", event => {
@@ -3866,7 +3925,8 @@ function renderSequenceMarkers(ruler) {
     button.addEventListener("contextmenu", event => {
       event.preventDefault(); event.stopPropagation();
       AppState.selectedMarkerId = marker.id;
-      $$(".sequence-marker").forEach(el => el.classList.toggle("selected", el.dataset.markerId === marker.id));
+      $(".sequence-marker").forEach(el => el.classList.toggle("selected", el.dataset.markerId === marker.id));
+      showSequenceMarkerTooltip(button, marker);
       showContextMenu(event.clientX, event.clientY, [
         { label: "Перейти к маркеру", action: () => goTo(marker.time) },
         { label: "Переименовать маркер", action: () => renameSequenceMarker(marker.id) },
@@ -3875,6 +3935,7 @@ function renderSequenceMarkers(ruler) {
       ]);
     });
     ruler.appendChild(button);
+    if (marker.id === AppState.selectedMarkerId) showSequenceMarkerTooltip(button, marker);
   }
 }
 
