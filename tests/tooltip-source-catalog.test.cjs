@@ -274,6 +274,13 @@ test("Electron tooltip GUI audit script has valid Node.js syntax", () => {
     encoding: "utf8"
   });
   assert.equal(result.status, 0, result.stderr || "tooltip GUI audit script has invalid syntax");
+
+  const audit = read("qa/tooltip-gui-audit.cjs");
+  assert.match(audit, /for\(let i=0;i<keys\.length;i\+\+\)/);
+  assert.match(audit, /buildFunctionHelpContent\(def\)/);
+  assert.match(audit, /Emulation\.setDeviceMetricsOverride/);
+  assert.match(audit, /renderedTooltipFragments:fragmentSamples\.length/);
+  assert.match(audit, /fragmentDisplayFailures/);
 });
 
 
