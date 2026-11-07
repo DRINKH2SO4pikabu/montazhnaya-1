@@ -203,3 +203,19 @@ test('marker tooltips are rendered outside the clipped ruler and remain viewport
   assert.doesNotMatch(rendererHtml, /button\.appendChild\(tooltip\)/);
   assert.match(rendererHtml, /document\.addEventListener\("scroll",[\s\S]*?positionSequenceMarkerTooltip/);
 });
+
+
+test('marker click and context-menu handlers update selection using a collection query', () => {
+  const start = rendererHtml.indexOf('function renderSequenceMarkers(ruler)');
+  const end = rendererHtml.indexOf('\nasync function addSequenceMarker()', start);
+  const source = rendererHtml.slice(start, end);
+  const clickStart = source.indexOf('button.addEventListener("click"');
+  const contextStart = source.indexOf('button.addEventListener("contextmenu"');
+  const clickHandler = source.slice(clickStart, contextStart);
+  const contextHandler = source.slice(contextStart);
+  assert.match(clickHandler, /\$\$\("\.sequence-marker"\)\.forEach/);
+  assert.match(contextHandler, /\$\$\("\.sequence-marker"\)\.forEach/);
+  assert.doesNotMatch(source, /(^|[^$])\$\("\.sequence-marker"\)\.forEach/);
+  assert.match(clickHandler, /goTo\(marker\.time\)/);
+  assert.match(contextHandler, /showContextMenu\(/);
+});
