@@ -494,3 +494,28 @@ test("Spanish detailed and short tooltip translations cover all 772 source messa
   assert.equal(coverage.englishFallback, 0);
   assert.equal(coverage.sourceLanguage, 0);
 });
+
+
+test("French detailed and short tooltip translations cover all 772 source messages", () => {
+  const window = {};
+  const context = { window };
+  vm.createContext(context);
+  for (const file of ["tooltip-source.js", "tooltips-fr.js", "tooltips-fr-quick.js"]) {
+    vm.runInContext(read("src/renderer/locales/" + file), context, { filename: file });
+  }
+
+  const source = window.MontazhnayaTooltipSource;
+  const registry = window.MontazhnayaTooltipTranslations;
+  assert.equal(source.textKeys.length, 364);
+  assert.equal(source.quickTextKeys.length, 408);
+  assert.equal(source.allTextKeys.length, 772);
+  assert.equal(Object.keys(registry.packs.fr).length, 772);
+  assert.equal(registry.scopes.fr.beginner, 364);
+  assert.equal(registry.scopes.fr.quick, 408);
+
+  const coverage = registry.getCoverage("fr", {});
+  assert.equal(coverage.total, 772);
+  assert.equal(coverage.translated, 772);
+  assert.equal(coverage.englishFallback, 0);
+  assert.equal(coverage.sourceLanguage, 0);
+});
