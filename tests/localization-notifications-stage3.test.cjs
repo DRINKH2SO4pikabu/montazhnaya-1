@@ -60,6 +60,22 @@ test("Russian and English have full message coverage; other locales use explicit
   }
 });
 
+test("timeline marker tooltip has an explicit translation in all 36 locale variants", () => {
+  const window = loadNotificationRuntime();
+  const entry = window.MontazhnayaNotificationCatalog.entries.find(item => item.key === "tooltip.timeline.marker");
+  assert.ok(entry, "Timeline marker tooltip entry must exist");
+  const locales = window.MontazhnayaLocaleManifest.available;
+  const previewCodes = locales.filter(({ code }) => code !== "ru" && code !== "en").map(({ code }) => code).sort();
+  assert.deepEqual(Object.keys(entry.translations).sort(), previewCodes);
+
+  for (const { code } of locales) {
+    const actual = window.MontazhnayaSemanticCatalog[code]?.messages?.[entry.key];
+    const expected = code === "ru" ? entry.source : code === "en" ? entry.en : entry.translations[code];
+    assert.equal(actual, expected, code + ": timeline marker tooltip must not fall back to another language");
+    assert.ok(typeof actual === "string" && actual.trim(), code + ": timeline marker tooltip must be non-empty");
+  }
+});
+
 test("resolver maps dynamic notifications to semantic IDs and keeps interpolation values intact", () => {
   const window = loadNotificationRuntime();
   const resolve = window.MontazhnayaNotificationCatalog.resolve;
