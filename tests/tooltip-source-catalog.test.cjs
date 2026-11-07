@@ -274,3 +274,14 @@ test("Korean detailed tooltip translations register all 364 source fragments", (
   assert.equal(Object.keys(window.MontazhnayaTooltipTranslations.packs.ko).length, 364);
   assert.equal(window.MontazhnayaTooltipTranslations.metadata.ko, "machine-assisted-draft-native-speaker-review-pending");
 });
+
+
+test("Arabic detailed tooltip translations register all 364 source fragments", () => {
+  const window = {};
+  const context = { window };
+  vm.createContext(context);
+  vm.runInContext(read("src/renderer/locales/tooltip-source.js"), context, { filename: "tooltip-source.js" });
+  vm.runInContext(read("src/renderer/locales/tooltips-ar.js"), context, { filename: "tooltips-ar.js" });
+  assert.equal(Object.keys(window.MontazhnayaTooltipTranslations.packs.ar).length, 364);
+  assert.equal(window.MontazhnayaTooltipTranslations.metadata.ar, "machine-assisted-draft-native-speaker-review-pending");
+});
