@@ -373,3 +373,37 @@ test("locale-specific Chinese Traditional and Uzbek Cyrillic tooltip variants re
   assert.equal(window.MontazhnayaTooltipTranslations.metadata["zh-TW"], "script-conversion-draft-native-speaker-review-pending");
   assert.equal(window.MontazhnayaTooltipTranslations.metadata["uz-Cyrl"], "transliteration-draft-native-speaker-review-pending");
 });
+
+
+test("all 36 selectable locales resolve every tooltip without Russian leakage", () => {
+  const window = {};
+  const context = { window };
+  vm.createContext(context);
+  const base = "src/renderer/locales/";
+  for (const file of ["manifest.js", "tooltip-source.js"]) {
+    vm.runInContext(read(base + file), context, { filename: file });
+  }
+  const html = read("src/renderer/index.html");
+  const tooltipScripts = [...html.matchAll(/<script src="\.\/locales\/(tooltips-[^"]+\.js)"><\/script>/g)]
+    .map(match => match[1]);
+  assert.ok(tooltipScripts.includes("tooltips-en.js"));
+  assert.ok(tooltipScripts.includes("tooltips-en-quick.js"));
+  for (const file of tooltipScripts) {
+    assert.ok(fs.existsSync(path.join(root, base, file)), "missing loaded tooltip pack: " + file);
+    vm.runInContext(read(base + file), context, { filename: file });
+  }
+  const manifest = window.MontazhnayaLocaleManifest;
+  const registry = window.MontazhnayaTooltipTranslations;
+  const source = window.MontazhnayaTooltipSource;
+  assert.equal(manifest.available.length, 36);
+  assert.equal(source.allTextKeys.length, 772);
+  for (const locale of manifest.available) {
+    if (locale.code === "ru") continue; // Russian is the source language.
+    const resolved = registry.resolveMessages(locale.code, {});
+    for (const key of source.allTextKeys) {
+      assert.equal(typeof resolved[key], "string", locale.code + " missing tooltip: " + key);
+      assert.notEqual(resolved[key], key, locale.code + " leaked Russian source text: " + key);
+      assert.ok(resolved[key].trim(), locale.code + " has an empty tooltip: " + key);
+    }
+  }
+});
