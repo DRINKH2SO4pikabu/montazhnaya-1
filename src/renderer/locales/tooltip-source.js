@@ -122,7 +122,7 @@
       .filter(value => typeof value === "string" && value.trim())
   )]);
   const tooltipTextKeySet = new Set(tooltipTextKeys);
-  const keyboardShortcutPattern = /^(?:(?:(?:Ctrl|Alt|Shift|Meta|Cmd|Win)(?:\\+[^+]+)+)|F\\d{1,2}|[A-Z]|Delete|Home|Space|End|Enter|Tab|Escape|Backspace|PageUp|PageDown)$/i;
+  const keyboardShortcutPattern = /^(?:(?:(?:Ctrl|Alt|Shift|Meta|Cmd|Win)(?:\+[^+]+)+)|F\d{1,2}|[A-Z]|Delete|Home|Space|End|Enter|Tab|Escape|Backspace|PageUp|PageDown)$/i;
   const quickTooltipTextKeys = Object.freeze([...new Set(
     [...Object.values(UI_HELP_ACTIONS), ...Object.values(UI_HELP_IDS)]
       .flat()
