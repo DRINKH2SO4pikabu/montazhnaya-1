@@ -307,9 +307,12 @@ function buildLocaleExpression(code, viewport) {
   "})()";
 }
 
+let activeClient = null;
+
 async function main() {
   const target = await waitForPageTarget();
   const client = new DevToolsClient(target.webSocketDebuggerUrl);
+  activeClient = client;
   await client.connect();
   await client.send("Runtime.enable");
   await client.send("Page.enable");
@@ -633,6 +636,7 @@ async function main() {
 
   fs.writeFileSync(mdPath, markdown, "utf8");
   client.close();
+  activeClient = null;
 
   process.stdout.write("\nAudit complete.\n");
   process.stdout.write("Report: " + mdPath + "\n");
