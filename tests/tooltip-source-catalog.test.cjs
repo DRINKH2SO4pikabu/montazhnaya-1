@@ -211,3 +211,12 @@ test("Uzbek Cyrillic detailed tooltips are marked as a transliteration draft", (
   assert.equal(Object.keys(window.MontazhnayaTooltipTranslations.packs["uz-Cyrl"]).length, 364);
   assert.equal(window.MontazhnayaTooltipTranslations.metadata["uz-Cyrl"], "transliteration-draft-native-speaker-review-pending");
 });
+
+
+test("Uzbek Cyrillic tooltip transliteration preserves technical identifiers", () => {
+  const source = read("src/renderer/locales/tooltips-uz-Cyrl.js");
+  for (const token of [".json", "Electron", "FFmpeg", "ffprobe", "WAV", "NVENC", "CBR", "VBR", "Full HD", "Mbps", "4K", "Ctrl+C", "Ctrl+V", "Ctrl+D", "Ripple Delete"]) {
+    assert.ok(source.includes(token), "Missing preserved identifier: " + token);
+  }
+  assert.doesNotMatch(source, /\\.жсон|Элестрон|рendэр|\bendи\b|ВАВ|Ripple Делете|Ctrl\+[СВД]|НВЕНС|СБР|ВБР|Фулл ҲД|Мбпс|4К|ма’лумот/);
+});
