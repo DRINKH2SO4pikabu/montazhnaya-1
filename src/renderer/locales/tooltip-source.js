@@ -116,10 +116,43 @@
  'fileInput': {title:'Выбрать файлы для монтажа',purpose:'Открывает выбор видео, музыки и изображений на компьютере.',usage:'Выбери нужные файлы. Они появятся в списке материалов проекта.',tip:'Если файл не открывается, браузер может не поддерживать его формат.'}
 };
 
+  const tooltipTextKeys = Object.freeze([...new Set(
+    [...Object.values(BEGINNER_ACTION_HELP), ...Object.values(BEGINNER_ID_HELP)]
+      .flatMap(definition => ["title", "purpose", "usage", "tip"].map(field => definition[field]))
+      .filter(value => typeof value === "string" && value.trim())
+  )]);
+
+  const tooltipTranslationPacks = Object.create(null);
+  const tooltipTranslationMetadata = Object.create(null);
+  root.MontazhnayaTooltipTranslations = Object.freeze({
+    packs: tooltipTranslationPacks,
+    metadata: tooltipTranslationMetadata,
+    register(locale, values, status) {
+      if (typeof locale !== "string" || !/^[a-z]{2}(?:-[A-Za-z]{2,4})?$/.test(locale)) {
+        throw new TypeError("Invalid tooltip translation locale");
+      }
+      if (!Array.isArray(values) || values.length !== tooltipTextKeys.length) {
+        throw new Error("Tooltip translation count does not match the source catalogue for " + locale);
+      }
+      const messages = Object.create(null);
+      tooltipTextKeys.forEach((source, index) => {
+        const value = values[index];
+        if (typeof value !== "string" || !value.trim()) {
+          throw new Error("Missing tooltip translation " + locale + "/" + index);
+        }
+        messages[source] = value.trim();
+      });
+      tooltipTranslationPacks[locale] = Object.freeze(messages);
+      tooltipTranslationMetadata[locale] = String(status || "machine-assisted-draft-native-speaker-review-pending");
+      return tooltipTranslationPacks[locale];
+    }
+  });
+
   root.MontazhnayaTooltipSource = Object.freeze({
     UI_HELP_ACTIONS,
     UI_HELP_IDS,
     BEGINNER_ACTION_HELP,
-    BEGINNER_ID_HELP
+    BEGINNER_ID_HELP,
+    textKeys: tooltipTextKeys
   });
 })(window);
