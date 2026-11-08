@@ -14,7 +14,7 @@
     "Slaat clipposities, uitsnedes, overgangen en instellingen op.",
     "Klik op de knop en kies waar je het projectbestand wilt opslaan.",
     "Hiermee sla je je montage op, maar maak je nog geen afgeronde video. Gebruik Exporteren om de video te maken.",
-    "Project met media opslaan",
+    "Project opslaan met media…",
     "Verpakt het project en de gebruikte bronbestanden in één draagbaar bestand.",
     "Kies deze optie en wacht tot het verpakken is voltooid.",
     "Het bestand kan groot zijn omdat ook de videobestanden zelf worden opgenomen.",
