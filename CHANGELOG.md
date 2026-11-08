@@ -2,6 +2,15 @@
 
 ## Stage 19 — timeline tools and clip speed
 
+## Localization Stage 10 — tooltip command terminology and GUI audit bridge
+
+- Harmonized the detailed-tooltip Ripple Delete title and instruction with the existing editorial UI glossary in 30 locale packs; the four CJK packs retain their native localized command names.
+- Added qa/audit-tooltip-ripple-terminology.cjs to npm run qa:locales, with a report covering all 34 preview locales.
+- Added regression coverage that requires the tooltip title and instruction to match the editorial command label and rejects English/mixed Ripple Delete wording.
+- Added a query-gated window.MontazhnayaTooltipQA bridge so the DevTools GUI audit can invoke renderer functions that are intentionally private inside the editor IIFE. Normal app launches do not expose the bridge.
+- Updated the PowerShell audit runner to request this explicit QA mode and restore the caller's environment after launching Electron.
+
+
 - Moved the Split button from the top action toolbar to the bottom timeline toolbar, beside the new clip-speed control. The Edit menu command and `S` shortcut remain available.
 - Added video clip speed selection from 0.25× to 4×. Changing speed preserves the selected source in/out range and recalculates the clip's timeline duration.
 - Linked detached audio follows its video partner's speed. Embedded video audio, audio preview, offline audio mixing and frame-accurate MP4/WebM export use the same playback-rate mapping.
