@@ -16,6 +16,7 @@
   const lastTranslatedAttributes = new WeakMap();
   let currentLocale = "en";
   let currentPreference = "en";
+  let activeTooltipUiLabels = Object.create(null);
   let activeMessages = Object.create(null);
   let activePatterns = [];
   let fallbackMessages = Object.create(null);
@@ -129,6 +130,8 @@
   }
 
   function translateSource(source) {
+    const helpLabel = translateWith(source, activeTooltipUiLabels, []);
+    if (helpLabel.found) return helpLabel.value;
     const direct = translateWith(source, activeMessages, activePatterns);
     if (direct.found) return direct.value;
     // Russian is the source language, not a missing-translation locale.
@@ -408,6 +411,9 @@
     currentLocale = AVAILABLE.some(item => item.code === locale) ? locale : "en";
     if (preference) currentPreference = preference;
     const pack = getPack(currentLocale);
+    activeTooltipUiLabels = pack.tooltipUiLabels && typeof pack.tooltipUiLabels === "object"
+      ? pack.tooltipUiLabels
+      : Object.create(null);
     activeMessages = messagesWithTooltipTranslations(currentLocale, safeMessages(pack));
     activePatterns = compilePatterns(activeMessages);
     activeSemanticData = semanticDataFor(currentLocale);
