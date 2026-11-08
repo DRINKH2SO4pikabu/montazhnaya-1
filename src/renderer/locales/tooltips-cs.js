@@ -14,7 +14,7 @@
     "Uloží pozice klipů, ořezy, přechody a nastavení.",
     "Klikněte na tlačítko a vyberte, kam chcete soubor projektu uložit.",
     "Tím se uloží střih, ale nevytvoří se hotové video. Video vytvoříte pomocí funkce Exportovat.",
-    "Uložit projekt včetně médií",
+    "Uložit projekt s médii…",
     "Zabalí projekt a jeho zdrojové soubory do jednoho přenosného souboru.",
     "Vyberte tuto možnost a počkejte na dokončení balení.",
     "Soubor může být velký, protože obsahuje samotné videosoubory.",
