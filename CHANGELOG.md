@@ -4,6 +4,10 @@
 
 ## Localization Stage 10 — tooltip command terminology and GUI audit bridge
 
+- Expanded detailed-tooltip QA to check all 12,376 preview translation cells for exact English and Russian source remnants; both counts are zero.
+- Added script-mixing review for Cyrillic characters in locales that do not use Cyrillic; no candidates were found.
+- Restricted immutable technical-token checks to identifiers that should remain stable. Localized keyboard direction names, key labels and units such as FPS/Mbps are no longer reported as missing technical tokens.
+
 - Harmonized the detailed-tooltip Ripple Delete title and instruction with the existing editorial UI glossary in 30 locale packs; the four CJK packs retain their native localized command names.
 - Added qa/audit-tooltip-ripple-terminology.cjs to npm run qa:locales, with a report covering all 34 preview locales.
 - Added regression coverage that requires the tooltip title and instruction to match the editorial command label and rejects English/mixed Ripple Delete wording.
