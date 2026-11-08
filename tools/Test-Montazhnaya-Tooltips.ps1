@@ -13,6 +13,8 @@ $sourceExtract = Join-Path $workRoot 'source'
 $profilePath = Join-Path $workRoot 'electron-profile'
 $appProcess = $null
 $exitCode = 0
+$previousTooltipQa = $env:MONTAZHNAYA_TOOLTIP_QA
+$tooltipQaEnvironmentSet = $false
 
 if ([string]::IsNullOrWhiteSpace($OutputDirectory)) {
     $desktop = [Environment]::GetFolderPath([Environment+SpecialFolder]::DesktopDirectory)
@@ -112,7 +114,16 @@ try {
         '--no-default-browser-check'
         '.'
     )
+    $env:MONTAZHNAYA_TOOLTIP_QA = '1'
+    $tooltipQaEnvironmentSet = $true
     $appProcess = Start-Process -FilePath $electronExe -ArgumentList $electronArguments -WorkingDirectory $projectRoot -PassThru
+    if ($null -eq $previousTooltipQa) {
+        Remove-Item Env:MONTAZHNAYA_TOOLTIP_QA -ErrorAction SilentlyContinue
+    }
+    else {
+        $env:MONTAZHNAYA_TOOLTIP_QA = $previousTooltipQa
+    }
+    $tooltipQaEnvironmentSet = $false
 
     Write-Host 'Окно Montazhnaya должно появиться на рабочем столе.' -ForegroundColor Green
     Write-Host 'Тест проверит 36 языков и реальные подсказки в трёх размерах окна.' -ForegroundColor Gray
@@ -146,6 +157,15 @@ catch {
     Write-Host ('ОШИБКА: ' + $_.Exception.Message) -ForegroundColor Red
 }
 finally {
+    if ($tooltipQaEnvironmentSet) {
+        if ($null -eq $previousTooltipQa) {
+            Remove-Item Env:MONTAZHNAYA_TOOLTIP_QA -ErrorAction SilentlyContinue
+        }
+        else {
+            $env:MONTAZHNAYA_TOOLTIP_QA = $previousTooltipQa
+        }
+    }
+
     if ($originalLocation) {
         Set-Location -Path $originalLocation
     }
