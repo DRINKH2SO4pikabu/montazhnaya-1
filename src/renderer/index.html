@@ -11800,6 +11800,33 @@ function initBeginnerTour() {
 }
 
 
+// Expose a narrow renderer-only bridge exclusively for the local GUI tooltip audit.
+if (new URLSearchParams(window.location.search).get("tooltip-audit") === "1") {
+  Object.defineProperty(window, "MontazhnayaTooltipQA", {
+    configurable: false,
+    enumerable: false,
+    writable: false,
+    value: Object.freeze({
+      isReady: () => !!document.getElementById("functionHelpPopover") &&
+        !!window.MontazhnayaI18n && !!window.MontazhnayaTooltipSource &&
+        !!window.MontazhnayaTooltipTranslations,
+      UI_HELP_ACTIONS,
+      UI_HELP_IDS,
+      BEGINNER_ACTION_HELP,
+      BEGINNER_ID_HELP,
+      FUNCTION_HELP_SELECTOR,
+      uiText,
+      showFunctionHelp,
+      hideFunctionHelp,
+      buildFunctionHelpContent,
+      setFunctionHelpEnabled,
+      helpActionDefinition,
+      getGenericFunctionHelp,
+      makeBeginnerFriendlyHelp
+    })
+  });
+}
+
 function init() {
   if (window.MontazhnayaI18n) window.MontazhnayaI18n.init();
   initFunctionHelp();
