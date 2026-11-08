@@ -8,7 +8,7 @@
     "start": "electron .",
     "test": "node --test --test-concurrency=4 tests/*.test.cjs",
     "dist:win": "node tools/run-windows-build.cjs",
-    "qa:locales": "node qa/generate-locale-coverage.cjs && node qa/audit-ipc-error-locales.cjs && node qa/localization-quality-audit.cjs && node qa/generate-terminology-glossary.cjs && node qa/generate-long-label-review.cjs && node qa/audit-beginner-tour-locales.cjs && node qa/audit-editorial-terminology-stage9.cjs && node qa/generate-terminology-glossary-stage9.cjs && node qa/audit-full-dictionary-editorial-stage9.cjs && node qa/audit-detailed-tooltip-locales.cjs",
+    "qa:locales": "node qa/generate-locale-coverage.cjs && node qa/audit-ipc-error-locales.cjs && node qa/localization-quality-audit.cjs && node qa/generate-terminology-glossary.cjs && node qa/generate-long-label-review.cjs && node qa/audit-beginner-tour-locales.cjs && node qa/audit-editorial-terminology-stage9.cjs && node qa/generate-terminology-glossary-stage9.cjs && node qa/audit-full-dictionary-editorial-stage9.cjs && node qa/audit-detailed-tooltip-locales.cjs && node qa/audit-tooltip-ripple-terminology.cjs",
     "electron:install": "install-electron",
     "electron:version": "electron --version",
     "deps:install": "node tools/sync-app-dependencies.cjs",
