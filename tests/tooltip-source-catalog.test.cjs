@@ -267,6 +267,61 @@ test("detailed tooltip quality audit covers all preview locales and produces a r
 });
 
 
+test("ripple-delete tooltip command names and instructions match editorial terminology in all affected locales", () => {
+  const window = {};
+  const context = { window };
+  vm.createContext(context);
+  for (const file of [
+    "src/renderer/locales/tooltip-source.js",
+    "src/renderer/locales/tooltips-en.js",
+    "src/renderer/locales/editorial-overrides.js"
+  ]) {
+    vm.runInContext(read(file), context, { filename: path.basename(file) });
+  }
+
+  const source = window.MontazhnayaTooltipSource;
+  const registry = window.MontazhnayaTooltipTranslations;
+  const corrections = window.MontazhnayaLocaleEditorialCorrections;
+  const english = registry.packs.en;
+  const titleKey = source.textKeys.find(key => english[key] === "Ripple delete");
+  const instructionKey = source.textKeys.find(key =>
+    english[key] === "The gap will remain. To move the following clips forward, use Ripple Delete."
+  );
+
+  assert.ok(titleKey, "the canonical Ripple Delete title must exist");
+  assert.ok(instructionKey, "the canonical Ripple Delete instruction must exist");
+
+  const affectedLocales = [
+    "tr", "hi", "sv", "fi", "cs", "ro", "el", "vi", "id", "th",
+    "kk", "uz", "uz-Cyrl", "ka", "hy", "tk", "az", "ky", "tg", "be"
+  ];
+
+  for (const locale of affectedLocales) {
+    vm.runInContext(
+      read("src/renderer/locales/tooltips-" + locale + ".js"),
+      context,
+      { filename: "tooltips-" + locale + ".js" }
+    );
+
+    const pack = registry.packs[locale];
+    const expectedLabel = corrections[locale]?.["Ripple-удалить"];
+    assert.ok(pack, locale + " tooltip pack must register");
+    assert.equal(Object.keys(pack).length, 364, locale + " must keep all 364 tooltip fragments");
+    assert.ok(expectedLabel, locale + " must have an editorial Ripple Delete label");
+    assert.equal(pack[titleKey], expectedLabel, locale + " tooltip title must match the editorial UI term");
+    assert.ok(
+      pack[instructionKey].includes(expectedLabel),
+      locale + " instruction must use the same localized command name"
+    );
+    assert.doesNotMatch(
+      pack[instructionKey],
+      /Ripple Delete|Ripple Silme|Ripple silme|रिपल डिलीट/,
+      locale + " instruction must not retain an English or mixed-script command name"
+    );
+  }
+});
+
+
 test("Electron tooltip GUI audit script has valid Node.js syntax", () => {
   const auditPath = path.join(root, "qa/tooltip-gui-audit.cjs");
   const result = spawnSync(process.execPath, ["--check", auditPath], {
