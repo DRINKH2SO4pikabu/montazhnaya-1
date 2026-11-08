@@ -385,7 +385,7 @@
     throw new Error("Tooltip UI label catalog must contain six labels for all 36 locales.");
   }
 
-  const revision = "beta-3.6.46-tooltip-ui-labels-stage12";
+  const revision = "beta-3.6.45-editorial-stage9-full-dictionary-pass1";
 
   function apply(locale) {
     const packs = root.MontazhnayaLocalePacks || Object.create(null);
@@ -417,6 +417,7 @@
       editorialRevision: revision,
       editorialCorrectionCount: Object.keys(patch || {}).length,
       tooltipUiLabelCount: tooltipLabels ? tooltipLabels.length : 0,
+      tooltipUiLabelRevision: "beta-3.6.46-tooltip-ui-labels-stage12",
       editorialReviewStatus: "machine-assisted-full-dictionary-audit-pass-1; native-speaker-review-pending"
     });
     packs[locale] = next;
