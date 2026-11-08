@@ -36,6 +36,7 @@ test('renderer blocks unexpected navigation, redirects and pop-up windows', () =
   assert.match(main, /const editorUrlWithAuditQuery = tooltipAuditMode \? editorUrl \+ "\?tooltip-audit=1" : editorUrl/);
   assert.match(main, /if \(navigationUrl !== editorUrl && navigationUrl !== editorUrlWithAuditQuery\) \{\s*event\.preventDefault\(\)/);
   assert.match(main, /tooltipAuditMode = process\.env\.MONTAZHNAYA_TOOLTIP_QA === "1"/);
+  assert.match(main, /event\.senderFrame\.url === editorUrl \+ "\?tooltip-audit=1"/);
   assert.match(main, /webContents\.on\("will-navigate",\s*blockUnexpectedNavigation\)/);
   assert.match(main, /webContents\.on\("will-redirect",\s*blockUnexpectedNavigation\)/);
   assert.match(main, /webContents\.setWindowOpenHandler\(\(\{\s*url\s*\}\)\s*=>\s*\{/);
