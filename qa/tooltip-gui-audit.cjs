@@ -554,7 +554,7 @@ async function main() {
   }
 
   await client.send("Emulation.clearDeviceMetricsOverride");
-  await client.evaluate("if(window.MontazhnayaTooltipQA)window.MontazhnayaTooltipQA.hideFunctionHelp(true);if(typeof qa.setFunctionHelpEnabled==='function')qa.setFunctionHelpEnabled(true);true");
+  await client.evaluate("if(window.MontazhnayaTooltipQA)window.MontazhnayaTooltipQA.hideFunctionHelp(true);if(window.MontazhnayaTooltipQA)window.MontazhnayaTooltipQA.setFunctionHelpEnabled(true);true");
 
   report.summary = {
     selectableLocales: localeList.length,
