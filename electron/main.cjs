@@ -2177,13 +2177,16 @@ function createWindow() {
     "renderer",
     "index.html"
   );
+  const tooltipAuditMode = process.env.MONTAZHNAYA_TOOLTIP_QA === "1";
   const editorUrl = pathToFileURL(editorPath).href;
+  const editorUrlWithAuditQuery = tooltipAuditMode ? editorUrl + "?tooltip-audit=1" : editorUrl;
 
   // The renderer is a local, single-window editor. It has no need to navigate
   // to arbitrary documents or spawn additional BrowserWindow instances.
-  // Keep the main frame pinned to the packaged editor document.
+  // Keep the main frame pinned to the packaged editor document. The only
+  // optional query flag enables the narrow local tooltip-audit bridge.
   const blockUnexpectedNavigation = (event, navigationUrl) => {
-    if (navigationUrl !== editorUrl) {
+    if (navigationUrl !== editorUrl && navigationUrl !== editorUrlWithAuditQuery) {
       event.preventDefault();
       console.warn("[Безопасность] Заблокирована навигация из окна редактора:", navigationUrl);
     }
@@ -2195,7 +2198,7 @@ function createWindow() {
     return { action: "deny" };
   });
 
-  mainWindow.loadFile(editorPath);
+  mainWindow.loadFile(editorPath, tooltipAuditMode ? { query: { "tooltip-audit": "1" } } : undefined);
   installWindowCloseGuard(mainWindow, {
     getDirtyState: async () => {
       if (mainWindow.isDestroyed() || mainWindow.webContents.isDestroyed()) return false;
