@@ -53,11 +53,8 @@ const technicalRules = [
   },
   {
     kind: "codec-platform-format",
-    pattern: /\b(?:Electron|FFmpeg|ffprobe|MP4|H\.264|AAC|WebM|VP8|VP9|Opus|FPS|WAV|NVENC|CBR|VBR|Full HD|Mbps|4K|1080p|1920×1080)\b/g
-  },
-  {
-    kind: "keyboard-shortcut",
-    pattern: /\b(?:(?:Ctrl|Alt|Shift|Meta)\+)+(?:[A-Z0-9]+|Left Arrow|Right Arrow|Up Arrow|Down Arrow)\b/g
+    // Keep immutable codec, container, platform and resolution identifiers.
+    pattern: /\b(?:Electron|FFmpeg|ffprobe|MP4|H\.264|AAC|WebM|VP8|VP9|Opus|WAV|NVENC|CBR|VBR|Full HD|4K|1080p|1920×1080)\b/g
   },
 ];
 
