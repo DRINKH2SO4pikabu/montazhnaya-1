@@ -14,7 +14,7 @@
     "Tallentaa leikkeiden sijainnit, rajaukset, siirtymät ja asetukset.",
     "Napsauta painiketta ja valitse projektitiedoston tallennuspaikka.",
     "Tämä tallentaa muokkauksen mutta ei luo valmista videota. Luo video käyttämällä Vie-toimintoa.",
-    "Tallenna projekti median kanssa",
+    "Tallenna projekti mediatiedostoineen…",
     "Pakkaa projektin ja sen lähdetiedostot yhdeksi siirrettäväksi tiedostoksi.",
     "Valitse tämä vaihtoehto ja odota, että pakkaus valmistuu.",
     "Tiedosto voi olla suuri, koska se sisältää itse videotiedostot.",
