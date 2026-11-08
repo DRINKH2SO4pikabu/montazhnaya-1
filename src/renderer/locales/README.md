@@ -83,6 +83,12 @@ The 24 international locales and 10 CIS/regional variants now have separate 364-
 
 ## Detailed tooltip quality audit
 
+## Stage 11 — tooltip and UI command-label consistency
+
+The cross-locale audit qa/audit-tooltip-editorial-consistency-stage11.cjs checks six frequent editing commands in all 34 preview locales: saving a project with media, Ripple Delete, copying, pasting, duplicating a clip and adding a marker. It compares each detailed-tooltip title with the corresponding localized UI label from the runtime locale pack. The current audit checks 204 pairs and reports zero mismatches.
+
+Where a title differed only because the detailed tooltip used a second synonym or a more explanatory paraphrase, the title was aligned to the existing UI label. The tooltip's purpose, usage and tip text were left unchanged. The audit runs through npm run qa:locales and its regression test lives in tests/tooltip-source-catalog.test.cjs.
+
 ## Stage 10 — detailed-tooltip terminology consistency
 
 The detailed-tooltip catalogue now uses the same Ripple Delete command wording as the existing editorial UI glossary in all 30 locales that have an editorial glossary entry. The four CJK locales keep their native locale-specific command labels; their instruction text is checked against the same title. Only the Ripple Delete title and its immediately related instruction fragment were changed in affected packs; the 364-entry pack size and translation metadata remain intact.
