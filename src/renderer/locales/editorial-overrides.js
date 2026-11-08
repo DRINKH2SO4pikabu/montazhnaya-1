@@ -401,17 +401,19 @@
       if (!Object.prototype.hasOwnProperty.call(messages, source)) throw new Error("Unknown editorial source label: " + locale + "/" + source);
       messages[source] = value;
     }
+    const translatedTooltipUiLabels = Object.create(null);
     if (tooltipLabels) {
       tooltipUiLabelKeys.forEach((source, index) => {
         const value = tooltipLabels[index];
         if (typeof value !== "string" || !value.trim()) throw new Error("Invalid tooltip UI translation: " + locale + "/" + source);
-        messages[source] = value;
+        translatedTooltipUiLabels[source] = value;
       });
     }
     const next = Object.freeze({
       ...current,
       appTitle: appTitleCorrections[locale] || current.appTitle,
       messages: Object.freeze(messages),
+      tooltipUiLabels: Object.freeze(translatedTooltipUiLabels),
       editorialRevision: revision,
       editorialCorrectionCount: Object.keys(patch || {}).length,
       tooltipUiLabelCount: tooltipLabels ? tooltipLabels.length : 0,
