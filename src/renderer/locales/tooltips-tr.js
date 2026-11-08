@@ -14,7 +14,7 @@
     "Klip konumlarını, kırpmaları, geçişleri ve ayarları kaydeder.",
     "Düğmeye tıklayın ve proje dosyasını nereye kaydedeceğinizi seçin.",
     "Bu işlem düzenlemenizi kaydeder ancak tamamlanmış bir video oluşturmaz. Videoyu oluşturmak için Dışa Aktar'ı kullanın.",
-    "Projeyi medya dosyalarıyla kaydet",
+    "Projeyi Medyalarla Kaydet…",
     "Projeyi ve kullanılan kaynak dosyalarını tek bir taşınabilir dosyada paketler.",
     "Bu seçeneği belirleyin ve paketleme işleminin bitmesini bekleyin.",
     "Dosya, video dosyalarının kendisini de içerdiği için büyük olabilir.",
