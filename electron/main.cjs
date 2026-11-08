@@ -135,7 +135,10 @@ function isTrustedExportSender(event) {
       event.senderFrame !== mainWindow.webContents.mainFrame) return false;
 
   const editorPath = path.resolve(__dirname, "..", "src", "renderer", "index.html");
-  return event.senderFrame.url === pathToFileURL(editorPath).href;
+  const editorUrl = pathToFileURL(editorPath).href;
+  if (event.senderFrame.url === editorUrl) return true;
+  return process.env.MONTAZHNAYA_TOOLTIP_QA === "1" &&
+    event.senderFrame.url === editorUrl + "?tooltip-audit=1";
 }
 
 async function inspectExportDiskSpace(outputPath, settings) {
