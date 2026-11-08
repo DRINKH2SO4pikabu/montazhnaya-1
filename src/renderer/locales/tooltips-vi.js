@@ -14,7 +14,7 @@
     "Lưu vị trí clip, phần cắt, chuyển cảnh và cài đặt.",
     "Nhấp vào nút và chọn nơi lưu tệp dự án.",
     "Thao tác này lưu bản dựng nhưng không tạo video hoàn chỉnh. Hãy dùng Xuất để tạo video.",
-    "Lưu dự án cùng phương tiện",
+    "Lưu dự án kèm tệp phương tiện…",
     "Đóng gói dự án và các tệp nguồn thành một tệp di động duy nhất.",
     "Chọn tùy chọn này và chờ quá trình đóng gói hoàn tất.",
     "Tệp có thể lớn vì bao gồm chính các tệp video.",
