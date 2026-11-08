@@ -217,10 +217,10 @@ test("Uzbek Cyrillic detailed tooltips are marked as a transliteration draft", (
 test("Uzbek Cyrillic tooltip transliteration preserves technical identifiers", () => {
   const source = read("src/renderer/locales/tooltips-uz-Cyrl.js");
   for (const token of [".json", "Electron", "FFmpeg", "ffprobe", "WAV", "NVENC", "CBR", "VBR", "Full HD", "Mbps", "4K", "Ctrl+C", "Ctrl+V", "Ctrl+D"]) {
-  assert.ok(source.includes("Бўшлиқни ёпиб ўчириш"), "Uzbek Cyrillic ripple-delete command must use the localized glossary term");
-  assert.doesNotMatch(source, /Ripple Delete/);
     assert.ok(source.includes(token), "Missing preserved identifier: " + token);
   }
+  assert.ok(source.includes("Бўшлиқни ёпиб ўчириш"), "Uzbek Cyrillic ripple-delete command must use the localized glossary term");
+  assert.doesNotMatch(source, /Ripple Delete/);
   assert.doesNotMatch(source, /\.жсон|Элестрон|рendэр|\bendи\b|ВАВ|Ripple Делете|Ctrl\+[СВД]|НВЕНС|СБР|ВБР|Фулл ҲД|Мбпс|4К|ма’лумот/);
 });
 
