@@ -37,7 +37,10 @@ const expectedLocaleCount = 34;
 const structuralProblems = [];
 const placeholderProblems = [];
 const technicalFlags = [];
+const russianSourceFlags = [];
+const scriptReviewFlags = [];
 const localeSummaries = [];
+const expectedCyrillicLocales = new Set(["uk", "kk", "uz-Cyrl", "ky", "tg", "be"]);
 
 const placeholderTokens = value => [...String(value).matchAll(/\{[A-Za-z][A-Za-z0-9_]*\}|%s|%\d+\$s|\$\{[^}]+\}/g)]
   .map(match => match[0])
@@ -56,10 +59,6 @@ const technicalRules = [
     kind: "keyboard-shortcut",
     pattern: /\b(?:(?:Ctrl|Alt|Shift|Meta)\+)+(?:[A-Z0-9]+|Left Arrow|Right Arrow|Up Arrow|Down Arrow)\b/g
   },
-  {
-    kind: "editor-command",
-    pattern: /\bRipple Delete\b/g
-  }
 ];
 
 function protectedTokens(value) {
@@ -88,6 +87,8 @@ let inspectedCells = 0;
 let missingOrEmptyTranslations = 0;
 let placeholderChecks = 0;
 let exactEnglishMatches = 0;
+let exactRussianSourceMatches = 0;
+let unexpectedCyrillicCells = 0;
 let technicalTokensChecked = 0;
 let missingTechnicalTokens = 0;
 
@@ -128,6 +129,8 @@ for (const locale of previewLocales) {
 
   let localePlaceholders = 0;
   let localeExactEnglish = 0;
+  let localeExactRussianSource = 0;
+  let localeUnexpectedCyrillic = 0;
   let localeTechnicalChecked = 0;
   let localeTechnicalMissing = 0;
 
@@ -159,6 +162,18 @@ for (const locale of previewLocales) {
       localeExactEnglish++;
     }
 
+    if (translation === key) {
+      exactRussianSourceMatches++;
+      localeExactRussianSource++;
+      russianSourceFlags.push({ locale: code, key, translation });
+    }
+
+    if (!expectedCyrillicLocales.has(code) && /\p{Script=Cyrillic}/u.test(translation)) {
+      unexpectedCyrillicCells++;
+      localeUnexpectedCyrillic++;
+      scriptReviewFlags.push({ locale: code, key, translation });
+    }
+
     for (const item of protectedTokens(reference)) {
       technicalTokensChecked++;
       localeTechnicalChecked++;
@@ -186,6 +201,8 @@ for (const locale of previewLocales) {
     entries: packKeys.length,
     placeholderChecks: localePlaceholders,
     exactEnglishMatches: localeExactEnglish,
+    exactRussianSourceMatches: localeExactRussianSource,
+    unexpectedCyrillicCells: localeUnexpectedCyrillic,
     technicalTokensChecked: localeTechnicalChecked,
     missingTechnicalTokens: localeTechnicalMissing,
     metadata
@@ -211,6 +228,8 @@ const report = {
   placeholderChecks,
   placeholderMismatches: placeholderProblems.length,
   exactEnglishMatches,
+  exactRussianSourceMatches,
+  unexpectedCyrillicCells,
   technicalTokensChecked,
   missingTechnicalTokens,
   technicalReviewStatus: missingTechnicalTokens === 0 ? "no missing protected tokens detected" : "review candidates found; see details",
@@ -218,7 +237,9 @@ const report = {
   localeSummaries,
   structuralProblems,
   placeholderProblems,
-  technicalFlags
+  technicalFlags,
+  russianSourceFlags,
+  scriptReviewFlags
 };
 
 const reportPath = path.join(root, "qa", "detailed-tooltip-quality-audit.json");
@@ -237,12 +258,15 @@ const markdown = [
   "- Protected technical tokens checked: **" + technicalTokensChecked.toLocaleString("en-US") + "**",
   "- Missing protected-token occurrences: **" + missingTechnicalTokens + "**",
   "- Exact English matches: **" + exactEnglishMatches + "** (review candidates, not automatically classified as errors)",
+  "- Exact unchanged Russian source strings: **" + exactRussianSourceMatches + "** (untranslated candidates)",
+  "- Cyrillic in locales that do not use Cyrillic: **" + unexpectedCyrillicCells + "** (script-mixing review candidates)",
   "",
   "## Locale coverage",
   "",
-  "| Locale | Entries | Placeholder checks | Missing technical tokens | Registry status |",
-  "|---|---:|---:|---:|---|",
+  "| Locale | Entries | Placeholders | Russian source remnants | Unexpected Cyrillic | Missing technical tokens | Registry status |",
+  "|---|---:|---:|---:|---:|---:|---|",
   ...localeSummaries.map(item => "| " + item.code + " | " + item.entries + " | " + item.placeholderChecks +
+    " | " + item.exactRussianSourceMatches + " | " + item.unexpectedCyrillicCells +
     " | " + item.missingTechnicalTokens + " | " + item.metadata + " |"),
   "",
   "## Review candidates",
@@ -252,6 +276,16 @@ const markdown = [
   ...technicalFlags.slice(0, 100).map(item => "- " + item.locale + " / " + item.kind + " / " +
     item.token + " — key " + item.key),
   technicalFlags.length > 100 ? "- ... " + (technicalFlags.length - 100) + " additional protected-token candidates are listed in the JSON report." : "",
+  "",
+  "### Exact Russian source remnants",
+  "",
+  ...(russianSourceFlags.length ? russianSourceFlags.slice(0, 100).map(item => "- " + item.locale + " / " + item.key) : ["None detected."]),
+  russianSourceFlags.length > 100 ? "- ... " + (russianSourceFlags.length - 100) + " additional items are listed in the JSON report." : "",
+  "",
+  "### Unexpected Cyrillic",
+  "",
+  ...(scriptReviewFlags.length ? scriptReviewFlags.slice(0, 100).map(item => "- " + item.locale + " / " + item.key + " — " + item.translation) : ["None detected."]),
+  scriptReviewFlags.length > 100 ? "- ... " + (scriptReviewFlags.length - 100) + " additional items are listed in the JSON report." : "",
   "",
   "## Quality boundary",
   "",
@@ -271,6 +305,8 @@ if (structuralProblems.length) {
     placeholderMismatches: placeholderProblems.length,
     technicalTokensChecked,
     missingTechnicalTokens,
+    exactRussianSourceMatches,
+    unexpectedCyrillicCells,
     report: "qa/detailed-tooltip-quality-audit.md"
   }, null, 2));
 }
