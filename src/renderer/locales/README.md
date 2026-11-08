@@ -83,6 +83,14 @@ The 24 international locales and 10 CIS/regional variants now have separate 364-
 
 ## Detailed tooltip quality audit
 
+## Stage 10 — detailed-tooltip terminology consistency
+
+The detailed-tooltip catalogue now uses the same Ripple Delete command wording as the existing editorial UI glossary in all 30 locales that have an editorial glossary entry. The four CJK locales keep their native locale-specific command labels; their instruction text is checked against the same title. Only the Ripple Delete title and its immediately related instruction fragment were changed in affected packs; the 364-entry pack size and translation metadata remain intact.
+
+The audit script qa/audit-tooltip-ripple-terminology.cjs validates all 34 preview locales and writes qa/ripple-delete-tooltip-terminology-stage10.md. It is part of npm run qa:locales. The test suite also contains a regression test so future translation updates cannot reintroduce the old English/mixed command label or diverge from the editorial glossary.
+
+These are machine-assisted terminology harmonizations, not native-speaker approvals. All 34 preview languages still require fluent-speaker review.
+
 The dedicated audit `qa/audit-detailed-tooltip-locales.cjs` checks all 364 detailed tooltip fragments across the 34 preview locales. It verifies that every pack registers, that no translation is missing or empty, and that interpolation placeholders match the English reference. It also records possible losses of file extensions, codec/platform identifiers, format labels, keyboard shortcuts and editor command names for manual review. Run `npm run qa:locales` to generate `qa/detailed-tooltip-quality-audit.md` and its JSON companion. Protected-token findings are review candidates rather than automatic failures because some terminology can be legitimately localized.
 
 This audit is structural and technical only. It does not certify grammar, naturalness, regional terminology or accessibility. All 34 preview packs remain machine-assisted drafts pending native-speaker review; `uz-Cyrl` remains a transliteration-derived draft requiring independent review.
