@@ -13,7 +13,7 @@ function loadNotificationRuntime() {
   vm.createContext(context);
   const files = [
     "manifest.js", "ru.js", "en.js", "source-messages.js", "guides-en.js",
-    "semantic.js", "beginner-tour.js", "notifications.js", "international.js", "cis.js"
+    "semantic.js", "beginner-tour.js", "notifications.js", "international.js", "cis.js", "editorial-overrides.js"
   ];
   for (const file of files) {
     vm.runInContext(read(`src/renderer/locales/${file}`), context, { filename: file });
@@ -198,4 +198,37 @@ test("legacy toast wrapper is not used for raw Russian literal messages", () => 
   const calls = html.split("\n").filter(line => /\btoast\(/.test(line) && !/function toast\(/.test(line) && !/return toast\(/.test(line));
   assert.equal(calls.length, 1, `Expected one prepared semantic message with preserved filenames, found: ${calls.join(" | ")}`);
   assert.match(calls[0], /status\.media\.imported/);
+});
+
+test("contextual-help chrome labels have explicit translations in all 36 locales", () => {
+  const window = loadNotificationRuntime();
+  const required = [
+    "Подсказка простыми словами",
+    "Подсказка",
+    "Что делает",
+    "Что нажать",
+    "Совет: ",
+    "Можно нажать на клавиатуре"
+  ];
+  assert.equal(window.MontazhnayaLocaleManifest.available.length, 36);
+  for (const { code } of window.MontazhnayaLocaleManifest.available) {
+    const pack = window.MontazhnayaApplyEditorialOverrides(code);
+    assert.ok(pack && pack.messages, code + ": locale pack is available");
+    for (const source of required) {
+      const translated = pack.messages[source];
+      assert.ok(typeof translated === "string" && translated.trim(), code + ": missing help label " + source);
+      if (code !== "ru") assert.notEqual(translated, source, code + ": untranslated help label " + source);
+    }
+    assert.equal(pack.tooltipUiLabelCount, required.length, code + ": wrong contextual-help label count");
+  }
+});
+
+test("tooltip GUI audit validates rendered translations, real document direction and numeric render totals", () => {
+  const audit = read("qa/tooltip-gui-audit.cjs");
+  assert.match(audit, /result\.expectedDirection !== result\.direction/);
+  assert.match(audit, /String\(qa\.uiText\(value\)\|\|''\)/);
+  assert.match(audit, /totalRenderedHelpSamples \+= result\.samples\.length/);
+  assert.match(audit, /totalViewportChecks \+= result\.samples\.length \+ result\.renderedTooltipFragments/);
+  assert.match(audit, /node\.scrollHeight>node\.clientHeight\+4/);
+  assert.match(audit, /pop\.scrollHeight>pop\.clientHeight\+4/);
 });
