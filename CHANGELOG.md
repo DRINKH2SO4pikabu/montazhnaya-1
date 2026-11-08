@@ -2,6 +2,13 @@
 
 ## Stage 19 — timeline tools and clip speed
 
+## Localization Stage 11 — tooltip and UI command-label consistency
+
+- Added a six-command consistency audit covering Save Project with Media, Ripple Delete, Copy Clip, Paste Clip, Duplicate Clip and Add Marker across all 34 preview locales.
+- Harmonized 46 detailed-tooltip title strings in 25 locale packs to the existing localized UI labels; tooltip explanations and instructions were not changed.
+- Added regression coverage for all 204 locale/command pairs. The audit reports zero remaining title mismatches.
+- Separated the Node-only locale and tooltip QA job from Electron runtime downloads so translation checks remain independently verifiable during external release-asset outages.
+
 ## Localization Stage 10 — tooltip command terminology and GUI audit bridge
 
 - Expanded detailed-tooltip QA to check all 12,376 preview translation cells for exact English and Russian source remnants; both counts are zero.
