@@ -157,7 +157,7 @@ function buildLocaleExpression(code, viewport) {
   const codeLiteral = JSON.stringify(code);
   const viewportLiteral = JSON.stringify(viewport);
   return "(async () => {" +
-    "const api=window.MontazhnayaI18n;" +
+    "const api=window.MontazhnayaI18n; const qa=window.MontazhnayaTooltipQA;if(!qa||typeof qa.isReady!=='function') throw new Error('Tooltip QA bridge unavailable');" +
     "if(!api||typeof api.setLocale!=='function') throw new Error('MontazhnayaI18n is unavailable');" +
     "await api.setLocale(" + codeLiteral + ");" +
     "await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));" +
@@ -179,11 +179,11 @@ function buildLocaleExpression(code, viewport) {
     "}" +
     "const expectedDirection=(locale==='ar'||locale==='he')?'rtl':'ltr';" +
     "const direction=document.documentElement.dir;" +
-    "const actionEntries=Object.entries(UI_HELP_ACTIONS||{});" +
-    "const idEntries=Object.entries(UI_HELP_IDS||{});" +
-    "const beginnerAction=BEGINNER_ACTION_HELP||{};" +
-    "const beginnerIds=BEGINNER_ID_HELP||{};" +
-    "if(typeof setFunctionHelpEnabled==='function') setFunctionHelpEnabled(true);" +
+    "const actionEntries=Object.entries(qa.UI_HELP_ACTIONS||{});" +
+    "const idEntries=Object.entries(qa.UI_HELP_IDS||{});" +
+    "const beginnerAction=qa.BEGINNER_ACTION_HELP||{};" +
+    "const beginnerIds=qa.BEGINNER_ID_HELP||{};" +
+    "if(typeof qa.setFunctionHelpEnabled==='function') qa.setFunctionHelpEnabled(true);" +
     "const pop=document.getElementById('functionHelpPopover');" +
     "if(!pop) throw new Error('The actual function-help popover is missing from the editor');" +
     "const fixtures=[];" +
@@ -201,7 +201,7 @@ function buildLocaleExpression(code, viewport) {
       "el.setAttribute('aria-label','QA control '+key); fixtureRoot.appendChild(el);" +
       "fixtures.push({kind:'control',key,element:el,override:!!beginnerIds[key]});" +
     "}" +
-    "const liveTargets=Array.from(document.querySelectorAll(FUNCTION_HELP_SELECTOR||'button,input,select,textarea,label,[data-action]'))" +
+    "const liveTargets=Array.from(document.querySelectorAll(qa.FUNCTION_HELP_SELECTOR||'button,input,select,textarea,label,[data-action]'))" +
       ".filter(el=>el.isConnected&&el.getClientRects().length>0&&!fixtureRoot.contains(el)&&!pop.contains(el));" +
     "const liveUnique=Array.from(new Set(liveTargets));" +
     "const sampleResults=[]; let longest=null; let longestLength=-1;" +
@@ -217,10 +217,10 @@ function buildLocaleExpression(code, viewport) {
       "}" +
       "let raw=null; let def=null;" +
       "try{" +
-        "raw=helpActionDefinition(el)||getGenericFunctionHelp(el);" +
-        "def=makeBeginnerFriendlyHelp(el,raw);" +
+        "raw=qa.helpActionDefinition(el)||qa.getGenericFunctionHelp(el);" +
+        "def=qa.makeBeginnerFriendlyHelp(el,raw);" +
         "if(!def){sampleResults.push({kind:sample.kind,key:sample.key,status:'no-definition'});continue;}" +
-        "showFunctionHelp(el);" +
+        "qa.showFunctionHelp(el);" +
       "}catch(error){sampleResults.push({kind:sample.kind,key:sample.key,status:'exception',error:String(error&&error.message||error)});continue;}" +
       "const actual=pop.innerText||pop.textContent||'';" +
       "const fields=['title','purpose','usage','tip'];" +
@@ -229,7 +229,7 @@ function buildLocaleExpression(code, viewport) {
         "const value=def[field];" +
         "if(field!=='tip'&&(!value||!String(value).trim())) missingFields.push(field);" +
         "if(typeof value==='string'&&value.trim()){" +
-          "const display=uiText(value); expectedText.push(display);" +
+          "const display=qa.uiText(value); expectedText.push(display);" +
           "if(locale!=='ru'&&display===value&&/[А-Яа-яЁё]/.test(value)) untranslated.push(field);" +
         "}" +
       "}" +
@@ -247,7 +247,7 @@ function buildLocaleExpression(code, viewport) {
       "sampleResults.push(record);" +
       "if(sampleLength>longestLength){longestLength=sampleLength;longest={sample,record};}" +
     "}" +
-    "if(longest){showFunctionHelp(longest.sample.element);}" +
+    "if(longest){qa.showFunctionHelp(longest.sample.element);}" +
     "const fragmentSamples=[]; let longestFragment=null; let longestFragmentLength=-1;" +
     "let fragmentOverflowCount=0; let fragmentDisplayFailures=0; let fragmentOutsideViewport=0;" +
     "const fragmentRoles=['title','purpose','usage','tip'];" +
@@ -255,7 +255,7 @@ function buildLocaleExpression(code, viewport) {
       "const key=keys[i]; const value=api.translate(key); const field=fragmentRoles[i%fragmentRoles.length];" +
       "const def={title:'Подсказка',purpose:'',usage:'',tip:''}; def[field]=value;" +
       "try{" +
-        "buildFunctionHelpContent(def); pop.classList.add('visible'); pop.style.left='8px'; pop.style.top='8px';" +
+        "qa.buildFunctionHelpContent(def); pop.classList.add('visible'); pop.style.left='8px'; pop.style.top='8px';" +
         "const actual=pop.innerText||pop.textContent||'';" +
         "const normalizedValue=String(value||'').normalize('NFC').replace(/\\s+/g,' ').trim();" +
         "const normalizedActual=String(actual).normalize('NFC').replace(/\\s+/g,' ').trim();" +
@@ -281,7 +281,7 @@ function buildLocaleExpression(code, viewport) {
     "}" +
     "if(longestFragment){" +
       "const def={title:'Подсказка',purpose:'',usage:'',tip:''}; def[longestFragment.field]=longestFragment.value;" +
-      "buildFunctionHelpContent(def); pop.classList.add('visible'); pop.style.left='8px'; pop.style.top='8px';" +
+      "qa.buildFunctionHelpContent(def); pop.classList.add('visible'); pop.style.left='8px'; pop.style.top='8px';" +
     "}" +
     "const summary={" +
       "locale,languageName:meta.nativeName||locale,direction,expectedDirection," +
@@ -317,7 +317,7 @@ async function main() {
   await client.send("Runtime.enable");
   await client.send("Page.enable");
 
-  const ready = await client.evaluate("(async()=>{const deadline=Date.now()+60000;while(Date.now()<deadline){if(window.MontazhnayaI18n&&typeof showFunctionHelp==='function'&&typeof uiText==='function'&&window.MontazhnayaTooltipSource&&window.MontazhnayaTooltipTranslations)return true;await new Promise(resolve=>setTimeout(resolve,250));}return false;})()");
+  const ready = await client.evaluate("(async()=>{const deadline=Date.now()+60000;while(Date.now()<deadline){if(window.MontazhnayaI18n&&window.MontazhnayaTooltipQA&&window.MontazhnayaTooltipQA.isReady()&&typeof window.MontazhnayaTooltipQA.showFunctionHelp==='function'&&typeof window.MontazhnayaTooltipQA.uiText==='function'&&window.MontazhnayaTooltipSource&&window.MontazhnayaTooltipTranslations)return true;await new Promise(resolve=>setTimeout(resolve,250));}return false;})()");
   if (!ready) throw new Error("The editor localization runtime or real tooltip renderer did not become ready.");
 
   const localeList = await client.evaluate("window.MontazhnayaI18n.availableLocales.map(item=>({code:item.code,nativeName:item.nativeName,direction:item.direction||'ltr'}))");
@@ -543,7 +543,7 @@ async function main() {
         }
       }
 
-      const reset = await client.evaluate("if(typeof hideFunctionHelp==='function')hideFunctionHelp(true);true");
+      const reset = await client.evaluate("if(window.MontazhnayaTooltipQA)window.MontazhnayaTooltipQA.hideFunctionHelp(true);true");
       void reset;
     }
 
@@ -554,7 +554,7 @@ async function main() {
   }
 
   await client.send("Emulation.clearDeviceMetricsOverride");
-  await client.evaluate("if(typeof hideFunctionHelp==='function')hideFunctionHelp(true);if(typeof setFunctionHelpEnabled==='function')setFunctionHelpEnabled(true);true");
+  await client.evaluate("if(window.MontazhnayaTooltipQA)window.MontazhnayaTooltipQA.hideFunctionHelp(true);if(typeof qa.setFunctionHelpEnabled==='function')qa.setFunctionHelpEnabled(true);true");
 
   report.summary = {
     selectableLocales: localeList.length,
