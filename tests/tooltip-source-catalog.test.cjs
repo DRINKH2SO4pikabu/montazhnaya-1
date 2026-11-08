@@ -323,6 +323,23 @@ test("ripple-delete tooltip command names and instructions match editorial termi
 });
 
 
+test("Ripple Delete terminology QA covers all 34 preview locales and writes a report", () => {
+  const result = spawnSync(process.execPath, [
+    path.join(root, "qa/audit-tooltip-ripple-terminology.cjs")
+  ], {
+    cwd: root,
+    encoding: "utf8",
+    maxBuffer: 1024 * 1024
+  });
+
+  assert.equal(result.status, 0, result.stderr || result.stdout || "Ripple Delete terminology audit failed");
+  const report = read("qa/ripple-delete-tooltip-terminology-stage10.md");
+  assert.match(report, /Preview locales checked: \*\*34 \/ 34\*\*/);
+  assert.match(report, /Editorially harmonized locale packs: \*\*30\*\*/);
+  assert.match(result.stdout, /"problems": 0/);
+});
+
+
 test("Electron tooltip GUI audit script has valid Node.js syntax", () => {
   const auditPath = path.join(root, "qa/tooltip-gui-audit.cjs");
   const result = spawnSync(process.execPath, ["--check", auditPath], {
