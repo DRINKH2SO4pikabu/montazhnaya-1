@@ -369,7 +369,7 @@ test("Electron tooltip GUI audit script has valid Node.js syntax", () => {
 
 test("PowerShell tooltip GUI runner downloads a temporary source copy and writes visual audit artifacts", () => {
   const script = read("tools/Test-Montazhnaya-Tooltips.ps1");
-  assert.match(script, /codeload\.github\.com\/\$repository/);
+  assert.match(script, /codeload\\.github\\.com\\/.*\\+ \\$repository/);
   assert.match(script, /DRINKH2SO4pikabu\/montazhnaya-1/);
   assert.match(script, /remote-debugging-address=127\.0\.0\.1/);
   assert.match(script, /remote-debugging-port=/);
