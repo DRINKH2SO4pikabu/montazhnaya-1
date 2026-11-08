@@ -331,11 +331,21 @@ test("Electron tooltip GUI audit script has valid Node.js syntax", () => {
   assert.equal(result.status, 0, result.stderr || "tooltip GUI audit script has invalid syntax");
 
   const audit = read("qa/tooltip-gui-audit.cjs");
+  const renderer = read("src/renderer/index.html");
+  const main = read("electron/main.cjs");
+  const runner = read("tools/Test-Montazhnaya-Tooltips.ps1");
   assert.match(audit, /for\(let i=0;i<keys\.length;i\+\+\)/);
-  assert.match(audit, /buildFunctionHelpContent\(def\)/);
+  assert.match(audit, /qa\.buildFunctionHelpContent\(def\)/);
+  assert.match(audit, /qa\.showFunctionHelp\(el\)/);
+  assert.match(audit, /window\.MontazhnayaTooltipQA/);
   assert.match(audit, /Emulation\.setDeviceMetricsOverride/);
   assert.match(audit, /renderedTooltipFragments:fragmentSamples\.length/);
   assert.match(audit, /fragmentDisplayFailures/);
+  assert.match(renderer, /get\("tooltip-audit"\) === "1"/);
+  assert.match(renderer, /MontazhnayaTooltipQA/);
+  assert.match(main, /MONTAZHNAYA_TOOLTIP_QA/);
+  assert.match(main, /tooltip-audit=1/);
+  assert.match(runner, /MONTAZHNAYA_TOOLTIP_QA/);
 });
 
 
@@ -345,6 +355,7 @@ test("PowerShell tooltip GUI runner downloads a temporary source copy and writes
   assert.match(script, /DRINKH2SO4pikabu\/montazhnaya-1/);
   assert.match(script, /remote-debugging-address=127\.0\.0\.1/);
   assert.match(script, /remote-debugging-port=/);
+  assert.match(script, /MONTAZHNAYA_TOOLTIP_QA/);
   assert.match(script, /qa\\tooltip-gui-audit\.cjs/);
   assert.match(script, /tooltip-gui-audit-summary\.md/);
   assert.match(script, /tooltip-gui-audit\.json/);
