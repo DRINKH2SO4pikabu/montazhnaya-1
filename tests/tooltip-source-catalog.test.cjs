@@ -292,7 +292,8 @@ test("ripple-delete tooltip command names and instructions match editorial termi
   assert.ok(instructionKey, "the canonical Ripple Delete instruction must exist");
 
   const affectedLocales = [
-    "tr", "hi", "sv", "fi", "cs", "ro", "el", "vi", "id", "th",
+    "de", "fr", "es", "pt-BR", "it", "pl", "uk", "tr", "ar", "he",
+    "hi", "nl", "sv", "fi", "cs", "ro", "el", "vi", "id", "th",
     "kk", "uz", "uz-Cyrl", "ka", "hy", "tk", "az", "ky", "tg", "be"
   ];
 
