@@ -26,7 +26,7 @@ jobs:
         run: npm run qa:locales
 
       - name: Run security and tooltip catalogue regression tests
-        run: node --test tests/security-config.test.cjs tests/tooltip-source-catalog.test.cjs
+        run: node --test tests/security-config.test.cjs tests/tooltip-source-catalog.test.cjs tests/localization-notifications-stage3.test.cjs
 
   test:
     name: Tests (${{ matrix.os }})
