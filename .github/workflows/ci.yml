@@ -10,6 +10,24 @@ permissions:
   contents: read
 
 jobs:
+  localization:
+    name: Localization and tooltip QA (Node-only)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+
+      - name: Run complete localization quality audit
+        run: npm run qa:locales
+
+      - name: Run security and tooltip catalogue regression tests
+        run: node --test tests/security-config.test.cjs tests/tooltip-source-catalog.test.cjs
+
   test:
     name: Tests (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
