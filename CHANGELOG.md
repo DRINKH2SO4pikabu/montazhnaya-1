@@ -2,6 +2,16 @@
 
 ## Stage 19 — timeline tools and clip speed
 
+## Localization Stage 12 — contextual-help chrome and real GUI audit corrections
+
+- Added six separately scoped contextual-help UI labels (plain-language heading, help title, section headings, tip prefix and keyboard-shortcut label) for all 36 selectable locale variants.
+- Kept these labels in a dedicated locale metadata dictionary; the canonical English source dictionary remains exactly 436 keys and translation coverage totals are unchanged.
+- Corrected the GUI audit direction comparison to check the actual renderer value, and made detailed-fragment checks compare the text after the same translation step used by the renderer.
+- Corrected audit counters that previously added sample arrays instead of their lengths.
+- Increased only the vertical subpixel measurement tolerance for tooltip text boxes and cards to avoid false Arabic clipping warnings while preserving horizontal overflow checks.
+- Added regression tests for all six labels in all 36 locales and included the checks in the independent Node-only localization CI job.
+- The Windows Electron GUI audit still needs a fresh user-side run to confirm the rendered result and inspect the new screenshots.
+
 ## Localization Stage 11 — tooltip and UI command-label consistency
 
 - Added a six-command consistency audit covering Save Project with Media, Ripple Delete, Copy Clip, Paste Clip, Duplicate Clip and Add Marker across all 34 preview locales.
