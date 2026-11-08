@@ -215,12 +215,18 @@ test("contextual-help chrome labels have explicit translations in all 36 locales
     const pack = window.MontazhnayaApplyEditorialOverrides(code);
     assert.ok(pack && pack.messages, code + ": locale pack is available");
     for (const source of required) {
-      const translated = pack.messages[source];
+      const translated = pack.tooltipUiLabels[source];
       assert.ok(typeof translated === "string" && translated.trim(), code + ": missing help label " + source);
       if (code !== "ru") assert.notEqual(translated, source, code + ": untranslated help label " + source);
+      assert.equal(Object.prototype.hasOwnProperty.call(pack.messages, source), false,
+        code + ": contextual-help chrome must stay outside the canonical message dictionary");
     }
     assert.equal(pack.tooltipUiLabelCount, required.length, code + ": wrong contextual-help label count");
   }
+  const runtime = read("src/renderer/i18n.js");
+  assert.match(runtime, /let activeTooltipUiLabels = Object\.create\(null\)/);
+  assert.match(runtime, /translateWith\(source, activeTooltipUiLabels, \[\]\)/);
+  assert.match(runtime, /activeTooltipUiLabels = pack\.tooltipUiLabels/);
 });
 
 test("tooltip GUI audit validates rendered translations, real document direction and numeric render totals", () => {
