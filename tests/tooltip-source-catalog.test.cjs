@@ -264,8 +264,17 @@ test("detailed tooltip quality audit covers all preview locales and produces a r
   assert.equal(report.inspectedTranslationCells, 34 * 364);
   assert.equal(report.placeholderChecks, 34 * 364);
   assert.equal(report.placeholderMismatches, 0);
+  assert.equal(report.exactRussianSourceMatches, 0, "no detailed tooltip may remain exactly equal to its Russian source text");
   assert.equal(report.localeSummaries.length, 34);
   assert.ok(report.localeSummaries.every(locale => locale.entries === 364));
+  assert.ok(report.localeSummaries.every(locale =>
+    Number.isInteger(locale.exactRussianSourceMatches) && Number.isInteger(locale.unexpectedCyrillicCells)
+  ));
+  assert.equal(
+    report.unexpectedCyrillicCells,
+    report.scriptReviewFlags.length,
+    "unexpected Cyrillic candidates must be preserved in the detailed report"
+  );
 });
 
 
