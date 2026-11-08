@@ -331,26 +331,90 @@
     "tg": "Montazhnaya beta 3.6.45 — муҳаррири акс, садо ва видео",
     "be": "Montazhnaya beta 3.6.45 — рэдактар фота, аўдыя і відэа"
   };
-  const revision = "beta-3.6.45-editorial-stage9-full-dictionary-pass1";
+  // Stage 12: translate the shared chrome around every contextual-help card.
+  // The six source labels are intentionally added after locale packs are built:
+  // they are renderer UI strings, not part of the 436-key source dictionary snapshot.
+  const tooltipUiLabelKeys = Object.freeze([
+    "Подсказка простыми словами",
+    "Подсказка",
+    "Что делает",
+    "Что нажать",
+    "Совет: ",
+    "Можно нажать на клавиатуре"
+  ]);
+  const tooltipUiLabelCatalog = Object.freeze({
+    "ru": ["Подсказка простыми словами", "Подсказка", "Что делает", "Что нажать", "Совет: ", "Можно нажать на клавиатуре"],
+    "en": ["Plain-language help", "Help", "What it does", "What to do", "Tip: ", "Keyboard shortcut"],
+    "de": ["Hilfe in einfacher Sprache", "Hinweis", "Was es macht", "Was zu tun ist", "Tipp: ", "Tastenkürzel"],
+    "fr": ["Aide en langage simple", "Aide", "À quoi ça sert", "Que faire", "Conseil : ", "Raccourci clavier"],
+    "es": ["Ayuda en lenguaje sencillo", "Ayuda", "Qué hace", "Qué hacer", "Consejo: ", "Atajo de teclado"],
+    "pt-BR": ["Ajuda em linguagem simples", "Ajuda", "O que faz", "O que fazer", "Dica: ", "Atalho de teclado"],
+    "it": ["Guida in parole semplici", "Aiuto", "Cosa fa", "Cosa fare", "Consiglio: ", "Scorciatoia da tastiera"],
+    "pl": ["Pomoc prostym językiem", "Pomoc", "Co robi", "Co zrobić", "Wskazówka: ", "Skrót klawiszowy"],
+    "uk": ["Пояснення простою мовою", "Підказка", "Що робить", "Що натиснути", "Порада: ", "Сполучення клавіш"],
+    "tr": ["Sade dille yardım", "Yardım", "Ne işe yarar", "Ne yapmalı", "İpucu: ", "Klavye kısayolu"],
+    "zh-CN": ["通俗易懂的帮助", "帮助", "功能说明", "操作方法", "提示：", "键盘快捷键"],
+    "zh-TW": ["淺顯易懂的說明", "說明", "功能說明", "操作方式", "提示：", "鍵盤快捷鍵"],
+    "ja": ["やさしい言葉での説明", "ヘルプ", "機能", "操作方法", "ヒント：", "キーボードショートカット"],
+    "ko": ["쉬운 설명", "도움말", "기능", "사용 방법", "팁: ", "키보드 단축키"],
+    "ar": ["مساعدة بلغة مبسطة", "مساعدة", "ما الذي يفعله", "ما الذي يجب فعله", "نصيحة: ", "اختصار لوحة المفاتيح"],
+    "he": ["עזרה בשפה פשוטה", "עזרה", "מה הפעולה עושה", "מה לעשות", "טיפ: ", "קיצור מקשים"],
+    "hi": ["सरल भाषा में सहायता", "सहायता", "यह क्या करता है", "क्या करना है", "सुझाव: ", "कीबोर्ड शॉर्टकट"],
+    "nl": ["Hulp in eenvoudige taal", "Hulp", "Wat het doet", "Wat je moet doen", "Tip: ", "Sneltoets"],
+    "sv": ["Hjälp på enkelt språk", "Hjälp", "Vad det gör", "Vad du ska göra", "Tips: ", "Kortkommando"],
+    "fi": ["Ohje selkeällä kielellä", "Ohje", "Mitä se tekee", "Mitä tehdä", "Vinkki: ", "Pikanäppäin"],
+    "cs": ["Nápověda jednoduchým jazykem", "Nápověda", "Co dělá", "Co udělat", "Tip: ", "Klávesová zkratka"],
+    "ro": ["Ajutor pe înțelesul tuturor", "Ajutor", "Ce face", "Ce trebuie făcut", "Sfat: ", "Scurtătură de la tastatură"],
+    "el": ["Βοήθεια με απλά λόγια", "Βοήθεια", "Τι κάνει", "Τι να κάνεις", "Συμβουλή: ", "Συντόμευση πληκτρολογίου"],
+    "vi": ["Trợ giúp bằng ngôn ngữ đơn giản", "Trợ giúp", "Chức năng", "Cách thực hiện", "Mẹo: ", "Phím tắt"],
+    "id": ["Bantuan dengan bahasa sederhana", "Bantuan", "Fungsinya", "Yang perlu dilakukan", "Tips: ", "Pintasan keyboard"],
+    "th": ["คำอธิบายที่เข้าใจง่าย", "ความช่วยเหลือ", "ทำอะไร", "วิธีใช้งาน", "เคล็ดลับ: ", "แป้นพิมพ์ลัด"],
+    "kk": ["Қарапайым тілдегі көмек", "Көмек", "Не істейді", "Не істеу керек", "Кеңес: ", "Пернетақта тіркесімі"],
+    "uz": ["Sodda tildagi yordam", "Yordam", "Nima qiladi", "Nima qilish kerak", "Maslahat: ", "Klaviatura yorlig‘i"],
+    "uz-Cyrl": ["Содда тилдаги ёрдам", "Ёрдам", "Нима қилади", "Нима қилиш керак", "Маслаҳат: ", "Клавиатура ёрлиғи"],
+    "ka": ["მარტივი ენით დახმარება", "დახმარება", "რას აკეთებს", "რა უნდა გააკეთოთ", "რჩევა: ", "კლავიატურის მალსახმობი"],
+    "hy": ["Օգնություն պարզ լեզվով", "Օգնություն", "Ինչ է անում", "Ինչ անել", "Խորհուրդ․ ", "Ստեղնաշարի դյուրանցում"],
+    "tk": ["Ýönekeý dilde kömek", "Kömek", "Näme edýär", "Näme etmeli", "Maslahat: ", "Klawiatura gysga ýoly"],
+    "az": ["Sadə dildə kömək", "Kömək", "Nə edir", "Nə etmək lazımdır", "Məsləhət: ", "Klaviatura qısayolu"],
+    "ky": ["Жөнөкөй тилдеги жардам", "Жардам", "Эмне кылат", "Эмне кылуу керек", "Кеңеш: ", "Баскычтоп жарлыгы"],
+    "tg": ["Кӯмак бо забони сода", "Кӯмак", "Чӣ мекунад", "Чӣ бояд кард", "Маслиҳат: ", "Миёнабури клавиатура"],
+    "be": ["Дапамога простай мовай", "Дапамога", "Што робіць", "Што зрабіць", "Парада: ", "Спалучэнне клавіш"]
+  });
+  if (Object.keys(tooltipUiLabelCatalog).length !== 36 ||
+      Object.values(tooltipUiLabelCatalog).some(values => !Array.isArray(values) || values.length !== tooltipUiLabelKeys.length)) {
+    throw new Error("Tooltip UI label catalog must contain six labels for all 36 locales.");
+  }
+
+  const revision = "beta-3.6.46-tooltip-ui-labels-stage12";
 
   function apply(locale) {
     const packs = root.MontazhnayaLocalePacks || Object.create(null);
     const current = packs[locale];
-    const patch = corrections[locale];
-    if (!current || !patch) return current || null;
+    const patch = corrections[locale] || null;
+    const tooltipLabels = tooltipUiLabelCatalog[locale] || null;
+    if (!current) return null;
+    if (!patch && !tooltipLabels) return current;
     if (current.editorialRevision === revision) return current;
     const messages = Object.assign(Object.create(null), current.messages || {});
-    for (const [source, value] of Object.entries(patch)) {
+    for (const [source, value] of Object.entries(patch || {})) {
       if (typeof value !== "string" || !value.trim()) throw new Error("Invalid editorial translation: " + locale + "/" + source);
       if (!Object.prototype.hasOwnProperty.call(messages, source)) throw new Error("Unknown editorial source label: " + locale + "/" + source);
       messages[source] = value;
+    }
+    if (tooltipLabels) {
+      tooltipUiLabelKeys.forEach((source, index) => {
+        const value = tooltipLabels[index];
+        if (typeof value !== "string" || !value.trim()) throw new Error("Invalid tooltip UI translation: " + locale + "/" + source);
+        messages[source] = value;
+      });
     }
     const next = Object.freeze({
       ...current,
       appTitle: appTitleCorrections[locale] || current.appTitle,
       messages: Object.freeze(messages),
       editorialRevision: revision,
-      editorialCorrectionCount: Object.keys(patch).length,
+      editorialCorrectionCount: Object.keys(patch || {}).length,
+      tooltipUiLabelCount: tooltipLabels ? tooltipLabels.length : 0,
       editorialReviewStatus: "machine-assisted-full-dictionary-audit-pass-1; native-speaker-review-pending"
     });
     packs[locale] = next;
