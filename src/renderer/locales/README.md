@@ -101,3 +101,20 @@ The dedicated audit `qa/audit-detailed-tooltip-locales.cjs` checks all 364 detai
 
 The detailed-tooltip audit also counts exact unchanged matches to the Russian source text and reports Cyrillic characters appearing in locales that do not normally use Cyrillic. It also fails the test suite if any preview fragment remains exactly equal to the English reference: the current catalogue has zero exact English matches across all 12,376 preview translation cells. The immutable technical-token check is deliberately limited to file extensions, codec/container/platform identifiers and resolution labels; localized keyboard names and units such as FPS and Mbps are not treated as missing tokens. Exact Russian-source matches fail the focused regression test; unexpected script mixing remains a review candidate so valid loanwords or isolated glyphs can be judged in context. The four CJK language labels for Ripple Delete are preserved in their native forms, while the other 30 preview locales must match the editorial tooltip glossary.
 This audit is structural and technical only. It does not certify grammar, naturalness, regional terminology or accessibility. All 34 preview packs remain machine-assisted drafts pending native-speaker review; `uz-Cyrl` remains a transliteration-derived draft requiring independent review.
+
+
+## Contextual-help chrome and GUI audit corrections — beta 3.6.46 Stage 12
+
+The six shared labels around contextual help are translated independently from the 436-key base message dictionary. This includes the plain-language heading, help title, the two section labels, the tip prefix and keyboard-shortcut label. The six labels are registered for all 36 selectable locales, including Russian and English.
+
+The dedicated tooltipUiLabels locale field is resolved by MontazhnayaI18n.translate() before the regular message dictionaries. This keeps the canonical English reference-key count at 436 and avoids inflating message-coverage statistics with renderer chrome.
+
+The real Electron GUI audit was corrected in four places:
+
+- Direction checks now compare the recorded document.documentElement.dir value directly.
+- Detailed-fragment display checks compare the normalized text after uiText() translation, matching the renderer's actual display path.
+- Summary counters use the length of the sample arrays rather than adding the arrays themselves.
+- Vertical text-box/card overflow checks allow a 4-pixel subpixel line-box tolerance. Horizontal overflow checks remain unchanged.
+
+The independent Node-only CI suite verifies six contextual-help labels in all 36 locales and checks that they remain outside the canonical messages dictionary. The full Electron GUI audit must be rerun on Windows after the update; native-speaker review is still required for machine-assisted translations.
+
