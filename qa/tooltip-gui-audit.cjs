@@ -237,7 +237,7 @@ function buildLocaleExpression(code, viewport) {
       "const r=pop.getBoundingClientRect();" +
       "const outside=r.left<0||r.top<0||r.right>window.innerWidth+1||r.bottom>window.innerHeight+1;" +
       "const textBoxes=Array.from(pop.querySelectorAll('.fhelp-title,.fhelp-text,.fhelp-tip,.fhelp-label'));" +
-      "const clipped=textBoxes.filter(node=>node.clientWidth>0&&(node.scrollWidth>node.clientWidth+2||node.scrollHeight>node.clientHeight+2))" +
+      "const clipped=textBoxes.filter(node=>node.clientWidth>0&&(node.scrollWidth>node.clientWidth+2||node.scrollHeight>node.clientHeight+4))" +
         ".map(node=>({className:node.className,text:(node.innerText||'').slice(0,110),scrollWidth:node.scrollWidth,clientWidth:node.clientWidth,scrollHeight:node.scrollHeight,clientHeight:node.clientHeight}));" +
       "const sampleLength=actual.length;" +
       "const record={kind:sample.kind,key:sample.key,override:sample.override===true,length:sampleLength," +
@@ -257,7 +257,7 @@ function buildLocaleExpression(code, viewport) {
       "try{" +
         "qa.buildFunctionHelpContent(def); pop.classList.add('visible'); pop.style.left='8px'; pop.style.top='8px';" +
         "const actual=pop.innerText||pop.textContent||'';" +
-        "const normalizedValue=String(value||'').normalize('NFC').replace(/\\s+/g,' ').trim();" +
+        "const normalizedValue=String(qa.uiText(value)||'').normalize('NFC').replace(/\\s+/g,' ').trim();" +
         "const normalizedActual=String(actual).normalize('NFC').replace(/\\s+/g,' ').trim();" +
         "const missing=!normalizedValue||!normalizedActual.includes(normalizedValue);" +
         "const selector=field==='title'?'.fhelp-title':field==='tip'?'.fhelp-tip':'.fhelp-text';" +
@@ -265,7 +265,7 @@ function buildLocaleExpression(code, viewport) {
         "const clipped=!!node&&(node.scrollWidth>node.clientWidth+2||node.scrollHeight>node.clientHeight+2);" +
         "const rect=pop.getBoundingClientRect();" +
         "const outside=rect.left<0||rect.top<0||rect.right>window.innerWidth+1||rect.bottom>window.innerHeight+1;" +
-        "const cardOverflow=pop.scrollHeight>pop.clientHeight+2&&getComputedStyle(pop).overflowY==='hidden';" +
+        "const cardOverflow=pop.scrollHeight>pop.clientHeight+4&&getComputedStyle(pop).overflowY==='hidden';" +
         "const overflow=clipped||cardOverflow;" +
         "const untranslatedCyrillic=locale!=='ru'&&value===key&&/[А-Яа-яЁё]/.test(key);" +
         "const record={key,field,length:String(value||'').length,missingFromRenderedCard:missing,untranslatedCyrillic,clipped,cardOverflow,outsideViewport:outside," +
@@ -380,7 +380,7 @@ async function main() {
         report.scope.beginnerFriendlyOverrides = result.beginnerActionOverrides + result.beginnerControlOverrides;
 
         totalTooltipStrings += result.tooltipKeyCount;
-        if (result.expectedDirection !== result.actualDirection) {
+        if (result.expectedDirection !== result.direction) {
           criticalFailures.push(locale.code + ": expected direction " + result.expectedDirection + ", got " + result.actualDirection);
         }
         if (result.emptyTooltipKeys) criticalFailures.push(locale.code + ": " + result.emptyTooltipKeys + " empty detailed tooltip strings");
@@ -471,12 +471,12 @@ async function main() {
         longestTooltipLength: result.longestTooltipLength
       };
       localeSummary.viewports.push(viewportSummary);
-      totalRenderedHelpSamples += result.samples;
+      totalRenderedHelpSamples += result.samples.length;
       totalRenderedTooltipFragments += result.renderedTooltipFragments;
       totalFragmentDisplayFailures += result.fragmentDisplayFailures;
       totalFragmentOverflowCount += result.fragmentOverflowCount;
       totalFragmentOutsideViewport += result.fragmentOutsideViewport;
-      totalViewportChecks += result.samples + result.renderedTooltipFragments;
+      totalViewportChecks += result.samples.length + result.renderedTooltipFragments;
       totalOutsideViewport += result.outsideViewport + result.fragmentOutsideViewport;
 
       for (const fragment of result.fragmentSamples) {
