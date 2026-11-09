@@ -128,3 +128,63 @@ test("Ukrainian and Kazakh contextual timeline labels are localized without chan
   assert.match(i18n, /const contextualHelp = root\.MontazhnayaContextualHelpTranslations\?\.\[locale\]/);
   assert.match(i18n, /contextualHelp \|\| \{\}/);
 });
+
+test("live contextual-help translations cover every source string for wave one locales", () => {
+  const window = {
+    MontazhnayaContextualHelpTranslations: {
+      uk: { "Таймлайн": "Часова шкала" },
+      kk: { "Таймлайн": "Уақыт шкаласы" }
+    }
+  };
+  const context = { window };
+  vm.createContext(context);
+  vm.runInContext(read("src/renderer/locales/contextual-help-translations.js"), context, {
+    filename: "contextual-help-translations.js"
+  });
+
+  const packs = window.MontazhnayaContextualHelpTranslations;
+  const expectedLocales = ["de", "fr", "es", "pt-BR", "it", "pl", "uk", "tr"];
+  assert.deepEqual(
+    Array.from(window.MontazhnayaContextualHelpTranslationStatus.locales),
+    expectedLocales
+  );
+  assert.equal(window.MontazhnayaContextualHelpTranslationStatus.sourceCount, 88);
+
+  for (const locale of expectedLocales) {
+    for (const [source, translated] of Object.entries(packs[locale])) {
+      assert.equal(typeof translated, "string", locale + "/" + source);
+      assert.ok(translated.trim(), locale + "/" + source + " is empty");
+      assert.notEqual(translated, source, locale + "/" + source + " was not translated");
+    }
+  }
+
+  assert.equal(packs.de["Меню «Файл»"], "Menü „Datei“");
+  assert.equal(packs.fr["Монитор предпросмотра"], "Moniteur d’aperçu");
+  assert.equal(packs.es["Панель свойств"], "Panel de propiedades");
+  assert.equal(packs["pt-BR"]["Скорость клипа"], "Velocidade do clipe");
+  assert.equal(packs.it["Вкладка «Медиа»"], "Scheda Media");
+  assert.equal(packs.pl["Дорожка {track}"], "Ścieżka {track}");
+  assert.equal(packs.uk["Дорожка {track}"], "Доріжка {track}");
+  assert.equal(packs.tr["Управление дорожкой {track}"], "Kanal {track} denetimleri");
+  assert.equal(packs.uk["Таймлайн"], "Часова шкала");
+  assert.equal(packs.kk["Таймлайн"], "Уақыт шкаласы");
+});
+
+test("contextual-help GUI audit distinguishes English fallback from missing Cyrillic translations", () => {
+  const audit = read("qa/tooltip-gui-audit.cjs");
+  assert.match(audit, /api\.translateFallback\(value\)/);
+  assert.match(audit, /englishFallbackFields\.push\(field\)/);
+  assert.match(audit, /english-fallback-in-contextual-help/);
+  assert.match(audit, /English fallback fields in live contextual help/);
+
+  const i18n = read("src/renderer/i18n.js");
+  assert.match(i18n, /translateFallback: source =>/);
+});
+
+test("contextual-help locale module loads after editorial overrides and before tooltip source setup", () => {
+  const html = read("src/renderer/index.html");
+  const editorial = html.indexOf('<script src="./locales/editorial-overrides.js"></script>');
+  const contextual = html.indexOf('<script src="./locales/contextual-help-translations.js"></script>');
+  const tooltipSource = html.indexOf('<script src="./locales/tooltip-source.js"></script>');
+  assert.ok(editorial >= 0 && contextual > editorial && tooltipSource > contextual);
+});
