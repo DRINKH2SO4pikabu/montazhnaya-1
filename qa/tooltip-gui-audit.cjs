@@ -141,6 +141,7 @@ let totalRenderedTooltipFragments = 0;
 let totalFragmentDisplayFailures = 0;
 let totalFragmentOverflowCount = 0;
 let totalFragmentOutsideViewport = 0;
+let totalEnglishFallbackFields = 0;
 let totalViewportChecks = 0;
 let totalOutsideViewport = 0;
 
@@ -224,13 +225,13 @@ function buildLocaleExpression(code, viewport) {
       "}catch(error){sampleResults.push({kind:sample.kind,key:sample.key,status:'exception',error:String(error&&error.message||error)});continue;}" +
       "const actual=pop.innerText||pop.textContent||'';" +
       "const fields=['title','purpose','usage','tip'];" +
-      "const untranslated=[]; const missingFields=[]; const expectedText=[];" +
+      "const untranslated=[]; const englishFallbackFields=[]; const missingFields=[]; const expectedText=[];" +
       "for(const field of fields){" +
         "const value=def[field];" +
         "if(field!=='tip'&&(!value||!String(value).trim())) missingFields.push(field);" +
         "if(typeof value==='string'&&value.trim()){" +
           "const display=qa.uiText(value); expectedText.push(display);" +
-          "if(locale!=='ru'&&display===value&&/[А-Яа-яЁё]/.test(value)) untranslated.push(field);" +
+          "if(locale!=='ru'&&display===value&&/[А-Яа-яЁё]/.test(value)) untranslated.push(field);" +"const englishFallback=typeof api.translateFallback==='function'?api.translateFallback(value):value;" +"if(locale!=='ru'&&locale!=='en'&&display!==value&&display===englishFallback) englishFallbackFields.push(field);" +
         "}" +
       "}" +
       "const missingDisplayed=expectedText.filter(value=>value&& !actual.includes(value));" +
@@ -242,7 +243,7 @@ function buildLocaleExpression(code, viewport) {
       "const sampleLength=actual.length;" +
       "const record={kind:sample.kind,key:sample.key,override:sample.override===true,length:sampleLength," +
         "outsideViewport:outside,rect:{left:Math.round(r.left),top:Math.round(r.top),right:Math.round(r.right),bottom:Math.round(r.bottom)}," +
-        "untranslatedCyrillicFields:untranslated,missingDisplayedFields:missingDisplayed,clippedTextBoxes:clipped," +
+        "untranslatedCyrillicFields:untranslated,englishFallbackFields,missingDisplayedFields:missingDisplayed,clippedTextBoxes:clipped," +
         "actualText:actual.slice(0,1200)};" +
       "sampleResults.push(record);" +
       "if(sampleLength>longestLength){longestLength=sampleLength;longest={sample,record};}" +
@@ -294,7 +295,7 @@ function buildLocaleExpression(code, viewport) {
       "longestTooltipFragment:longestFragment?longestFragment.key:null,longestTooltipFragmentLength:longestFragmentLength," +
       "fragmentSamples," +
       "outsideViewport:sampleResults.filter(item=>item.outsideViewport).length," +
-      "untranslatedCyrillicFields:sampleResults.reduce((sum,item)=>sum+(item.untranslatedCyrillicFields||[]).length,0)," +
+      "untranslatedCyrillicFields:sampleResults.reduce((sum,item)=>sum+(item.untranslatedCyrillicFields||[]).length,0)," +"englishFallbackFields:sampleResults.reduce((sum,item)=>sum+(item.englishFallbackFields||[]).length,0)," +
       "clippedTextBoxes:sampleResults.reduce((sum,item)=>sum+(item.clippedTextBoxes||[]).length,0)," +
       "missingDisplayedFields:sampleResults.reduce((sum,item)=>sum+(item.missingDisplayedFields||[]).length,0)," +
       "metadata:packs.metadata[locale]|| (locale==='ru'?'source-language': 'missing')," +
@@ -421,6 +422,16 @@ async function main() {
             fields: sample.untranslatedCyrillicFields
           });
         }
+        if ((sample.englishFallbackFields || []).length) {
+          reviewFlags.push({
+            locale: locale.code,
+            viewport,
+            type: "english-fallback-in-contextual-help",
+            key: sample.key,
+            fields: sample.englishFallbackFields,
+            note: "This contextual-help field is still using the English fallback rather than a locale-specific translation."
+          });
+        }
         if ((sample.missingDisplayedFields || []).length) {
           reviewFlags.push({
             locale: locale.code,
@@ -458,6 +469,7 @@ async function main() {
         renderedSamples: result.samples,
         outsideViewport: result.outsideViewport,
         untranslatedCyrillicFields: result.untranslatedCyrillicFields,
+        englishFallbackFields: result.englishFallbackFields,
         clippedTextBoxes: result.clippedTextBoxes,
         missingDisplayedFields: result.missingDisplayedFields,
         renderedTooltipFragments: result.renderedTooltipFragments,
@@ -476,6 +488,7 @@ async function main() {
       totalFragmentDisplayFailures += result.fragmentDisplayFailures;
       totalFragmentOverflowCount += result.fragmentOverflowCount;
       totalFragmentOutsideViewport += result.fragmentOutsideViewport;
+      totalEnglishFallbackFields += result.englishFallbackFields;
       totalViewportChecks += result.samples.length + result.renderedTooltipFragments;
       totalOutsideViewport += result.outsideViewport + result.fragmentOutsideViewport;
 
@@ -570,6 +583,7 @@ async function main() {
     fragmentDisplayFailures: totalFragmentDisplayFailures,
     fragmentOverflowCount: totalFragmentOverflowCount,
     fragmentOutsideViewport: totalFragmentOutsideViewport,
+    englishFallbackFields: totalEnglishFallbackFields,
     fragmentUntranslatedCyrillic: new Set(reviewFlags.filter(flag => flag.type === "untranslated-detailed-tooltip-fragment").map(flag => flag.locale + "|" + flag.key)).size,
     popoverViewportChecks: totalViewportChecks,
     outsideViewportCount: totalOutsideViewport,
@@ -601,6 +615,7 @@ async function main() {
     "- Individual detailed tooltip fragments rendered: **" + report.summary.renderedTooltipFragments + "**",
     "- Detailed tooltip fragments not rendered: **" + report.summary.fragmentDisplayFailures + "**",
     "- Detailed tooltip overflow flags: **" + report.summary.fragmentOverflowCount + "**",
+    "- English fallback fields in live contextual help: **" + report.summary.englishFallbackFields + "** (translation work remaining)",
     "- Untranslated detailed tooltip fragments: **" + report.summary.fragmentUntranslatedCyrillic + "** (review candidates)",
     "- Popover viewport checks: **" + report.summary.popoverViewportChecks + "**",
     "- Popovers outside the visible viewport: **" + report.summary.outsideViewportCount + "**",
@@ -616,7 +631,7 @@ async function main() {
       const sampleCount = item.viewports.reduce((sum, viewport) => sum + viewport.renderedSamples, 0);
       const outside = item.viewports.reduce((sum, viewport) => sum + viewport.outsideViewport + viewport.fragmentOutsideViewport, 0);
       const flags = item.viewports.reduce((sum, viewport) =>
-        sum + viewport.untranslatedCyrillicFields + viewport.clippedTextBoxes + viewport.missingDisplayedFields +
+        sum + viewport.untranslatedCyrillicFields + (viewport.englishFallbackFields || 0) + viewport.clippedTextBoxes + viewport.missingDisplayedFields +
           viewport.fragmentOverflowCount + viewport.fragmentUntranslatedCyrillic + viewport.fragmentDisplayFailures, 0);
       return "| " + item.code + " | " + item.actualDirection + " | " + item.detailedTooltipFragments +
         " | " + item.actionDefinitions + " | " + item.controlDefinitions + " | " + fragmentCount + " | " + sampleCount +
