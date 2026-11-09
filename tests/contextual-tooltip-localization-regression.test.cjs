@@ -157,7 +157,7 @@ test("live contextual-help translations cover every source string in all 34 loca
 
   const sourceCatalogue = window.MontazhnayaContextualHelpSourceEnglish;
   assert.equal(Object.keys(sourceCatalogue).length, 88);
-  const placeholders = value => Array.from(value.matchAll(/\\{[a-z]+\\}/g), match => match[0]).sort();
+  const placeholders = value => Array.from(value.matchAll(/\{[a-z]+\}/g), match => match[0]).sort();
 
   for (const locale of expectedLocales) {
     for (const [source, englishFallback] of Object.entries(sourceCatalogue)) {
