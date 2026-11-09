@@ -170,7 +170,7 @@
       "Shows the project's time scale and lets you move the playhead quickly.": "Zeigt die Zeitskala des Projekts und ermöglicht es, den Abspielkopf schnell zu bewegen.",
       "Click or drag on the ruler to move to a specific moment. Markers identify important points.": "Klicke auf die Skala oder ziehe den Abspielkopf, um zu einem bestimmten Moment zu springen. Markierungen kennzeichnen wichtige Stellen.",
       "Protects the track from accidental clip moves, trims, and deletions.": "Schützt die Spur vor versehentlichem Verschieben, Kürzen und Löschen von Clips.",
-      "Click the lock icon to toggle track locking.": "Klicke auf das Schlosssymbol, um die Sp Sperre ein- oder auszuschalten.",
+      "Click the lock icon to toggle track locking.": "Klicke auf das Schlosssymbol, um die Spursperre ein- oder auszuschalten.",
       "Click the eye icon to toggle track visibility.": "Klicke auf das Augensymbol, um die Sichtbarkeit der Spur umzuschalten.",
       "Opens the library of visual transitions that can be applied to video clips.": "Öffnet die Bibliothek mit visuellen Übergängen für Videoclips.",
       "Import files using the button above, then select them or drag them onto tracks.": "Importiere Dateien über die Schaltfläche oben und wähle sie anschließend aus oder ziehe sie auf eine Spur.",
