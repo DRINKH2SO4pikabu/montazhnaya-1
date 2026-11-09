@@ -516,6 +516,7 @@ async function main() {
           locale.code, viewport.width, viewport.height, "fragment/" + fragment.field, fragment.key,
           fragment.length, fragment.outsideViewport,
           fragment.untranslatedCyrillic ? "untranslated" : "",
+          "",
           fragment.missingFromRenderedCard ? "not-rendered" : "",
           (fragment.clipped || fragment.cardOverflow) ? 1 : 0,
           fragment.actualText || fragment.error || ""
@@ -527,6 +528,7 @@ async function main() {
           locale.code, viewport.width, viewport.height, sample.kind, sample.key,
           sample.length, sample.outsideViewport,
           (sample.untranslatedCyrillicFields || []).join(";"),
+          (sample.englishFallbackFields || []).join(";"),
           (sample.missingDisplayedFields || []).join(";"),
           (sample.clippedTextBoxes || []).length,
           (sample.actualText || "").replace(/\s+/g, " ").slice(0, 900)
@@ -598,7 +600,7 @@ async function main() {
   writeCsv(csvPath, [[
     "locale", "viewport_width", "viewport_height", "sample_type", "sample_key",
     "rendered_characters", "outside_viewport", "untranslated_cyrillic_fields",
-    "missing_displayed_fields", "clipped_text_box_count", "rendered_text"
+    "english_fallback_fields", "missing_displayed_fields", "clipped_text_box_count", "rendered_text"
   ], ...detailRows]);
 
   const markdown = [
