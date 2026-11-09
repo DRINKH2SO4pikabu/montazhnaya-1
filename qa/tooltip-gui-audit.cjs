@@ -167,7 +167,7 @@ function buildLocaleExpression(code, viewport) {
     "const source=window.MontazhnayaTooltipSource;" +
     "const packs=window.MontazhnayaTooltipTranslations;" +
     "const helpExtension=window.MontazhnayaContextualHelpExtensionStatus||{};" +
-    "if(locale!=='ru'&&locale!=='en'&&(helpExtension.sourceCount!==68||!Array.isArray(helpExtension.locales)||!helpExtension.locales.includes(locale))) throw new Error('Additional contextual-help translations are missing for '+locale);" +
+    "if(locale!=='ru'&&locale!=='en'&&(helpExtension.sourceCount!==77||!Array.isArray(helpExtension.locales)||!helpExtension.locales.includes(locale))) throw new Error('Additional contextual-help translations are missing for '+locale);" +
     "if(!source||!Array.isArray(source.textKeys)||!packs) throw new Error('Tooltip source registry is unavailable');" +
     "const keys=source.textKeys;" +
     "const tooltipPack=packs.packs[locale]||{};" +
@@ -341,6 +341,7 @@ async function main() {
       actionDefinitions: null,
       controlDefinitions: null,
       beginnerFriendlyOverrides: null,
+      additionalContextualHelpStrings: null,
       viewports
     },
     localeSummaries: [],
@@ -381,6 +382,7 @@ async function main() {
         report.scope.actionDefinitions = result.actionDefinitions;
         report.scope.controlDefinitions = result.controlDefinitions;
         report.scope.beginnerFriendlyOverrides = result.beginnerActionOverrides + result.beginnerControlOverrides;
+        report.scope.additionalContextualHelpStrings = result.additionalContextualHelpStrings;
 
         totalTooltipStrings += result.tooltipKeyCount;
         if (result.expectedDirection !== result.direction) {
@@ -588,7 +590,7 @@ async function main() {
     fragmentOverflowCount: totalFragmentOverflowCount,
     fragmentOutsideViewport: totalFragmentOutsideViewport,
     englishFallbackFields: totalEnglishFallbackFields,
-    additionalContextualHelpStrings: 68,
+    additionalContextualHelpStrings: report.scope.additionalContextualHelpStrings,
     fragmentUntranslatedCyrillic: new Set(reviewFlags.filter(flag => flag.type === "untranslated-detailed-tooltip-fragment").map(flag => flag.locale + "|" + flag.key)).size,
     popoverViewportChecks: totalViewportChecks,
     outsideViewportCount: totalOutsideViewport,
