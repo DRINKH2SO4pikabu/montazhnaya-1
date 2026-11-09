@@ -234,8 +234,8 @@ test("remaining live contextual-help phrases cover all 34 additional locale pack
   const requiredSources = [
     "Показывает сведения о версии и возможностях редактора.",
     "Используй, чтобы узнать версию проекта и основные ограничения.",
-    "Проверяет наличие локальных инструментов, их версии и необходимые кодеки.",
-    "Открой окно диагностики из меню «Справка» и дождись окончания пробного кодирования.",
+    "Проверяет доступность локальных инструментов, их версии и поддержку нужных форматов.",
+    "Открой это окно из меню «Справка» и дождись окончания проверок.",
     "Перед большим монтажом можно заблокировать уже выверенные дорожки.",
     "Скрытие помогает сравнивать варианты наложения.",
     "Это не удаляет звук из исходного файла.",
@@ -245,6 +245,9 @@ test("remaining live contextual-help phrases cover all 34 additional locale pack
   for (const source of requiredSources) {
     assert.ok(sources.includes(source), "Live contextual-help translation source is missing: " + source);
   }
+  const renderer = read("src/renderer/index.html");
+  assert.ok(renderer.includes("purpose:'Проверяет доступность локальных инструментов, их версии и поддержку нужных форматов.'"));
+  assert.ok(renderer.includes("usage:'Открой это окно из меню «Справка» и дождись окончания проверок.'"));
 
   const placeholders = value => Array.from(value.matchAll(/\{[a-z]+\}/g), match => match[0]).sort();
   for (const locale of expectedLocales) {
