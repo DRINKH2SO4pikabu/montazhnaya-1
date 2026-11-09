@@ -231,7 +231,7 @@ test("remaining live contextual-help phrases cover all 34 additional locale pack
   assert.deepEqual(Array.from(status.locales), expectedLocales);
   assert.equal(status.status, "machine-assisted-draft-native-speaker-review-pending");
 
-  const placeholders = value => Array.from(value.matchAll(/\\{[a-z]+\\}/g), match => match[0]).sort();
+  const placeholders = value => Array.from(value.matchAll(/\{[a-z]+\}/g), match => match[0]).sort();
   for (const locale of expectedLocales) {
     for (const source of sources) {
       const translated = packs[locale]?.[source];
