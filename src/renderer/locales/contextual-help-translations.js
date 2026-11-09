@@ -3339,7 +3339,7 @@
 
 
 /* Regional live contextual-help translations — remaining help fields.
- * These additions cover 68 distinct source phrases observed in GUI audit samples.
+ * These additions cover 77 distinct source phrases observed in GUI audit samples.
  * Draft translations are machine-assisted and still require native-speaker review.
  */
 (function (root) {
@@ -3412,7 +3412,16 @@
   "Экспорт и поддержка кодеков зависят от браузера и подключённых библиотек.",
   "Это задаёт границу экспорта, не обрезая сам исходный клип.",
   "Это не точка начала исходного видео.",
-  "Эту настройку можно включить снова в любой момент."
+  "Эту настройку можно включить снова в любой момент.",
+  "Показывает сведения о версии и возможностях редактора.",
+  "Используй, чтобы узнать версию проекта и основные ограничения.",
+  "Проверяет наличие локальных инструментов, их версии и необходимые кодеки.",
+  "Открой окно диагностики из меню «Справка» и дождись окончания пробного кодирования.",
+  "Перед большим монтажом можно заблокировать уже выверенные дорожки.",
+  "Скрытие помогает сравнивать варианты наложения.",
+  "Это не удаляет звук из исходного файла.",
+  "Позиции клипов измеряются по времени, а не по пикселям.",
+  "Таймлайн",
 ];
   const translations = {
   "de": [
@@ -3484,6 +3493,15 @@
     "Dies setzt die Exportgrenze, ohne den Quellclip selbst zu trimmen.",
     "Dies ist nicht der Startpunkt des Quellvideos.",
     "Diese Einstellung kannst du jederzeit wieder aktivieren."
+    "Zeigt Versionsinformationen und die Funktionen des Editors an.",
+    "Hier findest du die Version des Editors und seine wichtigsten Einschränkungen.",
+    "Prüft, ob lokale Werkzeuge verfügbar sind, zeigt ihre Versionen an und überprüft die benötigten Codecs.",
+    "Öffne die Diagnose über das Menü „Hilfe“ und warte, bis der Testlauf abgeschlossen ist.",
+    "Sperre bereits fertig abgestimmte Spuren, bevor du größere Änderungen vornimmst.",
+    "Mit dem Ausblenden einer Spur kannst du verschiedene Ebenenkombinationen vergleichen.",
+    "Dadurch wird der Ton in der Quelldatei nicht gelöscht.",
+    "Clippositionen werden anhand der Zeit gemessen, nicht anhand von Pixeln.",
+    "Zeitleiste",
   ],
   "fr": [
     "100 % correspond au centre, selon le système de coordonnées du clip utilisé.",
@@ -3554,6 +3572,15 @@
     "Cela définit la limite d’export sans rogner le clip source lui-même.",
     "Ce n’est pas le point de départ de la vidéo source.",
     "Vous pouvez réactiver ce réglage à tout moment."
+    "Affiche la version et les fonctionnalités du logiciel de montage.",
+    "Consulte cette fenêtre pour connaître la version de l’application et ses principales limites.",
+    "Vérifie la disponibilité des outils locaux, affiche leurs versions et contrôle la prise en charge des codecs requis.",
+    "Ouvre cette fenêtre depuis le menu « Aide » et attends la fin de l’encodage de test.",
+    "Verrouille les pistes déjà finalisées avant d’effectuer des modifications importantes.",
+    "Masquer une piste permet de comparer différentes combinaisons de calques.",
+    "Le son du fichier source n’est pas supprimé.",
+    "La position des clips se mesure en temps, et non en pixels.",
+    "Chronologie",
   ],
   "es": [
     "El 100 % corresponde al centro, según el sistema de coordenadas del clip.",
@@ -3624,6 +3651,15 @@
     "Esto establece el límite de exportación sin recortar el clip original.",
     "Este no es el punto de inicio del vídeo original.",
     "Puedes volver a activar esta opción en cualquier momento."
+    "Muestra la versión y las funciones del editor.",
+    "Consulta aquí la versión de la aplicación y sus principales limitaciones.",
+    "Comprueba si las herramientas locales están disponibles, muestra sus versiones y verifica los códecs necesarios.",
+    "Abre esta ventana desde el menú «Ayuda» y espera a que termine la codificación de prueba.",
+    "Bloquea las pistas que ya estén terminadas antes de hacer cambios importantes.",
+    "Ocultar una pista ayuda a comparar distintas combinaciones de capas.",
+    "Esto no elimina el audio del archivo original.",
+    "Las posiciones de los clips se miden en tiempo, no en píxeles.",
+    "Línea de tiempo",
   ],
   "pt-BR": [
     "100% corresponde ao centro, conforme o sistema de coordenadas usado pelo clipe.",
@@ -3694,6 +3730,15 @@
     "Isso define o limite da exportação sem recortar o clipe de origem.",
     "Este não é o ponto inicial do vídeo de origem.",
     "Você pode ativar esta opção novamente a qualquer momento."
+    "Mostra a versão e os recursos do editor.",
+    "Use esta janela para conferir a versão do aplicativo e suas principais limitações.",
+    "Verifica se as ferramentas locais estão disponíveis, informa suas versões e verifica os codecs necessários.",
+    "Abra esta janela pelo menu “Ajuda” e aguarde o fim da codificação de teste.",
+    "Bloqueie as faixas já finalizadas antes de fazer alterações importantes.",
+    "Ocultar uma faixa ajuda a comparar diferentes combinações de camadas.",
+    "Isso não remove o áudio do arquivo original.",
+    "As posições dos clipes são medidas em tempo, não em pixels.",
+    "Linha do tempo",
   ],
   "it": [
     "Il 100% corrisponde al centro, secondo il sistema di coordinate usato dalla clip.",
@@ -3764,6 +3809,15 @@
     "Questo imposta il limite di esportazione senza tagliare la clip sorgente.",
     "Questo non è il punto iniziale del video sorgente.",
     "Puoi riattivare questa impostazione in qualsiasi momento."
+    "Mostra la versione e le funzionalità dell’editor.",
+    "Usa questa finestra per verificare la versione dell’applicazione e i suoi principali limiti.",
+    "Verifica la disponibilità degli strumenti locali, ne mostra le versioni e controlla i codec richiesti.",
+    "Apri questa finestra dal menu «Aiuto» e attendi il completamento della codifica di prova.",
+    "Blocca le tracce già completate prima di apportare modifiche importanti.",
+    "Nascondere una traccia aiuta a confrontare diverse combinazioni di livelli.",
+    "Questo non elimina l’audio dal file sorgente.",
+    "Le posizioni delle clip sono misurate in base al tempo, non ai pixel.",
+    "Linea temporale",
   ],
   "pl": [
     "100% oznacza środek, jeśli tak działa bieżący układ współrzędnych klipu.",
@@ -3834,6 +3888,15 @@
     "To ustawia granicę eksportu, nie przycinając samego klipu źródłowego.",
     "To nie jest punkt początkowy materiału źródłowego.",
     "To ustawienie można ponownie włączyć w dowolnym momencie."
+    "Wyświetla informacje o wersji i możliwościach edytora.",
+    "Sprawdź tutaj wersję aplikacji i jej najważniejsze ograniczenia.",
+    "Sprawdza dostępność lokalnych narzędzi, wyświetla ich wersje i weryfikuje wymagane kodeki.",
+    "Otwórz to okno z menu „Pomoc” i poczekaj na zakończenie kodowania testowego.",
+    "Zablokuj ukończone ścieżki przed wprowadzaniem większych zmian.",
+    "Ukrycie ścieżki ułatwia porównanie różnych układów warstw.",
+    "Nie usuwa to dźwięku z pliku źródłowego.",
+    "Pozycje klipów są mierzone w czasie, a nie w pikselach.",
+    "Oś czasu",
   ],
   "uk": [
     "100% відповідає центру, якщо саме так працює поточна система координат кліпу.",
@@ -3904,6 +3967,15 @@
     "Це задає межу експорту, не обрізаючи сам вихідний кліп.",
     "Це не початкова точка вихідного відео.",
     "Цей параметр можна знову ввімкнути будь-коли."
+    "Показує відомості про версію та можливості редактора.",
+    "Тут можна перевірити версію програми та її основні обмеження.",
+    "Перевіряє наявність локальних інструментів, показує їхні версії та перевіряє потрібні кодеки.",
+    "Відкрий це вікно через меню «Довідка» й дочекайся завершення тестового кодування.",
+    "Заблокуй уже готові доріжки перед внесенням значних змін.",
+    "Приховування доріжки допомагає порівнювати різні комбінації шарів.",
+    "Це не видаляє звук з вихідного файла.",
+    "Позиції кліпів вимірюються за часом, а не в пікселях.",
+    "Часова шкала",
   ],
   "tr": [
     "%100, geçerli klip koordinat sisteminde merkeze karşılık gelir.",
@@ -3974,6 +4046,15 @@
     "Bu, kaynak klibi kırpmadan dışa aktarma sınırını belirler.",
     "Bu, kaynak videonun başlangıç noktası değildir.",
     "Bu ayarı istediğin zaman yeniden açabilirsin."
+    "Düzenleyicinin sürümünü ve özelliklerini gösterir.",
+    "Uygulama sürümünü ve temel kısıtlamalarını buradan kontrol edebilirsin.",
+    "Yerel araçların kullanılabilirliğini denetler, sürümlerini gösterir ve gerekli codec desteğini doğrular.",
+    "Bu pencereyi Yardım menüsünden aç ve deneme kodlamasının bitmesini bekle.",
+    "Büyük değişiklikler yapmadan önce tamamladığın izleri kilitle.",
+    "Bir izi gizlemek, farklı katman birleşimlerini karşılaştırmana yardımcı olur.",
+    "Bu işlem kaynak dosyadaki sesi silmez.",
+    "Klip konumları piksel değil zaman cinsinden ölçülür.",
+    "Zaman çizelgesi",
   ],
   "nl": [
     "100% is het midden, als het huidige clipcoördinatenstelsel zo werkt.",
@@ -4044,6 +4125,15 @@
     "Dit stelt de exportgrens in zonder de bronclip zelf te trimmen.",
     "Dit is niet het beginpunt van de bronvideo.",
     "Je kunt deze instelling op elk moment weer inschakelen."
+    "Toont de versie en functies van de editor.",
+    "Gebruik dit venster om de applicatieversie en de belangrijkste beperkingen te bekijken.",
+    "Controleert of lokale hulpprogramma's beschikbaar zijn, toont hun versies en controleert de vereiste codecs.",
+    "Open dit venster via het menu Help en wacht tot de testcodering is voltooid.",
+    "Vergrendel sporen die al klaar zijn voordat je grote wijzigingen aanbrengt.",
+    "Een spoor verbergen helpt je verschillende laagcombinaties te vergelijken.",
+    "Hiermee wordt de audio in het bronbestand niet verwijderd.",
+    "Clipposities worden in tijd gemeten, niet in pixels.",
+    "Tijdlijn",
   ],
   "sv": [
     "100 % motsvarar mitten om klippets aktuella koordinatsystem använder den tolkningen.",
@@ -4114,6 +4204,15 @@
     "Detta anger exportgränsen utan att trimma själva källklippet.",
     "Detta är inte källvideons startpunkt.",
     "Du kan aktivera den här inställningen igen när som helst."
+    "Visar redigerarens version och funktioner.",
+    "Använd detta fönster för att kontrollera programmets version och dess viktigaste begränsningar.",
+    "Kontrollerar om lokala verktyg är tillgängliga, visar deras versioner och verifierar stöd för nödvändiga kodekar.",
+    "Öppna fönstret från menyn Hjälp och vänta tills testkodningen är klar.",
+    "Lås spår som redan är färdiga innan du gör större ändringar.",
+    "Att dölja ett spår hjälper dig att jämföra olika lagerkombinationer.",
+    "Detta tar inte bort ljudet från källfilen.",
+    "Klippens positioner mäts i tid, inte i pixlar.",
+    "Tidslinje",
   ],
   "fi": [
     "100 % vastaa keskikohtaa, jos leikkeen nykyinen koordinaattimalli käyttää tätä tulkintaa.",
@@ -4184,6 +4283,15 @@
     "Tämä määrittää vientirajan trimmaamatta itse lähdeleikettä.",
     "Tämä ei ole lähdevideon aloituskohta.",
     "Voit ottaa tämän asetuksen uudelleen käyttöön milloin tahansa."
+    "Näyttää editorin version ja ominaisuudet.",
+    "Tästä voit tarkistaa sovelluksen version ja sen tärkeimmät rajoitukset.",
+    "Tarkistaa paikallisten työkalujen saatavuuden ja versiot sekä tarvittavien koodekkien tuen.",
+    "Avaa tämä ikkuna Ohje-valikosta ja odota testikoodauksen valmistumista.",
+    "Lukitse valmiiksi muokatut raidat ennen suuria muutoksia.",
+    "Raidan piilottaminen auttaa vertailemaan erilaisia tasoyhdistelmiä.",
+    "Tämä ei poista ääntä alkuperäisestä tiedostosta.",
+    "Leikkeiden sijainnit mitataan ajassa, ei pikseleissä.",
+    "Aikajana",
   ],
   "cs": [
     "100 % odpovídá středu, pokud to tak používá aktuální souřadnicový systém klipu.",
@@ -4254,6 +4362,15 @@
     "Tím se nastaví hranice exportu, aniž by se ořízl zdrojový klip.",
     "Nejde o počáteční bod zdrojového videa.",
     "Toto nastavení můžeš kdykoli znovu zapnout."
+    "Zobrazuje informace o verzi a funkcích editoru.",
+    "Zde zjistíš verzi aplikace a její hlavní omezení.",
+    "Kontroluje dostupnost místních nástrojů, zobrazuje jejich verze a ověřuje potřebné kodeky.",
+    "Otevři toto okno z nabídky Nápověda a počkej na dokončení zkušebního kódování.",
+    "Před většími úpravami zamkni stopy, které už máš hotové.",
+    "Skrytí stopy pomáhá porovnat různé kombinace vrstev.",
+    "Tím se neodstraní zvuk ze zdrojového souboru.",
+    "Pozice klipů se měří v čase, nikoli v pixelech.",
+    "Časová osa",
   ],
   "ro": [
     "100% corespunde centrului, dacă așa funcționează sistemul de coordonate al clipului.",
@@ -4324,6 +4441,15 @@
     "Aceasta stabilește limita exportului fără a tăia clipul sursă.",
     "Acesta nu este punctul de început al videoclipului sursă.",
     "Poți reactiva această setare oricând."
+    "Afișează versiunea și funcțiile editorului.",
+    "Folosește această fereastră pentru a verifica versiunea aplicației și principalele limitări.",
+    "Verifică disponibilitatea instrumentelor locale, afișează versiunile lor și confirmă codecurile necesare.",
+    "Deschide această fereastră din meniul Ajutor și așteaptă finalizarea codării de test.",
+    "Blochează pistele deja finalizate înainte de modificări majore.",
+    "Ascunderea unei piste te ajută să compari diferite combinații de straturi.",
+    "Acest lucru nu șterge sunetul din fișierul sursă.",
+    "Pozițiile clipurilor sunt măsurate în timp, nu în pixeli.",
+    "Cronologie",
   ],
   "el": [
     "Το 100% αντιστοιχεί στο κέντρο, εφόσον έτσι λειτουργεί το τρέχον σύστημα συντεταγμένων του κλιπ.",
@@ -4394,6 +4520,15 @@
     "Αυτό ορίζει το όριο εξαγωγής χωρίς να περικόπτει το ίδιο το κλιπ πηγής.",
     "Αυτό δεν είναι το σημείο έναρξης του αρχικού βίντεο.",
     "Μπορείς να ενεργοποιήσεις ξανά αυτή τη ρύθμιση οποιαδήποτε στιγμή."
+    "Εμφανίζει την έκδοση και τις δυνατότητες του προγράμματος επεξεργασίας.",
+    "Χρησιμοποίησε αυτό το παράθυρο για να ελέγξεις την έκδοση της εφαρμογής και τους βασικούς περιορισμούς της.",
+    "Ελέγχει αν υπάρχουν διαθέσιμα τοπικά εργαλεία, εμφανίζει τις εκδόσεις τους και επαληθεύει τους απαιτούμενους κωδικοποιητές.",
+    "Άνοιξε αυτό το παράθυρο από το μενού Βοήθεια και περίμενε να ολοκληρωθεί η δοκιμαστική κωδικοποίηση.",
+    "Κλείδωσε τα κομμάτια που έχεις ήδη ολοκληρώσει πριν κάνεις μεγάλες αλλαγές.",
+    "Η απόκρυψη ενός κομματιού βοηθά στη σύγκριση διαφορετικών συνδυασμών επιπέδων.",
+    "Αυτό δεν διαγράφει τον ήχο από το αρχικό αρχείο.",
+    "Οι θέσεις των κλιπ μετρώνται σε χρόνο, όχι σε εικονοστοιχεία.",
+    "Γραμμή χρόνου",
   ],
   "vi": [
     "100% tương ứng với tâm nếu hệ tọa độ hiện tại của clip dùng cách quy ước này.",
@@ -4464,6 +4599,15 @@
     "Thao tác này đặt giới hạn xuất mà không cắt chính clip nguồn.",
     "Đây không phải điểm bắt đầu của video nguồn.",
     "Bạn có thể bật lại cài đặt này bất cứ lúc nào."
+    "Hiển thị phiên bản và các tính năng của trình chỉnh sửa.",
+    "Dùng cửa sổ này để kiểm tra phiên bản ứng dụng và các giới hạn chính.",
+    "Kiểm tra các công cụ cục bộ có sẵn hay không, hiển thị phiên bản và xác minh codec cần thiết.",
+    "Mở cửa sổ này từ menu Trợ giúp và chờ quá trình mã hóa thử nghiệm hoàn tất.",
+    "Khóa các rãnh đã hoàn tất trước khi thực hiện những chỉnh sửa lớn.",
+    "Ẩn một rãnh giúp bạn so sánh các cách kết hợp lớp khác nhau.",
+    "Thao tác này không xóa âm thanh khỏi tệp nguồn.",
+    "Vị trí clip được đo bằng thời gian, không phải pixel.",
+    "Dòng thời gian",
   ],
   "id": [
     "100% berarti posisi tengah jika sistem koordinat klip saat ini menggunakan acuan tersebut.",
@@ -4534,6 +4678,15 @@
     "Ini menetapkan batas ekspor tanpa memotong klip sumber itu sendiri.",
     "Ini bukan titik awal video sumber.",
     "Pengaturan ini dapat diaktifkan kembali kapan saja."
+    "Menampilkan versi dan fitur editor.",
+    "Gunakan jendela ini untuk memeriksa versi aplikasi dan batasan utamanya.",
+    "Memeriksa ketersediaan alat lokal, menampilkan versinya, dan memastikan codec yang diperlukan didukung.",
+    "Buka jendela ini dari menu Bantuan dan tunggu hingga pengodean uji selesai.",
+    "Kunci trek yang sudah selesai sebelum melakukan perubahan besar.",
+    "Menyembunyikan trek membantu membandingkan berbagai kombinasi lapisan.",
+    "Tindakan ini tidak menghapus audio dari file sumber.",
+    "Posisi klip diukur berdasarkan waktu, bukan piksel.",
+    "Linimasa",
   ],
   "zh-CN": [
     "如果当前片段坐标系采用此定义，100% 表示居中。",
@@ -4604,6 +4757,15 @@
     "此设置仅确定导出边界，不会修剪源片段本身。",
     "这不是源视频的起始位置。",
     "你可以随时重新启用此设置。"
+    "显示编辑器的版本和功能。",
+    "在此查看应用版本及其主要限制。",
+    "检查本地工具是否可用、显示其版本，并验证所需编解码器支持。",
+    "从“帮助”菜单打开此窗口，并等待测试编码完成。",
+    "进行较大修改前，先锁定已经完成的轨道。",
+    "隐藏轨道有助于比较不同的图层组合。",
+    "这不会删除源文件中的音频。",
+    "片段位置按时间而不是像素计算。",
+    "时间轴",
   ],
   "zh-TW": [
     "若目前片段座標系統採用此定義，100% 代表置中。",
@@ -4674,6 +4836,15 @@
     "此設定只決定匯出邊界，不會修剪來源片段本身。",
     "這不是來源影片的起始位置。",
     "你可以隨時重新啟用此設定。"
+    "顯示編輯器的版本與功能。",
+    "可在此查看應用程式版本及其主要限制。",
+    "檢查本機工具是否可用、顯示其版本，並確認所需編解碼器的支援情況。",
+    "從「說明」選單開啟此視窗，並等待測試編碼完成。",
+    "進行重大修改前，先鎖定已完成的軌道。",
+    "隱藏軌道有助於比較不同的圖層組合。",
+    "這不會刪除來源檔案中的音訊。",
+    "片段位置是依時間而非像素計算。",
+    "時間軸",
   ],
   "ar": [
     "تعني 100% المركز إذا كان نظام إحداثيات المقطع الحالي يستخدم هذا التعريف.",
@@ -4744,6 +4915,15 @@
     "يحدد هذا حد التصدير دون قص المقطع الأصلي نفسه.",
     "هذه ليست نقطة بداية الفيديو الأصلي.",
     "يمكنك إعادة تفعيل هذا الإعداد في أي وقت."
+    "يعرض إصدار المحرر وميزاته.",
+    "استخدم هذه النافذة لمعرفة إصدار التطبيق وأهم القيود.",
+    "يتحقق من توفر الأدوات المحلية، ويعرض إصداراتها، ويتأكد من دعم برامج الترميز المطلوبة.",
+    "افتح هذه النافذة من قائمة «مساعدة» وانتظر انتهاء الترميز التجريبي.",
+    "اقفل المسارات التي انتهيت من ضبطها قبل إجراء تعديلات كبيرة.",
+    "يساعد إخفاء المسار على مقارنة مجموعات الطبقات المختلفة.",
+    "لا يؤدي ذلك إلى حذف الصوت من الملف المصدر.",
+    "تُقاس مواضع المقاطع بالوقت، لا بالبكسل.",
+    "المخطط الزمني",
   ],
   "he": [
     "100% מציין את המרכז, אם כך פועלת מערכת הקואורדינטות הנוכחית של הקליפ.",
@@ -4814,6 +4994,15 @@
     "הגדרה זו קובעת את גבול הייצוא בלי לחתוך את קליפ המקור עצמו.",
     "זו אינה נקודת ההתחלה של סרטון המקור.",
     "אפשר להפעיל את ההגדרה הזו מחדש בכל עת."
+    "מציג את גרסת העורך ואת התכונות שלו.",
+    "השתמש בחלון הזה כדי לבדוק את גרסת היישום ואת המגבלות העיקריות שלו.",
+    "בודק אילו כלים מקומיים זמינים, מציג את הגרסאות שלהם ומוודא תמיכה במפענחים הנדרשים.",
+    "פתח את החלון מתפריט העזרה והמתן לסיום קידוד הבדיקה.",
+    "נעל רצועות שכבר סיימת לערוך לפני ביצוע שינויים גדולים.",
+    "הסתרת רצועה עוזרת להשוות בין שילובים שונים של שכבות.",
+    "הפעולה אינה מוחקת את השמע מקובץ המקור.",
+    "מיקומי הקליפים נמדדים בזמן, לא בפיקסלים.",
+    "ציר זמן",
   ],
   "hi": [
     "यदि क्लिप का वर्तमान निर्देशांक तंत्र ऐसा मानता है, तो 100% का अर्थ केंद्र है।",
@@ -4884,6 +5073,15 @@
     "यह स्रोत क्लिप को ट्रिम किए बिना एक्सपोर्ट की सीमा तय करता है।",
     "यह स्रोत वीडियो का शुरुआती बिंदु नहीं है।",
     "आप इस सेटिंग को कभी भी फिर से चालू कर सकते हैं।"
+    "एडिटर का संस्करण और सुविधाएँ दिखाता है।",
+    "इस विंडो में ऐप्लिकेशन का संस्करण और उसकी मुख्य सीमाएँ देखें।",
+    "स्थानीय टूल की उपलब्धता जाँचता है, उनके संस्करण दिखाता है और आवश्यक कोडेक समर्थन सत्यापित करता है।",
+    "सहायता मेनू से यह विंडो खोलें और परीक्षण एन्कोडिंग पूरा होने तक प्रतीक्षा करें।",
+    "बड़े बदलाव करने से पहले पूरी हो चुकी ट्रैकों को लॉक कर दें।",
+    "किसी ट्रैक को छिपाने से अलग-अलग लेयर संयोजनों की तुलना करने में मदद मिलती है।",
+    "इससे स्रोत फ़ाइल का ऑडियो हटता नहीं है।",
+    "क्लिप की स्थिति पिक्सेल में नहीं, समय के अनुसार मापी जाती है।",
+    "समयरेखा",
   ],
   "kk": [
     "Клиптің қазіргі координаттар жүйесі осылай анықтаса, 100% — орталық деген сөз.",
@@ -4954,6 +5152,15 @@
     "Бұл бастапқы клипті қимай-ақ экспорт шекарасын белгілейді.",
     "Бұл бастапқы бейненің басталу нүктесі емес.",
     "Бұл баптауды кез келген уақытта қайта қосуға болады."
+    "Редактор нұсқасы мен мүмкіндіктері туралы ақпаратты көрсетеді.",
+    "Осы жерден қолданба нұсқасын және оның негізгі шектеулерін тексеруге болады.",
+    "Жергілікті құралдардың қолжетімділігін тексереді, нұсқаларын көрсетеді және қажетті кодектерді қолдауды растайды.",
+    "Бұл терезені «Анықтама» мәзірінен ашып, сынақ кодтауы аяқталғанша күтіңіз.",
+    "Үлкен өзгерістер жасамас бұрын дайын жолдарды құлыптаңыз.",
+    "Жолды жасыру әртүрлі қабат комбинацияларын салыстыруға көмектеседі.",
+    "Бұл бастапқы файлдағы дыбысты жоймайды.",
+    "Клип орындары пиксельмен емес, уақытпен өлшенеді.",
+    "Уақыт шкаласы",
   ],
   "ja": [
     "現在のクリップ座標系でこの定義を使う場合、100% は中央を示します。",
@@ -5024,6 +5231,15 @@
     "これは元のクリップをトリミングせずに、書き出し範囲を指定します。",
     "これは元動画の開始位置ではありません。",
     "この設定はいつでも再び有効にできます。"
+    "エディターのバージョンと機能を表示します。",
+    "この画面でアプリのバージョンと主な制限を確認できます。",
+    "ローカルツールの有無とバージョンを確認し、必要なコーデックへの対応を検証します。",
+    "ヘルプメニューからこの画面を開き、テストエンコードが完了するまで待ちます。",
+    "大きな変更を行う前に、仕上げたトラックをロックしてください。",
+    "トラックを非表示にすると、異なるレイヤー構成を比較できます。",
+    "元のファイルの音声が削除されることはありません。",
+    "クリップの位置はピクセルではなく時間で測定されます。",
+    "タイムライン",
   ],
   "ko": [
     "현재 클립 좌표계가 이 기준을 사용한다면 100%는 중앙을 의미합니다.",
@@ -5094,6 +5310,15 @@
     "이 설정은 원본 클립을 자르지 않고 내보내기 경계를 지정합니다.",
     "이것은 원본 동영상의 시작 지점이 아닙니다.",
     "이 설정은 언제든 다시 켤 수 있습니다."
+    "편집기의 버전과 기능을 표시합니다.",
+    "이 창에서 애플리케이션 버전과 주요 제한 사항을 확인할 수 있습니다.",
+    "로컬 도구의 사용 가능 여부와 버전을 확인하고 필요한 코덱 지원을 검증합니다.",
+    "도움말 메뉴에서 이 창을 열고 테스트 인코딩이 완료될 때까지 기다리세요.",
+    "큰 변경을 하기 전에 작업을 마친 트랙을 잠그세요.",
+    "트랙을 숨기면 서로 다른 레이어 조합을 비교하는 데 도움이 됩니다.",
+    "이 작업은 원본 파일의 오디오를 삭제하지 않습니다.",
+    "클립 위치는 픽셀이 아니라 시간으로 측정됩니다.",
+    "타임라인",
   ],
   "th": [
     "100% หมายถึงตำแหน่งกึ่งกลาง หากระบบพิกัดของคลิปปัจจุบันกำหนดเช่นนั้น",
@@ -5164,6 +5389,15 @@
     "นี่เป็นการกำหนดขอบเขตการส่งออกโดยไม่ตัดคลิปต้นฉบับ",
     "นี่ไม่ใช่จุดเริ่มต้นของวิดีโอต้นฉบับ",
     "คุณสามารถเปิดการตั้งค่านี้อีกครั้งได้ทุกเมื่อ"
+    "แสดงเวอร์ชันและความสามารถของโปรแกรมตัดต่อ",
+    "ใช้หน้าต่างนี้เพื่อตรวจสอบเวอร์ชันของแอปและข้อจำกัดหลัก",
+    "ตรวจสอบว่าเครื่องมือในเครื่องพร้อมใช้งานหรือไม่ แสดงเวอร์ชัน และยืนยันการรองรับตัวแปลงสัญญาณที่จำเป็น",
+    "เปิดหน้าต่างนี้จากเมนูช่วยเหลือ แล้วรอให้การเข้ารหัสทดสอบเสร็จสิ้น",
+    "ล็อกแทร็กที่ทำเสร็จแล้วก่อนเริ่มแก้ไขครั้งใหญ่",
+    "การซ่อนแทร็กช่วยให้เปรียบเทียบการจัดเลเยอร์แบบต่าง ๆ ได้",
+    "การทำเช่นนี้ไม่ได้ลบเสียงออกจากไฟล์ต้นฉบับ",
+    "ตำแหน่งของคลิปวัดเป็นเวลา ไม่ใช่พิกเซล",
+    "ไทม์ไลน์",
   ],
   "uz": [
     "Joriy klip koordinatalar tizimi shunday belgilasa, 100% markazni anglatadi.",
@@ -5234,6 +5468,15 @@
     "Bu manba klipni qirqmasdan eksport chegarasini belgilaydi.",
     "Bu manba videoning boshlanish nuqtasi emas.",
     "Bu sozlamani istalgan vaqtda qayta yoqish mumkin."
+    "Tahrirlovchi versiyasi va imkoniyatlarini ko‘rsatadi.",
+    "Bu oynada ilova versiyasi va uning asosiy cheklovlarini tekshirishingiz mumkin.",
+    "Mahalliy vositalar mavjudligini tekshiradi, versiyalarini ko‘rsatadi va kerakli kodeklar qo‘llab-quvvatlanishini tasdiqlaydi.",
+    "Bu oynani Yordam menyusidan oching va sinov kodlash tugashini kuting.",
+    "Katta o‘zgarishlardan oldin tugallangan yo‘laklarni qulflang.",
+    "Yo‘lakni yashirish turli qatlam kombinatsiyalarini solishtirishga yordam beradi.",
+    "Bu manba faylidagi audioni o‘chirmaydi.",
+    "Klip joylashuvi piksel bilan emas, vaqt bilan o‘lchanadi.",
+    "Vaqt jadvali",
   ],
   "uz-Cyrl": [
     "Агар жорий клип координаталар тизими шу қоидани қўлласа, 100% марказни англатади.",
@@ -5304,6 +5547,15 @@
     "Бу манба клипни қирқмасдан экспорт чегарасини белгилайди.",
     "Бу манба видеонинг бошланиш нуқтаси эмас.",
     "Бу созламани исталган вақтда қайта ёқиш мумкин."
+    "Муҳаррир версияси ва имкониятларини кўрсатади.",
+    "Бу ойнада илова версияси ва унинг асосий чекловларини текширишингиз мумкин.",
+    "Маҳаллий воситалар мавжудлигини текширади, версияларини кўрсатади ва керакли кодеклар қўллаб-қувватланишини тасдиқлайди.",
+    "Бу ойнани Ёрдам менюсидан очинг ва синов кодлаши тугашини кутинг.",
+    "Катта ўзгаришлардан олдин тайёр йўлакларни қулфланг.",
+    "Йўлакни яшириш турли қатлам бирикмаларини солиштиришга ёрдам беради.",
+    "Бу манба файлидаги аудиони ўчирмайди.",
+    "Клип жойлашуви пикселларда эмас, вақт бўйича ўлчанади.",
+    "Вақт жадвали",
   ],
   "ka": [
     "100% ცენტრს შეესაბამება, თუ კლიპის მიმდინარე კოორდინატთა სისტემა ასე განსაზღვრავს.",
@@ -5374,6 +5626,15 @@
     "ეს ექსპორტის საზღვარს ადგენს ისე, რომ თავად წყარო კლიპი არ მოიჭრას.",
     "ეს წყარო ვიდეოს საწყისი წერტილი არ არის.",
     "ამ პარამეტრის ხელახლა ჩართვა ნებისმიერ დროს შეგიძლია."
+    "აჩვენებს რედაქტორის ვერსიასა და შესაძლებლობებს.",
+    "ამ ფანჯარაში შეამოწმებ აპლიკაციის ვერსიას და მის ძირითად შეზღუდვებს.",
+    "ამოწმებს ადგილობრივი ხელსაწყოების ხელმისაწვდომობას, აჩვენებს მათ ვერსიებს და საჭირო კოდეკების მხარდაჭერას.",
+    "ეს ფანჯარა გახსენი დახმარების მენიუდან და დაელოდე სატესტო კოდირების დასრულებას.",
+    "დიდი ცვლილებების შეტანამდე დაბლოკე უკვე დასრულებული ბილიკები.",
+    "ბილიკის დამალვა ფენების სხვადასხვა კომბინაციის შედარებაში გეხმარება.",
+    "ეს წყაროს ფაილიდან აუდიოს არ შლის.",
+    "კლიპის მდებარეობა დროით იზომება და არა პიქსელებით.",
+    "დროითი ხაზი",
   ],
   "hy": [
     "100%-ը համապատասխանում է կենտրոնին, եթե հոլովակի ընթացիկ կոորդինատային համակարգն այդպես է սահմանում։",
@@ -5444,6 +5705,15 @@
     "Սա սահմանում է արտահանման սահմանը՝ առանց սկզբնական հոլովակը կտրելու։",
     "Սա սկզբնական տեսանյութի մեկնարկային կետը չէ։",
     "Այս կարգավորումը ցանկացած պահի կարող ես կրկին միացնել։"
+    "Ցուցադրում է խմբագրիչի տարբերակն ու հնարավորությունները։",
+    "Այս պատուհանում կարող ես ստուգել հավելվածի տարբերակն ու հիմնական սահմանափակումները։",
+    "Ստուգում է տեղական գործիքների առկայությունը, ցուցադրում դրանց տարբերակները և ստուգում անհրաժեշտ կոդեկների աջակցությունը։",
+    "Բացիր այս պատուհանը «Օգնություն» ընտրացանկից և սպասիր փորձնական կոդավորման ավարտին։",
+    "Մեծ փոփոխություններ կատարելուց առաջ կողպիր արդեն ավարտված ուղիները։",
+    "Ուղին թաքցնելը օգնում է համեմատել շերտերի տարբեր համադրությունները։",
+    "Սա չի ջնջում սկզբնական ֆայլի ձայնը։",
+    "Հոլովակների դիրքերը չափվում են ժամանակով, ոչ թե պիքսելներով։",
+    "Ժամանակագիծ",
   ],
   "tk": [
     "100% häzirki klip koordinat ulgamy şeýle kesgitleýän bolsa, merkezi aňladýar.",
@@ -5514,6 +5784,15 @@
     "Bu çeşme klipini gyrkmazdan eksport çägini belleýär.",
     "Bu çeşme wideonyň başlangyç nokady däl.",
     "Bu sazlamany islän wagtyň täzeden açyp bilersiň."
+    "Redaktoryň wersiýasyny we mümkinçiliklerini görkezýär.",
+    "Programma wersiýasyny we onuň esasy çäklendirmelerini şu ýerden barla.",
+    "Ýerli gurallaryň elýeterliligini barlaýar, wersiýalaryny görkezýär we zerur kodek goldawyny tassyklaýar.",
+    "Bu penjiräni Kömek menýusyndan aç we synag kodlamasynyň tamamlanmagyna garaş.",
+    "Uly üýtgeşmelerden öň tamamlanan ýollary gulpla.",
+    "Ýoly gizlemek dürli gatlak utgaşmalaryny deňeşdirmäge kömek edýär.",
+    "Bu çeşme faýlyndaky sesi pozmaýar.",
+    "Klipleriň ýerleşişi piksel bilen däl-de, wagt bilen ölçelýär.",
+    "Wagt şkalasy",
   ],
   "az": [
     "100% cari klip koordinat sistemi belə müəyyən edirsə, mərkəzi göstərir.",
@@ -5584,6 +5863,15 @@
     "Bu, mənbə klipini kəsmədən ixrac sərhədini müəyyən edir.",
     "Bu, mənbə videonun başlanğıc nöqtəsi deyil.",
     "Bu parametri istənilən vaxt yenidən aktivləşdirə bilərsən."
+    "Redaktorun versiyasını və imkanlarını göstərir.",
+    "Bu pəncərədə tətbiqin versiyasını və əsas məhdudiyyətlərini yoxlaya bilərsiniz.",
+    "Yerli alətlərin mövcudluğunu yoxlayır, versiyalarını göstərir və tələb olunan kodeklərin dəstəyini təsdiqləyir.",
+    "Bu pəncərəni Kömək menyusundan açın və sınaq kodlaşdırmasının bitməsini gözləyin.",
+    "Böyük dəyişikliklər etməzdən əvvəl tamamlanmış trekləri kilidləyin.",
+    "Treki gizlətmək müxtəlif lay birləşmələrini müqayisə etməyə kömək edir.",
+    "Bu, mənbə faylındakı səsi silmir.",
+    "Klip mövqeləri piksellərlə deyil, vaxtla ölçülür.",
+    "Vaxt xətti",
   ],
   "ky": [
     "100% учурдагы клип координат системасы ушундай аныктаса, борборду билдирет.",
@@ -5654,6 +5942,15 @@
     "Бул баштапкы клипти кеспестен экспорт чегин белгилейт.",
     "Бул баштапкы видеонун башталуу чекити эмес.",
     "Бул жөндөөнү каалаган убакта кайра күйгүзсө болот."
+    "Редактордун версиясы жана мүмкүнчүлүктөрү тууралуу маалыматты көрсөтөт.",
+    "Бул жерден колдонмонун версиясын жана негизги чектөөлөрүн текшере аласыз.",
+    "Жергиликтүү куралдардын жеткиликтүүлүгүн текшерет, версияларын көрсөтөт жана керектүү кодектерди колдоону ырастайт.",
+    "Бул терезени «Жардам» менюсунан ачып, сыноо коддоосу аяктаганча күтүңүз.",
+    "Чоң өзгөртүүлөрдөн мурун бүткөн жолчолорду кулпулап коюңуз.",
+    "Жолчону жашыруу ар кандай катмар айкалыштарын салыштырууга жардам берет.",
+    "Бул баштапкы файлдагы үндү өчүрбөйт.",
+    "Клиптердин орду пиксел менен эмес, убакыт менен өлчөнөт.",
+    "Убакыт тилкеси",
   ],
   "tg": [
     "Агар низоми кунунии координатаҳои клип ҳамин тавр муайян кунад, 100% марказро нишон медиҳад.",
@@ -5724,6 +6021,15 @@
     "Ин ҳудуди содиротро муайян мекунад, бе он ки худи клипи манбаъ бурида шавад.",
     "Ин нуқтаи оғози видеои манбаъ нест.",
     "Ин танзимро ҳар вақт дубора фаъол кардан мумкин аст."
+    "Версия ва имкониятҳои муҳаррирро нишон медиҳад.",
+    "Дар ин равзана версияи барнома ва маҳдудиятҳои асосии онро санҷед.",
+    "Мавҷудияти абзорҳои маҳаллиро месанҷад, версияҳои онҳоро нишон медиҳад ва дастгирии кодекҳои заруриро тасдиқ мекунад.",
+    "Ин равзанаро аз менюи «Кӯмак» кушоед ва анҷоми рамзгузории санҷиширо интизор шавед.",
+    "Пеш аз тағйироти калон роҳҳои аллакай анҷомёфтаро қулф кунед.",
+    "Пинҳон кардани роҳ барои муқоисаи таркибҳои гуногуни қабатҳо кӯмак мекунад.",
+    "Ин амал садоро аз файли аслӣ нест намекунад.",
+    "Мавқеи клипҳо бо вақт чен карда мешавад, на бо пиксел.",
+    "Ҷадвали вақт",
   ],
   "be": [
     "100% адпавядае цэнтру, калі бягучая сістэма каардынат кліпа выкарыстоўвае такое азначэнне.",
@@ -5794,10 +6100,19 @@
     "Гэта задае мяжу экспарту, не абразаючы сам зыходны кліп.",
     "Гэта не пачатковы пункт зыходнага відэа.",
     "Гэты параметр можна зноў уключыць у любы момант."
+    "Паказвае версію і магчымасці рэдактара.",
+    "Тут можна праверыць версію праграмы і яе асноўныя абмежаванні.",
+    "Правярае наяўнасць лакальных інструментаў, паказвае іх версіі і правярае падтрымку патрэбных кодэкаў.",
+    "Адкрый гэтае акно праз меню «Даведка» і дачакайся заканчэння тэставага кадавання.",
+    "Заблакуй ужо завершаныя дарожкі перад вялікімі зменамі.",
+    "Схаванне дарожкі дапамагае параўноўваць розныя камбінацыі слаёў.",
+    "Гэта не выдаляе гук з зыходнага файла.",
+    "Пазіцыі кліпаў вымяраюцца па часе, а не ў пікселях.",
+    "Часавая шкала",
   ]
 };
   const expectedLocales = ["de","fr","es","pt-BR","it","pl","uk","tr","nl","sv","fi","cs","ro","el","vi","id","zh-CN","zh-TW","ar","he","hi","kk","ja","ko","th","uz","uz-Cyrl","ka","hy","tk","az","ky","tg","be"];
-  if (sourceTexts.length !== 68) throw new Error("Unexpected contextual-help extension source count.");
+  if (sourceTexts.length !== 77) throw new Error("Unexpected contextual-help extension source count.");
   const previous = root.MontazhnayaContextualHelpTranslations || Object.create(null);
   const merged = Object.assign(Object.create(null), previous);
   for (const locale of expectedLocales) {
