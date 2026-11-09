@@ -881,4 +881,33 @@
     "Если результат отличается от ожидаемого, проверь выделенный клип, выбранную дорожку и текущий режим проекта.": "If the result is not what you expected, check the selected clip, track, and current project mode."
   });
 
+
+  // Variable-rich strings from live timeline clips, markers, media, and handles.
+  Object.assign(packs.en.messages, {
+    "{meta}. Перемещение исходника на таймлайн не меняет оригинальный файл.": "{meta}. Moving a source item to the timeline does not change the original file.",
+    "{tip} Установленная длительность: {duration} с.": "{tip} Installed duration: {duration} s.",
+    "Обрезка начала клипа": "Trim clip start",
+    "Сдвигает точку входа в монтаж, убирая часть исходника с начала.": "Moves the clip's source in-point and removes material from the beginning.",
+    "Зажми левую ручку клипа и перетащи её вправо/влево. Следи за положением начала.": "Drag the clip's left handle to adjust its start. Watch the new in-point.",
+    "Обрезка края отличается от перемещения клипа: она меняет исходный диапазон.": "Trimming an edge is different from moving a clip: it changes the source range.",
+    "Обрезка конца клипа": "Trim clip end",
+    "Меняет точку выхода исходного фрагмента и длину клипа.": "Changes the source out-point and the clip's duration.",
+    "Зажми правую ручку и перетащи. Не выходи за доступную длительность исходника.": "Drag the right handle, keeping within the available source duration.",
+    "При увеличенном таймлайне легче обрезать с точностью до кадра.": "A zoomed-in timeline makes frame-accurate trimming easier.",
+    "Контрольная точка на шкале времени для ключевой сцены, реплики или музыкального акцента.": "A point on the timeline that marks an important scene, line of dialogue, or music accent.",
+    "Щёлкни, чтобы перейти к метке; дважды щёлкни для переименования; правая кнопка открывает дополнительные действия.": "Click to jump to the marker, double-click to rename it, or right-click for more actions.",
+    "Маркеры не появляются в финальном видео, они нужны для навигации.": "Markers do not appear in the exported video; they are used for navigation.",
+    "Маркер на клипе визуализирует диапазон эффекта, но финальный результат нужно проверить в проигрывании.": "The marker shows the range of the effect on the clip, but check the final result in playback.",
+    "Показывает область клипа, на которой действует выбранный визуальный переход.": "Shows the part of the clip where the selected visual transition is active.",
+    "Измени длительность или режим в панели «Свойства» справа. Для изменения типа используй библиотеку переходов.": "Change the duration or mode in the Properties panel on the right. Use the transition library to choose another type.",
+    "Это монтажный экземпляр исходного файла. Он хранит собственные точки обрезки, положение, длительность, эффекты и параметры.": "This is an editable instance of a source file. It has its own trim points, timeline position, duration, effects, and settings.",
+    "Щёлкни, чтобы выделить; тащи середину клипа, чтобы переместить; используй левую/правую ручку, чтобы обрезать. Двойной щелчок или правая кнопка могут открыть дополнительные действия.": "Click to select the clip, drag its middle to move it, or drag either edge to trim it. Double-clicking or right-clicking may open more actions.",
+    "Материал в библиотеке доступен для добавления на таймлайн и повторного использования в нескольких местах.": "Media in the library can be added to the timeline and reused in multiple places.",
+    "Щёлкни для просмотра сведений или перетащи на совместимую дорожку. При необходимости используй кнопку удаления справа.": "Click to view details or drag the item to a compatible track. Use the remove button on the right when needed.",
+    "Переход на выходе": "Transition out",
+    "Переход на входе": "Transition in",
+    "Переход на клипе показывает диапазон визуального эффекта.": "The clip transition marker shows the range of the visual effect.",
+    "Панель редактора": "Editor panel"
+  });
+
 })(window);
