@@ -271,6 +271,7 @@ test("contextual-help GUI audit distinguishes English fallback from missing Cyri
   assert.match(audit, /english_fallback_fields/);
   assert.match(audit, /MontazhnayaContextualHelpExtensionStatus/);
   assert.match(audit, /additionalContextualHelpStrings:helpExtension\.sourceCount/);
+  assert.match(audit, /helpExtension\.sourceCount!==77/);
   assert.match(audit, /Additional live contextual-help phrases translated per non-English locale/);
   assert.match(audit, /knownIdentical=\(locale==='uk'\|\|locale==='be'\)&&value==='Меню «Файл»'/);
   assert.match(audit, /\.\.\.report\.localeSummaries\.map\(item =>/);\n  assert.match(audit, /viewport\.renderedSamples\.length/);
