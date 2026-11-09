@@ -564,6 +564,10 @@
     getPreference: () => currentPreference,
     getDirection: () => RTL.has(currentLocale.split("-")[0]) ? "rtl" : "ltr",
     translate: translateSource,
+    translateFallback: source => {
+      const result = translateWith(source, fallbackMessages, fallbackPatterns);
+      return result.found ? result.value : source;
+    },
     t,
     tCount,
     pluralNoun,
