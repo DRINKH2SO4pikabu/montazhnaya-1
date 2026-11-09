@@ -1746,6 +1746,7 @@
     }
     merged[locale] = Object.freeze(messages);
   }
+  root.MontazhnayaContextualHelpSourceEnglish = sourceEnglish;
   root.MontazhnayaContextualHelpTranslations = Object.freeze(merged);
   root.MontazhnayaContextualHelpTranslationStatus = Object.freeze({
     locales: Object.freeze(Object.keys(localeTranslations)),
