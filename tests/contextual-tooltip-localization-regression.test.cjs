@@ -208,6 +208,45 @@ test("live contextual-help translations cover every source string in all 34 loca
   assert.equal(packs.kk["Таймлайн"], "Уақыт шкаласы");
 });
 
+test("remaining live contextual-help phrases cover all 34 additional locale packs", () => {
+  const window = {};
+  const context = { window };
+  vm.createContext(context);
+  vm.runInContext(read("src/renderer/locales/contextual-help-translations.js"), context, {
+    filename: "contextual-help-translations.js"
+  });
+
+  const status = window.MontazhnayaContextualHelpExtensionStatus;
+  const sources = window.MontazhnayaContextualHelpExtensionSourceTexts;
+  const packs = window.MontazhnayaContextualHelpTranslations;
+  const expectedLocales = [
+    "de", "fr", "es", "pt-BR", "it", "pl", "uk", "tr",
+    "nl", "sv", "fi", "cs", "ro", "el", "vi", "id", "zh-CN", "zh-TW",
+    "ar", "he", "hi", "kk", "ja", "ko", "th", "uz", "uz-Cyrl",
+    "ka", "hy", "tk", "az", "ky", "tg", "be"
+  ];
+
+  assert.equal(status.sourceCount, 68);
+  assert.equal(sources.length, 68);
+  assert.deepEqual(Array.from(status.locales), expectedLocales);
+  assert.equal(status.status, "machine-assisted-draft-native-speaker-review-pending");
+
+  const placeholders = value => Array.from(value.matchAll(/\\{[a-z]+\\}/g), match => match[0]).sort();
+  for (const locale of expectedLocales) {
+    for (const source of sources) {
+      const translated = packs[locale]?.[source];
+      assert.equal(typeof translated, "string", locale + "/" + source + " is missing");
+      assert.ok(translated.trim(), locale + "/" + source + " is empty");
+      assert.notEqual(translated, source, locale + "/" + source + " remains in Russian");
+      assert.deepEqual(
+        placeholders(translated),
+        placeholders(source),
+        locale + "/" + source + " changed a dynamic placeholder"
+      );
+    }
+  }
+});
+
 test("contextual-help GUI audit distinguishes English fallback from missing Cyrillic translations", () => {
   const audit = read("qa/tooltip-gui-audit.cjs");
   assert.match(audit, /api\.translateFallback\(value\)/);
