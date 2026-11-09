@@ -634,7 +634,7 @@ async function main() {
     "|---|---|---:|---:|---:|---:|---:|---:|---:|",
     ...report.localeSummaries.map(item => {
       const fragmentCount = item.viewports.reduce((sum, viewport) => sum + viewport.renderedTooltipFragments, 0);
-      const sampleCount = item.viewports.reduce((sum, viewport) => sum + viewport.renderedSamples, 0);
+      const sampleCount = item.viewports.reduce((sum, viewport) => sum + viewport.renderedSamples.length, 0);
       const outside = item.viewports.reduce((sum, viewport) => sum + viewport.outsideViewport + viewport.fragmentOutsideViewport, 0);
       const flags = item.viewports.reduce((sum, viewport) =>
         sum + viewport.untranslatedCyrillicFields + (viewport.englishFallbackFields || 0) + viewport.clippedTextBoxes + viewport.missingDisplayedFields +
