@@ -231,7 +231,7 @@ function buildLocaleExpression(code, viewport) {
         "if(field!=='tip'&&(!value||!String(value).trim())) missingFields.push(field);" +
         "if(typeof value==='string'&&value.trim()){" +
           "const display=qa.uiText(value); expectedText.push(display);" +
-          "if(locale!=='ru'&&display===value&&/[А-Яа-яЁё]/.test(value)) untranslated.push(field);" +"const englishFallback=typeof api.translateFallback==='function'?api.translateFallback(value):value;" +"if(locale!=='ru'&&locale!=='en'&&display!==value&&display===englishFallback) englishFallbackFields.push(field);" +
+          "const knownIdentical=(locale==='uk'||locale==='be')&&value==='Меню «Файл»';if(locale!=='ru'&&display===value&&/[А-Яа-яЁё]/.test(value)&&!knownIdentical) untranslated.push(field);" +"const englishFallback=typeof api.translateFallback==='function'?api.translateFallback(value):value;" +"if(locale!=='ru'&&locale!=='en'&&display!==value&&display===englishFallback) englishFallbackFields.push(field);" +
         "}" +
       "}" +
       "const missingDisplayed=expectedText.filter(value=>value&& !actual.includes(value));" +
@@ -628,7 +628,7 @@ async function main() {
     "",
     "| Locale | Direction | Detailed strings | Action help | Control help | Detailed fragments rendered | Action/control samples | Outside viewport | Review flags |",
     "|---|---|---:|---:|---:|---:|---:|---:|---:|",
-    ...localeSummaries.map(item => {
+    ...report.localeSummaries.map(item => {
       const fragmentCount = item.viewports.reduce((sum, viewport) => sum + viewport.renderedTooltipFragments, 0);
       const sampleCount = item.viewports.reduce((sum, viewport) => sum + viewport.renderedSamples, 0);
       const outside = item.viewports.reduce((sum, viewport) => sum + viewport.outsideViewport + viewport.fragmentOutsideViewport, 0);
