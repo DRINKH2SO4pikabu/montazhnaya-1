@@ -226,10 +226,25 @@ test("remaining live contextual-help phrases cover all 34 additional locale pack
     "ka", "hy", "tk", "az", "ky", "tg", "be"
   ];
 
-  assert.equal(status.sourceCount, 68);
-  assert.equal(sources.length, 68);
+  assert.equal(status.sourceCount, 77);
+  assert.equal(sources.length, 77);
   assert.deepEqual(Array.from(status.locales), expectedLocales);
   assert.equal(status.status, "machine-assisted-draft-native-speaker-review-pending");
+
+  const requiredSources = [
+    "Показывает сведения о версии и возможностях редактора.",
+    "Используй, чтобы узнать версию проекта и основные ограничения.",
+    "Проверяет наличие локальных инструментов, их версии и необходимые кодеки.",
+    "Открой окно диагностики из меню «Справка» и дождись окончания пробного кодирования.",
+    "Перед большим монтажом можно заблокировать уже выверенные дорожки.",
+    "Скрытие помогает сравнивать варианты наложения.",
+    "Это не удаляет звук из исходного файла.",
+    "Позиции клипов измеряются по времени, а не по пикселям.",
+    "Таймлайн"
+  ];
+  for (const source of requiredSources) {
+    assert.ok(sources.includes(source), "Live contextual-help translation source is missing: " + source);
+  }
 
   const placeholders = value => Array.from(value.matchAll(/\{[a-z]+\}/g), match => match[0]).sort();
   for (const locale of expectedLocales) {
@@ -258,7 +273,7 @@ test("contextual-help GUI audit distinguishes English fallback from missing Cyri
   assert.match(audit, /additionalContextualHelpStrings:helpExtension\.sourceCount/);
   assert.match(audit, /Additional live contextual-help phrases translated per non-English locale/);
   assert.match(audit, /knownIdentical=\(locale==='uk'\|\|locale==='be'\)&&value==='Меню «Файл»'/);
-  assert.match(audit, /\.\.\.report\.localeSummaries\.map\(item =>/);
+  assert.match(audit, /\.\.\.report\.localeSummaries\.map\(item =>/);\n  assert.match(audit, /viewport\.renderedSamples\.length/);
 
   const i18n = read("src/renderer/i18n.js");
   assert.match(i18n, /translateFallback: source =>/);
