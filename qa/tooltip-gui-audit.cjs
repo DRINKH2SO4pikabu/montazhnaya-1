@@ -166,6 +166,8 @@ function buildLocaleExpression(code, viewport) {
     "const meta=(api.availableLocales||[]).find(item=>item.code===locale)||{};" +
     "const source=window.MontazhnayaTooltipSource;" +
     "const packs=window.MontazhnayaTooltipTranslations;" +
+    "const helpExtension=window.MontazhnayaContextualHelpExtensionStatus||{};" +
+    "if(locale!=='ru'&&locale!=='en'&&(helpExtension.sourceCount!==68||!Array.isArray(helpExtension.locales)||!helpExtension.locales.includes(locale))) throw new Error('Additional contextual-help translations are missing for '+locale);" +
     "if(!source||!Array.isArray(source.textKeys)||!packs) throw new Error('Tooltip source registry is unavailable');" +
     "const keys=source.textKeys;" +
     "const tooltipPack=packs.packs[locale]||{};" +
@@ -286,7 +288,7 @@ function buildLocaleExpression(code, viewport) {
     "}" +
     "const summary={" +
       "locale,languageName:meta.nativeName||locale,direction,expectedDirection," +
-      "tooltipKeyCount:keys.length,tooltipPackCount,missingPackKeys,unchangedCyrillicKeys:unchanged.length,emptyTooltipKeys:empty.length," +
+      "tooltipKeyCount:keys.length,tooltipPackCount,missingPackKeys,unchangedCyrillicKeys:unchanged.length,emptyTooltipKeys:empty.length,additionalContextualHelpStrings:helpExtension.sourceCount||0," +
       "actionDefinitions:actionEntries.length,controlDefinitions:idEntries.length," +
       "beginnerActionOverrides:Object.keys(beginnerAction).length,beginnerControlOverrides:Object.keys(beginnerIds).length," +
       "syntheticSamples:fixtures.length,liveTargets:liveUnique.length,samples:sampleResults.length," +
@@ -586,6 +588,7 @@ async function main() {
     fragmentOverflowCount: totalFragmentOverflowCount,
     fragmentOutsideViewport: totalFragmentOutsideViewport,
     englishFallbackFields: totalEnglishFallbackFields,
+    additionalContextualHelpStrings: 68,
     fragmentUntranslatedCyrillic: new Set(reviewFlags.filter(flag => flag.type === "untranslated-detailed-tooltip-fragment").map(flag => flag.locale + "|" + flag.key)).size,
     popoverViewportChecks: totalViewportChecks,
     outsideViewportCount: totalOutsideViewport,
@@ -612,6 +615,7 @@ async function main() {
     "- Action help definitions: **" + report.summary.actionDefinitions + "**",
     "- Control/property help definitions: **" + report.summary.controlDefinitions + "**",
     "- Beginner-friendly overrides: **" + report.summary.beginnerFriendlyOverrides + "**",
+    "- Additional live contextual-help phrases translated per non-English locale: **" + report.summary.additionalContextualHelpStrings + "**",
     "- Viewports: **1024×700, 1366×768, 1920×1080**",
     "- Action/control tooltip samples: **" + report.summary.renderedHelpSamples + "**",
     "- Individual detailed tooltip fragments rendered: **" + report.summary.renderedTooltipFragments + "**",
