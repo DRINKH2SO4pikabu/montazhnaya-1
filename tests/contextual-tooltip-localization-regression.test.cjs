@@ -129,7 +129,7 @@ test("Ukrainian and Kazakh contextual timeline labels are localized without chan
   assert.match(i18n, /contextualHelp \|\| \{\}/);
 });
 
-test("live contextual-help translations cover every source string for wave one locales", () => {
+test("live contextual-help translations cover every source string in all 34 locale packs", () => {
   const window = {
     MontazhnayaContextualHelpTranslations: {
       uk: { "Таймлайн": "Часова шкала" },
@@ -155,11 +155,26 @@ test("live contextual-help translations cover every source string for wave one l
   );
   assert.equal(window.MontazhnayaContextualHelpTranslationStatus.sourceCount, 88);
 
+  const sourceCatalogue = window.MontazhnayaContextualHelpSourceEnglish;
+  assert.equal(Object.keys(sourceCatalogue).length, 88);
+  const placeholders = value => Array.from(value.matchAll(/\\{[a-z]+\\}/g), match => match[0]).sort();
+
   for (const locale of expectedLocales) {
-    for (const [source, translated] of Object.entries(packs[locale])) {
+    for (const [source, englishFallback] of Object.entries(sourceCatalogue)) {
+      assert.ok(
+        Object.prototype.hasOwnProperty.call(packs[locale], source),
+        locale + "/" + source + " is missing"
+      );
+      const translated = packs[locale][source];
       assert.equal(typeof translated, "string", locale + "/" + source);
       assert.ok(translated.trim(), locale + "/" + source + " is empty");
-      assert.notEqual(translated, source, locale + "/" + source + " was not translated");
+      assert.notEqual(translated, source, locale + "/" + source + " is untranslated");
+      assert.notEqual(translated, englishFallback, locale + "/" + source + " still uses English");
+      assert.deepEqual(
+        placeholders(translated),
+        placeholders(source),
+        locale + "/" + source + " changed a dynamic placeholder"
+      );
     }
   }
 
