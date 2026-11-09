@@ -65,5 +65,5 @@ test('renderer declares a restrictive local-content CSP without eval or remote o
     .filter(match => !/\bsrc\s*=/i.test(match[1]));
   assert.equal(inlineScripts.length, 1, 'inline script CSP hash must cover the only inline script');
   const digest = createHash('sha256').update(inlineScripts[0][2], 'utf8').digest('base64');
-  assert.ok(scriptDirective[1].includes(`'sha256-${digest}'`), 'script-src hash must match the current inline renderer script');
+  assert.ok(scriptDirective[1].includes(`'sha256-${digest}'`), 'script-src hash must match the current inline renderer script; expected sha256-' + digest);
 });
