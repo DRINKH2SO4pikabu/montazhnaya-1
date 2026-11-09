@@ -146,7 +146,8 @@ test("live contextual-help translations cover every source string for wave one l
   const expectedLocales = [
     "de", "fr", "es", "pt-BR", "it", "pl", "uk", "tr",
     "nl", "sv", "fi", "cs", "ro", "el", "vi", "id", "zh-CN", "zh-TW",
-    "ar", "he", "hi", "kk"
+    "ar", "he", "hi", "kk",
+    "ja", "ko", "th", "uz", "uz-Cyrl", "ka", "hy", "tk", "az", "ky", "tg", "be"
   ];
   assert.deepEqual(
     Array.from(window.MontazhnayaContextualHelpTranslationStatus.locales),
@@ -177,6 +178,18 @@ test("live contextual-help translations cover every source string for wave one l
   assert.equal(packs.he["Меню «Файл»"], "תפריט קובץ");
   assert.equal(packs.hi["Меню «Файл»"], "फ़ाइल मेनू");
   assert.equal(packs.kk["Меню «Файл»"], "Файл мәзірі");
+  assert.equal(packs.ja["Меню «Файл»"], "ファイルメニュー");
+  assert.equal(packs.ko["Меню «Файл»"], "파일 메뉴");
+  assert.equal(packs.th["Меню «Файл»"], "เมนูไฟล์");
+  assert.equal(packs.uz["Меню «Файл»"], "Fayl menyusi");
+  assert.equal(packs["uz-Cyrl"]["Меню «Файл»"], "Файл менюси");
+  assert.equal(packs.ka["Меню «Файл»"], "ფაილის მენიუ");
+  assert.equal(packs.hy["Меню «Файл»"], "Ֆայլի ընտրացանկ");
+  assert.equal(packs.tk["Меню «Файл»"], "Faýl menýusy");
+  assert.equal(packs.az["Меню «Файл»"], "Fayl menyusu");
+  assert.equal(packs.ky["Меню «Файл»"], "Файл менюсу");
+  assert.equal(packs.tg["Меню «Файл»"], "Менюи Файл");
+  assert.equal(packs.be["Меню «Файл»"], "Меню «Файл»");
   assert.equal(packs.uk["Таймлайн"], "Часова шкала");
   assert.equal(packs.kk["Таймлайн"], "Уақыт шкаласы");
 });
