@@ -3492,7 +3492,7 @@
     "Export und Codec-Unterstützung hängen vom Browser und den eingebundenen Bibliotheken ab.",
     "Dies setzt die Exportgrenze, ohne den Quellclip selbst zu trimmen.",
     "Dies ist nicht der Startpunkt des Quellvideos.",
-    "Diese Einstellung kannst du jederzeit wieder aktivieren."
+    "Diese Einstellung kannst du jederzeit wieder aktivieren.",
     "Zeigt Versionsinformationen und die Funktionen des Editors an.",
     "Hier findest du die Version des Editors und seine wichtigsten Einschränkungen.",
     "Prüft, ob lokale Werkzeuge verfügbar sind, zeigt ihre Versionen an und überprüft die benötigten Codecs.",
@@ -3571,7 +3571,7 @@
     "L’export et la prise en charge des codecs dépendent du navigateur et des bibliothèques chargées.",
     "Cela définit la limite d’export sans rogner le clip source lui-même.",
     "Ce n’est pas le point de départ de la vidéo source.",
-    "Vous pouvez réactiver ce réglage à tout moment."
+    "Vous pouvez réactiver ce réglage à tout moment.",
     "Affiche la version et les fonctionnalités du logiciel de montage.",
     "Consulte cette fenêtre pour connaître la version de l’application et ses principales limites.",
     "Vérifie la disponibilité des outils locaux, affiche leurs versions et contrôle la prise en charge des codecs requis.",
@@ -3650,7 +3650,7 @@
     "La exportación y la compatibilidad con códecs dependen del navegador y de las bibliotecas cargadas.",
     "Esto establece el límite de exportación sin recortar el clip original.",
     "Este no es el punto de inicio del vídeo original.",
-    "Puedes volver a activar esta opción en cualquier momento."
+    "Puedes volver a activar esta opción en cualquier momento.",
     "Muestra la versión y las funciones del editor.",
     "Consulta aquí la versión de la aplicación y sus principales limitaciones.",
     "Comprueba si las herramientas locales están disponibles, muestra sus versiones y verifica los códecs necesarios.",
@@ -3729,7 +3729,7 @@
     "A exportação e o suporte a codecs dependem do navegador e das bibliotecas carregadas.",
     "Isso define o limite da exportação sem recortar o clipe de origem.",
     "Este não é o ponto inicial do vídeo de origem.",
-    "Você pode ativar esta opção novamente a qualquer momento."
+    "Você pode ativar esta opção novamente a qualquer momento.",
     "Mostra a versão e os recursos do editor.",
     "Use esta janela para conferir a versão do aplicativo e suas principais limitações.",
     "Verifica se as ferramentas locais estão disponíveis, informa suas versões e verifica os codecs necessários.",
@@ -3808,7 +3808,7 @@
     "Esportazione e supporto dei codec dipendono dal browser e dalle librerie caricate.",
     "Questo imposta il limite di esportazione senza tagliare la clip sorgente.",
     "Questo non è il punto iniziale del video sorgente.",
-    "Puoi riattivare questa impostazione in qualsiasi momento."
+    "Puoi riattivare questa impostazione in qualsiasi momento.",
     "Mostra la versione e le funzionalità dell’editor.",
     "Usa questa finestra per verificare la versione dell’applicazione e i suoi principali limiti.",
     "Verifica la disponibilità degli strumenti locali, ne mostra le versioni e controlla i codec richiesti.",
@@ -3887,7 +3887,7 @@
     "Eksport i obsługa kodeków zależą od przeglądarki oraz dołączonych bibliotek.",
     "To ustawia granicę eksportu, nie przycinając samego klipu źródłowego.",
     "To nie jest punkt początkowy materiału źródłowego.",
-    "To ustawienie można ponownie włączyć w dowolnym momencie."
+    "To ustawienie można ponownie włączyć w dowolnym momencie.",
     "Wyświetla informacje o wersji i możliwościach edytora.",
     "Sprawdź tutaj wersję aplikacji i jej najważniejsze ograniczenia.",
     "Sprawdza dostępność lokalnych narzędzi, wyświetla ich wersje i weryfikuje wymagane kodeki.",
@@ -3966,7 +3966,7 @@
     "Експорт і підтримка кодеків залежать від браузера та підключених бібліотек.",
     "Це задає межу експорту, не обрізаючи сам вихідний кліп.",
     "Це не початкова точка вихідного відео.",
-    "Цей параметр можна знову ввімкнути будь-коли."
+    "Цей параметр можна знову ввімкнути будь-коли.",
     "Показує відомості про версію та можливості редактора.",
     "Тут можна перевірити версію програми та її основні обмеження.",
     "Перевіряє наявність локальних інструментів, показує їхні версії та перевіряє потрібні кодеки.",
@@ -4045,7 +4045,7 @@
     "Dışa aktarma ve kodek desteği tarayıcıya ve yüklenen kütüphanelere bağlıdır.",
     "Bu, kaynak klibi kırpmadan dışa aktarma sınırını belirler.",
     "Bu, kaynak videonun başlangıç noktası değildir.",
-    "Bu ayarı istediğin zaman yeniden açabilirsin."
+    "Bu ayarı istediğin zaman yeniden açabilirsin.",
     "Düzenleyicinin sürümünü ve özelliklerini gösterir.",
     "Uygulama sürümünü ve temel kısıtlamalarını buradan kontrol edebilirsin.",
     "Yerel araçların kullanılabilirliğini denetler, sürümlerini gösterir ve gerekli codec desteğini doğrular.",
@@ -4124,7 +4124,7 @@
     "Export en codec-ondersteuning zijn afhankelijk van de browser en geladen bibliotheken.",
     "Dit stelt de exportgrens in zonder de bronclip zelf te trimmen.",
     "Dit is niet het beginpunt van de bronvideo.",
-    "Je kunt deze instelling op elk moment weer inschakelen."
+    "Je kunt deze instelling op elk moment weer inschakelen.",
     "Toont de versie en functies van de editor.",
     "Gebruik dit venster om de applicatieversie en de belangrijkste beperkingen te bekijken.",
     "Controleert of lokale hulpprogramma's beschikbaar zijn, toont hun versies en controleert de vereiste codecs.",
@@ -4203,7 +4203,7 @@
     "Export och codec-stöd beror på webbläsaren och inlästa bibliotek.",
     "Detta anger exportgränsen utan att trimma själva källklippet.",
     "Detta är inte källvideons startpunkt.",
-    "Du kan aktivera den här inställningen igen när som helst."
+    "Du kan aktivera den här inställningen igen när som helst.",
     "Visar redigerarens version och funktioner.",
     "Använd detta fönster för att kontrollera programmets version och dess viktigaste begränsningar.",
     "Kontrollerar om lokala verktyg är tillgängliga, visar deras versioner och verifierar stöd för nödvändiga kodekar.",
@@ -4282,7 +4282,7 @@
     "Vienti ja koodekkituki riippuvat selaimesta ja ladatuista kirjastoista.",
     "Tämä määrittää vientirajan trimmaamatta itse lähdeleikettä.",
     "Tämä ei ole lähdevideon aloituskohta.",
-    "Voit ottaa tämän asetuksen uudelleen käyttöön milloin tahansa."
+    "Voit ottaa tämän asetuksen uudelleen käyttöön milloin tahansa.",
     "Näyttää editorin version ja ominaisuudet.",
     "Tästä voit tarkistaa sovelluksen version ja sen tärkeimmät rajoitukset.",
     "Tarkistaa paikallisten työkalujen saatavuuden ja versiot sekä tarvittavien koodekkien tuen.",
@@ -4361,7 +4361,7 @@
     "Export a podpora kodeků závisí na prohlížeči a načtených knihovnách.",
     "Tím se nastaví hranice exportu, aniž by se ořízl zdrojový klip.",
     "Nejde o počáteční bod zdrojového videa.",
-    "Toto nastavení můžeš kdykoli znovu zapnout."
+    "Toto nastavení můžeš kdykoli znovu zapnout.",
     "Zobrazuje informace o verzi a funkcích editoru.",
     "Zde zjistíš verzi aplikace a její hlavní omezení.",
     "Kontroluje dostupnost místních nástrojů, zobrazuje jejich verze a ověřuje potřebné kodeky.",
@@ -4440,7 +4440,7 @@
     "Exportul și suportul pentru codecuri depind de browser și bibliotecile încărcate.",
     "Aceasta stabilește limita exportului fără a tăia clipul sursă.",
     "Acesta nu este punctul de început al videoclipului sursă.",
-    "Poți reactiva această setare oricând."
+    "Poți reactiva această setare oricând.",
     "Afișează versiunea și funcțiile editorului.",
     "Folosește această fereastră pentru a verifica versiunea aplicației și principalele limitări.",
     "Verifică disponibilitatea instrumentelor locale, afișează versiunile lor și confirmă codecurile necesare.",
@@ -4519,7 +4519,7 @@
     "Η εξαγωγή και η υποστήριξη κωδικοποιητών εξαρτώνται από το πρόγραμμα περιήγησης και τις φορτωμένες βιβλιοθήκες.",
     "Αυτό ορίζει το όριο εξαγωγής χωρίς να περικόπτει το ίδιο το κλιπ πηγής.",
     "Αυτό δεν είναι το σημείο έναρξης του αρχικού βίντεο.",
-    "Μπορείς να ενεργοποιήσεις ξανά αυτή τη ρύθμιση οποιαδήποτε στιγμή."
+    "Μπορείς να ενεργοποιήσεις ξανά αυτή τη ρύθμιση οποιαδήποτε στιγμή.",
     "Εμφανίζει την έκδοση και τις δυνατότητες του προγράμματος επεξεργασίας.",
     "Χρησιμοποίησε αυτό το παράθυρο για να ελέγξεις την έκδοση της εφαρμογής και τους βασικούς περιορισμούς της.",
     "Ελέγχει αν υπάρχουν διαθέσιμα τοπικά εργαλεία, εμφανίζει τις εκδόσεις τους και επαληθεύει τους απαιτούμενους κωδικοποιητές.",
@@ -4598,7 +4598,7 @@
     "Xuất video và hỗ trợ codec phụ thuộc vào trình duyệt cùng các thư viện được tải.",
     "Thao tác này đặt giới hạn xuất mà không cắt chính clip nguồn.",
     "Đây không phải điểm bắt đầu của video nguồn.",
-    "Bạn có thể bật lại cài đặt này bất cứ lúc nào."
+    "Bạn có thể bật lại cài đặt này bất cứ lúc nào.",
     "Hiển thị phiên bản và các tính năng của trình chỉnh sửa.",
     "Dùng cửa sổ này để kiểm tra phiên bản ứng dụng và các giới hạn chính.",
     "Kiểm tra các công cụ cục bộ có sẵn hay không, hiển thị phiên bản và xác minh codec cần thiết.",
@@ -4677,7 +4677,7 @@
     "Ekspor dan dukungan codec bergantung pada browser dan pustaka yang dimuat.",
     "Ini menetapkan batas ekspor tanpa memotong klip sumber itu sendiri.",
     "Ini bukan titik awal video sumber.",
-    "Pengaturan ini dapat diaktifkan kembali kapan saja."
+    "Pengaturan ini dapat diaktifkan kembali kapan saja.",
     "Menampilkan versi dan fitur editor.",
     "Gunakan jendela ini untuk memeriksa versi aplikasi dan batasan utamanya.",
     "Memeriksa ketersediaan alat lokal, menampilkan versinya, dan memastikan codec yang diperlukan didukung.",
@@ -4756,7 +4756,7 @@
     "导出方式和编解码器支持取决于浏览器及已加载的库。",
     "此设置仅确定导出边界，不会修剪源片段本身。",
     "这不是源视频的起始位置。",
-    "你可以随时重新启用此设置。"
+    "你可以随时重新启用此设置。",
     "显示编辑器的版本和功能。",
     "在此查看应用版本及其主要限制。",
     "检查本地工具是否可用、显示其版本，并验证所需编解码器支持。",
@@ -4835,7 +4835,7 @@
     "匯出方式與編解碼器支援取決於瀏覽器及載入的程式庫。",
     "此設定只決定匯出邊界，不會修剪來源片段本身。",
     "這不是來源影片的起始位置。",
-    "你可以隨時重新啟用此設定。"
+    "你可以隨時重新啟用此設定。",
     "顯示編輯器的版本與功能。",
     "可在此查看應用程式版本及其主要限制。",
     "檢查本機工具是否可用、顯示其版本，並確認所需編解碼器的支援情況。",
@@ -4914,7 +4914,7 @@
     "يعتمد التصدير ودعم برامج الترميز على المتصفح والمكتبات المحمّلة.",
     "يحدد هذا حد التصدير دون قص المقطع الأصلي نفسه.",
     "هذه ليست نقطة بداية الفيديو الأصلي.",
-    "يمكنك إعادة تفعيل هذا الإعداد في أي وقت."
+    "يمكنك إعادة تفعيل هذا الإعداد في أي وقت.",
     "يعرض إصدار المحرر وميزاته.",
     "استخدم هذه النافذة لمعرفة إصدار التطبيق وأهم القيود.",
     "يتحقق من توفر الأدوات المحلية، ويعرض إصداراتها، ويتأكد من دعم برامج الترميز المطلوبة.",
@@ -4993,7 +4993,7 @@
     "הייצוא ותמיכת המקודדים תלויים בדפדפן ובספריות שנטענו.",
     "הגדרה זו קובעת את גבול הייצוא בלי לחתוך את קליפ המקור עצמו.",
     "זו אינה נקודת ההתחלה של סרטון המקור.",
-    "אפשר להפעיל את ההגדרה הזו מחדש בכל עת."
+    "אפשר להפעיל את ההגדרה הזו מחדש בכל עת.",
     "מציג את גרסת העורך ואת התכונות שלו.",
     "השתמש בחלון הזה כדי לבדוק את גרסת היישום ואת המגבלות העיקריות שלו.",
     "בודק אילו כלים מקומיים זמינים, מציג את הגרסאות שלהם ומוודא תמיכה במפענחים הנדרשים.",
@@ -5072,7 +5072,7 @@
     "एक्सपोर्ट और कोडेक समर्थन ब्राउज़र तथा लोड की गई लाइब्रेरी पर निर्भर करते हैं।",
     "यह स्रोत क्लिप को ट्रिम किए बिना एक्सपोर्ट की सीमा तय करता है।",
     "यह स्रोत वीडियो का शुरुआती बिंदु नहीं है।",
-    "आप इस सेटिंग को कभी भी फिर से चालू कर सकते हैं।"
+    "आप इस सेटिंग को कभी भी फिर से चालू कर सकते हैं।",
     "एडिटर का संस्करण और सुविधाएँ दिखाता है।",
     "इस विंडो में ऐप्लिकेशन का संस्करण और उसकी मुख्य सीमाएँ देखें।",
     "स्थानीय टूल की उपलब्धता जाँचता है, उनके संस्करण दिखाता है और आवश्यक कोडेक समर्थन सत्यापित करता है।",
@@ -5151,7 +5151,7 @@
     "Экспорт пен кодек қолдауы браузерге және жүктелген кітапханаларға байланысты.",
     "Бұл бастапқы клипті қимай-ақ экспорт шекарасын белгілейді.",
     "Бұл бастапқы бейненің басталу нүктесі емес.",
-    "Бұл баптауды кез келген уақытта қайта қосуға болады."
+    "Бұл баптауды кез келген уақытта қайта қосуға болады.",
     "Редактор нұсқасы мен мүмкіндіктері туралы ақпаратты көрсетеді.",
     "Осы жерден қолданба нұсқасын және оның негізгі шектеулерін тексеруге болады.",
     "Жергілікті құралдардың қолжетімділігін тексереді, нұсқаларын көрсетеді және қажетті кодектерді қолдауды растайды.",
@@ -5230,7 +5230,7 @@
     "書き出しとコーデックの対応状況は、ブラウザーと読み込まれたライブラリによって異なります。",
     "これは元のクリップをトリミングせずに、書き出し範囲を指定します。",
     "これは元動画の開始位置ではありません。",
-    "この設定はいつでも再び有効にできます。"
+    "この設定はいつでも再び有効にできます。",
     "エディターのバージョンと機能を表示します。",
     "この画面でアプリのバージョンと主な制限を確認できます。",
     "ローカルツールの有無とバージョンを確認し、必要なコーデックへの対応を検証します。",
@@ -5309,7 +5309,7 @@
     "내보내기와 코덱 지원은 브라우저 및 로드된 라이브러리에 따라 달라집니다.",
     "이 설정은 원본 클립을 자르지 않고 내보내기 경계를 지정합니다.",
     "이것은 원본 동영상의 시작 지점이 아닙니다.",
-    "이 설정은 언제든 다시 켤 수 있습니다."
+    "이 설정은 언제든 다시 켤 수 있습니다.",
     "편집기의 버전과 기능을 표시합니다.",
     "이 창에서 애플리케이션 버전과 주요 제한 사항을 확인할 수 있습니다.",
     "로컬 도구의 사용 가능 여부와 버전을 확인하고 필요한 코덱 지원을 검증합니다.",
@@ -5388,7 +5388,7 @@
     "การส่งออกและการรองรับโคเดกขึ้นอยู่กับเบราว์เซอร์และไลบรารีที่โหลด",
     "นี่เป็นการกำหนดขอบเขตการส่งออกโดยไม่ตัดคลิปต้นฉบับ",
     "นี่ไม่ใช่จุดเริ่มต้นของวิดีโอต้นฉบับ",
-    "คุณสามารถเปิดการตั้งค่านี้อีกครั้งได้ทุกเมื่อ"
+    "คุณสามารถเปิดการตั้งค่านี้อีกครั้งได้ทุกเมื่อ",
     "แสดงเวอร์ชันและความสามารถของโปรแกรมตัดต่อ",
     "ใช้หน้าต่างนี้เพื่อตรวจสอบเวอร์ชันของแอปและข้อจำกัดหลัก",
     "ตรวจสอบว่าเครื่องมือในเครื่องพร้อมใช้งานหรือไม่ แสดงเวอร์ชัน และยืนยันการรองรับตัวแปลงสัญญาณที่จำเป็น",
@@ -5467,7 +5467,7 @@
     "Eksport va kodek qo‘llovi brauzer hamda yuklangan kutubxonalarga bog‘liq.",
     "Bu manba klipni qirqmasdan eksport chegarasini belgilaydi.",
     "Bu manba videoning boshlanish nuqtasi emas.",
-    "Bu sozlamani istalgan vaqtda qayta yoqish mumkin."
+    "Bu sozlamani istalgan vaqtda qayta yoqish mumkin.",
     "Tahrirlovchi versiyasi va imkoniyatlarini ko‘rsatadi.",
     "Bu oynada ilova versiyasi va uning asosiy cheklovlarini tekshirishingiz mumkin.",
     "Mahalliy vositalar mavjudligini tekshiradi, versiyalarini ko‘rsatadi va kerakli kodeklar qo‘llab-quvvatlanishini tasdiqlaydi.",
@@ -5546,7 +5546,7 @@
     "Экспорт ва кодек қўллови браузер ҳамда юкланган кутубхоналарга боғлиқ.",
     "Бу манба клипни қирқмасдан экспорт чегарасини белгилайди.",
     "Бу манба видеонинг бошланиш нуқтаси эмас.",
-    "Бу созламани исталган вақтда қайта ёқиш мумкин."
+    "Бу созламани исталган вақтда қайта ёқиш мумкин.",
     "Муҳаррир версияси ва имкониятларини кўрсатади.",
     "Бу ойнада илова версияси ва унинг асосий чекловларини текширишингиз мумкин.",
     "Маҳаллий воситалар мавжудлигини текширади, версияларини кўрсатади ва керакли кодеклар қўллаб-қувватланишини тасдиқлайди.",
@@ -5625,7 +5625,7 @@
     "ექსპორტი და კოდეკების მხარდაჭერა ბრაუზერსა და ჩატვირთულ ბიბლიოთეკებზეა დამოკიდებული.",
     "ეს ექსპორტის საზღვარს ადგენს ისე, რომ თავად წყარო კლიპი არ მოიჭრას.",
     "ეს წყარო ვიდეოს საწყისი წერტილი არ არის.",
-    "ამ პარამეტრის ხელახლა ჩართვა ნებისმიერ დროს შეგიძლია."
+    "ამ პარამეტრის ხელახლა ჩართვა ნებისმიერ დროს შეგიძლია.",
     "აჩვენებს რედაქტორის ვერსიასა და შესაძლებლობებს.",
     "ამ ფანჯარაში შეამოწმებ აპლიკაციის ვერსიას და მის ძირითად შეზღუდვებს.",
     "ამოწმებს ადგილობრივი ხელსაწყოების ხელმისაწვდომობას, აჩვენებს მათ ვერსიებს და საჭირო კოდეკების მხარდაჭერას.",
@@ -5704,7 +5704,7 @@
     "Արտահանումը և կոդեկների աջակցությունը կախված են զննարկիչից և բեռնված գրադարաններից։",
     "Սա սահմանում է արտահանման սահմանը՝ առանց սկզբնական հոլովակը կտրելու։",
     "Սա սկզբնական տեսանյութի մեկնարկային կետը չէ։",
-    "Այս կարգավորումը ցանկացած պահի կարող ես կրկին միացնել։"
+    "Այս կարգավորումը ցանկացած պահի կարող ես կրկին միացնել։",
     "Ցուցադրում է խմբագրիչի տարբերակն ու հնարավորությունները։",
     "Այս պատուհանում կարող ես ստուգել հավելվածի տարբերակն ու հիմնական սահմանափակումները։",
     "Ստուգում է տեղական գործիքների առկայությունը, ցուցադրում դրանց տարբերակները և ստուգում անհրաժեշտ կոդեկների աջակցությունը։",
@@ -5783,7 +5783,7 @@
     "Eksport we kodek goldawy brauzere hem-de ýüklenen kitaphanalara bagly.",
     "Bu çeşme klipini gyrkmazdan eksport çägini belleýär.",
     "Bu çeşme wideonyň başlangyç nokady däl.",
-    "Bu sazlamany islän wagtyň täzeden açyp bilersiň."
+    "Bu sazlamany islän wagtyň täzeden açyp bilersiň.",
     "Redaktoryň wersiýasyny we mümkinçiliklerini görkezýär.",
     "Programma wersiýasyny we onuň esasy çäklendirmelerini şu ýerden barla.",
     "Ýerli gurallaryň elýeterliligini barlaýar, wersiýalaryny görkezýär we zerur kodek goldawyny tassyklaýar.",
@@ -5862,7 +5862,7 @@
     "İxrac və kodek dəstəyi brauzerdən və yüklənmiş kitabxanalardan asılıdır.",
     "Bu, mənbə klipini kəsmədən ixrac sərhədini müəyyən edir.",
     "Bu, mənbə videonun başlanğıc nöqtəsi deyil.",
-    "Bu parametri istənilən vaxt yenidən aktivləşdirə bilərsən."
+    "Bu parametri istənilən vaxt yenidən aktivləşdirə bilərsən.",
     "Redaktorun versiyasını və imkanlarını göstərir.",
     "Bu pəncərədə tətbiqin versiyasını və əsas məhdudiyyətlərini yoxlaya bilərsiniz.",
     "Yerli alətlərin mövcudluğunu yoxlayır, versiyalarını göstərir və tələb olunan kodeklərin dəstəyini təsdiqləyir.",
@@ -5941,7 +5941,7 @@
     "Экспорт жана кодек колдоосу браузерге жана жүктөлгөн китепканаларга көз каранды.",
     "Бул баштапкы клипти кеспестен экспорт чегин белгилейт.",
     "Бул баштапкы видеонун башталуу чекити эмес.",
-    "Бул жөндөөнү каалаган убакта кайра күйгүзсө болот."
+    "Бул жөндөөнү каалаган убакта кайра күйгүзсө болот.",
     "Редактордун версиясы жана мүмкүнчүлүктөрү тууралуу маалыматты көрсөтөт.",
     "Бул жерден колдонмонун версиясын жана негизги чектөөлөрүн текшере аласыз.",
     "Жергиликтүү куралдардын жеткиликтүүлүгүн текшерет, версияларын көрсөтөт жана керектүү кодектерди колдоону ырастайт.",
@@ -6020,7 +6020,7 @@
     "Содирот ва дастгирии кодекҳо аз браузер ва китобхонаҳои боршуда вобастаанд.",
     "Ин ҳудуди содиротро муайян мекунад, бе он ки худи клипи манбаъ бурида шавад.",
     "Ин нуқтаи оғози видеои манбаъ нест.",
-    "Ин танзимро ҳар вақт дубора фаъол кардан мумкин аст."
+    "Ин танзимро ҳар вақт дубора фаъол кардан мумкин аст.",
     "Версия ва имкониятҳои муҳаррирро нишон медиҳад.",
     "Дар ин равзана версияи барнома ва маҳдудиятҳои асосии онро санҷед.",
     "Мавҷудияти абзорҳои маҳаллиро месанҷад, версияҳои онҳоро нишон медиҳад ва дастгирии кодекҳои заруриро тасдиқ мекунад.",
@@ -6099,7 +6099,7 @@
     "Экспарт і падтрымка кодэкаў залежаць ад браўзера і загружаных бібліятэк.",
     "Гэта задае мяжу экспарту, не абразаючы сам зыходны кліп.",
     "Гэта не пачатковы пункт зыходнага відэа.",
-    "Гэты параметр можна зноў уключыць у любы момант."
+    "Гэты параметр можна зноў уключыць у любы момант.",
     "Паказвае версію і магчымасці рэдактара.",
     "Тут можна праверыць версію праграмы і яе асноўныя абмежаванні.",
     "Правярае наяўнасць лакальных інструментаў, паказвае іх версіі і правярае падтрымку патрэбных кодэкаў.",
