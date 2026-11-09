@@ -215,6 +215,8 @@ test("contextual-help GUI audit distinguishes English fallback from missing Cyri
   assert.match(audit, /english-fallback-in-contextual-help/);
   assert.match(audit, /English fallback fields in live contextual help/);
   assert.match(audit, /english_fallback_fields/);
+  assert.match(audit, /knownIdentical=\(locale==='uk'\|\|locale==='be'\)&&value==='Меню «Файл»'/);
+  assert.match(audit, /\.\.\.report\.localeSummaries\.map\(item =>/);
 
   const i18n = read("src/renderer/i18n.js");
   assert.match(i18n, /translateFallback: source =>/);
