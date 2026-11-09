@@ -274,7 +274,8 @@ test("contextual-help GUI audit distinguishes English fallback from missing Cyri
   assert.match(audit, /helpExtension\.sourceCount!==77/);
   assert.match(audit, /Additional live contextual-help phrases translated per non-English locale/);
   assert.match(audit, /knownIdentical=\(locale==='uk'\|\|locale==='be'\)&&value==='Меню «Файл»'/);
-  assert.match(audit, /\.\.\.report\.localeSummaries\.map\(item =>/);\n  assert.match(audit, /viewport\.renderedSamples\.length/);
+  assert.match(audit, /\.\.\.report\.localeSummaries\.map\(item =>/);
+  assert.match(audit, /viewport\.renderedSamples\.length/);
 
   const i18n = read("src/renderer/i18n.js");
   assert.match(i18n, /translateFallback: source =>/);
