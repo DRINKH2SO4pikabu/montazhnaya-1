@@ -816,8 +816,7 @@
       "Type: {kind}. Start: {start}; duration: {duration}. Press Ctrl+Z to undo an accidental change.": "Tür: {kind}. Başlangıç: {start}; süre: {duration}. Yanlışlıkla yapılan değişikliği geri almak için Ctrl+Z tuşlarına basın.",
       "{meta}. Moving a source item to the timeline does not change the original file.": "{meta}. Bir kaynak öğeyi zaman çizelgesine taşımak özgün dosyayı değiştirmez.",
       "{tip} Installed duration: {duration} s.": "{tip} Ayarlanan süre: {duration} sn."
-    }
-
+    },
 
     nl: {
       "Arrange by filename sequence": "Ordenen op bestandsnummering",
