@@ -1751,6 +1751,6 @@
     locales: Object.freeze(Object.keys(localeTranslations)),
     sourceCount: Object.keys(sourceEnglish).length,
     status: "machine-assisted-draft-native-speaker-review-pending",
-    wave: "contextual-live-help-wave-1"
+    wave: "contextual-live-help-waves-1-2"
   });
 })(window);
