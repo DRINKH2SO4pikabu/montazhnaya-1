@@ -107,3 +107,24 @@ test("Arabic contextual-help typography reserves additional line height", () => 
   assert.match(html, /html\[dir="rtl"\] \.fhelp-text\{line-height:1\.85/);
   assert.match(html, /html\[dir="rtl"\] \.fhelp-tip\{line-height:1\.8/);
 });
+
+test("Ukrainian and Kazakh contextual timeline labels are localized without changing Russian source copy", () => {
+  const window = {};
+  const context = { window };
+  vm.createContext(context);
+  vm.runInContext(read("src/renderer/locales/editorial-overrides.js"), context, {
+    filename: "editorial-overrides.js"
+  });
+  assert.equal(
+    window.MontazhnayaContextualHelpTranslations.uk["Таймлайн"],
+    "Часова шкала"
+  );
+  assert.equal(
+    window.MontazhnayaContextualHelpTranslations.kk["Таймлайн"],
+    "Уақыт шкаласы"
+  );
+
+  const i18n = read("src/renderer/i18n.js");
+  assert.match(i18n, /const contextualHelp = root\.MontazhnayaContextualHelpTranslations\?\.\[locale\]/);
+  assert.match(i18n, /contextualHelp \|\| \{\}/);
+});
