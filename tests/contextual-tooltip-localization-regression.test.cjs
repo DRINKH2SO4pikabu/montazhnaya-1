@@ -94,8 +94,8 @@ test("dynamic tooltips have explicit definitions for editor menus and current co
     "beginnerTourNext",
     "tl-title",
     "tl-corner",
-    "Дорожка {track}",
-    "Управление дорожкой {track}"
+    "title:track?.label ? 'Дорожка ' + track.label",
+    "title:track?.label ? 'Управление дорожкой ' + track.label"
   ]) {
     assert.ok(html.includes(token), "Contextual-help definition is missing " + token);
   }
