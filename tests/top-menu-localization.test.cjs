@@ -45,16 +45,16 @@ function readTopMenuSources() {
   const buttons = [];
   const shortcutTexts = [];
 
-  for (const match of nav.matchAll(/<button\\b([^>]*)>([\\s\\S]*?)<\\/button>/g)) {
+  for (const match of nav.matchAll(/<button\b([^>]*)>([\s\S]*?)<\/button>/g)) {
     const attributes = match[1];
     const inner = match[2];
-    const className = (attributes.match(/\\bclass="([^"]*)"/) || [])[1] || "";
-    const isMenuButton = /(?:^|\\s)menu-btn(?:\\s|$)/.test(className);
-    const isMenuItem = /(?:^|\\s)menu-item(?:\\s|$)/.test(className);
+    const className = (attributes.match(/\bclass="([^"]*)"/) || [])[1] || "";
+    const isMenuButton = /(?:^|\s)menu-btn(?:\s|$)/.test(className);
+    const isMenuItem = /(?:^|\s)menu-item(?:\s|$)/.test(className);
     if (!isMenuButton && !isMenuItem) continue;
 
-    const action = (attributes.match(/\\bdata-action="([^"]+)"/) || [])[1] || null;
-    const labelHtml = inner.replace(/<span\\s+class="shortcut">[\\s\\S]*?<\\/span>/g, "");
+    const action = (attributes.match(/\bdata-action="([^"]+)"/) || [])[1] || null;
+    const labelHtml = inner.replace(/<span\s+class="shortcut">[\s\S]*?<\/span>/g, "");
     const label = stripMarkup(labelHtml);
     assert.ok(label, "Every top-menu button must have a visible label.");
 
@@ -64,10 +64,10 @@ function readTopMenuSources() {
       action
     });
 
-    for (const shortcutMatch of inner.matchAll(/<span\\s+class="shortcut">([\\s\\S]*?)<\\/span>/g)) {
+    for (const shortcutMatch of inner.matchAll(/<span\s+class="shortcut">([\s\S]*?)<\/span>/g)) {
       const value = stripMarkup(shortcutMatch[1]);
       if (!value) continue;
-      const looksLikeShortcut = /^(?:(?:Ctrl|Alt|Shift|Meta)(?:\\+[A-Za-z0-9←→]+)+|Delete|Del|Home|End|Space|[A-Z])$/.test(value);
+      const looksLikeShortcut = /^(?:(?:Ctrl|Alt|Shift|Meta)(?:\+[A-Za-z0-9←→]+)+|Delete|Del|Home|End|Space|[A-Z])$/.test(value);
       if (looksLikeShortcut) shortcutTexts.push(value);
       else buttons.push({ kind: "badge", label: value, action: null });
     }
