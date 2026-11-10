@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="dark">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self' file: data: blob:; script-src 'self' file: 'sha256-vzQSTYBU2r7za7WHqLrlZqI4vdeENMmPYZnyZyj3GDY='; script-src-attr 'none'; style-src 'self' 'unsafe-inline' file:; img-src 'self' file: data: blob:; media-src 'self' file: data: blob:; font-src 'self' file: data:; connect-src 'self' file: data: blob:; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' file: data: blob:; script-src 'self' file: 'sha256-liyAalvH416VpCVVx8I8u3f3AqOyfHyAjXRKBDcUE+s='; script-src-attr 'none'; style-src 'self' 'unsafe-inline' file:; img-src 'self' file: data: blob:; media-src 'self' file: data: blob:; font-src 'self' file: data:; connect-src 'self' file: data: blob:; object-src 'none'; base-uri 'none'; form-action 'none'">
 <title>Монтажная beta 3.6.45 — монтаж фото, аудио и видео</title>
 <link rel="icon" type="image/png" href="../../assets/montazhnaya-icon-256.png">
 <script src="./locales/manifest.js"></script>
@@ -17,6 +17,7 @@
 <script src="./locales/notifications.js"></script>
 <script src="./locales/ipc-error-translations.js"></script>
 <script src="./locales/editorial-overrides.js"></script>
+<script src="./locales/contextual-help-translations.js"></script>
 <script src="./locales/tooltip-source.js"></script>
 <script src="./locales/tooltips-en.js"></script>
 <script src="./locales/tooltips-de.js"></script>
@@ -597,6 +598,9 @@ button{font-family:inherit;}
 html[dir="rtl"] #functionHelpPopover{direction:rtl;text-align:start;transform-origin:top right;}
 html[dir="rtl"] .fhelp-tip{border-left:0;border-right:2px solid #68aaff;border-radius:5px 0 0 5px;}
 .fhelp-key{direction:ltr;unicode-bidi:isolate;text-align:center;}
+html[dir="rtl"] .fhelp-title{line-height:1.75;padding-block:2px 3px;}
+html[dir="rtl"] .fhelp-text{line-height:1.85;padding-block:2px;}
+html[dir="rtl"] .fhelp-tip{line-height:1.8;padding-block:10px;}
 .fhelp-title,.fhelp-text,.fhelp-tip{overflow-wrap:anywhere;word-break:normal;}
 
 
@@ -1230,7 +1234,7 @@ html[lang^="kk"] .modal, html[lang^="ky"] .modal, html[lang^="tg"] .modal, html[
     </div>
 
     <nav class="menus">
-      <div class="menu" data-menu>
+      <div class="menu" data-menu data-help-menu="file">
         <button class="menu-btn" type="button">Файл</button>
         <div class="menu-pop">
           <button class="menu-item" data-action="new-project">Новый проект<span class="shortcut">Ctrl+N</span></button>
@@ -1249,7 +1253,7 @@ html[lang^="kk"] .modal, html[lang^="ky"] .modal, html[lang^="tg"] .modal, html[
           <button class="menu-item" data-action="clear-timeline">Очистить таймлайн</button>
         </div>
       </div>
-      <div class="menu" data-menu>
+      <div class="menu" data-menu data-help-menu="edit">
         <button class="menu-btn" type="button">Правка</button>
         <div class="menu-pop">
           <button class="menu-item" data-action="undo">Отменить<span class="shortcut">Ctrl+Z</span></button>
@@ -1276,7 +1280,7 @@ html[lang^="kk"] .modal, html[lang^="ky"] .modal, html[lang^="tg"] .modal, html[
           <button class="menu-item" data-action="deselect">Снять выделение</button>
         </div>
       </div>
-      <div class="menu" data-menu>
+      <div class="menu" data-menu data-help-menu="view">
         <button class="menu-btn" type="button">Вид</button>
         <div class="menu-pop">
           <button class="menu-item" data-action="zoom-in">Приблизить таймлайн</button>
@@ -1291,7 +1295,7 @@ html[lang^="kk"] .modal, html[lang^="ky"] .modal, html[lang^="tg"] .modal, html[
           <button class="menu-item" data-action="toggle-snap">Переключить прилипание</button>
         </div>
       </div>
-      <div class="menu" data-menu>
+      <div class="menu" data-menu data-help-menu="transitions">
         <button class="menu-btn" type="button">Переходы</button>
         <div class="menu-pop">
           <button class="menu-item" data-action="transition-library">Открыть библиотеку переходов <span class="shortcut">20 переходов</span></button>
@@ -1305,7 +1309,7 @@ html[lang^="kk"] .modal, html[lang^="ky"] .modal, html[lang^="tg"] .modal, html[
           <button class="menu-item" data-action="trans-clear">Убрать переходы клипа</button>
         </div>
       </div>
-      <div class="menu" data-menu>
+      <div class="menu" data-menu data-help-menu="help">
         <button class="menu-btn" type="button">Справка</button>
         <div class="menu-pop">
           <button class="menu-item" id="tutorialMenuBtn" type="button">Пошаговое знакомство</button>
@@ -11277,7 +11281,7 @@ function bindGlobalEvents() {
 
 const UI_HELP_ACTIONS = window.MontazhnayaTooltipSource.UI_HELP_ACTIONS;
 const UI_HELP_IDS = window.MontazhnayaTooltipSource.UI_HELP_IDS;
-UI_HELP_ACTIONS["tool-diagnostics"] = ["Диагностика FFmpeg и ffprobe", "Проверяет наличие локальных инструментов, их версии и необходимые кодеки.", "Открой окно диагностики из меню «Справка» и дождись окончания пробного кодирования.", "Если инструмент не найден, установи FFmpeg и ffprobe, добавь папку bin в PATH и перезапусти редактор."];
+UI_HELP_ACTIONS["tool-diagnostics"] = ["Диагностика FFmpeg и ffprobe", "Проверяет доступность локальных инструментов, их версии и поддержку нужных форматов.", "Открой это окно из меню «Справка» и дождись окончания проверок.", "Пробный экспорт помогает заранее обнаружить проблемы кодирования и звука."];
 
 /* ============================================================
    МОДУЛЬ 17. КОНТЕКСТНАЯ ИНСТРУКЦИЯ ПО НАВЕДЕНИЮ
@@ -11332,6 +11336,93 @@ function helpShortText(el) {
 }
 function helpActionDefinition(el) {
   const action = el?.dataset?.action;
+  if (action === 'tool-diagnostics') return {
+    title:'Диагностика FFmpeg и ffprobe',
+    purpose:'Проверяет доступность локальных инструментов, их версии и поддержку нужных форматов.',
+    usage:'Открой это окно из меню «Справка» и дождись окончания проверок.',
+    tip:'Пробный экспорт помогает заранее обнаружить проблемы кодирования и звука.'
+  };
+  if (el?.classList?.contains('menu-btn')) {
+    const menuKey = el.closest('.menu')?.dataset?.helpMenu;
+    const menuHelp = {
+      file: {title:'Меню «Файл»',purpose:'Содержит команды создания, открытия, сохранения и экспорта проектов.',usage:'Выбери нужную команду; перед очисткой или созданием нового проекта сохрани текущую работу.',tip:'Сохранение проекта и экспорт видео — разные операции.'},
+      edit: {title:'Меню «Правка»',purpose:'Содержит команды отмены и повтора, разрезания, удаления, копирования и перемещения клипов.',usage:'Выбери команду или используй указанное рядом сочетание клавиш.',tip:'Если результат не понравился, сначала попробуй «Отменить».'},
+      view: {title:'Меню «Вид»',purpose:'Управляет масштабом таймлайна, направляющими композиции и прилипанием клипов.',usage:'Включи нужные направляющие или подбери масштаб для точного монтажа.',tip:'Направляющие помогают при работе и не попадают в экспорт.'},
+      transitions: {title:'Меню «Переходы»',purpose:'Открывает каталог и команды переходов между клипами.',usage:'Выбери эффект или открой библиотеку, затем проверь его на стыке клипов.',tip:'Для плавного растворения соседним клипам нужно перекрытие по времени.'},
+      help: {title:'Меню «Справка»',purpose:'Содержит пошаговое знакомство, диагностику проекта и сведения о редакторе.',usage:'Открой знакомство для подсказок или запусти диагностику перед экспортом.',tip:'Сначала исправь предупреждения о потерянных файлах и проблемах экспорта.'}
+    };
+    if (menuKey && menuHelp[menuKey]) return menuHelp[menuKey];
+  }
+  if (el?.id === 'languageMenuBtn') return {
+    title:'Язык интерфейса',purpose:'Открывает список доступных языков редактора.',
+    usage:'Выбери язык и подтверди изменение.',
+    tip:'Пункт «Автоматически» использует язык системы, если он поддерживается.'
+  };
+  if (el?.id === 'enableFunctionHelp') return {
+    title:'Включить подробные подсказки',purpose:'Показывает пояснения при наведении на элементы интерфейса.',
+    usage:'Нажми кнопку, чтобы снова показывать подсказки.',
+    tip:'Подсказки помогают разобраться в редакторе и не изменяют проект.'
+  };
+  if (el?.id === 'disableFunctionHelp') return {
+    title:'Выключить подробные подсказки',purpose:'Скрывает поясняющие карточки при наведении на элементы интерфейса.',
+    usage:'Нажми кнопку, чтобы убрать подсказки.',
+    tip:'Эту настройку можно включить снова в любой момент.'
+  };
+  if (el?.id === 'btnSlideshow') return {
+    title:'Создать слайд-шоу',purpose:'Автоматически размещает фотографии на таймлайне и подстраивает их под выбранную музыку.',
+    usage:'Выбери фотографии и аудиофайл, затем проверь длительность и порядок кадров.',
+    tip:'Оригинальные файлы не изменяются.'
+  };
+  if (el?.id === 'beginnerTourClose') return {
+    title:'Закрыть знакомство',purpose:'Завершает пошаговое знакомство с редактором.',
+    usage:'Нажми крестик, чтобы закрыть окно знакомства.',
+    tip:'Знакомство можно запустить повторно из меню «Справка».'
+  };
+  if (el?.id === 'beginnerTourLater') return {
+    title:'Отложить знакомство',purpose:'Закрывает пошаговое знакомство, не проходя оставшиеся шаги.',
+    usage:'Нажми «Позже», если хочешь вернуться к редактору сейчас.',
+    tip:'Знакомство можно запустить позже из меню «Справка».'
+  };
+  if (el?.id === 'beginnerTourNext') return {
+    title:'Продолжить знакомство',purpose:'Переходит к следующему шагу пошагового знакомства.',
+    usage:'Нажми, чтобы начать знакомство или перейти дальше.',
+    tip:'На следующих шагах показаны основные действия редактора.'
+  };
+  if (el?.id === 'clipSpeedSelect' || el?.closest?.('.clip-speed-control')) return {
+    title:'Скорость клипа',purpose:'Изменяет скорость воспроизведения выбранного видеоклипа.',
+    usage:'Выбери коэффициент от 0,25× до 4× и проверь результат в окне предпросмотра.',
+    tip:'Ускорение сокращает длительность клипа, замедление увеличивает её.'
+  };
+  if (el?.classList?.contains('side-panel-head')) return {
+    title:'Библиотека медиа и переходов',
+    purpose:'Показывает импортированные материалы проекта и доступные переходы.',
+    usage:'Переключай вкладки «Медиа» и «Переходы», чтобы выбрать нужный ресурс.',
+    tip:'Счётчик рядом с названием показывает количество элементов в соответствующем разделе.'
+  };
+  if (el?.classList?.contains('preview-panel-head')) return {
+    title:'Монитор предпросмотра',
+    purpose:'Показывает изображение в текущей позиции курсора с учётом монтажа.',
+    usage:'Запусти воспроизведение или перемести курсор по шкале времени.',
+    tip:'Проверь кадрирование, титры, звук и переходы перед экспортом.'
+  };
+  if (el?.classList?.contains('panel-head') && el.closest('#propsPanel')) return {
+    title:'Панель свойств',
+    purpose:'Показывает параметры выбранного клипа или материала.',
+    usage:'Выдели элемент на таймлайне или в библиотеке и измени нужный параметр.',
+    tip:'Настройки применяются к выбранному объекту; результат проверь в окне предпросмотра.'
+  };
+  if (el?.classList?.contains('tl-title')) return {
+    title:'Таймлайн',
+    purpose:'Здесь располагаются видеоклипы, изображения и звуковые дорожки в порядке монтажа.',
+    usage:'Перетаскивай клипы, обрезай их края и перемещай курсор по шкале времени.',
+    tip:'Увеличь масштаб для точной работы, уменьши его для обзора всего проекта.'
+  };
+  if (el?.classList?.contains('tl-corner')) return {
+    title:'Дорожки',
+    purpose:'Показывает дорожки проекта и их порядок.',
+    usage:'Используй заголовки дорожек для блокировки, скрытия видео или отключения звука.',
+    tip:'Клипы на разных дорожках могут перекрываться по времени.'
+  };
   if (action && UI_HELP_ACTIONS[action]) {
     const v = UI_HELP_ACTIONS[action];
     return { title: v[0], purpose: v[1], usage: v[2], tip: v[3] || '', shortcut: v[4] || '' };
@@ -11405,7 +11496,14 @@ function helpActionDefinition(el) {
   if (el?.classList?.contains('clip')) {
     const clip = getClipById(el.dataset.clipId);
     const media = clip ? getMedia(clip.mediaId) : null;
-    return {title:clip ? 'Клип: ' + (clip.name || 'без названия') : 'Клип на таймлайне',purpose:'Это монтажный экземпляр исходного файла. Он хранит собственные точки обрезки, положение, длительность, эффекты и параметры.',usage:'Щёлкни, чтобы выделить; тащи середину клипа, чтобы переместить; используй левую/правую ручку, чтобы обрезать. Двойной щелчок или правая кнопка могут открыть дополнительные действия.',tip:'Тип: ' + (media ? (KIND_LABEL[media.kind] || media.kind) : 'медиа отсутствует') + '. Начало: ' + (clip ? timecode(clip.timelineStart) : '—') + ', длительность: ' + (clip ? shortTime(clip.duration) : '—') + '. Нажми Ctrl+Z, если результат случайный.'};
+    const clipName = clip ? (clip.name || 'без названия') : '';
+    const mediaKind = media ? (KIND_LABEL[media.kind] || media.kind) : 'медиа отсутствует';
+    return {
+      title:clip ? 'Клип: ' + clipName : 'Клип на таймлайне',
+      purpose:'Это монтажный экземпляр исходного файла. Он хранит собственные точки обрезки, положение, длительность, эффекты и параметры.',
+      usage:'Щёлкни, чтобы выделить; тащи середину клипа, чтобы переместить; используй левую/правую ручку, чтобы обрезать. Двойной щелчок или правая кнопка могут открыть дополнительные действия.',
+      tip:'Тип: ' + mediaKind + '. Начало: ' + (clip ? timecode(clip.timelineStart) : '—') + ', длительность: ' + (clip ? shortTime(clip.duration) : '—') + '. Нажми Ctrl+Z, если результат случайный.'
+    };
   }
   if (el?.classList?.contains('media-item')) {
     const title = el.querySelector('.mi-name')?.textContent?.trim() || 'Медиафайл';
@@ -11413,18 +11511,18 @@ function helpActionDefinition(el) {
     return {title:'Исходник: ' + title,purpose:'Материал в библиотеке доступен для добавления на таймлайн и повторного использования в нескольких местах.',usage:'Щёлкни для просмотра сведений или перетащи на совместимую дорожку. При необходимости используй кнопку удаления справа.',tip:meta + '. Перемещение исходника на таймлайн не меняет оригинальный файл.'};
   }
   if (el?.classList?.contains('sequence-marker')) {
-    const name = el.querySelector('.marker-tooltip')?.textContent?.trim() || 'Маркер';
-    return {title:'Маркер: ' + name,purpose:'Контрольная точка на шкале времени для ключевой сцены, реплики или музыкального акцента.',usage:'Щёлкни, чтобы перейти к метке; дважды щёлкни для переименования; правая кнопка открывает дополнительные действия.',tip:'Маркеры не появляются в финальном видео, они нужны для навигации.'};
+    const name = el.querySelector('.marker-tooltip')?.textContent?.trim() || '';
+    return {title:name ? 'Маркер: ' + name : 'Маркер',purpose:'Контрольная точка на шкале времени для ключевой сцены, реплики или музыкального акцента.',usage:'Щёлкни, чтобы перейти к метке; дважды щёлкни для переименования; правая кнопка открывает дополнительные действия.',tip:'Маркеры не появляются в финальном видео, они нужны для навигации.'};
   }
   if (el?.classList?.contains('lane')) {
     const row = el.closest('.tl-row');
     const track = row ? getTrack(row.dataset.track) : null;
-    return {title:'Дорожка ' + (track?.label || ''),purpose:track?.kind==='audio'?'Содержит звуковые клипы, которые можно сводить с другими аудиодорожками.':'Содержит видеоклипы и изображения, формирующие визуальную композицию.',usage:'Перетащи клип из библиотеки или перемести существующий клип на свободное место дорожки.',tip:track?.locked?'Дорожка заблокирована: сначала разблокируй её.':track?.hidden?'Дорожка скрыта и не отображается в композиции.':track?.muted?'Звук дорожки отключён.':'Позиции клипов измеряются по времени, а не по пикселям.'};
+    return {title:track?.label ? 'Дорожка ' + track.label : 'Дорожка',purpose:track?.kind==='audio'?'Содержит звуковые клипы, которые можно сводить с другими аудиодорожками.':'Содержит видеоклипы и изображения, формирующие визуальную композицию.',usage:'Перетащи клип из библиотеки или перемести существующий клип на свободное место дорожки.',tip:track?.locked?'Дорожка заблокирована: сначала разблокируй её.':track?.hidden?'Дорожка скрыта и не отображается в композиции.':track?.muted?'Звук дорожки отключён.':'Позиции клипов измеряются по времени, а не по пикселям.'};
   }
   if (el?.classList?.contains('ruler')) return {title:'Линейка времени',purpose:'Показывает временную шкалу проекта и позволяет быстро перемещать курсор воспроизведения.',usage:'Щёлкни или перетащи курсор по линейке, чтобы перейти к нужному моменту. Маркеры обозначают важные точки.',tip:'При высокой точности увеличь масштаб таймлайна и используй шаг по кадрам.'};
   if (el?.classList?.contains('track-head') || el?.classList?.contains('th-label')) {
     const row=el.closest('.tl-row'); const track=row?getTrack(row.dataset.track):null;
-    return {title:'Управление дорожкой ' + (track?.label || ''),purpose:'Здесь можно заблокировать дорожку, скрыть видеодорожку или отключить звук аудиодорожки.',usage:'Используй маленькие кнопки справа от названия дорожки. Состояние активной блокировки/скрытия выделяется цветом.',tip:'Блокировка защищает от случайного монтажа, но не является блокировкой доступа к файлу.'};
+    return {title:track?.label ? 'Управление дорожкой ' + track.label : 'Управление дорожкой',purpose:'Здесь можно заблокировать дорожку, скрыть видеодорожку или отключить звук аудиодорожки.',usage:'Используй маленькие кнопки справа от названия дорожки. Состояние активной блокировки/скрытия выделяется цветом.',tip:'Блокировка защищает от случайного монтажа, но не является блокировкой доступа к файлу.'};
   }
   if (el?.classList?.contains('transition-duration-row')) return {title:'Длительность перехода',purpose:'Общее значение продолжительности, применяемое при добавлении следующего перехода из каталога.',usage:'Перемести ползунок и прочитай длительность в секундах. Затем перетащи выбранную карточку.',tip:'Уже применённые переходы изменяются отдельно в свойствах выбранного клипа.'};
   if (el?.classList?.contains('transition-library-hint')) return {title:'Как применять переходы',purpose:'Подсказывает основные способы работы с библиотекой переходов.',usage:'Перетащи эффект на начало/конец клипа или на стык. Щелчок по карточке применяет переход к выделенному клипу.',tip:'Для полноценного перекрёстного растворения соседним клипам нужен общий временной участок.'};
@@ -11485,9 +11583,13 @@ function makeBeginnerFriendlyHelp(el, original) {
   if (!original) return original;
   const def = {...original};
   const action = el?.dataset?.action;
-  const id = el?.id;
+  const nestedControl = el?.matches?.('input,select,textarea') ? el : el?.querySelector?.('input,select,textarea');
+  const id = el?.id || nestedControl?.id;
   const override = (action && BEGINNER_ACTION_HELP[action]) || (id && BEGINNER_ID_HELP[id]);
   if (override) return {...def, ...override};
+  // Preserve canonical Russian source strings for locale dictionary lookup.
+  // The terminology rewrite below is only useful in the Russian source locale.
+  if ((window.MontazhnayaI18n?.getLocale?.() || 'ru') !== 'ru') return def;
   const replacements = [
     [/монтажную последовательность/gi, 'ваш ролик'], [/монтажной последовательности/gi, 'монтажа'],
     [/предыдущую последовательность/gi, 'предыдущую часть ролика'], [/в последовательности/gi, 'в ролике'], [/на последовательности/gi, 'на шкале монтажа'], [/концу последовательности/gi, 'концу ролика'], [/конец последовательности/gi, 'конец ролика'], [/начало последовательности/gi, 'начало ролика'], [/началу последовательности/gi, 'началу ролика'], [/курсора последовательности/gi, 'курсора ролика'], [/последовательности проекта/gi, 'проекта'], [/последовательности/gi, 'ролика'], [/последовательность/gi, 'ролик'],
@@ -11532,7 +11634,7 @@ function buildFunctionHelpContent(def) {
   addSection('Что делает',def.purpose);
   addSection('Что нажать',def.usage);
   if (def.tip) { const tip=document.createElement('div'); tip.className='fhelp-tip'; tip.textContent=uiText('Совет: ') + uiText(def.tip); pop.append(tip); }
-  if (def.shortcut) { const row=document.createElement('div'); row.className='fhelp-shortcut'; const label=document.createElement('span'); label.textContent=uiText('Можно нажать на клавиатуре'); const key=document.createElement('span'); key.className='fhelp-key'; key.textContent=def.shortcut; row.append(label,key); pop.append(row); }
+  if (def.shortcut) { const row=document.createElement('div'); row.className='fhelp-shortcut'; const label=document.createElement('span'); label.textContent=uiText('Можно нажать на клавиатуре'); const key=document.createElement('span'); key.className='fhelp-key'; key.textContent=uiText(def.shortcut); row.append(label,key); pop.append(row); }
   pop.setAttribute('aria-hidden','false');
 }
 function positionFunctionHelp(el) {

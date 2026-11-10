@@ -1,6 +1,8 @@
 ﻿param(
     [string]$OutputDirectory = '',
     [int]$DevToolsPort = 9337,
+    [ValidatePattern('^[A-Za-z0-9._/-]+$')]
+    [string]$Ref = 'main',
     [switch]$KeepWorkingCopy
 )
 
@@ -8,7 +10,7 @@ $ErrorActionPreference = 'Stop'
 
 $repository = 'DRINKH2SO4pikabu/montazhnaya-1'
 $workRoot = Join-Path $env:TEMP ('Montazhnaya-Tooltip-Audit-' + [guid]::NewGuid().ToString('N'))
-$sourceZip = Join-Path $workRoot 'montazhnaya-main.zip'
+$sourceZip = Join-Path $workRoot 'montazhnaya-source.zip'
 $sourceExtract = Join-Path $workRoot 'source'
 $profilePath = Join-Path $workRoot 'electron-profile'
 $appProcess = $null
@@ -73,21 +75,25 @@ try {
     [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
 
     Write-Host ''
-    Write-Host 'Загружаем актуальный исходный код из GitHub main...' -ForegroundColor Cyan
-    $archiveUrl = 'https://codeload.github.com/' + $repository + '/zip/refs/heads/main'
+    Write-Host ('Загружаем исходный код из GitHub, ref: ' + $Ref + '...') -ForegroundColor Cyan
+    $archiveUrl = 'https://codeload.github.com/' + $repository + '/zip/refs/heads/' + $Ref
     Invoke-WebRequest -Uri $archiveUrl -OutFile $sourceZip -UseBasicParsing
 
     New-Item -ItemType Directory -Force -Path $sourceExtract | Out-Null
     Expand-Archive -LiteralPath $sourceZip -DestinationPath $sourceExtract -Force
 
-    $projectRoot = Join-Path $sourceExtract 'montazhnaya-1-main'
+    $projectDirectory = Get-ChildItem -LiteralPath $sourceExtract -Directory | Select-Object -First 1
+    if (-not $projectDirectory) {
+        throw 'В архиве GitHub не найдена папка с исходным кодом проекта.'
+    }
+    $projectRoot = $projectDirectory.FullName
     if (-not (Test-Path -LiteralPath (Join-Path $projectRoot 'package.json'))) {
         throw 'В архиве GitHub не найдена корневая папка проекта с package.json.'
     }
 
     $auditScript = Join-Path $projectRoot 'qa\tooltip-gui-audit.cjs'
     if (-not (Test-Path -LiteralPath $auditScript)) {
-        throw 'В исходном коде пока нет GUI-аудита подсказок. Проверь, что загружена актуальная ветка main.'
+        throw ('В выбранном ref ' + $Ref + ' нет GUI-аудита подсказок. Проверь ветку или выбери более свежий ref.')
     }
 
     $originalLocation = Get-Location

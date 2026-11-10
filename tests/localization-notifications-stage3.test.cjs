@@ -229,6 +229,57 @@ test("contextual-help chrome labels have explicit translations in all 36 locales
   assert.match(runtime, /activeTooltipUiLabels = pack\.tooltipUiLabels/);
 });
 
+test("live contextual help has English fallback for dynamic editor controls", () => {
+  const window = loadNotificationRuntime();
+  const messages = window.MontazhnayaLocalePacks.en.messages;
+  const required = [
+    "Начать экспорт",
+    "Поиск переходов",
+    "Сбросить цветокоррекцию",
+    "Соотношение сторон",
+    "Цветовой стиль",
+    "Частота кадров проекта",
+    "Меню «Файл»",
+    "Меню «Правка»",
+    "Меню «Вид»",
+    "Меню «Переходы»",
+    "Меню «Справка»",
+    "Диагностика FFmpeg и ffprobe",
+    "Язык интерфейса",
+    "Включить подробные подсказки",
+    "Выключить подробные подсказки",
+    "Создать слайд-шоу",
+    "Скорость клипа",
+    "Библиотека медиа и переходов",
+    "Монитор предпросмотра",
+    "Панель свойств",
+    "Таймлайн",
+    "Дорожки",
+    "Вкладка «Медиа»",
+    "Вкладка «Переходы»",
+    "Линейка времени",
+    "Заблокировать дорожку",
+    "Скрыть видеодорожку",
+    "Отключить звук дорожки",
+    "Управление дорожкой {track}",
+    "Дорожка {track}",
+    "Этот элемент управляет соответствующей функцией видеоредактора."
+  ];
+  for (const source of required) {
+    assert.ok(messages[source], "missing English contextual-help fallback: " + source);
+  }
+
+  const html = read("src/renderer/index.html");
+  assert.match(html, /data-help-menu="file"/);
+  assert.match(html, /data-help-menu="edit"/);
+  assert.match(html, /data-help-menu="view"/);
+  assert.match(html, /data-help-menu="transitions"/);
+  assert.match(html, /data-help-menu="help"/);
+  assert.match(html, /nestedControl\?\.id/);
+  assert.match(html, /getLocale\?\.\(\) \|\| 'ru'\) !== 'ru'\) return def/);
+  assert.match(html, /key\.textContent=uiText\(def\.shortcut\)/);
+});
+
 test("tooltip GUI audit validates rendered translations, real document direction and numeric render totals", () => {
   const audit = read("qa/tooltip-gui-audit.cjs");
   assert.match(audit, /result\.expectedDirection !== result\.direction/);

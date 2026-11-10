@@ -424,6 +424,13 @@
     return next;
   }
 
+  // Contextual-help terminology that is valid only in selected locales.
+  // Keep it separate from the main UI catalogue so Russian source copy stays intact.
+  root.MontazhnayaContextualHelpTranslations = Object.freeze({
+    uk: Object.freeze({ "Таймлайн": "Часова шкала" }),
+    kk: Object.freeze({ "Таймлайн": "Уақыт шкаласы" })
+  });
+
   root.MontazhnayaLocaleEditorialCorrections = Object.freeze(corrections);
   root.MontazhnayaApplyEditorialOverrides = apply;
 })(window);

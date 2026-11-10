@@ -152,9 +152,14 @@
 
   function messagesWithTooltipTranslations(locale, messages) {
     const translations = root.MontazhnayaTooltipTranslations?.packs?.[locale];
-    return translations
-      ? Object.assign(Object.create(null), messages, translations)
-      : messages;
+    const contextualHelp = root.MontazhnayaContextualHelpTranslations?.[locale];
+    if (!translations && !contextualHelp) return messages;
+    return Object.assign(
+      Object.create(null),
+      messages,
+      translations || {},
+      contextualHelp || {}
+    );
   }
 
   const PLURAL_CATEGORIES = new Set(["zero", "one", "two", "few", "many", "other"]);
@@ -559,6 +564,10 @@
     getPreference: () => currentPreference,
     getDirection: () => RTL.has(currentLocale.split("-")[0]) ? "rtl" : "ltr",
     translate: translateSource,
+    translateFallback: source => {
+      const result = translateWith(source, fallbackMessages, fallbackPatterns);
+      return result.found ? result.value : source;
+    },
     t,
     tCount,
     pluralNoun,
