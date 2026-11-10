@@ -8,6 +8,14 @@ const vm = require("node:vm");
 
 const source = fs.readFileSync(path.join(__dirname, "..", "src", "renderer", "index.html"), "utf8");
 
+function section(start, end) {
+  const from = source.indexOf(start);
+  assert.notEqual(from, -1, `Missing source marker: ${start}`);
+  const to = source.indexOf(end, from + start.length);
+  assert.notEqual(to, -1, `Missing end marker: ${end}`);
+  return source.slice(from, to);
+}
+
 function loadHelper(name, globals = {}) {
   const match = source.match(new RegExp(`function ${name}\\([^)]*\\)\\s*\\{[\\s\\S]*?\\n\\}`, "m"));
   assert.ok(match, `${name} should be defined in renderer`);
