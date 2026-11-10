@@ -9,7 +9,7 @@ const vm = require("node:vm");
 const source = fs.readFileSync(path.join(__dirname, "..", "src", "renderer", "index.html"), "utf8");
 
 function loadHelper(name, globals = {}) {
-  const match = source.match(new RegExp(`function ${name}\\([^)]*\\)\\s*\\{[\\s\\S]*?\\n\\}`, "m"));
+  const match = source.match(new RegExp(`function ${name}\\([^)]*\\)\\s*\\{[\\s\\S]*?\n\\}`, "m"));
   assert.ok(match, `${name} should be defined in renderer`);
   const sandbox = { ...globals };
   vm.runInNewContext(`${match[0]}\nthis.helper = ${name};`, sandbox);
@@ -63,11 +63,11 @@ test("the media panel exposes numbered arrangement and timeline lanes handle ext
 
 
 function loadTimelineDropHarness(trackKind, assets) {
-  const sortHelper = section("function sortMediaByFilename(items) {", "\\nfunction isNumberedMediaName");
-  const compatibilityHelper = section("function isCompatible(mediaKind, trackKind) {", "\\nfunction isClipCompatible");
+  const sortHelper = section("function sortMediaByFilename(items) {", "\nfunction isNumberedMediaName");
+  const compatibilityHelper = section("function isCompatible(mediaKind, trackKind) {", "\nfunction isClipCompatible");
   const placementFunction = section(
     "async function importAndPlaceFilesOnTrack(files, track, startTime) {",
-    "\\nfunction bindTimelineDelegation()"
+    "\nfunction bindTimelineDelegation()"
   );
   const track = { id: trackKind === "audio" ? "A1" : "V1", kind: trackKind, label: trackKind, locked: false, clips: [] };
   const messages = [];
@@ -95,7 +95,7 @@ function loadTimelineDropHarness(trackKind, assets) {
   };
   vm.createContext(sandbox);
   vm.runInContext(
-    [sortHelper, compatibilityHelper, placementFunction, "this.placeFiles = importAndPlaceFilesOnTrack;"].join("\\n"),
+    [sortHelper, compatibilityHelper, placementFunction, "this.placeFiles = importAndPlaceFilesOnTrack;"].join("\n"),
     sandbox,
     { filename: "timeline-drop-ordering-test.js" }
   );
