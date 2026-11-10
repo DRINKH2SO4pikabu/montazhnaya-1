@@ -261,3 +261,99 @@ test("legacy audio clips without pair IDs are matched only to an identical split
   assert.equal(sandbox.legacyMatchB, false,
     "a sibling fragment with the same source group is not the same detached audio clip");
 });
+
+
+const offlineAudioCollector = extract(
+  "  async collectOfflineAudioSources() {",
+  "\n  async prepareVideoElements()"
+);
+
+function makeOfflineExportHarness(tracks) {
+  const media = {
+    id: "media-1",
+    kind: "video",
+    name: "source-video.mp4",
+    file: { path: "source-video.mp4" },
+    missing: false
+  };
+  const sandbox = {
+    project: { tracks },
+    clamp: (value, min, max) => Math.max(min, Math.min(max, value)),
+    getMedia: id => id === media.id ? media : null,
+    detectEmbeddedAudio: async candidate => candidate.id === media.id ? true : null
+  };
+  vm.createContext(sandbox);
+  vm.runInContext(
+    "globalThis.collectOfflineAudioSources = ({" + offlineAudioCollector +
+      "}).collectOfflineAudioSources;",
+    sandbox,
+    { filename: "offline-audio-export-collector-test.js" }
+  );
+  return {
+    collect: () => sandbox.collectOfflineAudioSources.call({
+      state: { rangeStart: 0, rangeEnd: 20 }
+    })
+  };
+}
+
+function makeExportVideoClip(id, audioMutedBySplit, timelineStart = 0) {
+  return {
+    id,
+    mediaId: "media-1",
+    timelineStart,
+    duration: 10,
+    volume: 1,
+    audioMutedBySplit,
+    audioOnlyFromVideo: false
+  };
+}
+
+function makeExportDetachedAudio(id, timelineStart = 0) {
+  return {
+    id,
+    mediaId: "media-1",
+    timelineStart,
+    duration: 10,
+    volume: 1,
+    audioOnlyFromVideo: true
+  };
+}
+
+test("offline export uses detached audio instead of duplicating the muted video's embedded audio", async () => {
+  const video = makeExportVideoClip("video-1", true);
+  const detached = makeExportDetachedAudio("detached-1");
+  const harness = makeOfflineExportHarness([
+    { id: "V1", kind: "video", clips: [video] },
+    { id: "A1", kind: "audio", clips: [detached] }
+  ]);
+
+  const sources = await harness.collect();
+  assert.deepEqual(Array.from(sources, source => source.clip.id), ["detached-1"]);
+});
+
+test("offline export restores embedded video audio after its detached audio clip is removed", async () => {
+  const video = makeExportVideoClip("video-1", false);
+  const harness = makeOfflineExportHarness([
+    { id: "V1", kind: "video", clips: [video] },
+    { id: "A1", kind: "audio", clips: [] }
+  ]);
+
+  const sources = await harness.collect();
+  assert.deepEqual(Array.from(sources, source => source.clip.id), ["video-1"]);
+});
+
+test("offline export keeps a surviving detached split segment while restoring only the deleted segment's embedded audio", async () => {
+  const leftVideo = makeExportVideoClip("video-left", true, 0);
+  const rightVideo = makeExportVideoClip("video-right", false, 10);
+  const leftDetachedAudio = makeExportDetachedAudio("audio-left", 0);
+  const harness = makeOfflineExportHarness([
+    { id: "V1", kind: "video", clips: [leftVideo, rightVideo] },
+    { id: "A1", kind: "audio", clips: [leftDetachedAudio] }
+  ]);
+
+  const sources = await harness.collect();
+  const sourceIds = Array.from(sources, source => source.clip.id).sort();
+  assert.deepEqual(sourceIds, ["audio-left", "video-right"]);
+  assert.equal(sourceIds.length, new Set(sourceIds).size,
+    "each surviving audio segment must enter the offline export exactly once");
+});
