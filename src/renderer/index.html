@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="dark">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self' file: data: blob:; script-src 'self' file: 'sha256-liyAalvH416VpCVVx8I8u3f3AqOyfHyAjXRKBDcUE+s='; script-src-attr 'none'; style-src 'self' 'unsafe-inline' file:; img-src 'self' file: data: blob:; media-src 'self' file: data: blob:; font-src 'self' file: data:; connect-src 'self' file: data: blob:; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' file: data: blob:; script-src 'self' file: 'sha256-J4hOMzm6mNW+DiXj9+nRWDhK1+oQvaxh4ZATLEQYbgs='; script-src-attr 'none'; style-src 'self' 'unsafe-inline' file:; img-src 'self' file: data: blob:; media-src 'self' file: data: blob:; font-src 'self' file: data:; connect-src 'self' file: data: blob:; object-src 'none'; base-uri 'none'; form-action 'none'">
 <title>Монтажная beta 3.6.45 — монтаж фото, аудио и видео</title>
 <link rel="icon" type="image/png" href="../../assets/montazhnaya-icon-256.png">
 <script src="./locales/manifest.js"></script>
@@ -4618,14 +4618,72 @@ function getAvailableAudioTrack(start, duration) {
   return track;
 }
 
+function hasSeparatedAudioForVideo(videoClip) {
+  if (!videoClip || !videoClip.id) return false;
+  const sameNumber = (left, right) => Number.isFinite(Number(left)) &&
+    Number.isFinite(Number(right)) && Math.abs(Number(left) - Number(right)) < 0.001;
+  for (const track of project.tracks) {
+    if (track.kind !== "audio") continue;
+    for (const audioClip of track.clips || []) {
+      if (!audioClip.audioOnlyFromVideo || audioClip.mediaId !== videoClip.mediaId) continue;
+      if (audioClip.sourceVideoClipId) {
+        if (audioClip.sourceVideoClipId === videoClip.id) return true;
+        continue;
+      }
+      if (audioClip.avLinkId || videoClip.avLinkId) {
+        if (audioClip.avLinkId && videoClip.avLinkId && audioClip.avLinkId === videoClip.avLinkId) return true;
+        continue;
+      }
+      // Compatibility for older projects without per-pair/source IDs. Match the
+      // exact split segment, never every clip sharing the original source group.
+      if (!videoClip.audioSplitGroupId || audioClip.audioSplitGroupId !== videoClip.audioSplitGroupId) continue;
+      if (sameNumber(audioClip.sourceIn, videoClip.sourceIn) &&
+          sameNumber(audioClip.sourceOut, videoClip.sourceOut) &&
+          sameNumber(audioClip.duration, videoClip.duration) &&
+          sameNumber(audioClip.timelineStart, videoClip.timelineStart)) return true;
+    }
+  }
+  return false;
+}
+
+function findSourceVideoClipForSeparatedAudio(audioClip) {
+  if (!audioClip || !audioClip.audioOnlyFromVideo) return null;
+  const videos = [];
+  for (const track of project.tracks) {
+    if (track.kind !== "video") continue;
+    for (const clip of track.clips || []) {
+      if (clip.mediaId === audioClip.mediaId) videos.push(clip);
+    }
+  }
+  if (audioClip.sourceVideoClipId) {
+    const matches = videos.filter(clip => clip.id === audioClip.sourceVideoClipId);
+    return matches.length === 1 ? matches[0] : null;
+  }
+  if (audioClip.avLinkId) {
+    const matches = videos.filter(clip => clip.avLinkId === audioClip.avLinkId);
+    return matches.length === 1 ? matches[0] : null;
+  }
+  if (!audioClip.audioSplitGroupId) return null;
+  const sameNumber = (left, right) => Number.isFinite(Number(left)) &&
+    Number.isFinite(Number(right)) && Math.abs(Number(left) - Number(right)) < 0.001;
+  const matches = videos.filter(clip =>
+    clip.audioSplitGroupId === audioClip.audioSplitGroupId &&
+    sameNumber(clip.sourceIn, audioClip.sourceIn) &&
+    sameNumber(clip.sourceOut, audioClip.sourceOut) &&
+    sameNumber(clip.duration, audioClip.duration) &&
+    sameNumber(clip.timelineStart, audioClip.timelineStart)
+  );
+  return matches.length === 1 ? matches[0] : null;
+}
+
 function createSeparatedAudioClip(videoClip) {
   if (!videoClip) return null;
   const media = getMedia(videoClip.mediaId);
   const videoTrack = getTrack(videoClip.trackId);
   if (!media || media.kind !== "video" || !videoTrack || videoTrack.kind !== "video") return null;
-  if (videoClip.audioSplitGroupId) {
-    const existing = project.tracks.some(t => t.kind === "audio" && t.clips.some(c => c.audioOnlyFromVideo && c.audioSplitGroupId === videoClip.audioSplitGroupId));
-    if (existing) { videoClip.audioMutedBySplit = true; return null; }
+  if (hasSeparatedAudioForVideo(videoClip)) {
+    videoClip.audioMutedBySplit = true;
+    return null;
   }
   const audioTrack = getAvailableAudioTrack(videoClip.timelineStart, videoClip.duration);
   if (!audioTrack || audioTrack.locked) return null;
@@ -4821,13 +4879,15 @@ async function addMediaToTimeline(mediaId, trackId, startTime, options = {}) {
   return clip;
 }
 
-function restoreVideoAudioIfNoSeparatedClip(groupId) {
-  if (!groupId) return;
-  const remaining = project.tracks.some(t => t.kind === "audio" && t.clips.some(c => c.audioOnlyFromVideo && c.audioSplitGroupId === groupId));
-  if (remaining) return;
-  for (const track of project.tracks) if (track.kind === "video") for (const clip of track.clips) {
-    if (clip.audioSplitGroupId === groupId) { clip.audioMutedBySplit = false; clip.audioSplitGroupId = null; }
-  }
+function restoreVideoAudioIfNoSeparatedClip(videoClip) {
+  if (!videoClip || hasSeparatedAudioForVideo(videoClip)) return false;
+  videoClip.audioMutedBySplit = false;
+  videoClip.audioSplitGroupId = null;
+  // If the detached audio was removed while the pair was unlinked, discard the
+  // now-stale pair identity as well. Other split segments keep their own pairs.
+  videoClip.avLinkEnabled = false;
+  videoClip.avLinkId = null;
+  return true;
 }
 
 async function splitVideoAudioForSelectedClip() {
@@ -4839,7 +4899,12 @@ async function splitVideoAudioForSelectedClip() {
     toastKey("notification.audio.detach.selectVideoOnVideoTrack", {}, "warn"); return;
   }
   if (track.locked) { toastKey("notification.track.videoUnlockRequired", {}, "warn"); return; }
-  if (clip.audioMutedBySplit && clip.audioSplitGroupId && project.tracks.some(t => t.kind === "audio" && t.clips.some(c => c.audioOnlyFromVideo && c.audioSplitGroupId === clip.audioSplitGroupId))) {
+  if (hasSeparatedAudioForVideo(clip)) {
+    if (!clip.audioMutedBySplit) {
+      clip.audioMutedBySplit = true;
+      History.record();
+      refreshAfterTimelineEdit();
+    }
     toastKey("notification.audio.alreadyDetached", {}, "ok"); return;
   }
   const hasAudio = await detectEmbeddedAudio(media);
@@ -5017,15 +5082,20 @@ function deleteSelectedClip() {
       return;
     }
   }
-  const groupsToCheck = new Set(targets.filter(c => c.audioOnlyFromVideo && c.audioSplitGroupId).map(c => c.audioSplitGroupId));
   const ids = new Set(targets.map(c => c.id));
+  const videosToRestore = new Map();
+  for (const target of targets) {
+    if (!target.audioOnlyFromVideo) continue;
+    const sourceVideoClip = findSourceVideoClipForSeparatedAudio(target);
+    if (sourceVideoClip && !ids.has(sourceVideoClip.id)) videosToRestore.set(sourceVideoClip.id, sourceVideoClip);
+  }
   for (const targetTrack of project.tracks) targetTrack.clips = targetTrack.clips.filter(c => !ids.has(c.id));
   for (const target of targets) {
     AudioEngine.removeClipNode(target.id);
     const fb = FallbackAudioEls.get(target.id);
     if (fb) { try { fb.pause(); fb.removeAttribute("src"); fb.load(); } catch (e) {} FallbackAudioEls.delete(target.id); }
   }
-  for (const groupId of groupsToCheck) restoreVideoAudioIfNoSeparatedClip(groupId);
+  for (const videoClip of videosToRestore.values()) restoreVideoAudioIfNoSeparatedClip(videoClip);
   AppState.selection = { type: null, id: null };
   History.record();
   Preview.reconcileClipElements();
@@ -5048,8 +5118,13 @@ function rippleDeleteSelectedClip() {
     if (!targetTrack) return;
     if (targetTrack.locked) { toastKey("notification.track.linkedPartnerLocked", { track: uiText(targetTrack.label) }, "error"); return; }
   }
-  const groupsToCheck = new Set(targets.filter(c => c.audioOnlyFromVideo && c.audioSplitGroupId).map(c => c.audioSplitGroupId));
   const ids = new Set(targets.map(c => c.id));
+  const videosToRestore = new Map();
+  for (const target of targets) {
+    if (!target.audioOnlyFromVideo) continue;
+    const sourceVideoClip = findSourceVideoClipForSeparatedAudio(target);
+    if (sourceVideoClip && !ids.has(sourceVideoClip.id)) videosToRestore.set(sourceVideoClip.id, sourceVideoClip);
+  }
   const shifts = targets.map(c => ({ trackId: c.trackId, start: c.timelineStart, duration: c.duration }));
   for (const targetTrack of project.tracks) targetTrack.clips = targetTrack.clips.filter(c => !ids.has(c.id));
   for (const target of targets) {
@@ -5064,7 +5139,7 @@ function rippleDeleteSelectedClip() {
       if (c.timelineStart > shift.start + 1e-6) c.timelineStart = Math.max(0, roundToFrame(c.timelineStart - shift.duration));
     }
   }
-  for (const groupId of groupsToCheck) restoreVideoAudioIfNoSeparatedClip(groupId);
+  for (const videoClip of videosToRestore.values()) restoreVideoAudioIfNoSeparatedClip(videoClip);
   AppState.selection = { type: null, id: null };
   History.record();
   Preview.reconcileClipElements();
