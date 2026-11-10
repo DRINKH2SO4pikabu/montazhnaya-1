@@ -9,7 +9,7 @@ const vm = require("node:vm");
 const source = fs.readFileSync(path.join(__dirname, "..", "src", "renderer", "index.html"), "utf8");
 
 function loadHelper(name, globals = {}) {
-  const match = source.match(new RegExp(`function ${name}\\([^)]*\\)\\s*\\{[\\s\\S]*?\n\\}`, "m"));
+  const match = source.match(new RegExp(`function ${name}\\([^)]*\\)\\s*\\{[\\s\\S]*?\\n\\}`, "m"));
   assert.ok(match, `${name} should be defined in renderer`);
   const sandbox = { ...globals };
   vm.runInNewContext(`${match[0]}\nthis.helper = ${name};`, sandbox);
