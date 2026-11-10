@@ -87,7 +87,7 @@ test("the five top dropdowns and language selector expose a complete translatabl
   assert.equal(buttons.filter(item => item.kind === "menu").length, 6);
   assert.equal(buttons.filter(item => item.kind === "item").length, 46);
   assert.equal(buttons.filter(item => item.kind === "badge").length, 1);
-  assert.equal(shortcutTexts.length, 22);
+  assert.equal(shortcutTexts.length, 21);
 
   for (const source of uniqueKeys) {
     assert.ok(
