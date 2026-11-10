@@ -5118,8 +5118,13 @@ function rippleDeleteSelectedClip() {
     if (!targetTrack) return;
     if (targetTrack.locked) { toastKey("notification.track.linkedPartnerLocked", { track: uiText(targetTrack.label) }, "error"); return; }
   }
-  const groupsToCheck = new Set(targets.filter(c => c.audioOnlyFromVideo && c.audioSplitGroupId).map(c => c.audioSplitGroupId));
   const ids = new Set(targets.map(c => c.id));
+  const videosToRestore = new Map();
+  for (const target of targets) {
+    if (!target.audioOnlyFromVideo) continue;
+    const sourceVideoClip = findSourceVideoClipForSeparatedAudio(target);
+    if (sourceVideoClip && !ids.has(sourceVideoClip.id)) videosToRestore.set(sourceVideoClip.id, sourceVideoClip);
+  }
   const shifts = targets.map(c => ({ trackId: c.trackId, start: c.timelineStart, duration: c.duration }));
   for (const targetTrack of project.tracks) targetTrack.clips = targetTrack.clips.filter(c => !ids.has(c.id));
   for (const target of targets) {
