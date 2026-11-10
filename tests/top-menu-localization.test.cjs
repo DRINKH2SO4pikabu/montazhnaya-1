@@ -85,7 +85,7 @@ test("the five top dropdowns and language selector expose a complete translatabl
 
   assert.deepEqual(menuKeys, ["file", "edit", "view", "transitions", "help"]);
   assert.equal(buttons.filter(item => item.kind === "menu").length, 6);
-  assert.equal(buttons.filter(item => item.kind === "item").length, 46);
+  assert.equal(buttons.filter(item => item.kind === "item").length, 47);
   assert.equal(buttons.filter(item => item.kind === "badge").length, 1);
   assert.equal(shortcutTexts.length, 21);
 
@@ -118,6 +118,20 @@ test("every top-menu label is translated explicitly in all 34 preview locales", 
 
   const issues = [];
   const checked = {};
+  // These identical forms are established cognates or standard UI terms in
+  // the target locale, not fallback to Russian/English.
+  const acceptedMenuCognates = {
+    fr: ["Переходы", "20 переходов"],
+    it: ["Файл"],
+    nl: ["Справка"],
+    id: ["Правка"],
+    uk: ["Файл"],
+    kk: ["Файл"],
+    "uz-Cyrl": ["Файл"],
+    ky: ["Файл"],
+    tg: ["Файл"],
+    be: ["Файл"]
+  };
 
   for (const code of previewCodes) {
     const pack = packs[code];
@@ -134,13 +148,14 @@ test("every top-menu label is translated explicitly in all 34 preview locales", 
       if (fallbackKeys.has(source)) {
         issues.push({ locale: code, source, issue: "declared-english-fallback" });
       }
-      if (value === source) {
+      const acceptedCognate = (acceptedMenuCognates[code] || []).includes(source);
+      if (value === source && !acceptedCognate) {
         issues.push({ locale: code, source, issue: "unchanged-russian-source" });
       }
-      if (value === packs.en.messages[source]) {
+      if (value === packs.en.messages[source] && !acceptedCognate) {
         issues.push({ locale: code, source, issue: "unchanged-english-reference" });
       }
-      if (value !== source && value !== packs.en.messages[source] && !fallbackKeys.has(source)) translated += 1;
+      if ((value !== source && value !== packs.en.messages[source] || acceptedCognate) && !fallbackKeys.has(source)) translated += 1;
     }
 
     checked[code] = { checked: uniqueKeys.length, explicitlyTranslated: translated };
