@@ -18,7 +18,6 @@ function extract(startMarker, endMarker) {
 
 const ownershipHelpers = [
   extract("function hasSeparatedAudioForVideo(videoClip) {", "\nfunction createSeparatedAudioClip(videoClip) {"),
-  extract("function findSourceVideoClipForSeparatedAudio(audioClip) {", "\nfunction createSeparatedAudioClip(videoClip) {"),
   extract("function restoreVideoAudioIfNoSeparatedClip(videoClip) {", "\nasync function splitVideoAudioForSelectedClip() {")
 ].join("\n");
 
