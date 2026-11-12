@@ -220,7 +220,7 @@ jobs:
           retention-days: 90
 
       - name: Publish official GitHub Beta release
-        uses: softprops/action-gh-release@3bb12739c298aeb8a4eeaf626c5b8d85266b0e65 # v2
+        uses: softprops/action-gh-release@8a0cd651e5b2365bd640854a3fa5dfc70e4875f3 # v3.0.4
         with:
           tag_name: ${{ steps.release-meta.outputs.tag_name }}
           target_commitish: ${{ steps.pin-release-lock.outputs.commit_sha || steps.source-commit.outputs.commit_sha || github.sha }}
